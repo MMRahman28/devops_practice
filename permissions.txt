@@ -3,7 +3,7 @@
 	- Confirmed it exists: `ls -l` inside /devops_learning.
 	- -rw------- : starts with d or -. d for directory, - for files.first 3 letters for user/owner, next 3 for group, and the last 3 for others.
 	- read = 4, write = 2, execute = 1.
-	- Set owner-only Read/Write permission: `chmod 600 test file.txt`. 6 is for owner (4 + 2 + 0), group 0, others 0. Equivalent command is `chmod u=rw,go= testfile.txt`
+	- Set owner-only Read/Write permission: `chmod 600 testfile.txt`. 6 is for owner (4 + 2 + 0), group 0, others 0. Equivalent command is `chmod u=rw,go= testfile.txt`
 	- Verify the permission: Same command as to verify the file exists. `ls -l testfile.txt`
 
 - **Add new users and group**:
