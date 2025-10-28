@@ -1,0 +1,21 @@
+- **Permissions(linuxjourney.com)**:
+	- Created a file testfile.txt: `touch testfile.txt`
+	- Confirmed it exists: `ls -l` inside /devops_learning.
+	- -rw------- : starts with d or -. d for directory, - for files.first 3 letters for user/owner, next 3 for group, and the last 3 for others.
+	- read = 4, write = 2, execute = 1.
+	- Set owner-only Read/Write permission: `chmod 600 test file.txt`. 6 is for owner (4 + 2 + 0), group 0, others 0. Equivalent command is `chmod u=rw,go= testfile.txt`
+	- Verify the permission: Same command as to verify the file exists. `ls -l testfile.txt`
+
+- **Add new users and group**:
+	- Username of the current user: `whoami`
+	- Create new user: `sudo adduser jack` (adduser is not built-in which uses useradd in its implementation)
+		- creates new user, group (primary) called jack, home directory /home/jack.
+	- Verifying home directory: `ls /home` (jack should show up)
+	- Verifying primary group: `id jack` (shows UID, GID and secondary groups) 
+	- View all groups in the system: `cat /etc/group`
+	- View or verify a specific group: `cat /etc/group | grep -E "group_name"` or, `getent group group_name`
+	- Create a new group: `sudo groupadd group_name`
+	- Add user to this group: `sudo usermod -aG group_name jack` (secondary group. -a stands for append)
+	- Add user to a primary group: `sudo usermod -g primary_group_name jack`
+	- One line code to adduser and select a primary group for the user: `sudo adduser --group group_name user_name` (prerequisite: group_name exists)
+	- All the groups a user in: `sudo groups jack`
