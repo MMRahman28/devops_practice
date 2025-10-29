@@ -114,3 +114,35 @@ for arg in "$@"; do
     echo "Argument $count: $arg"
     count=$((count + 1))
 done
+
+# Input validation with -z
+name="${1:-Guest}"
+
+if [ -z "$1" ]; then
+	echo "No name given - using default: Guest"
+else
+	echo "Name received: $1"
+fi
+
+# Input validation with -z and -n
+
+if [ -z "$1" ]; then
+	echo "Missing!"
+elif [ -n "$2" ]; then
+	echo "Got second arg too!"
+fi
+
+# Another example
+if [ -z "$1" ]; then
+	echo "Usage: $0 <Your-name>"
+	echo "Example: $0 Alice"
+	exit 1
+fi
+
+# loop demo
+echo "Counting down"
+for i in {3..1}; do
+	echo "Tick: $i"
+done
+
+echo "Done!"
