@@ -5,11 +5,10 @@
 
 ---
 
-## Today's Progress (October 28, 2025)
+## Today's Progress (October 29, 2025)
 - **labex.io Bash Labs**:
-	-Shell variables, command substitution, arithmetic, environment variables
+	-Command-line args, conditionals, for loop
 	- Scripts: `bash_basics.sh`
-	- Ran out of VM quota -> continue on Arch Linux
 	- **Github**: Daily commit + `notes.md` updated
 
 ---
@@ -20,4 +19,4 @@
 
 ---
 
-*Last updated: October 28, 2025*
+*Last updated: October 29, 2025*
