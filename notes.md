@@ -52,11 +52,11 @@ echo "Hours left: $hours_left | Home: $HOME"
 	- $0 represents the name of the script
 	- $1, $2, etc. represents first, second and so on arguments.
 	- $# special variable holds number of arguments.
-	- [ $# -eq 0 ], [ $# -lt 2 ], [ $# -gt 3 ] are how we express conditions.
+	- Using `[ $# -eq 0 ]`, `[ $# -lt 2 ]`, `[ $# -gt 3 ]` are how we express conditions.
 	- fi indicates finish or end of conditional statements.
 	- $@ another special variables represents all command-line arguments.
 	- done indicates the end of a loop
-	- {1..3} or {3..1} indicates range going up or down in for loop
+	- `{1..3}` or `{3..1}` indicates range going up or down in for loop
 	- input validation with -z and -n
 	- `[ -z "$1" ]` returns true if the variable is empty or unset, false otherwise.
 	- -n opposite of -z, True if variable is NOT empty
