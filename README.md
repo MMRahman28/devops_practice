@@ -16,6 +16,7 @@
 ## Files in this Repo
 - `notes.md` -> Daily learning log
 - `*.sh` -> Bash scripts from labex
+- permission.txt
 
 ---
 
