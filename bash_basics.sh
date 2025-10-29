@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Shell variables (28 October, 2025)
+
 PRICE_PER_APPLE=5
 MyFirstLetters=ABC
 greeting='Hello        world!'
@@ -85,3 +87,30 @@ unset MY_VARIABLE
 # Verifying the variable is unset
 echo "MY_VARIABLE after unsetting: $MY_VARIABLE"
 
+
+
+# Argument passing (29 October, 2025)
+
+if [ $# -eq 0 ]; then
+  echo "No arguments provided."
+elif [ $# -eq 1 ]; then
+  echo "One argument provided: $1"
+elif [ $# -eq 2 ]; then
+  echo "Two arguments provided: $1 and $2"
+else
+  echo "More than two arguments provided:"
+  echo "First argument: $1"
+  echo "Second argument: $2"
+  echo "Third argument: $3"
+  echo "Total number of arguments: $#"
+fi
+
+# loop through all arguments
+echo "Total number of arguments: $#"
+echo "All arguments:"
+
+count=1
+for arg in "$@"; do
+    echo "Argument $count: $arg"
+    count=$((count + 1))
+done

@@ -43,3 +43,18 @@ user=$(whoami)
 hours_left=$((24 - $(date +%H)))
 echo "Hello $name! Time: $time | User: $user"
 echo "Hours left: $hours_left | Home: $HOME"
+```
+---
+
+### October 29, 2025
+#### Tasks Completed
+- **labex.io Bash Scripting - accept and use of command-line arguments**
+	- $0 represents the name of the script
+	- $1, $2, etc. represents first, second and so on arguments.
+	- $# special variable holds number of arguments.
+	- [$# -eq 0], [$# -lt 2], [$# -gt 3] are how we express conditions.
+	- fi indicates finish or end of conditional statements.
+	- $@ another special variables represents all command-line arguments.
+	- done indicates the end of a loop
+	
+#### `bash_basics.sh` (key script)
