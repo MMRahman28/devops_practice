@@ -76,5 +76,8 @@ echo "Hours left: $hours_left | Home: $HOME"
 	- `tail -5` -> show recent errors
 	- `exit 1` -> fail fast
 	- Alerts on ERRORs in logs
+	- cat > /tmp/sample.log << EOF, here EOF is a delimiter
+	- cat  << EOF is Here Document, any delimiter (STOP, END etc.) would work in place of EOF	
 
 #### `log_monitor.sh` (key script)
+---
