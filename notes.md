@@ -67,3 +67,14 @@ echo "Hours left: $hours_left | Home: $HOME"
 	
 #### `bash_basics.sh` (key script)
 ---
+
+### October 30, 2025
+#### Tasks Completed
+- **Build a log monitor script**
+	-`${1:-default}` -> safe config
+	- `grep -c what_pattern where` -> count matches
+	- `tail -5` -> show recent errors
+	- `exit 1` -> fail fast
+	- Alerts on ERRORs in logs
+
+#### `log_monitor.sh` (key script)
