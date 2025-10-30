@@ -5,6 +5,13 @@
 
 ---
 
+## Open to Junior DevOps Roles
+- Available: Immediate
+- Location: UK (Remote/Hybrid)
+- Email: mashuk.pro@gmail.com
+
+---
+
 ## Today's Progress (October 29, 2025)
 - **labex.io Bash Labs**:
 	-Command-line args, conditionals, for loop
@@ -20,4 +27,4 @@
 
 ---
 
-*Last updated: October 29, 2025*
+*Last updated: October 30, 2025*
