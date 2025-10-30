@@ -71,7 +71,7 @@ echo "Hours left: $hours_left | Home: $HOME"
 ### October 30, 2025
 #### Tasks Completed
 - **Build a log monitor script**
-	-`${1:-default}` -> safe config
+	- `${1:-default}` -> safe config
 	- `grep -c what_pattern where` -> count matches
 	- `tail -5` -> show recent errors
 	- `exit 1` -> fail fast

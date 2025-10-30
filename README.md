@@ -14,7 +14,7 @@
 
 ## Today's Progress (October 30, 2025)
 - **Build a log monitor bash script**:
-	-Use conditional, grep, cat, input validation, default
+	- Use conditional, grep, cat, input validation, default
 	- Scripts: `log_monitor.sh`
 	- **Github**: Daily commit + `notes.md` updated
 
