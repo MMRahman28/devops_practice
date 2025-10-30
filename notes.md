@@ -77,7 +77,16 @@ echo "Hours left: $hours_left | Home: $HOME"
 	- `exit 1` -> fail fast
 	- Alerts on ERRORs in logs
 	- cat > /tmp/sample.log << EOF, here EOF is a delimiter
-	- cat  << EOF is Here Document, any delimiter (STOP, END etc.) would work in place of EOF	
+	- cat  << EOF is Here Document, any delimiter (STOP, END etc.) would work in place of EOF
 
 #### `log_monitor.sh` (key script)
+
+- **labex.io Bash scripting - Arrays**
+	- () initialise an empty array
+	- += to append elements
+	- `[@]`. @ symbol inside the bracket represents all elements
+	- `#`symbol tells to count number of elements.
+	- `${#NAMES[@]}` will be used to count number of elements.	
+
+#### `bash_basics.sh` (key script)
 ---
