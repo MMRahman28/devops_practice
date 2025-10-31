@@ -12,9 +12,9 @@
 
 ---
 
-## Today's Progress (October 30, 2025)
+## Today's Progress (October 31, 2025)
 - **Build a log monitor bash script**:
-	- Use conditional, grep, cat, input validation, default
+	- Email alert added, now a real-time log monitoring system
 	- Scripts: `log_monitor.sh`
 	- **Github**: Daily commit + `notes.md` updated
 
@@ -27,4 +27,4 @@
 
 ---
 
-*Last updated: October 30, 2025*
+*Last updated: $(date '+%Y-%m-%d')*

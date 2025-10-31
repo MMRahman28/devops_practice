@@ -90,3 +90,26 @@ echo "Hours left: $hours_left | Home: $HOME"
 
 #### `bash_basics.sh` (key script)
 ---
+
+### October 31, 2025
+#### Tasks Completed
+- **Improved previous log monitor with email alert**
+	- Email via 'msmtp` + Gmail SMTP
+	- install s-nail and msmtp with pacman
+#### **Configuration**
+```ini
+# nano ~/.msmtprc
+account gmail
+host smtp.gmail.com
+port 587
+auth on
+user your-email@gmail.com
+password abcdefghijklmnop # <- 16 chars, no space (App password not Gmail password, create one from Google)
+from your-email@gmail.com
+account default: gmail
+```
+- Debugging: VPN block port 587 so disconnect VPN
+- Testing: `echo "Test mail" | msmtp -a gmail mashuk.pro@gmail.com`
+
+#### `log_monitor.sh` (key script)
+---
