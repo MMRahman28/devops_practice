@@ -27,4 +27,4 @@
 
 ---
 
-*Last updated: $(date '+%Y-%m-%d')*
+*Last updated: 31 October, 2025*

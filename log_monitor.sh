@@ -33,3 +33,21 @@ if [ "$ERROR_COUNT" -gt 0 ]; then
 else
 	echo "All good - no '$ERROR_PATTERN' in '$LOG_FILE'"
 fi
+
+# Alternative email alert with curl (vpn proof)
+
+#if ["$ERROR_COUNT" -gt 0 ]; then
+#	BODY="ALERT: $ERROR_COUNT '$ERROR_PATTERN' (s) found in '$LOG_FILE'\n\nLast 5 lines:
+#	\n$(grep "$ERROR_PATTERN" "$LOG_FILE" | tail -5)"
+
+#	curl -s \
+#		--url 'smtps://smtp.gmail.com:465' \
+#		--ssl-reqd \
+#		--mail-from 'you@gmail.com' \
+#		--mail-rcpt 'you@gmail.com' \
+#		--user 'you@gmail.com:APP_PASSWORD' \
+#		-T <(echo -e "From: you@gmail.com\nTo: you@gmail.com\nSubject: Log Alert\n\n$BODY")
+	
+#	echo "Email sent via curl"
+#fi	
+
