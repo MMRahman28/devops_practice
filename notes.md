@@ -148,3 +148,4 @@ account default: gmail
 	- cron was not running. To fix it, cronie was installed from Arch Linux package. `sudo pacman -S cronie`.
 
 #### `log_moitor.sh` (key script)
+---

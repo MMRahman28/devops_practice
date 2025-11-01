@@ -12,9 +12,10 @@
 
 ---
 
-## Today's Progress (October 31, 2025)
+## Today's Progress (1 November, 2025)
 - **Build a log monitor bash script**:
 	- Email alert added, now a real-time log monitoring system
+	- Cron job added to send email alert every 5 minutes
 	- Scripts: `log_monitor.sh`
 	- **Github**: Daily commit + `notes.md` updated
 
@@ -27,4 +28,4 @@
 
 ---
 
-*Last updated: 31 October, 2025*
+*Last updated: 1 November, 2025*
