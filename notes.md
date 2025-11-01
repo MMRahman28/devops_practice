@@ -136,15 +136,15 @@ account default: gmail
 - Command: log_monitor.sh with Arguments `/home/mashuk/Documents/Journals/devops_learning/ log_monitor.sh /var/log/syslog ERROR`
 - Output Redirection with `>>` and `2>&1`: `>> /home/mashuk/Documents/Journals/devops_learning/cron_alert.log 2>&1`
 - `>>` appends stdout, `>` overwrites which we do not want here, 2> represents stderr, &1 for stdout
-- together 2>&1 instructs send errors to same place as output
-- we use `crontab -e` which opens crontab with nano. With command and output redirection together we write the full cronline.
+- 2>&1 sends errors to same place as output
+- we use `crontab -e` which opens crontab with nano. With command and output redirection, we write the full cronline.
 - Full cronline: `/home/mashuk/Documents/Journals/devops_learning/ log_monitor.sh /var/log/syslog ERROR >> /home/mashuk/Documents/Journals/devops_learning/cron_alert.log 2>&1`
 
 - **Troubleshooting**
 	- `crontab -e` did not open nano file. The following fix was used.
 	 `echo 'export EDITOR=nano' >> ~/.bashrc`
 	 `source ~/.bashrc`
-	- cron was not running. To fix it, cronie was installed from Arch Linux package. `sudo pacman -S cronie`.
+	- cron was not running.To fix it, cronie was installed from Arch Linux package. `sudo pacman -S cronie`.
 
 #### `log_moitor.sh` (key script)
 ---
