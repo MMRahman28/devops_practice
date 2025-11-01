@@ -1,0 +1,150 @@
+Alert: 18 'ERROR' found in '/var/log/syslog'
+2025-11-01 14:01:00 ERROR FINAL TEST
+2025-11-01 14:01:00 ERROR FINAL TEST
+2025-11-01 14:01:00 ERROR FINAL TEST
+2025-11-01 14:01:00 ERROR FINAL TEST
+2025-11-31 16:00:00 ERROR DEBUG TEST
+Email alert sent via msmtp
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 54: 2025-11-01: command not found
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 55: 2025-11-01: command not found
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 56: 2025-11-01: command not found
+Alert: 18 'ERROR' found in '/var/log/syslog'
+2025-11-01 14:01:00 ERROR FINAL TEST
+2025-11-01 14:01:00 ERROR FINAL TEST
+2025-11-01 14:01:00 ERROR FINAL TEST
+2025-11-01 14:01:00 ERROR FINAL TEST
+2025-11-31 16:00:00 ERROR DEBUG TEST
+Email alert sent via msmtp
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 54: 2025-11-01: command not found
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 55: 2025-11-01: command not found
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 56: 2025-11-01: command not found
+Alert: 20 'ERROR' found in '/var/log/syslog'
+2025-11-01 14:01:00 ERROR FINAL TEST
+2025-11-01 14:01:00 ERROR FINAL TEST
+2025-11-31 16:00:00 ERROR DEBUG TEST
+2025-11-31 16:00:00 ERROR DEBUG TEST
+2025-11-31 16:00:00 ERROR DEBUG TEST
+Email alert sent via msmtp
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 54: 2025-11-01: command not found
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 55: 2025-11-01: command not found
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 56: 2025-11-01: command not found
+Alert: 20 'ERROR' found in '/var/log/syslog'
+2025-11-01 14:01:00 ERROR FINAL TEST
+2025-11-01 14:01:00 ERROR FINAL TEST
+2025-11-31 16:00:00 ERROR DEBUG TEST
+2025-11-31 16:00:00 ERROR DEBUG TEST
+2025-11-31 16:00:00 ERROR DEBUG TEST
+Email alert sent via msmtp
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 54: 2025-11-01: command not found
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 55: 2025-11-01: command not found
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 56: 2025-11-01: command not found
+Alert: 20 'ERROR' found in '/var/log/syslog'
+2025-11-01 14:01:00 ERROR FINAL TEST
+2025-11-01 14:01:00 ERROR FINAL TEST
+2025-11-31 16:00:00 ERROR DEBUG TEST
+2025-11-31 16:00:00 ERROR DEBUG TEST
+2025-11-31 16:00:00 ERROR DEBUG TEST
+Email alert sent via msmtp
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 54: 2025-11-01: command not found
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 55: 2025-11-01: command not found
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 56: 2025-11-01: command not found
+Alert: 20 'ERROR' found in '/var/log/syslog'
+2025-11-01 14:01:00 ERROR FINAL TEST
+2025-11-01 14:01:00 ERROR FINAL TEST
+2025-11-31 16:00:00 ERROR DEBUG TEST
+2025-11-31 16:00:00 ERROR DEBUG TEST
+2025-11-31 16:00:00 ERROR DEBUG TEST
+Email alert sent via msmtp
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 54: 2025-11-01: command not found
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 55: 2025-11-01: command not found
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 56: 2025-11-01: command not found
+Alert: 20 'ERROR' found in '/var/log/syslog'
+2025-11-01 14:01:00 ERROR FINAL TEST
+2025-11-01 14:01:00 ERROR FINAL TEST
+2025-11-31 16:00:00 ERROR DEBUG TEST
+2025-11-31 16:00:00 ERROR DEBUG TEST
+2025-11-31 16:00:00 ERROR DEBUG TEST
+Email alert sent via msmtp
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 54: 2025-11-01: command not found
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 55: 2025-11-01: command not found
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 56: 2025-11-01: command not found
+Alert: 20 'ERROR' found in '/var/log/syslog'
+2025-11-01 14:01:00 ERROR FINAL TEST
+2025-11-01 14:01:00 ERROR FINAL TEST
+2025-11-31 16:00:00 ERROR DEBUG TEST
+2025-11-31 16:00:00 ERROR DEBUG TEST
+2025-11-31 16:00:00 ERROR DEBUG TEST
+Email alert sent via msmtp
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 54: 2025-11-01: command not found
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 55: 2025-11-01: command not found
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 56: 2025-11-01: command not found
+Alert: 20 'ERROR' found in '/var/log/syslog'
+2025-11-01 14:01:00 ERROR FINAL TEST
+2025-11-01 14:01:00 ERROR FINAL TEST
+2025-11-31 16:00:00 ERROR DEBUG TEST
+2025-11-31 16:00:00 ERROR DEBUG TEST
+2025-11-31 16:00:00 ERROR DEBUG TEST
+Email alert sent via msmtp
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 54: 2025-11-01: command not found
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 55: 2025-11-01: command not found
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 56: 2025-11-01: command not found
+Alert: 20 'ERROR' found in '/var/log/syslog'
+2025-11-01 14:01:00 ERROR FINAL TEST
+2025-11-01 14:01:00 ERROR FINAL TEST
+2025-11-31 16:00:00 ERROR DEBUG TEST
+2025-11-31 16:00:00 ERROR DEBUG TEST
+2025-11-31 16:00:00 ERROR DEBUG TEST
+Email alert sent via msmtp
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 54: 2025-11-01: command not found
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 55: 2025-11-01: command not found
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 56: 2025-11-01: command not found
+Alert: 20 'ERROR' found in '/var/log/syslog'
+2025-11-01 14:01:00 ERROR FINAL TEST
+2025-11-01 14:01:00 ERROR FINAL TEST
+2025-11-31 16:00:00 ERROR DEBUG TEST
+2025-11-31 16:00:00 ERROR DEBUG TEST
+2025-11-31 16:00:00 ERROR DEBUG TEST
+Email alert sent via msmtp
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 54: 2025-11-01: command not found
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 55: 2025-11-01: command not found
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 56: 2025-11-01: command not found
+Alert: 20 'ERROR' found in '/var/log/syslog'
+2025-11-01 14:01:00 ERROR FINAL TEST
+2025-11-01 14:01:00 ERROR FINAL TEST
+2025-11-31 16:00:00 ERROR DEBUG TEST
+2025-11-31 16:00:00 ERROR DEBUG TEST
+2025-11-31 16:00:00 ERROR DEBUG TEST
+Email alert sent via msmtp
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 54: 2025-11-01: command not found
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 55: 2025-11-01: command not found
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 56: 2025-11-01: command not found
+Alert: 20 'ERROR' found in '/var/log/syslog'
+2025-11-01 14:01:00 ERROR FINAL TEST
+2025-11-01 14:01:00 ERROR FINAL TEST
+2025-11-31 16:00:00 ERROR DEBUG TEST
+2025-11-31 16:00:00 ERROR DEBUG TEST
+2025-11-31 16:00:00 ERROR DEBUG TEST
+Email alert sent via msmtp
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 54: 2025-11-01: command not found
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 55: 2025-11-01: command not found
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 56: 2025-11-01: command not found
+Alert: 20 'ERROR' found in '/var/log/syslog'
+2025-11-01 14:01:00 ERROR FINAL TEST
+2025-11-01 14:01:00 ERROR FINAL TEST
+2025-11-31 16:00:00 ERROR DEBUG TEST
+2025-11-31 16:00:00 ERROR DEBUG TEST
+2025-11-31 16:00:00 ERROR DEBUG TEST
+Email alert sent via msmtp
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 54: 2025-11-01: command not found
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 55: 2025-11-01: command not found
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 56: 2025-11-01: command not found
+Alert: 20 'ERROR' found in '/var/log/syslog'
+2025-11-01 14:01:00 ERROR FINAL TEST
+2025-11-01 14:01:00 ERROR FINAL TEST
+2025-11-31 16:00:00 ERROR DEBUG TEST
+2025-11-31 16:00:00 ERROR DEBUG TEST
+2025-11-31 16:00:00 ERROR DEBUG TEST
+Email alert sent via msmtp
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 54: 2025-11-01: command not found
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 55: 2025-11-01: command not found
+/home/mashuk/Documents/Journals/devops_learning/log_monitor.sh: line 56: 2025-11-01: command not found

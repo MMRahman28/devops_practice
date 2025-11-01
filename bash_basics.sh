@@ -179,3 +179,58 @@ echo "NUMBERS array: ${NUMBERS[@]}"
 echo "STRINGS array: ${STRINGS[@]}"
 echo "The number of names listed in the NAMES array: $NumberOfNames"
 echo "The second name on the NAMES list is: $second_name"
+
+# Array challenge (1 November, 2025)
+
+# Define arrays for each cargo bay's inventory
+forward_bay=()
+forward_bay+=("Space Suits")
+forward_bay+=("Oxygen Tanks")
+forward_bay+=("Repair Kits")
+midship_bay=()
+midship_bay+=("Food Supplies")
+midship_bay+=("Water Containers")
+midship_bay+=("Medical Equipment")
+aft_bay=()
+aft_bay+=("Spare Parts")
+aft_bay+=("Fuel Cells")
+aft_bay+=("Scientific Instruments")
+# Check if an argument is provided
+if [ $# -eq 0 ]; then
+    # Your code here
+    echo "Please specify a cargo bay: forward, midship, or aft"
+    exit 1
+fi
+
+# Display inventory based on the argument
+if [ "$1" = "forward" ]; then
+    # Your code here
+    echo "Forward Bay Inventory:"
+    count=1
+    for arg in "${forward_bay[@]}"; do
+        echo "$count. $arg"
+        count=$((count + 1))
+    done
+
+elif [ "$1" = "midship" ]; then
+    # Your code here
+    echo "Midship Bay Inventory:"
+    count=1
+    for arg in "${midship_bay[@]}"; do
+        echo "$count. $arg"
+        count=$((count + 1))
+    done
+elif [ "$1" = "aft" ]; then
+    # Your code here
+    echo "Aft Bay Inventory:"
+    count=1
+    for arg in "${aft_bay[@]}"; do
+        echo "$count. $arg"
+        count=$((count + 1))
+    done
+else
+    # Your code here
+    echo "Invalid cargo bay. Choose forward, midship, or aft."
+    exit 1
+fi
+

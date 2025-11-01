@@ -113,3 +113,38 @@ account default: gmail
 
 #### `log_monitor.sh` (key script)
 ---
+
+### November 1, 2025
+#### Task Completed
+- **A challenge using array knowledge - labex.io**
+	- `for arg in "${midship_bay[@]}";` carefully observe the double quote around. 
+	- `"${midship_bay[@]}"` represents all the array elements of the array midship_bay.
+
+#### `bash_basics.sh`(key script)
+
+- **Cron Syntax & Logging**
+```cron
+*/5 * * * *
+|   | | | |
+|   | | | |____ Day of the week(0-7, Sunday = 0 or 7)
+|   | | |______ Month of the year (1-12)
+|   | |________ Day of the month (1 - 31)
+|   |__________ Hour (0-23)
+|______________ Minute (0-59)
+
+```
+- Command:log_monitor.sh with Arguments `/home/mashuk/Documents/Journals/devops_learning/ log_monitor.sh /var/log/syslog ERROR`
+- Output Redirection: >> and 2>&1
+	`>> /home/mashuk/Documents/Journals/devops_learning/cron_alert.log 2>&1`
+- >> append stdout, > overwrite which we do not want here, 2> represents stderr, &1 for stdout
+- together 2>&1 instructs send errors to same place as output
+- we use `crontab -e` which opens crontab with nano. With command and output redirection together we write the full cronline.
+- Full cronline: `/home/mashuk/Documents/Journals/devops_learning/ log_monitor.sh /var/log/syslog ERROR >> /home/mashuk/Documents/Journals/devops_learning/cron_alert.log 2>&1`
+
+- **Troubleshooting**
+	- `crontab -e` did not open nano file. The following fix was used.
+	 `echo 'export EDITOR=nano' >> ~/.bashrc`
+	 `source ~/.bashrc`
+	- cron was not running. To fix it, cronie was installed from Arch Linux package. `sudo pacman -S cronie`.
+
+#### `log_moitor.sh` (key script)
