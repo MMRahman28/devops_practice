@@ -134,8 +134,7 @@ account default: gmail
 
 ```
 - Command: log_monitor.sh with Arguments `/home/mashuk/Documents/Journals/devops_learning/ log_monitor.sh /var/log/syslog ERROR`
-- Output Redirection: `>>` and `2>&1`
-	`>> /home/mashuk/Documents/Journals/devops_learning/cron_alert.log 2>&1`
+- Output Redirection with `>>` and `2>&1`: `>> /home/mashuk/Documents/Journals/devops_learning/cron_alert.log 2>&1`
 - `>>` append stdout, `>` overwrite which we do not want here, 2> represents stderr, &1 for stdout
 - together 2>&1 instructs send errors to same place as output
 - we use `crontab -e` which opens crontab with nano. With command and output redirection together we write the full cronline.
