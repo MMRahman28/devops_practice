@@ -1,4 +1,4 @@
-# Devops Learning notes
+# DevOps Learning notes
 
 ## Overview
 - **Goal**: Junior DevOps Engineer (UK)
