@@ -144,7 +144,13 @@ account default: gmail
 	- `crontab -e` did not open nano file. The following fix was used.
 	 `echo 'export EDITOR=nano' >> ~/.bashrc`
 	 `source ~/.bashrc`
+	- Recommended: `EDITOR=nano crontab -e`
 	- cron was not running.To fix it, cronie was installed from Arch Linux package. `sudo pacman -S cronie`.
+	
+- **Some useful info**
+	- ~/.bashrc = Bash run Commands file
+	- export = available to child processes
+	- source or . = reload in current shell
 
 #### `log_moitor.sh` (key script)
 ---
