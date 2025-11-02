@@ -12,13 +12,24 @@
 
 ---
 
-## Today's Progress (1 November, 2025)
+## Live Project: Log Monitoring System
 - **Build a log monitor bash script**:
 	- Email alert added, now a real-time log monitoring system
 	- Cron job added to send email alert every 5 minutes
 	- Scripts: `log_monitor.sh`
-	- **Github**: Daily commit + `notes.md` updated
 
+	```bash
+	./log_monitor.sh /var/log/syslog ERROR
+	```
+
+
+## Today's Progress (2 November, 2025)
+- **Build a user input menu**:
+	- System menu, user input processing with case
+	- `read -p` for prompt, `case` for input
+	- `df -h`, `free -h`, `uptime`
+	- Scripts: `menu.sh`
+	- **Github**: Daily commit + `notes.md` updated
 ---
 
 ## Files in this Repo
@@ -28,4 +39,4 @@
 
 ---
 
-*Last updated: 1 November, 2025*
+*Last updated: 2 November, 2025*
