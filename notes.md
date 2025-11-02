@@ -146,11 +146,23 @@ account default: gmail
 	 `source ~/.bashrc`
 	- Recommended: `EDITOR=nano crontab -e`
 	- cron was not running.To fix it, cronie was installed from Arch Linux package. `sudo pacman -S cronie`.
-	
+
 - **Some useful info**
 	- ~/.bashrc = Bash run Commands file
 	- export = available to child processes
 	- source or . = reload in current shell
 
 #### `log_moitor.sh` (key script)
+---
+
+### November 2, 2025
+#### Task Completed
+- **Menu Script**
+	-`case` for input
+	- `read -p "prompt" var` -> prompt + store in `var`
+	- Skip `var` -> input goes to `$REPLY`, always use variable for clarity.
+	- `df -h`, `free -h`, `uptime`
+	- each case ends with ;;
+
+#### `menu.sh` (key script)
 ---
