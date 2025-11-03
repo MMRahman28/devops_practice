@@ -166,3 +166,42 @@ account default: gmail
 
 #### `menu.sh` (key script)
 ---
+
+### November 3, 2025
+#### Task completed 
+- **Reading and Book exercise**
+	- `$?` contains the return code of the previously executed command.
+	- All commands return an exit status.
+	- Valid exit status 0 to 255. 0 successful execution of command. Non-zero - error condition.
+	- With the above exit status of command in mind, we can use AND(&&) and OR (||) effectively:
+		- Command following a `&&` will only execute if the previous command succeeded i.e. had non-zero exit status.
+		- Command following a `||` will only execute if the previous command failed i.e. had zero exit status.
+
+#### `book_exercise.sh` (key script)
+
+- **Backup Script with tar, timestamps and safety**
+	- `tar -czf` = create gzipped archive
+	- `$(date +%Y%m%d_%H%M%S)` = timestamp
+	- `[[ -d "$PATH" ]]` = safe dir check
+	- `mkdir -p` = create if missing
+	- `$?` = exit status
+
+	- [[ ]] vs [ ]
+		-  `[[ ]]` = Bash-only, safer, modern
+		- No word splitting -> No quoting needed for [[ ]]
+		- Supports `=~` regex, `&&` and `||` logical operator inside [[ ]]
+		- `[[ $file == *.sh ]] && echo "Bash script"` # pattern matching
+
+		- `["$file" != "" -a -f "$file"]` # fails if $file has spaces
+		- AND (-a) and OR (-o) are logical operators inside [ ] - not very readable
+		- `[[ -n "$file" && -f "$file" ]]` # works with spaces
+
+	- Use `[[ ]]` in all Bash scripts.
+
+	- `tar` sometimes shows warning which are harmless
+	- to avoid those warnings we send the stderr to `/dev/null`
+	- `2>/dev/null`
+	- Clean output = professional
+
+#### `backup.sh` (key script)
+

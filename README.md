@@ -23,12 +23,11 @@
 	```
 
 
-## Today's Progress (2 November, 2025)
-- **Build a user input menu**:
-	- System menu, user input processing with case
-	- `read -p` for prompt, `case` for input
-	- `df -h`, `free -h`, `uptime`
-	- Scripts: `menu.sh`
+## Today's Progress (3 November, 2025)
+- **Backup script with timestamp, tar and safety**:
+	- Safe use of [[ ]] instead of [ ]
+	- exit status, capturing a command's exit status with `$?`
+	- Scripts: `backup.sh`
 	- **Github**: Daily commit + `notes.md` updated
 ---
 
@@ -39,4 +38,4 @@
 
 ---
 
-*Last updated: 2 November, 2025*
+*Last updated: 3 November, 2025*
