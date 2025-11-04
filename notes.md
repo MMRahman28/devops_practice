@@ -241,6 +241,28 @@ account default: gmail
 	- `echo "2.5 > 2" | bc -l` -> gives 1.
 	-  returns 1 (true) or 0 (false) for comparisons
 
+- **Fixed and Learnt**
+	- race condition - two date command/call inside the function and outside can create racing
+	- `crontab -e` can be run from any directory
+	- Breakdown of email to body, subject etc.
+	```
+	  {
+		BODY="ALERT!\n$1\n$host\n$timestamp"
+		echo "From: $EMAIL"
+		echo "To: $EMAIL"
+		echo "Subject: [ALERT] $msg"
+		echo "Content-Type: text/plain; charset=UTF-8"
+		#echo "ALERT: $msg"
+		echo -e "$BODY"
+	} | MSMTP_CONFIG="$MSMTPRC" "$MSMTP" -a gmail "$EMAIL"
+
+	```
+	- without -e echo will not print newline (\n)
+	- `sed -i` = edit file in place
+	- sed = stream editor
+	- sed 's/old/new' file
+	- Example: sed 's/threshold_disk=90/threshold_disk=10/' health_check.sh
+
 #### `health_check.sh` (key script)
 
 ---
