@@ -21,13 +21,28 @@
 	```bash
 	./log_monitor.sh /var/log/syslog ERROR
 	```
+- **Automated Backup**
+	- tar -czf with timestamp
+	- safe checks => [[ -d ]], mkdir -p
+	- Clean output with 2>/dev/null
+	
+	`./backup.sh`
+
+- **System Health Monitor**
+	- Checks disk, memory, load
+	- Email alerts via msmtp
+	- Cron every 15 min
+
+    `./health_check.sh`
 
 
-## Today's Progress (3 November, 2025)
-- **Backup script with timestamp, tar and safety**:
-	- Safe use of [[ ]] instead of [ ]
-	- exit status, capturing a command's exit status with `$?`
-	- Scripts: `backup.sh`
+
+## Today's Progress (4 November, 2025)
+- **System Health Check**:
+	- `df /`, `free`, `uptime` -> metrics
+	- `awk`, `bc` -> math
+	-`msmtp` -> email on threshold
+	- Cron every 15 min
 	- **Github**: Daily commit + `notes.md` updated
 ---
 
@@ -38,4 +53,4 @@
 
 ---
 
-*Last updated: 3 November, 2025*
+*Last updated: 4 November, 2025*

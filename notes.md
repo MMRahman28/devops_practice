@@ -48,7 +48,7 @@ echo "Hours left: $hours_left | Home: $HOME"
 
 ### October 29, 2025
 #### Tasks Completed
-- **labex.io Bash Scripting - accept and use of command-line arguments**
+- **labex.io Bash Scripting - Accept and Use of Command-line Arguments**
 	- $0 represents the name of the script
 	- $1, $2, etc. represents first, second and so on arguments.
 	- $# special variable holds number of arguments.
@@ -70,7 +70,7 @@ echo "Hours left: $hours_left | Home: $HOME"
 
 ### October 30, 2025
 #### Tasks Completed
-- **Build a log monitor script**
+- **Build a Log Monitor Script**
 	- `${1:-default}` -> safe config
 	- `grep -c what_pattern where` -> count matches
 	- `tail -5` -> show recent errors
@@ -81,7 +81,7 @@ echo "Hours left: $hours_left | Home: $HOME"
 
 #### `log_monitor.sh` (key script)
 
-- **labex.io Bash scripting - Arrays**
+- **labex.io Bash Scripting - Arrays**
 	- () initialise an empty array
 	- += to append elements
 	- `[@]`. @ symbol inside the bracket represents all elements
@@ -93,7 +93,7 @@ echo "Hours left: $hours_left | Home: $HOME"
 
 ### October 31, 2025
 #### Tasks Completed
-- **Improved previous log monitor with email alert**
+- **Improved Previous Log Monitor With Email Alert**
 	- Email via 'msmtp` + Gmail SMTP
 	- install s-nail and msmtp with pacman
 #### **Configuration**
@@ -116,7 +116,7 @@ account default: gmail
 
 ### November 1, 2025
 #### Task Completed
-- **A challenge using array knowledge - labex.io**
+- **A challenge Using Array Knowledge - labex.io**
 	- `for arg in "${midship_bay[@]}";` carefully observe the double quote around. 
 	- `"${midship_bay[@]}"` represents all the array elements of the array midship_bay.
 
@@ -147,7 +147,7 @@ account default: gmail
 	- Recommended: `EDITOR=nano crontab -e`
 	- cron was not running.To fix it, cronie was installed from Arch Linux package. `sudo pacman -S cronie`.
 
-- **Some useful info**
+- **Some Useful Info**
 	- ~/.bashrc = Bash run Commands file
 	- export = available to child processes
 	- source or . = reload in current shell
@@ -168,8 +168,8 @@ account default: gmail
 ---
 
 ### November 3, 2025
-#### Task completed 
-- **Reading and Book exercise**
+#### Task Completed 
+- **Reading and Book Exercise - Exit status**
 	- `$?` contains the return code of the previously executed command.
 	- All commands return an exit status.
 	- Valid exit status 0 to 255. 0 successful execution of command. Non-zero - error condition.
@@ -204,4 +204,48 @@ account default: gmail
 	- Clean output = professional
 
 #### `backup.sh` (key script)
+---
+
+### November 4, 2025
+#### Task Completed
+- **Reading and Book Exercise - Function**
+	- By default, all variables are global
+	- local keyword to define local variables inside a function
+	- arguments passing same as command-line. Call function and then arguments next to it.
+	- function call does not require ().
+	- side note `ls | - wc -l` counts number of entries (files and folders)
+	- the `-l` option counts number of newline characters
+
+#### `book_exercise.sh` (key script)
+- **System Health Check**
+	- `df /`, `free`, `uptime` -> metrics
+	- `awk`, `bc` -> math
+	-`msmtp` -> email on threshold
+	- Cron every 15 min
+	- uptime + load average
+	```
+		uptime | awk -F 'load average:' '{print $2}' # -> " 0.15, 0.20, 0.25"
+		| bcut -d, -f1                                  # -> " 0.15"
+		| xargs                                      # -> "0.15"
+	```
+	- `cut -d, -f1` , here -f1 = first field, -d, = comma delimiter
+	- xargs = trim all whitespace
+- **awk Commands**
+	- blank separates input fields
+	- The output of `df /` got blank separated fields. `tr -d '%'` translate: here delete %
+	- Pattern match '/Mem/' and code block in {}
+	- `awk -F`, here -F specify the separator which is 'load average'.
+- **bc -l**
+	- `bc` = basic calculator
+	- `-l` = load **math library** -> **decimals**
+	- `echo "2.5 > 2" | bc -l` -> gives 1.
+	-  returns 1 (true) or 0 (false) for comparisons
+
+#### `health_check.sh` (key script)
+
+---
+
+
+
+
 

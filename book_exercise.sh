@@ -109,8 +109,28 @@ echo "Command failed"
 #exit 1
 fi
 
-sudo cat /etc/shadow && echo "Command succeeded" && exit 0
-cat /etc/shadow || echo "Command failed" && exit 1
+
+
+# Chapter 3 (4 November, 2025)
+
+# exercise 1
+# function file_count(){
+	#local NUMBER_OF_FILES=$(ls | wc -l) 
+	#echo "Number of files in the present working directory is: $NUMBER_OF_FILES"
+# }
+# file_count
+
+# exercise 2
+
+function file_count(){
+	if [[ -d "$1" ]]; then
+	local DIR=$1
+    local NUMBER_OF_FILES=$(ls "$DIR"| wc -l) 
+	echo "${DIR}:"
+	echo "Number of files in the present working directory is: $NUMBER_OF_FILES"
+	fi
+}
+file_count /home/mashuk/Documents/Journals/devops_learning
 
 
 
