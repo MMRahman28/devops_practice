@@ -261,7 +261,7 @@ account default: gmail
 	- `sed -i` = edit file in place
 	- sed = stream editor
 	- sed 's/old/new' file
-	- Example: sed 's/threshold_disk=90/threshold_disk=10/' health_check.sh
+	- Example: sed -i 's/threshold_disk=90/threshold_disk=10/' health_check.sh
 
 #### `health_check.sh` (key script)
 
