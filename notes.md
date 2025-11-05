@@ -300,7 +300,7 @@ account default: gmail
 		- `command 123` -> argument `$1` 
 	-`$$` = script's own PID
 	- `$!` = last background PID
-	- & = spawn, $! = track, $$ = self.
+	- `&` = spawn, `$!` = track, `$$` = self.
 	- `echo "[$$] Backup started at $(date)" >> /var/log/backup.log`
 
 #### `book_exercise.sh` (key script)
@@ -336,7 +336,9 @@ account default: gmail
 	- `*/n` = every n units
 	- Fixed number = only at that time
 	- */5 * * * * -> Every 5 minutes -> 0,5,10, 15 ...(12 times/hour)
+	- wait for next multiple of time, if script runs at 6:17, it starts at 6:20 and then 6:25 ...
 	- 5 * * * * -> Once per hour, at minute 5 -> 00:05, 01:05,...23:05 (1 time/hour)
+
 	
 
 #### `rotate_logs.sh` (key script)
