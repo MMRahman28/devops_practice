@@ -267,6 +267,75 @@ account default: gmail
 
 ---
 
+### November 5, 2025
+#### Task Completed
+- **Wildcards**
+	- * asterisk: matches zero or more characters
+	- `*.txt`, `a*.txt`
+	- ? question mark: matches exactly one character
+	- `?.txt`: one character name file, `a?.txt`: two character name file
+	- Ranges: `[a-g]`, `[3-6]`
+	- Named Character Classes: `[:alpha:]`, `[:alnum:]`, `[:digit:]`, `[:lower:]`, `[:upper:]`, `[:space:]`
+	- `[:space:]` matches whitespace. Spaces, tabs, newline.
+	- match wildcards- use escape character: *\?
+
+- **Case Statements**
+	```case
+	case "$VAR" in
+	pattern_1)
+		# commands go here.
+		;;
+	pattern_N)
+		# commands go here
+		;;
+	esac
+	```
+	- See `menu.sh` (script) example
+- **Learnt**
+	- `trap` command - `trap [commands] [signals]`
+	- run the command upon receiving the specified signals.
+	- e.g. `trap "rm $PID_FILE; exit" SIGHUP SIGINT SIGTERM`
+	- & vs argument
+		- ` command &` -> start process in the background -> PID in `$!`
+		- `command 123` -> argument `$1` 
+	-`$$` = script's own PID
+	- `$!` = last background PID
+	- & = spawn, $! = track, $$ = self.
+	- `echo "[$$] Backup started at $(date)" >> /var/log/backup.log`
+
+#### `book_exercise.sh` (key script)
+
+
+- **Log Rotation**
+	- Why log rotation? - Prevent disk full
+	- Keep only recent data
+	- 7 days = standard
+
+    - `find command`
+	```bash
+	find /path -type f -name "*.tar.gz" -mtime +7 -print0
+	```
+	`type f` = files only, name = pattern, mtime = modified time, +7 = older than 7
+	`-print0` = null separatior -> safe
+	- xargs -0
+		- handles spaces, newlines
+		- `xargs` -> split by **whitespaces** -> **Broken with spaces**
+		- `xargs -0` -> split by **null terminator \0** -> **safe**
+		- Always use with `find -print0`
+    
+	```
+	touch "my backup file.tar.gz"
+	find . -name "*.tar.gz" | xargs rm -f
+	# -> tries to delete "my" "backup" "file.tar.gz" -> ERROR
+	find . -name "*.tar.gz" -print0 | xargs -0 rm -f
+	# -> Deletes entire file
+	```
+#### `rotate_logs.sh` (key script)
+---
+
+
+
+
 
 
 

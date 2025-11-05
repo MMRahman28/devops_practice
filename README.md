@@ -13,6 +13,7 @@
 ---
 
 ## Live Project: Log Monitoring System
+
 - **Build a log monitor bash script**:
 	- Email alert added, now a real-time log monitoring system
 	- Cron job added to send email alert every 5 minutes
@@ -35,15 +36,25 @@
 
     `./health_check.sh`
 
+- **Log Rotation**
+	- Prevents disk full, keeps recent data
+	- find /path -type f -name "*.tar.gz" -mtime +7 -print0
+	- `-print0` use null separator,`xargs -0` handles null separated input
+	- Use `-print0` with `xargs -0` -> safe
+
+	`rotates_logs.sh`
 
 
-## Today's Progress (4 November, 2025)
-- **System Health Check**:
-	- `df /`, `free`, `uptime` -> metrics
-	- `awk`, `bc` -> math
-	-`msmtp` -> email on threshold
-	- Cron every 15 min
+
+## Today's Progress (5 November, 2025)
+
+- **Log Rotation**
+	- Prevents disk full, keeps recent data
+	- find /path -type f -name "*.tar.gz" -mtime +7 -print0
+	- `-print0` use null separator,`xargs -0` handles null separated input
+	- Use `-print0` with `xargs -0` -> safe
 	- **Github**: Daily commit + `notes.md` updated
+	`rotates_logs.sh`
 ---
 
 ## Files in this Repo
@@ -53,4 +64,4 @@
 
 ---
 
-*Last updated: 4 November, 2025*
+*Last updated: 5 November, 2025*

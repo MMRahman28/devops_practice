@@ -76,7 +76,7 @@ fi
 ls -l $FILE
 done
 
-# Chapter 3 - Exit status and return code
+# Exit status and return code
 
 # exercise 1
 
@@ -111,7 +111,7 @@ fi
 
 
 
-# Chapter 3 (4 November, 2025)
+# Functions (4 November, 2025)
 
 # exercise 1
 # function file_count(){
@@ -131,6 +131,50 @@ function file_count(){
 	fi
 }
 file_count /home/mashuk/Documents/Journals/devops_learning
+
+
+# Wildcards and Case Statements (5 November, 2025)
+
+# exercise 1
+# Uncomment the following line (shopt) to avoid an error when no png files are found
+
+#shopt -s nullglob
+
+#DATE=$(date +%Y-%m-%d)
+#for FILE in *.png
+#do
+#mv $FILE ${DATE}-${FILE}
+#done
+
+#exercise 2
+DATE=$(date +%F)
+
+read -p "Please enter a file extension: " EXTENSION
+read -p "Please enter a file prefix (PRESS ENTER for default date prefix): " PREFIX
+if [[ -z $PREFIX ]] # i.e. PREFIX is empty
+then
+	PREFIX="$DATE"
+fi
+
+for FILE in *.${EXTENSION}
+do
+NEW_FILE = ${PREFIX}-${FILE}
+echo "Renaming $FILE to ${NEW_FILE}."
+mv $FILE ${NEW_FILE}
+done
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
