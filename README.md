@@ -23,9 +23,9 @@
 	./log_monitor.sh /var/log/syslog ERROR
 	```
 - **Automated Backup**
-	- tar -czf with timestamp
-	- safe checks => [[ -d ]], mkdir -p
-	- Clean output with 2>/dev/null
+	- `tar -czf` with timestamp
+	- safe checks => `[[ -d ]]`, `mkdir -p`
+	- Clean output with `2>/dev/null`
 	
 	`./backup.sh`
 
