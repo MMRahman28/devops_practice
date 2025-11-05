@@ -330,6 +330,15 @@ account default: gmail
 	find . -name "*.tar.gz" -print0 | xargs -0 rm -f
 	# -> Deletes entire file
 	```
+- **Learnt**
+	- `0 3 * * *` -> 3 AM daily
+	- `0 */3 * * *` -> 00:00, 03:00, 06:00....
+	- `*/n` = every n units
+	- Fixed number = only at that time
+	- */5 * * * * -> Every 5 minutes -> 0,5,10, 15 ...(12 times/hour)
+	- 5 * * * * -> Once per hour, at minute 5 -> 00:05, 01:05,...23:05 (1 time/hour)
+	
+
 #### `rotate_logs.sh` (key script)
 ---
 
