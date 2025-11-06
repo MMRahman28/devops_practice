@@ -44,17 +44,22 @@
 
 	`rotates_logs.sh`
 
+- **Monitor Service**
+	- sleep-walking-service is being used to test monitor_service.sh
+	- Auto restart
+	- `pkill -f` to stop
+
+	`monitor_service.sh`
 
 
-## Today's Progress (5 November, 2025)
+## Today's Progress (6 November, 2025)
 
-- **Log Rotation**
-	- Prevents disk full, keeps recent data
-	- find /path -type f -name "*.tar.gz" -mtime +7 -print0
-	- `-print0` use null separator,`xargs -0` handles null separated input
-	- Use `-print0` with `xargs -0` -> safe
-	- **Github**: Daily commit + `notes.md` updated
-	`rotates_logs.sh`
+- **Monitor Service**
+	- sleep-walking-service is being used to test monitor_service.sh
+	- Auto restart
+	- `pkill -f` to stop
+
+	`monitor_service.sh`
 ---
 
 ## Files in this Repo
@@ -64,4 +69,4 @@
 
 ---
 
-*Last updated: 5 November, 2025*
+*Last updated: 6 November, 2025*
