@@ -163,7 +163,41 @@ echo "Renaming $FILE to ${NEW_FILE}."
 mv $FILE ${NEW_FILE}
 done
 
+# Logging (6 November, 2025)
 
+# handle logging
+
+logit(){
+	local LOG_LEVEL=$1
+	shift
+	MSG=$@
+	TIMESTAMP=$(date +"%Y-%m-%d%T")
+	if [[ $LOG_LEVEL = 'ERROR' ]] || $VERBOSE
+	then
+		echo "${TIMESTAMP} ${HOST} ${PROGRAM_NAME}[${PID}]: ${LOG_LEVEL}${MSG}"
+	fi
+}
+
+fetch-data $HOST || logit ERROR "Could not fetch data from $HOST" # fetch data made up command
+
+# exercise 1
+# my answer - logger -s $RANDOM -p user.info "Randon numner: $RANDOM"
+
+# book solution
+MESSAGE="Random number:$RANDOM"
+echo "$MESSAGE"
+logger user.info "$MESSAGE"
+
+# exercise 2
+function my_logger(){
+	local MESSAGE = $@
+	echo "$MESSAGE"
+	logger -i -t randomly -p user.info "$MESSAGE"
+}
+
+my_logger "Random number: $RANDOM"
+my_logger "Random number: $RANDOM"
+my_logger "Random number: $RANDOM"
 
 
 

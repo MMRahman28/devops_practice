@@ -297,8 +297,9 @@ account default: gmail
 	- e.g. `trap "rm $PID_FILE; exit" SIGHUP SIGINT SIGTERM`
 	- & vs argument
 		- ` command &` -> start process in the background -> PID in `$!`
-		- `command 123` -> argument `$1` 
-	-`$$` = script's own PID
+		- `command 123` -> argument `$1`
+
+	- `$$` = script's own PID
 	- `$!` = last background PID
 	- `&` = spawn, `$!` = track, `$$` = self.
 	- `echo "[$$] Backup started at $(date)" >> /var/log/backup.log`
@@ -343,6 +344,39 @@ account default: gmail
 
 #### `rotate_logs.sh` (key script)
 ---
+
+### November 6, 2025
+#### Task Completed
+- **Logging**
+	- syslog uses facilities and severities/priorities to categorise messages
+	- See the table in the book
+	 - System logger can route the log to a different log file
+	- logger uitility options:
+		- `-t` -> tag, 
+		- `-p` -> facility and priority, 
+		- `-i` -> pid, 
+		- `-s` -> display on screen
+	- `logger -i -t myscript -p local0.info "Message"`
+	- local0 to local7 -> custom logs.
+	- if not saved in /var/log/syslog:
+		- `journalctl | grep "Message" | tail -n 5` can be used
+
+#### `book_exercise.sh` (key script)
+
+- **Monitor service**
+	- `/tmp/sleep-walking-server &` (run in the background)
+	- `pkill -f sleep-walking-server` (stop)
+	- `pgrep -x` = exact process name
+	- `pgrep -x $SERVICE` - matches service name and list
+	- try the multiple service with CONFIG
+	- IFS:= Internal Field Separator = colon :
+	- `read -r` - raw mode don't interpret backslashes
+	- `<` redirect file as input
+
+#### `monitor_service.sh` (key script)
+
+
+
 
 
 
