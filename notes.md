@@ -270,7 +270,7 @@ account default: gmail
 ### November 5, 2025
 #### Task Completed
 - **Wildcards**
-	- * asterisk: matches zero or more characters
+	- `*` asterisk: matches zero or more characters
 	- `*.txt`, `a*.txt`
 	- ? question mark: matches exactly one character
 	- `?.txt`: one character name file, `a?.txt`: two character name file
@@ -374,10 +374,62 @@ account default: gmail
 	- `<` redirect file as input
 
 #### `monitor_service.sh` (key script)
+---
+
+### November 7, 2025
+#### Task Completed
+- **Debugging**
+	- `-x` option prints commands and their arguments (variable value is displayed)
+	- For entire Shell script use: #!/bin/bash -x
+	- For lines -> run `set -x`. to stop `set +x`
+	- Starting `+`s show executed command.
+
+	- `-e` exits immediately if command exits with a non-zero status
+    - `-e` and `-x` together is useful
+	- For entire shell script use: #!bin/bash -xe
+	- `-v` causes every line of the script to be displayed on the screen
+	- `help set | less` to see these options
+	- PS1, PS4 variables. PS4 is useful for debugging
+	- PS4 is expanded and displayed before each command during an execution trace.
+	- Bash built-in can be used to set PS4
+	- `+$BASH_SOURCE:$LINENO:`
+
+	```
+	#!/bin/bash -x
+	PS4='+ $BASH_SOURCE: $LINENO:'
+	TEST_VAR="test"
+	echo "$TEST_VAR"
+	
+	```
+Output:
+
+	```
+	+PS4='$BASH_SOURCE: $LINENO:'
+	+./test.sh:3: TEST_VAR=test
+	+./test.sh:4:echo test
+	test
+
+	```
+	- Linux -> line feed, Windows -> line feed + carriage return
+	- In Linux carriage return turns into ^M
+	- use dos2unix and unix2dos utility
+	- check carriage returns and line feeds: `file script.sh`
+
+#### `book_exercise.sh` (key script)
+
+- **Parsing**
+	- `declare -A` = associative array
+	- `IFS='='` + with `read -r` get key value
+	- `xargs` trim whitespace
+	- `IFS=','` `read -ra` split list and put them in an array
+	- With regex skip comment (#) and empty lines
+	 - the `=~` in regex means does this match this regex.
+	 - returns true if matched.
+	 - Use glob for file pattern matching: loop over files, glob in array
+	 - Use regex for text pattern matching: validate input, parse
 
 
-
-
+---
 
 
 

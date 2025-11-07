@@ -199,6 +199,64 @@ my_logger "Random number: $RANDOM"
 my_logger "Random number: $RANDOM"
 my_logger "Random number: $RANDOM"
 
+# Debugging (7 November, 2025)
+	
+#	#!/bin/bash -x
+ #   TEST_VAR = "test"
+#	echo "$TEST_VAR"
+
+#	Output:
+
+#	+TEST_VAR=test
+#	+echo test
+#	test
+	
+#	In the line:
+	
+#	TEST_VAR="test"
+#	set -x
+#	echo $TEST_VAR
+#	set +x
+#	hostname
+
+	
+#	Output:
+
+#	+echo test
+#	test
+#	+ set +x
+#	linuxsvr
+
+# -e option:
+
+#  #!/bin/bash
+#  FILE_NAME="/not/here"
+#  ls $FILE_NAME
+#  echo $FILE_NAME
+
+# Output
+# ls: cannot access /not/here:No such file or directory
+
+# -v option:
+
+# #!/bin/bash -v
+# TEST_VAR="test"
+# echo "$TEST_VAR"
+
+# Output
+
+#!/bin/bash -v 
+# TEST_VAR="test"
+# echo "$TEST_VAR"
+# test
+
+# -v and -x together for the previous command
+# #!/bin/bash -vx
+# TEST_VAR="test"
+# +TEST_VAR=test
+# echo "$TEST_VAR"
+# + echo test
+# test
 
 
 
