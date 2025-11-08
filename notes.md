@@ -431,6 +431,19 @@ Output:
 
 ---
 
+### November 8, 2025
+- **Unix and Linux System Administration Handbook Chapter 2**
+	- Reading BIOS, UEFI, bootloader, systemd, systemctl
+
+- **All-In-One Monitor (sytemd-powered)**
+	- `systemctl is-active --quiet`
+	- `systemctl restart`
+	- `journaltl -u service` - not yet applied
+	- Replace `pgrep` + `&` with real daemon control (systemctl)
+
+
+#### `monitor_all.sh` (key script)
+
 
 
 

@@ -62,27 +62,19 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (7 November, 2025)
+## Today's Progress (8 November, 2025)
 
-- **Debugging**
-	- `-x` prints command and their arguments (as value)
-	- With `set -x` debug at the command line or just a portion of a script
-	- `set +x` to stop debugging behaviour of `set -x`
-	- `-e` to exit immediately if non-zero exit code appears
-	- `-v` shows every line of the script on the screen
-	- the options can be combited e.g. -xe, -xv, -ve etc.
-	- `help set | less` to read info about these options
+- **Unix and Linux System Administration Handbook Chapter 2**
+	- Reading BIOS, UEFI, bootloader, systemd, systemctl
 
-	`book_exercise.sh`
+- **All-In-One Monitor (sytemd-powered)**
+	- `systemctl is-active --quiet`
+	- `systemctl restart`
+	- `journaltl -u service` - not yet applied
+	- Replace `pgrep` + `&` with real daemon control (systemctl)
 
-- **Parse Configuration**
-	- `declare -A` = associative array
-	- `IFS='='` + with `read -r` get key value
-	- `xargs` trim whitespace
-	- `IFS=','` `read -ra` split list and put them in an array
-	- With regex skip comment (#) and empty lines
 
-	`parse_config.sh` , `app.conf`
+#### `monitor_all.sh` (key script)
  
  ---
 
@@ -93,4 +85,4 @@
 
 ---
 
-*Last updated: 7 November, 2025*
+*Last updated: 8 November, 2025*
