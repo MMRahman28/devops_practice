@@ -457,10 +457,10 @@ Output:
 		- 3. Kernel -> vmlixuz
 		- 4. initramfs -> /init
 		- 5. Real Root -> Switch root
-		  6. systemd -> PID 1
-		  7. Display manager -> Login
+		- 6. systemd -> PID 1
+		- 7. Display manager -> Login
 
-	-Q2.  What is PID 1?
+	- Q2.  What is PID 1?
 
 		- PID 1 is the first process started by the kernel.It adopts all orphaned processes and is
 		is the root of the process tree.On modern Linux, it is /usr/lib/systemd/systemd.
