@@ -62,27 +62,21 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (8 November, 2025)
+## Today's Progress (9 November, 2025)
 
-- **Unix and Linux System Administration Handbook Chapter 2**
-	- Reading BIOS, UEFI, bootloader, systemd, systemctl
+- **Unix and Linux System Administration Handbook Chapter 2 Complete**
+	- Have taken a test
+	- 96/100 - not a closed book exam though
+	- Understanding - good 
 
-- **All-In-One Monitor (sytemd-powered)**
-	- `systemctl is-active --quiet`
-	- `systemctl restart`
-	- `journaltl -u service` - not yet applied
-	- Replace `pgrep` + `&` with real daemon control (systemctl)
-
-
-#### `monitor_all.sh` (key script)
- 
+#### notes.md (learning log)
  ---
 
 ## Files in this Repo
 - `notes.md` -> Daily learning log
-- `*.sh` -> Bash scripts from labex
+- `*.sh` -> Bash scripts
 - permission.txt
 
 ---
 
-*Last updated: 8 November, 2025*
+*Last updated: 9 November, 2025*

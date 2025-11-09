@@ -444,7 +444,104 @@ Output:
 
 #### `monitor_all.sh` (key script)
 
+---
 
+### November 9, 2025
+- **Chapter 2 Complete and test questions**
+	- BIOS, UEFI, bootloader, systemd, systemctl
+
+	- Q1. List the 6 layers from power-on to shell
+		- Boot layers
+		- 1. UEFI/BIOS -> POST (Power ON Self Test)
+		- 2. GRUB -> grub.cfg
+		- 3. Kernel -> vmlixuz
+		- 4. initramfs -> /init
+		- 5. Real Root -> Switch root
+		  6. systemd -> PID 1
+		  7. Display manager -> Login
+
+	-Q2.  What is PID 1?
+
+		- PID 1 is the first process started by the kernel.It adopts all orphaned processes and is
+		is the root of the process tree.On modern Linux, it is /usr/lib/systemd/systemd.
+
+	- Q3. Name 3 unit types. Give one example each.
+
+		- 1. Type: .service e.g. cron.service
+		- 2. Type: .target e.g. factory-reset.target
+		- 3. Type: .mount e.g. Mount FS
+		Use `systemctl list-unit-files` to see different types.
+	
+	- Q4. What runs multi-user.target vs graphical.target?
+		- Desktop or GUI-based system runs graphical.target
+		- Server without GUI runs multi-user.target
+		- Can be changed as appropriate
+		- `systemctl get-default`
+		- `systemctl set-default graphical.target` 
+	
+	- Q5. What does modprobe -v nvme do during boot?
+		- Probes NVMe SSD, crates `/dev/nvme0n1`, `dev/nvme0n1p1`, initramfs runs it
+		- v verbose option is for debug.
+		- Boot: `modprobe nvme` -> silent, fast
+		- Never use `-v`in production initramfs
+
+	- Q6. Command to see only sshd logs from this boot?
+		- `journalctl -u sshd -b` 
+		- journalctl showing the unit name sshd.
+		- `-b` showing the current boot
+		- `-b -1` to show previous boot. (info only not Q6 answer)
+
+	- Q7. Why can't the kernel mount root without initramfs on LUKS?
+		- Kernel boots -> sees encrypted root (LUKS)
+		- No LUKS driver -> cannot open /dev/sda3_crypt
+		- No root -> cannot load modules from /lib/modules
+		- stuck
+	    initramfs fixed it:
+		```
+		cryptsetup luksOpen /dev/sda3 root
+		mount /dev/mapper/root /sysroot
+		switch_root ...
+
+		```
+		- Chicken and egg:
+		- Kernel needs LUKS driver -> need root -> need LUKS driver
+		- initramfs = mini userspace in RAM
+		- Runs cryptsetup, unlocks disk, mount real root
+
+	- Q8. Where are system unit files? Where are your custom ones?
+
+		- 1. `/etc/systemd/system/` <- Your custom units (highest priority)
+		- 2. `/run/systemd/system/ <- runtime(tmpfs)
+		- 3. `/usr/lib/systemd/system` <- (Arch, Fedora etc.)
+		- 4. `/lib/systemd/system` <- Legacy symlink on some systems.
+	
+	- Q9. You can run `systemctl status sleep-walking-server.service` -> 'inactive(dead)'. What next?
+
+		- Check logs first: `journalctl -u sleep-walking-server.service -n 50 --no-pager`
+		- Start it if inactive: `systemctl start sleep-walking-server.service`
+		- Verify by running status again.
+		- starting a dead service without checking log first = masking a crash.
+
+	- Q10. Write a 3-line `.service` file for `/tmp/sleep-walking-server`. 
+
+		```ini
+		[Unit]
+		Description=Sleep-Walking Server
+
+		[Service]
+		ExecStart=/tmp/sleep-walking-server
+
+		[Install]
+		WantBy=multi-user.target
+
+		```
+		- Must have one line per section
+		- place in /etc/systemd/system/ as it is a custom .service.
+		- Reload the systemctl daemon
+		- `systemctl restart`
+
+	
+		 
 
 
 

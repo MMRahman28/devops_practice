@@ -18,7 +18,8 @@ while IFS=: read -r name unit cmd; do
 		log "$name ($unit) is ACTIVE"
 	else
 		log "$name ($unit) is DOWN - restarting with $cmd"
-		$cmd & # systemctl restart $unit (systemctl powered)
+		#$cmd & # systemctl restart $unit (systemctl powered)
+		systemctl restart sleep-walking-server.service
 		sleep2
 		if pgrep -x "$(basename "$cmd")" > /dev/null; then # same -if systemctl is-active --quiet "$unit"; then
 			log "$name restarted"
