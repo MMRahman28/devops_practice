@@ -62,12 +62,11 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (9 November, 2025)
+## Today's Progress (10 November, 2025)
 
-- **Unix and Linux System Administration Handbook Chapter 2 Complete**
-	- Have taken a test
-	- 96/100 - not a closed book exam though
-	- Understanding - good 
+- **Unix and Linux System Administration Handbook Chapter 3 Complete**
+	- Read sudo, access control, PAM, AppArmort
+	- Understanding - not clear requires additional reading and test
 
 #### notes.md (learning log)
  ---
@@ -79,4 +78,4 @@
 
 ---
 
-*Last updated: 9 November, 2025*
+*Last updated: 10 November, 2025*

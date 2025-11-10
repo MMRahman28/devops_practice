@@ -463,7 +463,7 @@ Output:
 	- Q2.  What is PID 1?
 
 		- PID 1 is the first process started by the kernel.It adopts all orphaned processes and is
-		is the root of the process tree.On modern Linux, it is /usr/lib/systemd/systemd.
+		is the root of the process tree. On modern Linux, it is /usr/lib/systemd/systemd.
 
 	- Q3. Name 3 unit types. Give one example each.
 
@@ -480,7 +480,7 @@ Output:
 		- `systemctl set-default graphical.target` 
 	
 	- Q5. What does modprobe -v nvme do during boot?
-		- Probes NVMe SSD, crates `/dev/nvme0n1`, `dev/nvme0n1p1`, initramfs runs it
+		- Probes NVMe SSD, creates `/dev/nvme0n1`, `dev/nvme0n1p1`, initramfs runs it
 		- v verbose option is for debug.
 		- Boot: `modprobe nvme` -> silent, fast
 		- Never use `-v`in production initramfs
@@ -540,7 +540,17 @@ Output:
 		- Reload the systemctl daemon
 		- `systemctl restart`
 
-	
+---
+
+### November 10, 2025
+#### Task Completed
+
+- **Unix and Linux System Administration Handbook Chapter 3**
+	- Reading:sudo, access control, PAM, Capabilities, AppArmor etc
+	- Understanding - not clear yet, requires additional reading and test.
+
+
+
 		 
 
 
