@@ -65,7 +65,7 @@
 ## Today's Progress (10 November, 2025)
 
 - **Unix and Linux System Administration Handbook Chapter 3 Complete**
-	- Read sudo, access control, PAM, AppArmort
+	- Read sudo, access control, PAM, AppArmor
 	- Understanding - not clear requires additional reading and test
 
 #### notes.md (learning log)
