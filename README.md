@@ -62,7 +62,7 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (10 November, 2025)
+## Today's Progress (11 November, 2025)
 
 - **Unix and Linux System Administration Handbook Chapter 3 test**
 	- learnt sudoers, PAM, setuid, rsync.

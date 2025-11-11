@@ -651,7 +651,6 @@ Output:
 		- `pacman -Qkk` verify all package files. 
 
 	- Q8. User backup runs sudo rsync .. and gets 'permission denied' on a root-owned file. What's most likely cause?
-		- 
 		- Most likely cause No: `backup ALL=(root) NOPASSWD: /usr/bin/rsync`
 		- for remote backup
 		- setup
