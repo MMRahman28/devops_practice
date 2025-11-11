@@ -64,9 +64,10 @@
 
 ## Today's Progress (10 November, 2025)
 
-- **Unix and Linux System Administration Handbook Chapter 3 Complete**
-	- Read sudo, access control, PAM, AppArmor
-	- Understanding - not clear requires additional reading and test
+- **Unix and Linux System Administration Handbook Chapter 3 test**
+	- learnt sudoers, PAM, setuid, rsync.
+	- test: 78% 
+	- Understanding solid.
 
 #### notes.md (learning log)
  ---
@@ -78,4 +79,4 @@
 
 ---
 
-*Last updated: 10 November, 2025*
+*Last updated: 11 November, 2025*

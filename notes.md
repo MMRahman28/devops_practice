@@ -549,6 +549,124 @@ Output:
 	- Reading:sudo, access control, PAM, Capabilities, AppArmor etc
 	- Understanding - not clear yet, requires additional reading and test.
 
+---
+
+### November 11, 2025
+#### Task Completed
+
+- **Unix and Linux System Administration Handbook Chapter 3 test**
+	
+	- Q1. Why is it dangerous to log in directly as root? What's the safer alternative?
+
+		- Root login leaves no record of what operations were performed. The safer alternative would be sudo.
+	      sudo logs original user + command
+
+	- Q2. What does sudo stand for? What is the main config file?
+		- It stands for substitute user do. The main config file: `/etc/sudoers`.
+		- `sudo -l` shows your rights.
+	
+	- Q3. Write a one-line sudoers entry that lets user alice run any command as bob without a password.
+		- `alice ALL=(bob) NOPASSWD: ALL`
+
+		- aside: `%wheel ALL=(ALL:ALL) NOPASSWD: ALL` (risky)
+		- `%wheel`: every user who is in the group wheel
+		- `ALL=` : On any computer (host) in the network.
+		- `(ALL:ALL)` : First ALL before colon run as any user (bob, root, etc)
+		- second ALL after colon means run the command as anyone as any group
+		- `NOPASSWD:` no password is asked.
+		- last `ALL` : any command can be run.
+
+		- e.g. I can write `noah ALL=(oliver : wheel) NOPASSWD /bin/bash`
+		 - `sudo -u oliver -g wheel /bin/bash`
+		 - Inside the new shell: `whoami` -> oliver. noah becomes oliver only in that shell.
+	
+	- Q4. What is PAM? Name one common PAM module and what it does.
+	
+		- Pluggable Authentication Modules. PAM is a wrapper for variety of method specific authentication libraries. Users are not tied to use only encrypted hard coded password. Different ways of authentication like biometrics, two-factor, LDAP etc also possible. Program that requires authentication simply calls PAM and PAM calls relevant authentication library specified by the system admin.
+
+		- one API -> many backends.
+		- Apps call PAM -> PAM calls modules
+		- Modules in /etc/pam.d/ or /etc/pam.conf
+		- config - /etc/pam.d/service
+		- common pam module: pam_unix.so
+			- checks local password in /etc/shadow
+			- uses encrypyted hash
+			- Standard for su, login, sudo
+		- e.g. `/etc/pam.d/login`
+	```
+	
+			auth sufficient pam_fingerprint.so
+			auth required pam_unix.so
+	
+	```
+	- Q5. How does the system enforce password complexity (strength)? Which file controls expiration?
+		- Enforced by PAM module: pam_pwquality.so(or pam_cracklib.so)
+		- Config file: /etc/security/pwquallity.conf
+	```
+		minilen = 12
+		dcredit = -1 # at least 1 digit
+		ucredit = -1 # at least 1	
+	```
+		- password aging: file `/etc/shadow`.
+		- `sudo nano /etc/shadow` - user:$6$...:18900:0:90:7:30::
+		- 18900 = last change (days since jan1, 1970)
+		- 90 = expiry after 90 days
+		- 7 = warn 7 day s before
+		- 30 = inactive after expiry
+		- `sudo chage -M 90 alice` # expire in 90 days
+
+	- Q6. What does a file with setuid bit do when executed? Give a real-world example from /usr/bin.
+
+		- When a kernel runs an executable file that has its "setuid" or "setgid" permission bits set, it changes the effective UID or GID of the resulting process to the UID or GID of the file containing the program image rather than the UID and GID of the user that ran the command.
+
+		- For example, to change password which is in protected /usr/bin (symlink of /bin), user need setuid passwd command. passwd command checks who is running the command and change accordingly.
+			- run passwd as alice
+			- Kernel sees setuid root
+			- Process runs with eUID=0 (root)
+
+		- Common setuid Binaries
+			- /usr/bin/passwd
+			- /usr/bin/sudo
+			- /bin/su
+			- /bin/mount
+			- bin/umount
+		- `ls -l /usr/bin/passwd`, output has s in place of x -rwsr-
+		- s indicates setuid (-rwsr-xr-x) or setgid (-rwxr-sr-x)	
+		
+		- How to know which files have setuid or setgid?
+			- `find /usr/bin -type f -perm -4000` 
+			- or `find /usr/bin -type f -perm -u=s -ls`
+		- /usr/bin is a symlink of /bin so passwd file does not show if we cd into /usr/bin
+
+		- See symlink: `readlink -f /usr/bin/passwd` -> /bin/passwd
+		- `readlink -f /bin` -> /usr/bin
+
+	- Q7. /bin/passwd has setuid root. Is this a security risk? Why or why not?
+		- No - /bin/passwd having setuid root is not a security risk unless the binary is compromised or has a bug.
+		- The concerns: wee need to know how many files in the system has setuid. Anything outside common setuid need thorough investigation.
+		- `find / -type f -perm -4000 2>/dev/null
+		- Expected safe output: `/bin/su`, `/bin/mount`, `/bin/umount`, `/bin/passwd`, `/usr/bin/sudo`, `/usr/bin/passwd`.
+		- Anything else -> investigate.
+		- However, there can be more which is normal. Investigate which are in `/tmp` or user directories. `/usr/bin` or `/opt` are fine.
+		- `pacman -Qkk` verify all package files. 
+
+	- Q8. User backup runs sudo rsync .. and gets 'permission denied' on a root-owned file. What's most likely cause?
+		- 
+		- Most likely cause No: `backup ALL=(root) NOPASSWD: /usr/bin/rsync`
+		- for remote backup
+		- setup
+			- local user:mashuk
+			- remote user:oliver
+			- remote host: oliver_host
+			- Source: /data/ (local)
+			- destination: /backup/ (on remote)
+		
+		- `rsync -avz /etc/hosts oliver@oliver_host:/backup/test-hosts.txt`
+		- `rsync -avz /etc/hosts oliver@192.168.1.50:/backup/test-hosts.txt`
+		- Another from web: `rsync -a -e "ssh" --rsync-path="sudo rsync" source_directory/ user@remote_host:/destination_directory/`
+
+	---
+
 
 
 		 
