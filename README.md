@@ -62,12 +62,11 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (11 November, 2025)
+## Today's Progress (12 November, 2025)
 
-- **Unix and Linux System Administration Handbook Chapter 3 test**
-	- learnt sudoers, PAM, setuid, rsync.
-	- test: 78% 
-	- Understanding solid.
+- **Unix and Linux System Administration Handbook Chapter 4**
+	- Reading: process, threads, signal from sytem admin perspective
+	- Understanding - Good.
 
 #### notes.md (learning log)
  ---
@@ -79,4 +78,4 @@
 
 ---
 
-*Last updated: 11 November, 2025*
+*Last updated: 12 November, 2025*

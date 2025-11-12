@@ -661,10 +661,30 @@ Output:
 			- destination: /backup/ (on remote)
 		
 		- `rsync -avz /etc/hosts oliver@oliver_host:/backup/test-hosts.txt`
+		- better: `rsync -avz /etc/hosts backup@oliver_host:/backup/test-hosts.txt`
+			- not full user access of oliver, backup only owns /backup - least privilege.
+			- On remote server run these commands to create dedicated backup user and folder:
+
+				```
+					sudo useradd -m backup
+					sudo mkdir /backup
+					sudo chown backup:backup/backup
+				```
+			- now we can run the better command.
+
 		- `rsync -avz /etc/hosts oliver@192.168.1.50:/backup/test-hosts.txt`
 		- Another from web: `rsync -a -e "ssh" --rsync-path="sudo rsync" source_directory/ user@remote_host:/destination_directory/`
 
 	---
+
+### November 12, 2025
+#### Task Completed
+
+- **Unix and Linux System Administration Handbook Chapter 4**
+	- Reading:process, threads, signal
+	- Understanding - Good.
+
+---
 
 
 
