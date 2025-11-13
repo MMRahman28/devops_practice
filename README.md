@@ -65,7 +65,7 @@
 ## Today's Progress (13 November, 2025)
 
 - **Unix and Linux System Administration Handbook Chapter 4 test**
-	- Took test 93.- 75%.
+	- Took test: 93.75%.
 	- Understanding - Good.
 
 #### notes.md (learning log)
