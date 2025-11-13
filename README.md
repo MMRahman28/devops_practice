@@ -62,10 +62,10 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (12 November, 2025)
+## Today's Progress (13 November, 2025)
 
-- **Unix and Linux System Administration Handbook Chapter 4**
-	- Reading: process, threads, signal from sytem admin perspective
+- **Unix and Linux System Administration Handbook Chapter 4 test**
+	- Took test 93.- 75%.
 	- Understanding - Good.
 
 #### notes.md (learning log)
@@ -78,4 +78,4 @@
 
 ---
 
-*Last updated: 12 November, 2025*
+*Last updated: 13 November, 2025*

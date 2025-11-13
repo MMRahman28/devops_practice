@@ -686,11 +686,76 @@ Output:
 
 ---
 
+### November 13, 2025
+#### Task Completed
 
+- **Unix and Linux System Administration Handbook Chapter 4 test**
+
+	- Q1. What does the unshare command do? Give a one-line example that creates a new PID namespaces and provide isolation.
+
+		- unshare runs a program in a namespace, isolating it from the host
+		- unshare --fork --pid --mount-proc bash
+		- Proof of isolation (inside the new shell):
+		- `readlink /proc/self` # -> 1
+		- `ps`                  # -> PID 1: bash, PID 2: ps (only namespace processes)
+		-- --pid: for pid namespace
+		- --fork : Required with pid to spawn child in new namespace
+		- --mount-proc: Remounts /proc so new namespace sees clean PID tree (PID 1)
+		- `readlink /proc/self`: shows current PID -> 1 in new namespace
+		- ps: Confirms only processes in namespace visible
 
 		 
+	- Q2. What is the difference between a zombie and an orphan process? Give one line command to create each (conceptually).
 
+		- When a child process completes, it calls exit, if parent dies before child, child becomes orphan, kernel reparents to init/systemd. Zombie = exit status not collected.
+		- zombie : child exits, parent sleeps (no wait):
+		- `(sleep 1; exit 42) & sleep 10` -> child exit, parent does not call wait
+		- Orphan: parent dies, child keeps running:
+		- `(sleep 10) & kill $! # parent shell dies -> orphan
+	
+	- Q3. What does the nice value mean? How do you start a process with lower priority (one-line command)?
+		- nice = CPU priority. Range: -20 (High priority) -> +19(low)
+		- Higher nice = lower priority
+		- Default: 0
+		- `nice -n 10 backup.sh` # lower priority
+	
+	- Q4. Name three process states and explain when a process enters the D (uninterruptible sleep).
+		- R: Runnable, S: Sleeping(interruptible), T: Suspended (stopped)
+		- D: uninterruptible sleep: when direct disk I/O(e.g. dd, fsync, sync)
+		- Why: Kernel cannnot interupt hardware operation
+		- Cannot KILL (even with SIGKILL)
+		- Transient - resolves when I/O completes
+		- Danger - Stuck D -> system may hang.
+	
+	- Q5. What is the difference between kill and kill -9? When should you never use -9?
+		- kill can send any signal by default sends TERM which can be blocked, caught, or ignored. kill 9 cannot be caught or ignored or blocked and guarantees death.
+		- Never use kill 9 on: 
+			- D state, Database processes, Filesystem ops(fsck, mount, umount), anything holding lock
 
+	- Q6. What happens when a process receives `SIGSTOP`? How do you resume it?
+		- A process cannot block or catch a SIGSTOP. SIGSTOP suspends the process until it receives signal
+		CONT to resume. CONT can be caught and ignored, but not blocked.
+
+	- Q7. What is the difference between fork() and exec()? Give a one-line example of each in a shell context.
+		- fork(): creates a child process, copy of parent, different PID.
+			- `sleep 10 &` background a command (shell forks) 
+		- exec(): Replace current process image, new program loaded, PID stays the same
+			- `exec cat /etc/passwd` replace shell with new program
+			- after exec shell is gone, cat runs in its place.
+	
+	- Q8. What is a zombie process? How do you find and clean one up (two commands)?
+		- Already exited, still in process table, Holds PID + exit status
+		- State: Z (zombie) or `<Exiting>` or `<defunct>`
+		- Cleaned by parent calling wait()
+		
+		```bash
+		ps aux | grep -E ' Z |defunct' # find
+		kill <PPID> # kill parent -> init reaps
+
+		```
+		- Never kill zombie PID - already. kill PPID.
+	
+	---
 
 
 
