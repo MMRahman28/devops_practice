@@ -755,7 +755,19 @@ Output:
 		```
 		- Never kill zombie PID - already. kill PPID.
 	
-	---
+---
+
+### November 14, 2025
+#### Task Completed
+
+- **Unix and Linux System Administrator Handbook Chapter 5**
+	- Reading: Filesystem, file type, permission, symbolic link etc.
+	- Understanding: Good
+
+---
+
+
+
 
 
 
