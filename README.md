@@ -62,10 +62,10 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (14 November, 2025)
+## Today's Progress (15 November, 2025)
 
-- **Unix and Linux System Administration Handbook Chapter 5**
-	- Reading: Filesystem, file permision, types etc
+- **Unix and Linux System Administration Handbook Chapter 5 test**
+	- Test score: 97.5%
 	- Understanding - Good.
 
 #### notes.md (learning log)
@@ -78,4 +78,4 @@
 
 ---
 
-*Last updated: 14 November, 2025*
+*Last updated: 15 November, 2025*

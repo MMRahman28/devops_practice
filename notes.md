@@ -766,6 +766,92 @@ Output:
 
 ---
 
+### November 15, 2025
+#### Task Completed
+
+- **Unix and Linux System Administrator Handbook test**
+
+	- Q1. What does the df command show? Give a one-line command to show disk usage in human-readable format for the root filesystem only.
+
+		- df command shows file system space usage. 
+		- `df -h / # for root only`
+		- `df -h # all file system`
+
+	- Q2. What does `du` command do? Give a one-line command to find the total size of `/var/log` in human-readable format.
+
+		- du command estimates file space usage.
+		- `sudo du -h /var/log   # full scan, total at the end`
+		- `sudo du -sh /var/log  # summary only one line output`
+		- Without sudo -> permission denied on private dirs.
+
+	- Q3. What is the difference between a hard link and a soft link? Give a one-line command to create each for a file `data.txt`.
+
+		- Hard link creates reference by directly using pointer.
+		- Soft link is a reference by name, stores pathname.
+		- When all hard links removed -> filesystem release the data content.
+		- Hard link cannot cross FS
+		- Soft link can cross, removing soft link or symbolic link has no impact on data content.
+		- Hard link survive delete? Yes (if >= 1 link)
+		- Soft link survive delete? No (becomes dangling)
+		- file type same (hard), file type l (soft)
+		- one line command for hard link: `ln data.txt data.hard`
+		- one line command for soft link: `ln -s data.txt data.soft`
+		- view `ls -li` -> same inode = hard link
+
+	- Q4. What does fsck do? When should you run it? Give a one-line command to check /dev/sda1(non-destructive).
+
+		- fsck = File system check
+		- checks and repairs filesystem consistency
+		- Must run on unmounted or read-only FS
+		- Never run on mounted root (/) while live
+		- When to run
+			- After unclean shutdown
+			- After X failed mounts (tune2fs counter)
+			- Never to 'find boot' - that's blkid or lsblk
+		- One line command: `sudo fsck -n /dev/sda1` , though risky.
+		- Also, if the system boots normally after an unclean shutdown, we DO NOT need to run fsck manually
+		- Auto fsck check and mount happens during booting
+	    - check first with `df -h /dev/sda1` if it is already mounted or not to avoid the danger.
+
+	- Q5. What is an inode? How do you view inode usage for a directory? One-line command.
+
+		- inode = integer for file content + metadata
+		- directory entry points to inode
+		- hard links -> same inode
+		- Usage: `df -i /var/log` inode count, not disk space this time with df
+		- `rm` reference counting
+		- `find . -inum 12345`
+		- `debugfs` recovery
+	
+	- Q6. What is the difference between mount and df? When would you use each?
+		- mount attaches a filesystem to the existing tree, maps mount point to root of of new FS
+		- df reports space usage.
+		- Use mount to access FS, df to monitor it.
+		- Use mount: access new storage `sudo mount /dev/sdb1 /mnt/data`
+		- Use df: monitor space: `df -h /mnt/data` 
+		- kubernates mount volumes, LVM expands storage, Cloud block devices are attached
+	
+	- Q7. What is a bind mount? Give a one-line command to bind `/var/log` to `/home/user/logs`.
+
+		- Bind mount: Re-exports part of the FS tree elsewhere
+		- Source -> target
+		- `sudo mount --bind /var/log /home/user/logs`
+		- Use: Share dirs, chroot, containers
+		- Same trick used in: chroot, Docker volumes, systemd-nspawn
+	
+	- Q8. What does umount -l do? When would you use it?
+
+		- `umount -l` = lazy umount. Removes FS from tree when all references are closed. Does not guarantee immediate unmount. Use with caution - may cause issues on non-NFS, certain filesystems.
+		- When to use - process stuck on NFS umount hangs -> -l detaches.
+		- Log rotation - rsyslog holds /var/log -> lazy umount
+		- Docker uses it to avoid hangs.
+		- Emergency detach - you must free mount point.
+		- `umount -l /mnt/data` 
+	
+	---
+	
+
+
 
 
 
