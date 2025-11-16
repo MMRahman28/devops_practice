@@ -849,6 +849,16 @@ Output:
 		- `umount -l /mnt/data` 
 	
 	---
+
+### November 16, 2025
+#### Task Completed
+
+- **Unix and Linux System Administrator Handbook, Chapter 6**
+
+	- Reading: OS installation, kickstart, PXE, Cobbler etc.
+	- Understanding OK
+	
+---
 	
 
 

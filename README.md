@@ -62,11 +62,11 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (15 November, 2025)
+## Today's Progress (16 November, 2025)
 
-- **Unix and Linux System Administration Handbook Chapter 5 test**
-	- Test score: 97.5%
-	- Understanding - Good.
+- **Unix and Linux System Administration Handbook Chapter 6**
+	- Reading: Operating system installation, kickstart, PXE, Cobbler etc
+	- Understanding - so far so good.
 
 #### notes.md (learning log)
  ---
@@ -78,4 +78,4 @@
 
 ---
 
-*Last updated: 15 November, 2025*
+*Last updated: 16 November, 2025*
