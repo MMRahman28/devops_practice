@@ -857,9 +857,79 @@ Output:
 
 	- Reading: OS installation, kickstart, PXE, Cobbler etc.
 	- Understanding OK
-	
+
 ---
+
+### November 17, 2025
+#### Task Completed
+
+- **Unix and Linux System Administrator Handbook Chapter 6 test**
+
+	- Q1. What is the difference between the offical repositories and the AUR? Give a one-line command to install neofetch from the official repos and yay from the AUR.
+
+		- Official repos -> pre-built, signed maintained by Arch team, auto dependencies
+		- AUR -> PKGBUILDs only, user-maintained, manual build, manual deps
+		- One line command: sudo pacman -S neofetch 
+		- AUR(yay): download -> makepkg -> sudo pacman -U *.zst
+		- Online for AUR instead of my answer:
+		- git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+		- CI/CD favourite: after clone and cd to yay makepkg --noconfirm -si
+
+	- Q2. What does `pacman -Rs` do? Give a one-line command to remove `vim` and all its configuration files.
+
+		- `pacman -Rs` removes a package and its unnecessary dependencies
+		- `-R`= remove package, `-s` = recursive (unused deps)
+		- Command to remove vim and all config files: `pacman -Rns vim` 
+		- `-n` remove comfigurations file
 	
+	- Q3. What does `pacman -Qe` list? Give a one-line command to show only the package names (no version).
+
+		- `pacman -Qe` lists explicitly installed packages
+		- One-line to show only names (no versions): `pacman -Qe --quite` or `pacman -Qeq`
+		- `-Qd` dep only
+	
+	- Q4. What is the safest way to upgrade an entire Arch system? Give the exact one-line command you personaly use.
+
+		- `sudo pacman -Syu`
+		- S= sync, y = refresh, u = upgrade.
+	
+	- Q5. What does `pacman -Dk` do? When would you use it (real-world scenario)?
+
+		- Checks whether all files owned by packages are still present on the filesystem (i.e. nothing was accidentally deleted or corrupted - file integrity check)
+		- equivalent: `pacman -Qkk`
+		- Real world scenario: After a forced shutdown/ fsck
+		- After manually deleting files in /usr
+		- Before reporting a bug - prove it's not missing files
+		- After rsync - delete or bad backup restore - quick sanity check
+		- What to do if there's error:
+			- `pacman -Qkq >missing.txt #list broken packages`
+			- `xargs sudo pacman -S < missing.txt  # fix them`
+			- Or, one liner: `pacman Qkq | xargs sudo pacman -S --`
+	
+	- Q6. What is the difference between `pacman -Rsc` and `pacman-Rns`? Give a real-life example when you would choose one over the other.
+
+		- `-Rsc` remove package + everything that depends on it (cascade)
+		- Real life: Critical security vulnerability (Remove any vulnerable package and its all dependencies)
+		- `sudo pacman -Rsc openssl-old`
+		- `-Rns` remove package + config files + unused deps (clean unistall of vim, leave sytem intact)
+		- `sudo pacman -Rns vim # clean uninstall + orphan cleanup`
+
+	- Q7. What is the purpose of the package cache? Give the one-line command to clean it safely while keeping the currently installed versions.
+
+		- package cache -> stores downloaded package files so you can reinstall without internet
+		- One-line command: `pacman -Sc` removes all cached packages except the currently installed versions
+		- Keeps installed versions (safe)
+		- In contrast, `pacman -Scc` Removes everything and does not keep installed versions.
+
+	- Q8.  Name one situation where you would delebarately keep old package files in the cache (real-life example).
+
+		- Rollback, and for compatibility: if a package depends on the older version but the newer one breaks it
+		- Bug in the new version (rollback):
+		- `sudo pacman -U /var/cache/pacman/pkg/firefox-130.0-1-x86_64.pkg.tar.zst`
+
+---
+		
+		
 
 
 

@@ -62,11 +62,12 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (16 November, 2025)
+## Today's Progress (17 November, 2025)
 
-- **Unix and Linux System Administration Handbook Chapter 6**
-	- Reading: Operating system installation, kickstart, PXE, Cobbler etc
-	- Understanding - so far so good.
+- **Unix and Linux System Administration Handbook Chapter 6 test**
+	- Test on Arch  Linux software installation, removal, cache etc.
+	- Understanding - good.
+	- test result: 98.75%
 
 #### notes.md (learning log)
  ---
@@ -78,4 +79,4 @@
 
 ---
 
-*Last updated: 16 November, 2025*
+*Last updated: 17 November, 2025*
