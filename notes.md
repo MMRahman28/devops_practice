@@ -225,7 +225,7 @@ account default: gmail
 	- uptime + load average
 	```
 		uptime | awk -F 'load average:' '{print $2}' # -> " 0.15, 0.20, 0.25"
-		| bcut -d, -f1                                  # -> " 0.15"
+		| cut -d, -f1                                  # -> " 0.15"
 		| xargs                                      # -> "0.15"
 	```
 	- `cut -d, -f1` , here -f1 = first field, -d, = comma delimiter
@@ -928,7 +928,13 @@ Output:
 		- `sudo pacman -U /var/cache/pacman/pkg/firefox-130.0-1-x86_64.pkg.tar.zst`
 
 ---
-		
+
+### November 18, 2025
+#### Task Completed
+
+- **Review previous days**
+	- Revise code, notes, checkpoint
+---
 		
 
 
