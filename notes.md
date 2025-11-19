@@ -935,6 +935,16 @@ Output:
 - **Review previous days**
 	- Revise code, notes, checkpoint
 ---
+
+### November 19, 2025
+#### Task Completed
+
+-**Unix and Linux System Administrator Handbook - Chapter 7**
+	- Reading: Scripting and the shell
+	- Bash, Python, Ruby for scripting
+	- Important commands, tips and cautions
+
+---
 		
 
 

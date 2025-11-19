@@ -62,10 +62,10 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (18 November, 2025)
+## Today's Progress (19 November, 2025)
 
-- **Revise previous days**
-	- code, script, notes
+- **Unix and Linux Sytem Administrator Handbook - Chapter 7**
+	- Scripting, bash, commands
 	- Understanding - good.
 	
 #### notes.md (learning log)
@@ -78,4 +78,4 @@
 
 ---
 
-*Last updated: 18 November, 2025*
+*Last updated: 19 November, 2025*
