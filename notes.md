@@ -939,11 +939,35 @@ Output:
 ### November 19, 2025
 #### Task Completed
 
--**Unix and Linux System Administrator Handbook - Chapter 7**
+- **Unix and Linux System Administrator Handbook - Chapter 7**
 	- Reading: Scripting and the shell
 	- Bash, Python, Ruby for scripting
 	- Important commands, tips and cautions
 
+---
+
+### November 20, 2025
+#### Task Completed
+
+- **Labwork 1**
+	- Installing ubuntu in Raspberry Pi using a microSD- automated
+	- Find out the device name with `lsblk`
+	- In this case it was: mmcblk0. So the card is: /dev/mmcblk0
+	- curl -LO https://cdimage.ubuntu.com/ubuntu/releases/24.04.3/release/ubuntu-24.04.3-preinstalled-server-arm64+raspi.img.xz
+	- curl -LO https://cdimage.ubuntu.com/ubuntu/releases/24.04.3/release/SHA256SUMS
+	- xz -d ubuntu-24.04.3-preinstalled-server-arm64+raspi.img.xz
+	- dd if=ubuntu-24.04.3-preinstalled-server-arm64+raspi.img of=/dev/mmcblk0 bs=4M conv=fsync status=progress
+	- flash done. 
+	- dd -> the Unix tool that copies raw bytes. dd means disk duplicator
+	- if=filename -> input file = ubuntu image just extracted
+	- of=/dev/mmcblk0 -> output file = microSD.
+	- bs=4M -> block size 4 megabytes = faster than default 512bytes
+	- conv=fsync -> force the kernel finish writing before dd says done
+	- status=progress -> live percentage and speed
+	- Now the card is ready for Raspberry Pi, just insert and power on.
+	- From another pc find the ip of the Raspberry pi using `arp -a | grep -i b8:27:eb`
+	- ssh to it: ssh ubuntu@that-ip
+	- Sometimes Pi does not show up, troubleshoot.
 ---
 		
 

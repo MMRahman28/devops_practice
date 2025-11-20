@@ -62,11 +62,12 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (19 November, 2025)
+## Today's Progress (20 November, 2025)
 
-- **Unix and Linux Sytem Administrator Handbook - Chapter 7**
-	- Scripting, bash, commands
-	- Understanding - good.
+- **Lab work - Installing Ubantu in Raspberry Pi using MicroSD auto boot**
+	- learned dd command
+	- tftp setup incomplete
+	- automatic OS installation
 	
 #### notes.md (learning log)
  ---
@@ -78,4 +79,4 @@
 
 ---
 
-*Last updated: 19 November, 2025*
+*Last updated: 20 November, 2025*
