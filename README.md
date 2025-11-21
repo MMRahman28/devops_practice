@@ -62,13 +62,14 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (20 November, 2025)
+## Today's Progress (21 November, 2025)
 
-- **Lab work - Installing Ubantu in Raspberry Pi using MicroSD auto boot**
-	- learned dd command
-	- tftp setup incomplete
-	- automatic OS installation
-	
+- **Lab work - Installing Ubantu in Raspberry Pi using MicroSD auto boot and ssh into it**
+	- learned to create an empty ssh file just to enabling ssh
+	- firewall impact on ARP/SSH
+	- image compatibility, cloud-init and first-boot behaviour
+	- ssh touch files, known_host fixes
+		
 #### notes.md (learning log)
  ---
 
@@ -79,4 +80,4 @@
 
 ---
 
-*Last updated: 20 November, 2025*
+*Last updated: 21 November, 2025*

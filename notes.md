@@ -949,8 +949,10 @@ Output:
 ### November 20, 2025
 #### Task Completed
 
-- **Labwork 1**
+- **Labwork 1 - installing ubuntu in pi**
 	- Installing ubuntu in Raspberry Pi using a microSD- automated
+	- Isert card
+	- Do not mount the card, ignore the mount and open notification
 	- Find out the device name with `lsblk`
 	- In this case it was: mmcblk0. So the card is: /dev/mmcblk0
 	- curl -LO https://cdimage.ubuntu.com/ubuntu/releases/24.04.3/release/ubuntu-24.04.3-preinstalled-server-arm64+raspi.img.xz
@@ -963,12 +965,52 @@ Output:
 	- of=/dev/mmcblk0 -> output file = microSD.
 	- bs=4M -> block size 4 megabytes = faster than default 512bytes
 	- conv=fsync -> force the kernel finish writing before dd says done
-	- status=progress -> live percentage and speed
+	- status=progress -> live progress
 	- Now the card is ready for Raspberry Pi, just insert and power on.
 	- From another pc find the ip of the Raspberry pi using `arp -a | grep -i b8:27:eb`
 	- ssh to it: ssh ubuntu@that-ip
 	- Sometimes Pi does not show up, troubleshoot.
 ---
+
+### November 21, 2025
+#### Task Completed
+
+- **Labwork 2 - installing ubuntu in Pi and ssh to it**
+	- Making the ubuntu installation in Raspberry Pi and enable ssh
+	- Without mounting the card dd the right image.
+	- Raspberry Pi 3 uses different image than Raspberry 4
+	- Find the right image
+	- extract and dd as labwork 1.
+	- Now, remove the card and put back again and do not mount
+	- We will mount the card with the following code just to create ssh file
+	- `sudo mkdir -p /mnt/boot`
+	- `sudo mount /dev/mmcblk0p1   /mnt/boot`
+	- `touch /mnt/boot/ssh` just ssh not ssh.txt
+	- This blank ssh file will trigger ssh
+	- `sudo umount /mnt/boot`
+	- Now, insert the card in Pi, ether plugged and power in it might take few minutes
+	- In the main pc `arp -a  | grep -i b8:27:eb`, this should reveal ip if not:
+	- we can try `ssh ubuntu` which might reveal its ip.
+	- ssh `ubuntu@192.168.1.xxx` password ubuntu
+	- Once inside: try `sudo apt update && apt upgrade -y`
+	- if runs OK, it will install all the packages etc.
+	- `sudo reboot.` will reboot the pi and log you out
+	- log back in to see if installed correctly or one more time update.
+	- Sometimes the remote might not let ssh for a new ssh key change.If so:
+	- ssh-keygen -R 192.168.1.xxx or rm ~/.ssh/known_hosts (faster)
+	- Try again ssh ubuntu@192.168.1.xxx, should let you in.
+
+- **learned**
+	- Firewall impact on ssh/ARP, always check the settings
+	- Sometimes if connecting to a remote system already ubuntu installed (laptop not pi), might not ssh service enabled
+	- enable the ssh there
+	- `sudo apt update && sudo apt install openssh-server -y`
+	- `sudo systemctl enable ssh`
+	- `sudo systemctl start ssh`
+	- now ssh to that system: `ssh user@ip`
+
+---
+
 		
 
 
