@@ -1011,6 +1011,20 @@ Output:
 
 ---
 
+### November 22, 2025
+#### Task Completed
+
+- **Unix and Linux Administrator Handbook - Chapter 7**
+	- Reading: more on scripting
+	
+- **while command**
+	- One liner:
+	``` find . -type f -name '*.log' | while read fname;
+	do echo mv $fname `echo $fname | sed s/.log/.LOG/`; done | sh -x
+	```
+	- `fc` command to capture the previous command.
+
+
 		
 
 
