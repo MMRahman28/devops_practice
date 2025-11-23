@@ -1016,13 +1016,37 @@ Output:
 
 - **Unix and Linux Administrator Handbook - Chapter 7**
 	- Reading: more on scripting
-	
+
 - **while command**
 	- One liner:
 	``` find . -type f -name '*.log' | while read fname;
 	do echo mv $fname `echo $fname | sed s/.log/.LOG/`; done | sh -x
 	```
 	- `fc` command to capture the previous command.
+
+---
+
+### November 23, 2025
+
+- **Unix and Linux Administrator Handbook - Chapter 7**
+
+	- Read: Regular expression, Python for scripting
+	- dot (.) matches any character
+	- `[chars]` matches any char in the set
+	- `[chars]` matches any char not in the set
+	-  ^ beginning, $ end.
+	- `\w` word chars same as `[A-Za-z0-9_]`
+	- `\s` whitespace same as `[\f,\t,\r,\n]`
+	- `\d` matches any digit same as `[0-9]`
+	-  `(expr)` limit scope, the ? will treat anything in () as unit
+	- `?` zero or one match of the preceding char
+	- `*` zero, one or more match of the preceding char
+	- `+` one or more matches
+	- {n} matches n instances of prededing element
+	- {min,} matches at least min instances of preceding element
+	- {min,max} matches any number of instances from min to max
+
+---
 
 
 		

@@ -62,12 +62,12 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (22 November, 2025)
+## Today's Progress (23 November, 2025)
 
-- **Reading Chapter 7 - sh and more on scripting**
+- **Reading Chapter 7 - Regular expression and more on python scripting**
 
-	- learned about while command
-	- `fc` to capture previous command
+	- learned all use of .* is suspicious and take extra care.
+	
 
 #### notes.md (learning log)
  ---
@@ -79,4 +79,4 @@
 
 ---
 
-*Last updated: 22 November, 2025*
+*Last updated: 23 November, 2025*
