@@ -1027,6 +1027,7 @@ Output:
 ---
 
 ### November 23, 2025
+#### Task Completed
 
 - **Unix and Linux Administrator Handbook - Chapter 7**
 
@@ -1047,6 +1048,19 @@ Output:
 	- {min,max} matches any number of instances from min to max
 
 ---
+
+### November 24, 2025
+#### Task Completed
+
+- **Unix and Linux Administrator Handbook - Chapter 7**
+	- Python regex random two lines:
+	- `pattern = re.compile("(%s)" %sys.argv[1])`
+	- `pattern.sub(r"_\1_", colour)`
+	- Here `\1` is the reference to the first capture group with regex, sub is substitute.
+	- the r suppresses the normal substitution of escape sequence - we are using `\1`, to distinguish it from escape sequence. r stands for raw.
+
+---
+
 
 
 		

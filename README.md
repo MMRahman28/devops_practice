@@ -62,13 +62,13 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (23 November, 2025)
+## Today's Progress (24 November, 2025)
 
-- **Reading Chapter 7 - Regular expression and more on python scripting**
-
-	- learned all use of .* is suspicious and take extra care.
+- **Chapter 7 - Complete**
+	- Most of the topic I already know.
+	- Python, Ruby pattern matching.
+	- Python tuple, dictionaries, list etc.
 	
-
 #### notes.md (learning log)
  ---
 
@@ -79,4 +79,4 @@
 
 ---
 
-*Last updated: 23 November, 2025*
+*Last updated: 24 November, 2025*
