@@ -62,13 +62,13 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (24 November, 2025)
+## Today's Progress (25 November, 2025)
 
-- **Chapter 7 - Complete**
-	- Most of the topic I already know.
-	- Python, Ruby pattern matching.
-	- Python tuple, dictionaries, list etc.
-	
+- **Chapter 8 - User management**
+	- Learned about getpwuid(), getpwnam()
+	- `/etc/passwd` file which respond to the library calls
+	- returns info about the user associated with the UID.
+	- `/etc/shadow` is not readable by all, and encrypted password are located here.
 #### notes.md (learning log)
  ---
 
@@ -79,4 +79,4 @@
 
 ---
 
-*Last updated: 24 November, 2025*
+*Last updated: 25 November, 2025*

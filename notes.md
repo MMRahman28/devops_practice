@@ -1060,7 +1060,18 @@ Output:
 	- the r suppresses the normal substitution of escape sequence - we are using `\1`, to distinguish it from escape sequence. r stands for raw.
 
 ---
+### November 25, 2025
+#### Task Completed
 
+- **Unix and Linux Administrator Handbook - Chapter 8**
+	- User nothing but a number, unsigned 32-bit integer or a UID.
+	- getpwuid() accepts an UID, getpwnam() accepts a login name as argument
+	- These calls get info from `/etc/passwd`
+	- UNIX and Linux moved the password to a separate file for security reasons.
+	- `/etc/master.passwd` on FreeBSD and `/etc/shadow` on Linux keeps encrypted password not readable by everyone.
+	- `/etc/passwd` puts an x in the former location of encrypted password.
+
+---
 
 
 		
