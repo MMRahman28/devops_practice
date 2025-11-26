@@ -62,13 +62,14 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (25 November, 2025)
+## Today's Progress (26 November, 2025)
 
 - **Chapter 8 - User management**
-	- Learned about getpwuid(), getpwnam()
-	- `/etc/passwd` file which respond to the library calls
-	- returns info about the user associated with the UID.
-	- `/etc/shadow` is not readable by all, and encrypted password are located here.
+	- Learned about passwd, shadow file
+	- useradd or adduser which maintain both passwd and shadow
+	- What different lines contain in these files
+	- How to update different fields and algorithm
+
 #### notes.md (learning log)
  ---
 
@@ -79,4 +80,4 @@
 
 ---
 
-*Last updated: 25 November, 2025*
+*Last updated: 26 November, 2025*
