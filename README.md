@@ -62,18 +62,15 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (27 November, 2025)
+## Today's Progress (28 November, 2025)
 
-- **Chapter 8 - User management Complete**
+- **Chapter 9 - Cloud Computing**
 
-	- learned `useradd` command and its options
-	- configuration files: `logins.def` and `/etc/default/useradd`
-	- startup file: `/etc/skel`
-	- Groups: `/etc/groups`
-	- batch adduer script
-
-
-
+	- Cloud computing: Mostly definitions, overview
+	- Private, Public and Hybrid Cloud
+	- IaaS, PaaS, SaaS
+	- Already have good idea
+	
 #### notes.md (learning log)
  ---
 
@@ -84,4 +81,4 @@
 
 ---
 
-*Last updated: 27 November, 2025*
+*Last updated: 28 November, 2025*

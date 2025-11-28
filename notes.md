@@ -1102,9 +1102,21 @@ Output:
 	- similar wrapper: addgroup, delgroup.
 	- `rmuser` is for FreeBSD.
 	- newusers command creates multiple accounts but batch adduser script or a wrapper of useradd is preferable.
+	- A command to find the paths of orphan files:
+	- `sudo find filesystem -xdev -nouser` use `-xdev` so that find does not escape into network servers.
+	- Debian and ubuntu uses a perl script for `deluser` command
+	- it runs `/usr/local/sbin//deluser.local` if exists, configuration in:/etc/delusers.conf
 
 ---
 
+### November 28, 2025
+#### Task Completed
+
+- **Unix and Linux Administrator handbook - Chapter 9 (Cloud Computing)**
+	- Reading Cloud Computing: Nothing new
+	- Require practical knowledge, lab work.
+
+---
 
 
 
