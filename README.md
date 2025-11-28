@@ -62,13 +62,17 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (26 November, 2025)
+## Today's Progress (27 November, 2025)
 
-- **Chapter 8 - User management**
-	- Learned about passwd, shadow file
-	- useradd or adduser which maintain both passwd and shadow
-	- What different lines contain in these files
-	- How to update different fields and algorithm
+- **Chapter 8 - User management Complete**
+
+	- learned `useradd` command and its options
+	- configuration files: `logins.def` and `/etc/default/useradd`
+	- startup file: `/etc/skel`
+	- Groups: `/etc/groups`
+	- batch adduer script
+
+
 
 #### notes.md (learning log)
  ---
@@ -80,4 +84,4 @@
 
 ---
 
-*Last updated: 26 November, 2025*
+*Last updated: 27 November, 2025*

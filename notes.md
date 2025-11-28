@@ -1080,12 +1080,32 @@ Output:
 	- Do not recycle UID or GID
 	- useradd maintain both passwd and shadow file
 	- useradd or adduser put user to his or her own group by default
-	- To share files greate separate groups other than the default.
+	- To share files create separate groups other than the default.
 	- Instead of entering each admin to the sudoers file,configure sudo for auto sudo privilege.
 	- password algorithm can be set in `/etc/login.defs` for Linux. For FreeBSD, `/etc/login.conf`
 	- `sudo authconfig --passalgo=sha512 --update`
 	- MD5 is not recommended algorithm.
 ---
+
+### November 27, 2025
+#### Task Completed
+
+- **Unix and Linux Administrator Handbook - Chapter 8 Complete**
+	- startup file located in `/etc/skel`
+	- `usr/local/etc/skel` is a reasonable place to put modified copy.
+	- `useradd` get its config parameter from `login.defs` and `etc/default/useradd`
+	- `sudo useradd -D -s /bin/bash` sets bash as the default
+	- `sudo useradd hilbert` this creates entry in `/etc/passwd` and `/etc/shadow`
+	- `sudo useradd -c "David Hilbert" -d /home/math/hilbert -g hilbert -G faculty -m -s /bin/bash hilbert`
+	- `/etc/group` gets an entry too
+	- higher level wrapper: `adduser` and `deluser`. The configuration in `/etc/adduser.conf`
+	- similar wrapper: addgroup, delgroup.
+	- `rmuser` is for FreeBSD.
+	- newusers command creates multiple accounts but batch adduser script or a wrapper of useradd is preferable.
+
+---
+
+
 
 
 		
