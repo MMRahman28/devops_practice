@@ -1154,6 +1154,35 @@ Output:
 
 ---
 
+### November 30, 2025
+#### Task Completed
+
+- **Labwork - text manipulation with Vim**
+- Read vim tutorial: just type `vimtutor` in cmd
+- Navigation - h(left),j (down),k (up),l (right)
+- x to delete character under the cursor
+- `i` to insert before cursor, `a` to insert after, `A` to append at the end of a current line, and `I` at the start of a current line
+- `:q` no change made and quit, `:wq` for saving the changes, `:q!` for quiting without saving the change.
+- ZZ is shortcut for :wq
+- ESC for normal mode.
+- o for newline below current line, O for above.
+- operator + motion : both can be numbered: 3dd, d3w etc.
+- dw/cw/yw deletes/changes/copies from cursor to the beginning of the next word
+- ce changes until th end of a word
+- d$/c$ deletes/changes from cursor to the end of the current line
+- dd/cc/yy deletes/changes/copies the current line.
+- `d}` deletes next paragraph
+- p/P pastes the copied or yanked text after/before the cursor or the line below/above
+- r replaces single char under the cursor
+- R enters replace mode allow continuous overwrite, ESC to go back normal mode.
+- J joins the current line to the next
+- . repeat the last change made.
+- u undo last action, U undo the whole line.
+- CTRL+R redo the last action. So, may require multiple redo to redo a line.
+
+---
+
+
 
 
 		

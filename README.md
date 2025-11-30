@@ -62,12 +62,13 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (29 November, 2025)
+## Today's Progress (30 November, 2025)
 
-- **Labwork - quick text manipulation**
-
-	- cut, paste, join, split, tr, expand, unexpand, sort, wc, nl, uniq
-	- Reading cloud computing and watched Udemy Linux video.  
+- **Labwork - text manipulation with Vim**
+	- Navigation, delete character, word, line
+	- Change character, line
+	- Replace character
+	- Vim editor feature - quit, save, undo, redo. 
 
 	
 #### notes.md (learning log)
@@ -80,4 +81,5 @@
 
 ---
 
-*Last updated: 29 November, 2025*
+*Last updated: 30 November, 2025*
+
