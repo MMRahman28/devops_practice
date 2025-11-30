@@ -1118,6 +1118,42 @@ Output:
 
 ---
 
+### November 29, 2025
+#### Task Completed
+
+- **Labwork 3- text manipulation - linuxjourney.com**
+
+	- `cut -c 5 sample.txt` output the 5th char from each line
+	- `cut -f 2 sample.txt` outpput the second field, default delimiter TAB
+	- `cut -f 1 -d ";" sample.txt` specifying delimiter
+	- `paste -s sample2.txt` merges lines together in a file, same default delimiter TAB
+	- `paste -d ' ' -s sample2.txt` specifying delimiter
+	- `expand sample.txt` converts tabs to 8 space chars
+	- To save the conversion redirect: `expand sample.txt > result.txt`
+	- `unexpand sample.txt` does the reverse - 8 spaces into TAB
+	- By default unexpand converts leading spaces.
+	- To convert al use -a: `unexpand -a sample.txt`
+	- `join file1.txt file2.txt` - join files
+	- By default combines two sorted files based on identical first field
+	- `join -1 2 -2 1 file1.txt file2.txt` specifying first file second field to join with second file first field.
+	- `split somefile` split once a 1000 line limit is reached.
+	- out put files - xaa,xab and so on.
+	- `sort`, reverse sort: `sort -r` , numerical value sort: `sort -n`
+	- `tr` to translate and delete.
+	- lower to upper: `echo "Hello World"  | tr a-z A-Z`
+	- delete: `echo "My address: 123 " | tr -d '0-9'`
+	- squeezing repeat: `echo "Hello     World" | tr -s ' '`
+	- `uniq` to remove repeating lines. But first sort or will not show the right result.
+	- `uniq readinglist.txt` or `uniq -c readinglist.txt` c to count the repeats.
+	- wc for word count `wc -l` line count, `wc -w` word count, `wc -c` byte count
+	- `wc /etc/passwd` -> 96 (l) 25 (w) 5925(byte) all together.
+	- `nl file1.txt` adds line number.
+	- `grep -e "-v" /path/to/somefile.conf` -e ensures pattern are interpreted correctly.
+	- without -e "-v" would be like a flag for invert match.
+	- `grep -f patternfile.txt sample.txt` use a list of pattern from a file (patternfile.txt)
+
+---
+
 
 
 		

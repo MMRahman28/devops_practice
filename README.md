@@ -62,14 +62,13 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (28 November, 2025)
+## Today's Progress (29 November, 2025)
 
-- **Chapter 9 - Cloud Computing**
+- **Labwork - quick text manipulation**
 
-	- Cloud computing: Mostly definitions, overview
-	- Private, Public and Hybrid Cloud
-	- IaaS, PaaS, SaaS
-	- Already have good idea
+	- cut, paste, join, split, tr, expand, unexpand, sort, wc, nl, uniq
+	- Reading cloud computing and watched Udemy Linux video.  
+
 	
 #### notes.md (learning log)
  ---
@@ -81,4 +80,4 @@
 
 ---
 
-*Last updated: 28 November, 2025*
+*Last updated: 29 November, 2025*
