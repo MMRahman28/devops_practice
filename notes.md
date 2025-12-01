@@ -1181,6 +1181,27 @@ Output:
 - CTRL+R redo the last action. So, may require multiple redo to redo a line.
 
 ---
+### December 1, 2025
+#### Task Completed
+
+- **Labwork - search and substitute text, parentheses with Vim**
+	- `/` - forward search and `?` - backword search
+	- n next, and N in the opposite direction of n.
+	- place cursor on top of a parentheses and press % to find the matching pair.
+	- `:s/old/new/g` to substitute new for old globally and without `/g` to change only the 1st occurence
+	- Very useful: `s/old/new/gc` will prompt or ask.
+	- Execute external command: `:!` followed by the command.
+	- To save: `:w FILENAME` can be deleted with `:!rm FILENAME`
+	- Visual mode: press v. Select a portion of text by moving the cursor.
+	- To insert content from a file: `:r FILENAME`.
+	- `set ic` to set ignore case for search, and substitute.`set noic` to disable it
+	- `set hlsearch` or `set nohlsearch` for highlight/nohighlight. Or, `set hls is`
+	- is or incsearch for partial match
+	- Ignore case for one search: `/searchterm\c`
+	- type the start of a command and press CTRL+D to get all possible command, TAB to auto-complete
+
+---
+
 
 
 

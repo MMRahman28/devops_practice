@@ -62,15 +62,14 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (30 November, 2025)
+## Today's Progress (1 December, 2025)
 
-- **Labwork - text manipulation with Vim**
-	- Navigation, delete character, word, line
-	- Change character, line
-	- Replace character
-	- Vim editor feature - quit, save, undo, redo. 
+- **Labwork - text search, parentheses matching, substitution with Vim**
 
-	
+	- learned: text search, command execution, inserting content from a file
+	- Text substitution
+
+
 #### notes.md (learning log)
  ---
 
@@ -81,5 +80,5 @@
 
 ---
 
-*Last updated: 30 November, 2025*
+*Last updated: 1 December, 2025*
 
