@@ -1202,6 +1202,19 @@ Output:
 
 ---
 
+### December 2, 2025
+#### Task Completed
+
+- **Miscellaneous**
+
+	- Reading chapter 8, linuxjourney.com
+	- setuid add 4, setguid 2, sticky bit 1
+	- real UID tracks, effective UID grants access
+	- sticky bit add t in the permission and applied on a directory
+	- `chmod 1755 my_shared_directory`
+---
+
+
 
 
 

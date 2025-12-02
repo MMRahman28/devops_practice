@@ -62,12 +62,16 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (1 December, 2025)
+## Today's Progress (2 December, 2025)
 
-- **Labwork - text search, parentheses matching, substitution with Vim**
+- **Practice - Linuxjourney.com**
 
-	- learned: text search, command execution, inserting content from a file
-	- Text substitution
+	- Practised permission commands and concepts
+	- setUID mechanism
+	- real and effective UID - one  tracks and the other grants permission
+	- sticky bit - applies on directory
+	- Effective for a shared folder where file can be created but only owner can delete
+	
 
 
 #### notes.md (learning log)
@@ -80,5 +84,5 @@
 
 ---
 
-*Last updated: 1 December, 2025*
+*Last updated: 2 December, 2025*
 
