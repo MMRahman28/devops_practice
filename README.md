@@ -62,17 +62,13 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (2 December, 2025)
+## Today's Progress (3 December, 2025)
 
-- **Practice - Linuxjourney.com**
+- **Amazon, Google and Digital Ocean instances creation, ssh and deletion**
 
-	- Practised permission commands and concepts
-	- setUID mechanism
-	- real and effective UID - one  tracks and the other grants permission
-	- sticky bit - applies on directory
-	- Effective for a shared folder where file can be created but only owner can delete
-	
-
+	- aws, gcloud, tugboat cli tool
+	- aws, gcloud use Python, tugboat uses Ruby
+	- How to ssh into these instances
 
 #### notes.md (learning log)
  ---
@@ -84,5 +80,5 @@
 
 ---
 
-*Last updated: 2 December, 2025*
+*Last updated: 3 December, 2025*
 

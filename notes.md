@@ -1214,6 +1214,65 @@ Output:
 	- `chmod 1755 my_shared_directory`
 ---
 
+### December 3, 2025
+#### Task Completed
+
+- **Cloud computing - chapter 9 complted - AWS, Google Cloud and Digital Ocean**
+
+	- Amazon web services - cli `amd` which relies on Python Boto Library
+	- `pip install awscli`
+	- `aws configure` - prompts to setup credentials and region, provides access id and key
+	- settings saved to ~/.aws/config
+	- useful manpages - `aws help`, `aws ec2 help`, `ec2 describe-instances help`
+	- To create and launch instances: `aws ec2 run-instances`
+	- Example complete command: 
+	```aws ec2 run-instances --image-id ami-d440a6e7 --instance-type
+	 t2.nano --associate-public-ip-address --key-name admin-key
+
+	 ```
+	 - for multiple instances use `--count`
+	 - EC2 instances in VPC subnets do not have public ip
+	 - that's why associate ip address to reach them
+	 - `aws ec2 describe-instances` to see assigned ip
+	 - adjust security group(firewall) of the instance to ssh from your IP address
+	 -`aws ec2 describe-instances --instance-id` to see details of a particular instance.
+	 - Viewing the console log: `aws ec2 get-console-output --instance-id i-c4f60303`
+	 - Helpful output with using sed: 
+	 - `aws ec2 get-console-output --instance-id i-c4f60303 | sed 's/\\r\\n/\\n/g'` 
+	 - To stop: `aws ec2 stop-instances --instance-id i-c4f60303`
+	 - stop can retain the instance, but terminate cannot
+
+
+	 - Google cloud services:
+	 - `gcloud` cli tool
+	 - set up envirounment - `gcloud init`
+	 - settings saved in - ~/.config/gcloud/
+	 - Help: gcloud help or gcloud -h
+	 - Manpage: `gcloud help compute`
+	 - To create an instance get the image:
+	 - `gcloud compute images list --regexp 'debian.*'`
+     - `gcloud compute instances create mashuk --image debian-8` here debian-8 (alias) comes from previous output
+	 - gcloud initialises the instance with a public and private ip.
+	 - public ip can be ssh
+	 - but there's helpful wrapper to simplify ssh:
+	 - `gcloud compute ssh mashuk`
+
+	 - Digital Ocean
+	 - create an account, install tugboat, instances are called droplets
+	 - To install tugboat: ruby and gem are needed.
+	 - Create cryptographic key to access droplet.
+	 - `ssh-keygen -t rsa -b 2048 -f ~/.ssh/id_rsa_do`
+	 - Copy the key to the web console (settings -> security)
+	 - Connect tugboat to DO API entering the access token from previous step
+	 - `tugboat authorize`
+	 - `tugboat images | grep -i ubuntu`
+	 - `tugboat keys` key is needed (1587367)
+	 - `tugboat create -i ubuntu-16-04--x64 -k 1587367 mashuk-ubuntu`
+	 - `tugboat ssh mashuk-ubuntu`
+	 - Keep a snapshot to use it as a source image `tugboat snapshot droplet-name snapshot-name`
+	 - Destroy: `tugboat destroy droplet-name`
+
+
 
 
 
