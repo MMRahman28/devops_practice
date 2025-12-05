@@ -62,13 +62,14 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (3 December, 2025)
+## Today's Progress (4 December, 2025)
 
-- **Amazon, Google and Digital Ocean instances creation, ssh and deletion**
+- **Unix and Linux System Administrator Handbook - Chapter 10 -logging**
 
-	- aws, gcloud, tugboat cli tool
-	- aws, gcloud use Python, tugboat uses Ruby
-	- How to ssh into these instances
+	- Learning journal location, piculiarity
+	- configuration file /etc/systemd/journald.conf
+	- Storage options: volatile, persistent, auto and none
+	- useful journalctl commands for disk usage, boot listing, log integrity with key pair
 
 #### notes.md (learning log)
  ---
@@ -80,5 +81,5 @@
 
 ---
 
-*Last updated: 3 December, 2025*
+*Last updated: 4 December, 2025*
 

@@ -1271,6 +1271,50 @@ Output:
 	 - `tugboat ssh mashuk-ubuntu`
 	 - Keep a snapshot to use it as a source image `tugboat snapshot droplet-name snapshot-name`
 	 - Destroy: `tugboat destroy droplet-name`
+	
+---
+### December 4, 2025
+#### Task Completed
+
+- **Unix and Linux System Administrator Handbook Chapter 10 - Logging**
+	- Log location - /var/log
+	- File wtmp or wtmpx got login/logout, shutdown/reboot record.
+	- File lastlog is similar but only last login
+	- `journalctl -u ssh` to see specific service unit
+	- `journalctl -f` to see live logging
+	- Journal collects and index messages from:/dev/log socket, /dev/kmsg kernel, /run/systemd/journal/stdout
+	- and /run/systemd/journal/socket
+	- Audit messages from the kernel auditd
+	- default config file: /etc/systemd/journald.conf not intended to be edited. it has every possible options.
+	- add config here:/etc/systemd/journald.conf.d directory.
+	- storage options: volatile, persistent, auto (default), none
+	- volatile in memory, persistent in the disk creating a directory if doesn't exist
+	- auto saves same as persistent but does not create the directory.Does not save journal between reboots.
+	- none discards data.
+	- Modifying default behaviour: create the directory or
+	- update to persistent:
+
+	```
+	# mkdir /etc/systemd/journald.conf.d/
+	# cat << END > /etc/systemd/journald.conf.d/storage.conf
+	[Journal]
+	Storage=persistent
+	END
+	# systemctl restart systemd-journald
+
+	```
+    - FSS(Forward Secured Sealing) to increase integrity of log message
+	- To genereate the key-pair: `journalctl --setup-keys`
+	- Refer manpage: journald.conf and journalctl to know more about key-pair.
+	- More useful filtering options with journalctl:
+	- `journalctl --disk-usage`
+	- `journalctl --list-boots`
+	- To restrict to a particular boot session: `journalctl -b 0 -u ssh`
+	- `journalctl --since=yesterday --until=now`
+	- `journalctl -n 100 /usr/sbin/sshd`
+
+---
+
 
 
 
