@@ -463,7 +463,7 @@ Output:
 	- Q2.  What is PID 1?
 
 		- PID 1 is the first process started by the kernel.It adopts all orphaned processes and is
-		is the root of the process tree. On modern Linux, it is /usr/lib/systemd/systemd.
+		the root of the process tree. On modern Linux, it is /usr/lib/systemd/systemd.
 
 	- Q3. Name 3 unit types. Give one example each.
 
@@ -1314,6 +1314,59 @@ Output:
 	- `journalctl -n 100 /usr/sbin/sshd`
 
 ---
+
+### December 5, 2025
+#### Task Completed
+
+- **linuxjourney.com - processes and packages**
+
+	- TTY: teletype, pts - pseudo terminals
+	- `?` in `ps` command output shows the process is not tied to a terminal.e.g.startup daemons.
+	- kernel acts as a schedular
+	- Signal - primary method for inter-process communication
+	- process can ignore, catch, default action, block a signal
+	- SIGHUP 1, SIGTERM 15 (Default), SIGKILL 9, SIGINT 2
+	- `kill 123245` (PID) will send this process a SIGTERM (default)
+	- `kill -9 12345` explicitly telling SIGKILL to send
+	- Check process's existence - `kill -0 12345` does not send signal but check if the PID exists or permission to signal.
+	- Each process is allocated a small amount of CPU time called a time slice.
+	- With the nice value of a process we can influence kernel's scheduling (cpu time) for it.
+	- Process states: R (Running or Runable) -> executing or in the run queue.
+	- S (Interruptible Sleep) - can be waken by signal, e.g. waiting for user input or network packet
+	- D (Uninterruptible Sleep) - typically, during I/O operations
+	- Z (Zombie) - waiting for parent process to read its exit status.
+	- T (Stopped) - paused by pressing CTRL+Z or by a debugger, can be resumed by SIGCONT.
+	- zombie vs orphan: orphan is active but parent is dead, zombie is dead, but parent has not read exit status and there's an entry in the process table.Cannot be killed with signal as they are not running.
+	- `ls /proc`
+	- `cat /proc/12345/status` is useful to know specific info about a process.
+	- `sleep 1000 &` append an ampersand to run in the background.
+	- `jobs` to see all background jobs
+	- `sleep 1003` ^Z to suspend, then `bg` - fg job to bg
+	- `fg %1` bringing the job 1 from bg to fg.
+	- `kill %2` to kill a bg job.
+
+	**Packages**
+	- Configure repo source: `/etc/apt/sources.list` file (debian)
+	- Also common: `/etc/apt/sources.list.d/` directory (debian)
+	- Newer version Ubuntu keeps `.sources` files.It keeps 3rd party sources separate from system's default.
+	- Install - `dpkg -i` for debians `rpm -i` for Red Hat.
+	- Remove- `dpkg -r` for debians `rpm -e` for Red Hat.
+	- List installed packages - `dpkg -l` for deb and `rpm -qa` for rpm
+	- apt and yum package management systems for deb and rpm respectively.
+	- `apt install package_name` or `yum install package_name`
+	- `apt remove package_name` or `yum erase package_name`
+	- `apt update`; `apt upgrade` or `yum update`
+	- `apt show package_name`, `yum info package_name`
+	- `sudo apt install build-essentials` - install necessary tool to compile a source code
+	- if build- essentials installed, extract the content of the source code, read README
+	- Build process: run `./configure` -> checks dependencies
+	- next run `make` - reads Makefile
+	- Finally, `sudo make install`. To uninstall pkg installed with make: `sudo make uninstall`
+	- Better way to install:`sudo checkinstall`integrates the compiled software with the package manager.
+
+---
+
+
 
 
 

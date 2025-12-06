@@ -62,14 +62,14 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (4 December, 2025)
+## Today's Progress (5 December, 2025)
 
-- **Unix and Linux System Administrator Handbook - Chapter 10 -logging**
+- **Revision: Processes and packages**
 
-	- Learning journal location, piculiarity
-	- configuration file /etc/systemd/journald.conf
-	- Storage options: volatile, persistent, auto and none
-	- useful journalctl commands for disk usage, boot listing, log integrity with key pair
+	- Process status (R, S, D, Z, T)
+	- Difference between zombie and orphan process
+	- Different type of signal, `kill -0` to see PID existence or permission
+	- deb and rpm package manager installation, configuration info etc.
 
 #### notes.md (learning log)
  ---
@@ -81,5 +81,5 @@
 
 ---
 
-*Last updated: 4 December, 2025*
+*Last updated: 5 December, 2025*
 
