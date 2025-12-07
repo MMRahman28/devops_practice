@@ -1366,6 +1366,38 @@ Output:
 
 ---
 
+### December 6, 2025
+#### Task Completed
+
+- **Reading Unix and Linux System Administrator Handbook - Chapter 10**
+
+	- journal miss many features that syslog can provide
+	- new systemd-journal-remote try to compensate
+	- Admin find it convenient log file in plain text than journal's binary format.
+	- systemd journal can forward message to another socket which syslog daemon can read.
+	- another socket: `run/systemd/journal/syslog`
+	- basic message parameters are fowarded but systemd-specific metadata is lost.
+	- ubuntu/debian use this way.
+	- Alternative way for Red Hat and CentOS:
+	- syslog consume message directly from journal API, no metadata loss.
+	- Check: `/etc/systemd/journald.conf` ForwardToSyslog option - yes?
+
+	**Syslog**
+	- Let us sort message by source (facility) and importance (severity)
+	- can be routed to file, terminal or other machines.
+	- can collect from wide variety of sources, can examine the attributes of the messages, can modify.
+	- It can centralise logging for a network - most valuable feature.
+	- There's a newer implementation rsyslogd. It's available for FreeBSD too.
+	- `cat var/log/syslog` shows timestamp, hostname, process name and it's `[PID]`, message payload
+	- rsyslog configuration: `/etc/rsyslog.conf`, modifying this file requires restart
+	- rsyslogd writes its process id to `/var/run/syslog.d/pid, easy to send signal
+	- `sudo kill -HUP bin/cat /var/run/syslog.d/pid`
+	- send HUP before rotate the log file to avoid unpredictable result
+	- Most distribution use $IncludeConfig legacy directive to include additional file in
+	`/etc/rsyslog.d/*.conf`
+	- rsyslogd interpotes these in `/etc/rsyslog.conf`
+
+---
 
 
 

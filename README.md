@@ -62,14 +62,15 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (5 December, 2025)
+## Today's Progress (6 December, 2025)
 
-- **Revision: Processes and packages**
+- **Syslog**
 
-	- Process status (R, S, D, Z, T)
-	- Difference between zombie and orphan process
-	- Different type of signal, `kill -0` to see PID existence or permission
-	- deb and rpm package manager installation, configuration info etc.
+	- Newer version rsyslog
+	- More feature than journal
+	- Plaintext log file is possible
+	- Centralise logging for a network
+	- Easy to send signal as it writes its pid
 
 #### notes.md (learning log)
  ---
@@ -81,5 +82,5 @@
 
 ---
 
-*Last updated: 5 December, 2025*
+*Last updated: 6 December, 2025*
 
