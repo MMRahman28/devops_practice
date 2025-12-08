@@ -1411,6 +1411,18 @@ Output:
 	- Segmentation fault, Bus error
 ---
 
+### December 8, 2025
+#### Task Completed
+
+- **Reading User space and kernel space**
+- On Linux systems kernel is a binary file /vmlinuz or /boot/vmlinuz.
+- A boot loader loads the file into memory and sets in motion when the system boots.
+- Once the boot loader starts the kernel, the main kernel file is no longer used by the running system.
+- Kernel loads and unloads on demand many modules
+- Loadable kernel modules, are located /lib/modules.
+
+---
+
 
 
 

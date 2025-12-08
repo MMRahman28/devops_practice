@@ -62,17 +62,14 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (7 December, 2025)
+## Today's Progress (8 December, 2025)
 
-- **Common Errors in Linux**
-
-	- No such file or directory
-	- File exists
-	- Not a directory, Is a directory
-	- No space left on device
-	- Permission denied
-	- Operation not permitted
-	- Segmentation fault, Bus error
+- **User space and kernel space**
+    
+	- Linux kernel can run kernel threads e.g. kthreadd and kblockd.
+	- kernel location /vmlinuz or boot/vmlinuz a binary file.
+	- Once boot loader starts the kernel, the main kernel file no longer used.
+	
 
 #### notes.md (learning log)
  ---
@@ -84,5 +81,5 @@
 
 ---
 
-*Last updated: 7 December, 2025*
+*Last updated: 8 December, 2025*
 
