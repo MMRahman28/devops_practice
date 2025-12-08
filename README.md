@@ -62,15 +62,17 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (6 December, 2025)
+## Today's Progress (7 December, 2025)
 
-- **Syslog**
+- **Common Errors in Linux**
 
-	- Newer version rsyslog
-	- More feature than journal
-	- Plaintext log file is possible
-	- Centralise logging for a network
-	- Easy to send signal as it writes its pid
+	- No such file or directory
+	- File exists
+	- Not a directory, Is a directory
+	- No space left on device
+	- Permission denied
+	- Operation not permitted
+	- Segmentation fault, Bus error
 
 #### notes.md (learning log)
  ---
@@ -82,5 +84,5 @@
 
 ---
 
-*Last updated: 6 December, 2025*
+*Last updated: 7 December, 2025*
 

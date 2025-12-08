@@ -1398,7 +1398,18 @@ Output:
 	- rsyslogd interpotes these in `/etc/rsyslog.conf`
 
 ---
+### December 7, 2025
+#### Task Completed
 
+- **Common Errors in Linux**
+	- No such file or directory
+	- File exists
+	- Not a directory, Is a directory
+	- No space left on device
+	- Permission denied
+	- Operation not permitted
+	- Segmentation fault, Bus error
+---
 
 
 
