@@ -62,14 +62,14 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (8 December, 2025)
+## Today's Progress (9 December, 2025)
 
-- **User space and kernel space**
-    
-	- Linux kernel can run kernel threads e.g. kthreadd and kblockd.
-	- kernel location /vmlinuz or boot/vmlinuz a binary file.
-	- Once boot loader starts the kernel, the main kernel file no longer used.
-	
+- **Linux Devices**
+    - Device interfaces are represented as files.
+	- Block, character, pipe and socket devices
+	- Learned about `/dev` and `/sys`
+	- udev - dynamically adds and removes devices
+	- Learned about `/dev/zero`, `/dev/null` and `dev/random`
 
 #### notes.md (learning log)
  ---
@@ -81,5 +81,5 @@
 
 ---
 
-*Last updated: 8 December, 2025*
+*Last updated: 9 December, 2025*
 

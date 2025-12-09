@@ -1423,6 +1423,43 @@ Output:
 
 ---
 
+### December 9, 2025
+#### Task Completed
+
+- **Linux Devices**
+	
+	- Kernel presents many of the device I/O interfaces to user processes as files.
+	- During character device interaction, the kernel cannot back up and reexamine the data stream
+	after it has passed data to a device or process.
+	- Kernel assigns devices in the order in which they are found - may show
+	different device names between reboots
+	- block, character, pipe and socket devices
+	- sockets can communicate between multiple processes even across a network.
+	- sd or SCSI(Small Computer System Interface) disk
+	- letter (a, b, or c) represents drive
+	- number represents partition, e.g /dev/sdb1, second disk first partition
+	- Pseudo devices:
+	- `/dev/zero` accepts and discards all input. When read,continuous stream of NULL bytes (zero value)
+	-`/dev/null` - accepts and discards all input.Produces no output.
+	- `dev/random` - produces stream of random numbers from environmental noise.
+
+	- `/sys` vs `/dev`
+	- `/dev` provides device nodes (files) allow programs or process access
+	- `sys` to see info and manage devices. Exposes underlying device model.
+	- `udev` dynamically adds and removes devices.
+	- udevd daemon listen messages from kernel for devices. Parse info and matches data with the rules
+	specified in /etc/udev/rules.d.
+	- useful udev command: `udevadm info --query=all --name=/dev/sda`
+	- Listing usb devices: `lsusb` or tree like `lsusb -t`
+	- Listing pci devices: `lspci`
+	- Non-volatile memory express devices `/dev/nvme*`, Device mapper: `/dev/dm-*`, `/dev/mapper/*`
+	- CD and DVD: `/dev/sr*`, PATA Hard disks: `/dev/hd*`
+	- Terminals: `/dev/tty*`, `/dev/pts/*`, and `/dev/tty`
+
+---
+
+
+
 
 
 
