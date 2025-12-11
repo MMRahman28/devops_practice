@@ -62,14 +62,16 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (9 December, 2025)
+## Today's Progress (10 December, 2025)
 
-- **Linux Devices**
-    - Device interfaces are represented as files.
-	- Block, character, pipe and socket devices
-	- Learned about `/dev` and `/sys`
-	- udev - dynamically adds and removes devices
-	- Learned about `/dev/zero`, `/dev/null` and `dev/random`
+- **Linux Devices - Part 2**
+    - More on udev, how it responds to uevent from kernel
+	- SCSI subsystem, USB subsystem
+	- Top: device class drivers, mid: bus management core, bottom: host controller drivers
+	- Generic SCSI devices
+	- Useful to bypass kernel code complexity
+	- Example: Optical disc writing avoid kernel space and talk directly with the SCSI subsystem
+	- To see generic devices: `lsscsi -g`
 
 #### notes.md (learning log)
  ---
@@ -81,5 +83,5 @@
 
 ---
 
-*Last updated: 9 December, 2025*
+*Last updated: 10 December, 2025*
 

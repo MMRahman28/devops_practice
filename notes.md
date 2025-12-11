@@ -1457,6 +1457,39 @@ Output:
 	- Terminals: `/dev/tty*`, `/dev/pts/*`, and `/dev/tty`
 
 ---
+### December 10, 2025
+#### Task Completed
+
+- **Linux Devices - part 2**
+	- Old way: `mknod /dev/sda1 b 8 1` b block device, major 8 , minor 1
+	- udev must start early, during boot -> rest of the system does not keep waiting
+	- devtmpfs is newer simpler version of devfs.
+	- udev does not creat device files, it initialise, set permission and notify other processes
+	- udev also creates symbolic links in /dev/disk/by-id for attached disks.
+	- Kernel sends uevent which udevd receives.
+	- udev learns the device name, sysfs device path, oter attributes
+	- udev then start processing rules in: `/lib/udev/rules.d` and `/etc/udev/rules.d`
+	- There are directive to skip usually placed at the top of the rules. Other directives can
+	import variables,
+	- Conditionals are denoted by == or !=, directives by =, (+=), (:=)
+	- To monitor uevents: `udevadm monitor`
+	- Filter by subsystem: `udevadm monitor --kernel --subsystem-match=scsi`
+	- Traditional SCSI hardward -> host adapter + SCSI bus + chain of devices
+	- SCSI subsystem: top layer - device class, mid - moderates and routes, bottom - handles hardware-specific actions.
+	- Top and bottom layers contain many different drivers
+	- Kernel uses one top and one bottom driver nearly always
+	USB subsystem almost same - top device-class drivers, mid bus management, bottom host controller drivers
+	- Generic SCSI devices - most user processes never need to know anything about SCSI devices or their commands
+	- user processes communicate through the block device layer.
+	- To bypass device class drivers user processes can give SCSI protocol commands directly through generic devices.
+	- 
+	Why use generic device? To avoid kernel code complexity in kernel.
+	- Reading optical disc is simple op, and there's specialised kernel driver for it
+	- Writing complicated, so user-space bypass kernel space and talks to generic SCSI device (subsystem), such as /dev/sg1
+	- To see generic devices: `lsscsi -g`
+
+---
+
 
 
 
