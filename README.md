@@ -62,17 +62,20 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (11 December, 2025)
+## Today's Progress (12 December, 2025)
 
-- **Disks and Filesystems**
+- **The Filesystem - linuxjourney.com**
 
-    - parted and fdisk tools
-	- creating a partition with fdisk (practical work)
-	- p -> print partition, d -> delete, n -> new, q -> quit without saving, w -> write
-	- fdisk makes one single system calls to tell the kernel
-	- parted makes system call for each alteration of partition
-	- SSD: data is read in chunks called pages (not virtual mem page)
-	- So, boundary is important for reading, aligning (partition tools aligns)
+    - Filesystem structure
+	- `parted` commands to create partition
+	- Manually filesystem creation with mkfs
+	- Creating a mount point, simply a directory creation
+	- Mount with file type or with UUID (get UUID from blkid)
+	- `/etc/fstab` configuration to auto mount filesystem during boot, can be edited but be careful.
+	- Initialise swap: `mkswap /dev/sdb2`, enable: `swapon /dev/sdb2` or remove:`swapoff /dev/sdb2`
+	- Filesystem uses a database that manages all its files called inode table.
+	- inode points to actual data block of a file.
+
 	
 	#### notes.md (learning log)
  ---
@@ -84,5 +87,5 @@
 
 ---
 
-*Last updated: 11 December, 2025*
+*Last updated: 12 December, 2025*
 

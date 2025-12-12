@@ -1525,6 +1525,52 @@ Output:
  
  ---
 
+### December 12, 2025
+#### Task Completed
+
+- **The Filesystem - linuxjourney.com**
+
+	- Filesystem structure: boot block, super block, inode table, data block
+	- fdisk does not support GPT, parted supports both MBR and GPT
+	- gdisk supports GPT only similar like fdisk
+	- List partition: `sudo parted -l`
+	- Launch interactive mode: `sudo parted`
+	- Selecting a device: `select /dev/sda`
+	- view: `print`, create: `mkpart` or full `mkpart primary ext4 1 MB 5000MB` 
+	- Resize: `resizepart 1 8000MB` only changes partition size, filesystem resize needs resize2fs tool
+	- Create filesystem: `sudo mkfs -t ext4 /dev/sdb2` only create in a newly created partition (destructive)
+	- How to mount: create a mount point i.e. a directory `sudo mkdir /mydrive`
+	- Now mount: `sudo mount -t ext4 /dev/sdb2 /mydrive`
+	- Unmount: `sudo umount /mydrive` or `sudo umount /dev/sdb2` both works.
+	- Using UUID for stable mounting: `sudo blkid` should show UUID
+	- Mount with UUID: `sudo mount UUID=130b882f-ao90 /mydrive`
+	- Auto mount filesystem with /etc/fstab configuration during boot.
+	- `cat /etc/fstab` 
+	- Carefully edit/add new entry to /etc/fstab
+	- `sudo mount -a` mounts all filesystem listed in /etc/fstab
+	- Swap is what we allocate for our virtual memory for the sytem.
+	- Using a partition for swap, initialise: `mkswap /dev/sdb2` make sure nothing is in this partition
+	- Allocate 2 * RAM, modern systems have enough RAM
+	- Enable: `swapon /dev/sdb2`
+	- An entry for swap can be added to /etc/fstab. sw is the filesystem type
+	- To remove: `swapoff /dev/sdb2`
+	- use df to check how much disk space is free
+	- use du to check the disk usage of specific files and directories.
+	- It is possible to run out of inode, so check with: `df -i`
+	- Filesystem repair: `sudo fsck /dev/sda` run auto during boot before the mount of the filesystem
+	- Do fsck only when in a rescue disk or filesystem is not mounted
+	- Filesystem is comprised of all the files and the database that manages them. 
+	- This database is inode table. Every file and directory has its own inode.
+	- `ls -li` shows inode. Also `stat ~/Desktop/`
+	- inode points to the actual data blocks of your file.
+	- Each inode got 15 pointers. 12 points directly to data blocks.
+	- 13 points to a block that contains more pointers.
+	- 14 and 15 points to further nested blocks of pointers.
+
+---
+
+
+
 
 
 
