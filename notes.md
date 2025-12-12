@@ -1490,7 +1490,40 @@ Output:
 
 ---
 
+### December 11, 2025
+#### Task Completed
 
+- **Disks and Filesystems**
+
+	- The partition table defines simple boundaries on the disk
+	- Filesystem is much more involved data system - supplies structure to transform block device into hierarchy of files and subdirectories.
+	- parted to display partition table: `parted -l`
+	- fdisk create and alter partition table
+	- fdisk makes changes only when exit the program.
+	- fdisk issues a single system call to tell the kernel
+	- The debugging output from kernel can be seen with `journalctl -k`
+	- forcing a partition table reload: `blockdev --rereadpt /dev/sda`
+	- parted partitions are created, modified, and removed on issuing commands.
+	- Both fdisk and parted modify the partitions in user space
+	- SSD: read data in chunks called pages (not virtual mem. pages though) e.g. 4096 bytes
+	- the read must begin at a multiple of that size: if partition and its data do not lie on boundary
+	may need several reads.
+	- Partitioning tools currently do not make any calculations they just align partitions on 1MB boundaries.
+	- If we want to know: `cat /sys/block/sda/sda2/start` output: 1953126 offset from the start in units of 512 bytes
+	- Confusingly called sector.
+	- If SSD has 4096 byte pages, there are 8 sectors. If we cannot evenly didvide the partition offset by 8 it would not attain optimal performance.
+	
+  **Creating a partition table**
+	- `fdisk /dev/sda`
+	- Command prompt: `command (m for help):`
+	- p to print current partition table
+	- d to deleted, n to create a new -> Follow the instruction that appears
+	- First default: 2048, Last sector:  type +200M
+	- See the new partition again with p
+	- q to quit without writing changs.
+	- if satisfied w to write
+ 
+ ---
 
 
 

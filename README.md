@@ -62,18 +62,19 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (10 December, 2025)
+## Today's Progress (11 December, 2025)
 
-- **Linux Devices - Part 2**
-    - More on udev, how it responds to uevent from kernel
-	- SCSI subsystem, USB subsystem
-	- Top: device class drivers, mid: bus management core, bottom: host controller drivers
-	- Generic SCSI devices
-	- Useful to bypass kernel code complexity
-	- Example: Optical disc writing avoid kernel space and talk directly with the SCSI subsystem
-	- To see generic devices: `lsscsi -g`
+- **Disks and Filesystems**
 
-#### notes.md (learning log)
+    - parted and fdisk tools
+	- creating a partition with fdisk (practical work)
+	- p -> print partition, d -> delete, n -> new, q -> quit without saving, w -> write
+	- fdisk makes one single system calls to tell the kernel
+	- parted makes system call for each alteration of partition
+	- SSD: data is read in chunks called pages (not virtual mem page)
+	- So, boundary is important for reading, aligning (partition tools aligns)
+	
+	#### notes.md (learning log)
  ---
 
 ## Files in this Repo
@@ -83,5 +84,5 @@
 
 ---
 
-*Last updated: 10 December, 2025*
+*Last updated: 11 December, 2025*
 
