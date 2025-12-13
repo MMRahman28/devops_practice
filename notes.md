@@ -1569,6 +1569,41 @@ Output:
 
 ---
 
+### December 13, 2025
+#### Task Completed
+
+- **Logical Volume Manager**
+	- physical volume -> Volume group -> logical volume
+	- Working with LVM: `vgs` to list volume groups
+	- `vgdisplay` shows volume group's prorerties
+	- PE stands for physical extent a piece of physical volume much like a block but larger.
+	- `lvs` list logical volumes and `lvsdisplay` shows their properties
+	- `lvdisplay /dev/volgroup0/lv_root` more specific to a particular lv.
+	- `ls -l /dev/volgroup0/lv_root` will show a symlink to /dev/dm-0.
+	-  Additional symlinks in : /dev/mapper
+	- `pvs`, `pvdisplay` for physical volume similar to lv.
+	- Creating physical volumes and a volume group: `vgcreate myvg /dev/sdb1`
+	- both physical volume and volume group myvg created.
+	- It is possible to create PV first with `pvcreate` but vgcreate does this on a partition if nothing is present currently.
+	- Verify with `vgs`
+	- If no volume group run `pvscan`.
+	- Add another PV at /dev/sdc1: `vgextend myvg /dev/sdc1` and verify with `vgs`
+	- Creating logical volume: `lvcreate --size 10g --type linear -n mylv1 myvg`
+	- type linear is optional (default), we can create another.
+	- So, we add physical volume to a volume group. Then we crave out logical volume from it.
+	- `vgdisplay myvg`
+	- Using the new logical volume for filesystem `mkfs -t ext4 /dev/mapper/myvg-mylv1`
+	- Mounting: `mount /dev/mapper/myvg-mylv1 /mnt` and check: `df /mnt`
+	- Removing: `lvremove myvg/mylv2` When manipulating lv with this command, refer the volume with slash (/)
+	- Resizing LV: `lvresize -l +2602 myvg/mylv1` (by adding all the free PE, find PE with vgdisplay)
+	- Then resizing the filesystem: `fsadm -v resize /dev/mapper/myvg-mylv1` (filesystem with '-' not slash)
+	- A shortcut resizing: `lvresize -r -l + 100%FREE myvg/mylv1`
+
+	- Inside a traditional filesystem, what kernel does: root inode number is 2. Find the given name of a directory in inode 2's directory data and find the given directory's inode (say 12). Look up 12 in inode table and verify it is a directory inode.Follow 12's data link to its directory info and so on and so forth.
+
+---
+
+
 
 
 

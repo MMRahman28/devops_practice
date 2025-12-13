@@ -62,21 +62,14 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (12 December, 2025)
+## Today's Progress (13 December, 2025)
 
-- **The Filesystem - linuxjourney.com**
+- **Logical Volume Manager**
 
-    - Filesystem structure
-	- `parted` commands to create partition
-	- Manually filesystem creation with mkfs
-	- Creating a mount point, simply a directory creation
-	- Mount with file type or with UUID (get UUID from blkid)
-	- `/etc/fstab` configuration to auto mount filesystem during boot, can be edited but be careful.
-	- Initialise swap: `mkswap /dev/sdb2`, enable: `swapon /dev/sdb2` or remove:`swapoff /dev/sdb2`
-	- Filesystem uses a database that manages all its files called inode table.
-	- inode points to actual data block of a file.
+    - Pysical volume -> Volume group -> logical volume
+	- We add physical volume to a volume group then carve out logical volume from it.
+	- Learned command to create, display remove and resize volume group.
 
-	
 	#### notes.md (learning log)
  ---
 
@@ -87,5 +80,5 @@
 
 ---
 
-*Last updated: 12 December, 2025*
+*Last updated: 13 December, 2025*
 
