@@ -1603,6 +1603,34 @@ Output:
 
 ---
 
+### December 14, 2025
+#### Task Completed
+
+- **How the Linux Kernel Boots**
+
+	- BIOS -> Bootloader -> Kernel ->Init
+	- Location where BIOS/firmware searches depends on disk partition scheme. Two partition scheme: Master Boot Record (MBR) and GUID partition table (GPT) 
+	- Alternative to BIOS is UEFI (Unified Extensible Firmwire Interface)
+	- Kernel initialises in this general order: CPU inspection, memory, device bus discovery, device, auxiliary subsystem setup (networking), root filesystem mount, userspace start
+	- Kernel parameters: `cat /proc/cmdline` quiet, splash, ro etc
+	- If any parameter not understood, it is saved and passed to init e.g. -s fto indicate single-user mode.
+	- Kernel and its parameters are usually somewhere in the root filesystem.
+	- Bootloader does need a driver but not the same one that the kernel uses to access the disk
+	- Logical Block Addressing (LBA) is a simple way to access data from any disk but its performance is poor (not an issue for few times). Bootloader often the only program uses this method.
+	- Most common boot loaders can read partition tables and support read-only access to filesystems.
+	- Bootloader tasks: select from multiple kernels, switch between sets of kernel parameters, allow manual override and edit kernel image names and parameters, support booting other OS.
+
+- **GRUB**
+	- The GRUB 'root' is the filesystem where GRUB searches for kernel and RAM filesystem image files.
+	- root also means a kernel parameter in a GRUB configuration.
+	- GRUB has its own device-addressing scheme.
+	- GRUB prompt `grub> ls` (hd0) (hd0, msdos1) , one main disk hd0, and a single MBR partition table
+	- `grub > set` shows all GRUB set variables most impotant is the $prefix where GRUB expects to find its configuration and auxiliary support.
+	- grub configuration directory: /boot/grub or /boot/grub2. It contains grub.cfg
+	- use grub-mkconfig or grub2-mkconfig to modify
+	- `grub-mkconfig -o /boot/grub/grub.cfg`
+
+---
 
 
 

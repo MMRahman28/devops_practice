@@ -62,13 +62,15 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (13 December, 2025)
+## Today's Progress (14 December, 2025)
 
-- **Logical Volume Manager**
+- **How the Linux kernel boots and GRUB**
 
-    - Pysical volume -> Volume group -> logical volume
-	- We add physical volume to a volume group then carve out logical volume from it.
-	- Learned command to create, display remove and resize volume group.
+    - BIOS -> Bootloader -> Kernel -> Init
+	- Alternative to BIOS is UEFI
+	- BIOS searches for boot block depends on the partition scheme: MBR or GPT
+	- GRUB core resides either: in between MBR and the beginning of the first partition, in a regular partition, or in a special boot partition: GPT, ESP or elsewhere
+
 
 	#### notes.md (learning log)
  ---
@@ -80,5 +82,5 @@
 
 ---
 
-*Last updated: 13 December, 2025*
+*Last updated: 14 December, 2025*
 
