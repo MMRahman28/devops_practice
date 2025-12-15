@@ -62,15 +62,15 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (14 December, 2025)
+## Today's Progress (15 December, 2025)
 
-- **How the Linux kernel boots and GRUB**
+- **Kernel short summary - linuxjourney.com**
 
-    - BIOS -> Bootloader -> Kernel -> Init
-	- Alternative to BIOS is UEFI
-	- BIOS searches for boot block depends on the partition scheme: MBR or GPT
-	- GRUB core resides either: in between MBR and the beginning of the first partition, in a regular partition, or in a special boot partition: GPT, ESP or elsewhere
-
+    - System call: bridge between user mode and kernel mode
+	- Number of system calls for a certain system is fixed
+	- Each system call has unique ID in syscall table of the system
+	- Kernel modules can be loaded and unloaded temporarily with modeprobe command or permanently during boot
+	by adding configuration files in `/etc/modprobe.d/` directory.
 
 	#### notes.md (learning log)
  ---
@@ -82,5 +82,5 @@
 
 ---
 
-*Last updated: 14 December, 2025*
+*Last updated: 15 December, 2025*
 

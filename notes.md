@@ -1632,6 +1632,30 @@ Output:
 
 ---
 
+### December 15, 2025
+#### Task Completed
+
+- **Kernel short summary - linuxjourney.com**
+	- The bridge between kernel mode and user mode is system call.
+	- The number of available system calls is fixed.
+	- Each system maintains a syscall table where each system call is registered with a unique ID.
+	- To observe system calls: `strace ls` for ls command.
+	- Kernel is stored in `/boot`
+	- Pieces of code can be loaded into or unloaded from kernel on demand are called kernel modules.
+	- To see list of kernel modules: lsmod
+	- Load a kernel module, e.g. `sudo modprobe bluetooth`
+	- To unload or remove, e.g. `sudo modprobe -r bluetooth`
+	- Modules loaded with modprobe are temporary and will be gone after a reboot.
+	- To auto load a module during boot (permanent) create configuration files in /etc/modprope.d/
+	- lets create a .conf file: `/etc/modprobe.d/peanutbutter.conf`
+	options peanut_butter type=peanut
+	- To pervent module load at the boot: `blacklist peanut_butter` in that .conf file
+
+---
+
+
+
+
 
 
 
