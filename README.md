@@ -62,15 +62,20 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (15 December, 2025)
+## Today's Progress (16 December, 2025)
 
-- **Kernel short summary - linuxjourney.com**
+- **How user space starts + init section from linuxjourney.com**
 
-    - System call: bridge between user mode and kernel mode
-	- Number of system calls for a certain system is fixed
-	- Each system call has unique ID in syscall table of the system
-	- Kernel modules can be loaded and unloaded temporarily with modeprobe command or permanently during boot
-	by adding configuration files in `/etc/modprobe.d/` directory.
+    - Old init varieties: System V and Upstart
+	- Modern: systemd
+	- System V: sequential and check runlevels and run corresponding scripts
+	- Upstart: performs actions called jobs triggered by events.
+	- systemd: goal oriented, not sequential, identifies primary goal called target.
+	- Common targets for systemd: poweroff.target, rescue.target, multi-user.target, graphical.target etc
+	- Fundament objects systemd manages are called units.
+	- unit types are identified by the file extension, e.g. `.service`, `.mount` etc.
+	- Service file in systemd is divided into section e.g. `[unit]`, `[service]` etc.
+
 
 	#### notes.md (learning log)
  ---
@@ -82,5 +87,5 @@
 
 ---
 
-*Last updated: 15 December, 2025*
+*Last updated: 16 December, 2025*
 

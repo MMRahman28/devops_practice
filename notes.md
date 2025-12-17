@@ -1653,6 +1653,65 @@ Output:
 
 ---
 
+### December 16, 2025
+#### Task Completed
+
+- **How user space starts + linuxjourney.com -init**
+
+	- Two old init varieties - System V and Upstart
+	- Modern - systemd
+   	- system V you have`/etc/inittab` directory, upstart you have `/usr/share/upstart` directory
+	- systemd you have `/usr/lib/systemd`
+	- system V - `service --status-all` `sudo service networking start`
+	- Upstart - `initctl list` `initctl status networking` `sudo initctl restart networking`
+	- systemd- `systemctl list-units` `systemctl status networking.service` `systemctl stop networking.service`
+
+	**System V**
+	- In system V machine states are defined as runlevels (0 - 6) 
+	- 0 shutdown, 1 single user mode, 2 multiuser mode without networking, 3 multiuser mode with networking,
+	- 4 unused, 5 multiuser mode with networking and GUI, 6 reboot
+	- During system boot, system V checks configured runlevels and corresponding scripts
+	- Scripts: `etc/rc.d/rc[runlevel].d` or `etc/init.d`
+	- Scripts starts with S runs during startup and K during shutdown
+	- The numbers following S or K dictate execution order.
+	- E.g. `mashuk@mashuk232: /etc/rc.d/rc0.d$ ls`
+	- if shows `K10updates` then switching runlevel 0 will run the script to kill the update service
+	
+	**Upstart**
+	- In upstart events trigger jobs, jobs are actions that upstart performs
+	- `/etc/init` got jobs as .conf file. This conf file use runlevels to as system V.
+	- start on runlevel `[235]` inside a networking.conf will start the networking on runlevel 2, 3 and 5
+	- So, upstart loads job configuration from `/etc/init`, once a start up event occurs it runs the corresponding jobs which triggers more events, these events triggers more jobs etc.
+    
+	**Systemd**
+	- systemd uses the concept goals to bring the system to a functional state.
+	- It identifies a primary goal called a target and satisfies the dependencies.
+	- Configuration: `/etc/systemd/system` and `/usr/lib/systemd/system`
+	- Targets in systemd are equivalent to runlevels in older init like System V or upstart
+	- Common targets: poweroff.target, rescue.target, multi-user.target, graphical.target, reboot.target
+	- default.target is a symbolic link often to graphical.target
+	- Fundamental objects systemd manages are units. Each unit type is identified by it's file extension
+	- .service, .mount, .target
+	- A systemd unit file is a plain text file that describes a service.
+	- Service file is divided into sections: `[unit]`, `[service]`, `[install]` etc.
+	- Unit section: dependency, description, directives e.g. `After=network.target`
+	- Service section: ExecStart, ExecStop, ExecReload e.g. ExecStart=/usr/bin/foobar
+	- See manual page systemctl.service(5) and systemd.exec(5).
+	- Install section: defines behaviour when it is enabled or disabled. e.g. WantedBy=multi-user.agent
+	- WantedBy directive says start this service as a part of a specific target
+	- unit with an `[Install]` section need to be enabled before start.
+	- unit dependencies are not tree like but graph.So, we will handle dependency graph.
+	- systemd configuration search path:`systemctl -p UnitPath show`
+	- Use @ specifier to create multiple copies of a unit from a single unit file.
+	- E.g. getty controls login prompts getty@.service allows dynamic creation of units: getty@tty1, getty@tty2.
+	- anything after @ called an instance.
+	- For flexibility and fault tolerance, systemd offers serveral dependency types and styles:
+	- Requires: try to activate the dependency unit if fails it deactivates the dependent unit.
+	- Wants: Upon activating a unit, it activates the wants dependencies, if fails those wants dependencies it does not care
+	- Requisite: Units that must already be active.
+	- Conflicts: When activating a unit with conflict dependency, it deactivates the opposing dependency if it's active.
+	- If a service unit file has the same prefix as a .socket file, systemd knows to activate that service unit when there's activity on the socket unit.
+	- Explicit activation: use Socket=bar.socket inside foo.service to have bar.socket hand its socket to foo.service. Here, we are not depending on the same prefix.
 
 
 
