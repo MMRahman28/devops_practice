@@ -62,20 +62,13 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (16 December, 2025)
+## Today's Progress (17 December, 2025)
 
-- **How user space starts + init section from linuxjourney.com**
+- **System Configuration - Logging, System Time, Batch Jobs and Users - part 1**
 
-    - Old init varieties: System V and Upstart
-	- Modern: systemd
-	- System V: sequential and check runlevels and run corresponding scripts
-	- Upstart: performs actions called jobs triggered by events.
-	- systemd: goal oriented, not sequential, identifies primary goal called target.
-	- Common targets for systemd: poweroff.target, rescue.target, multi-user.target, graphical.target etc
-	- Fundament objects systemd manages are called units.
-	- unit types are identified by the file extension, e.g. `.service`, `.mount` etc.
-	- Service file in systemd is divided into section e.g. `[unit]`, `[service]` etc.
-
+    - journald and syslogd comparison
+	- journalctl commands
+	- Challenges around log authentication
 
 	#### notes.md (learning log)
  ---
@@ -87,5 +80,5 @@
 
 ---
 
-*Last updated: 16 December, 2025*
+*Last updated: 17 December, 2025*
 

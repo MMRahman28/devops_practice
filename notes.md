@@ -1713,6 +1713,51 @@ Output:
 	- If a service unit file has the same prefix as a .socket file, systemd knows to activate that service unit when there's activity on the socket unit.
 	- Explicit activation: use Socket=bar.socket inside foo.service to have bar.socket hand its socket to foo.service. Here, we are not depending on the same prefix.
 
+	---
+### December 17, 2025
+#### Task Completed
+
+- **System Configuration: Logging, System Time, BAtch jobs and users - Part 1**
+
+	- journald and syslog
+	- `/var/log/journal` is where journald stores its logfiles.
+	-journalctl can display log messages using a pager starting with the oldest as they would appear in a logfile.
+	- `journalctl -r` reverse it
+	- `journalctl _PID=8792` search messages from process ID 8792.
+	- Useful: `journalctl -S -4h` -S means since.
+	- We can use -U until less useful though.
+	- Filer by system unit: `journalctl -u cron.service`, unit type can be omitted.
+	- To list all units: `journalctl -F _SYSTEMD_UNIT` 
+	- List all available fields: `journalctl -N`
+	- Classic grep over all the messages.
+	- message from just one boot, current boot: `journalctl -b`
+	- `journalctl -b -1` from previous boot offset of -1.
+	- Display kernel messages: `journalctl -k`
+	- `journalctl --list-boots`
+	- Traditional way monitoring logs: `tail -f` or `less +F` on a logfile
+	- With journald: `journalctl -f` will do the same: printing logs as they arrive.
+	- Log rotation: log maintained by logrotate is divided into many chunks.
+	- A logfile auth.log in /var/log can have auth.log1, auth.log2, and auth.log3 with progressively older data.
+	- Removing method: remove the oldest, rename the immediately next oldest file, so auth.log.3 get deleted, auth.log.2 becomes auth.log.3, until auth.log becomes auth.log.1
+	- names and details may vary across distributions.
+	- In Linux once a file is open, the I?O system has no way to know it was renamed.
+	- So, during log writing a rename would not cause any issue and the log message would be written successfully.
+	- journald decides to delete message based on how much space is left on the journal's filesystem, how much space the journal should take as a percentage of the filesystem,and what maximum journal size is set to.
+	- syslogd can listen to network socket, too. usual listening unix domain socket /dev/log.
+	- Client machines can send messages over a network.
+	- syslog sends messages of various tyoes from different services, so, a way to classify messages is necessary.
+	- facility what sent the message, and severity -the urgency, are used to classify. Eight levels.
+	- In contrast, journald emphasizes collecting and organizing the log output of a single machine into a single format.
+	- systemd can collect the output of server units and can send them to journald. So, more log data possible than syslog.
+	- Challeges: Are the logs trustworhty? No modification? Logs are not encrypted, snooping possible. Original syslog had no authentication. More challenging: when we consider individual application's log how can we always ensure authenticity!
+	
+	**getty and login**
+	- `ps ao args | grep getty`
+	- Most users log in with graphical interface gdm or remotely with ssh, so getty or login are rare.
+	- Just to know - after your login name, getty replaces itself with the login program which asks for password, if correct login replaces itself with your shell. Otherwise, login incorrect message.
+
+
+---
 
 
 
