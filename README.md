@@ -62,13 +62,16 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (17 December, 2025)
+## Today's Progress (18 December, 2025)
 
-- **System Configuration - Logging, System Time, Batch Jobs and Users - part 1**
+- **System Configuration - Logging, System Time, Batch Jobs and Users - part 2**
 
-    - journald and syslogd comparison
-	- journalctl commands
-	- Challenges around log authentication
+    - euid is the actor and ruid is the owner
+	- Owner (ruid) of the process can kill the process even if the process executes as a different user (euid).
+	- PAM - module and function together determine the action not on their own.
+	- pam_unix.so + auth -> checks password
+	- pam_unix.so + password -> sets password
+	- So, same module but with different function does different action.
 
 	#### notes.md (learning log)
  ---
@@ -80,5 +83,5 @@
 
 ---
 
-*Last updated: 17 December, 2025*
+*Last updated: 18 December, 2025*
 

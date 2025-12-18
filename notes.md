@@ -1740,7 +1740,7 @@ Output:
 	- A logfile auth.log in /var/log can have auth.log1, auth.log2, and auth.log3 with progressively older data.
 	- Removing method: remove the oldest, rename the immediately next oldest file, so auth.log.3 get deleted, auth.log.2 becomes auth.log.3, until auth.log becomes auth.log.1
 	- names and details may vary across distributions.
-	- In Linux once a file is open, the I?O system has no way to know it was renamed.
+	- In Linux once a file is open, the I/O system has no way to know it was renamed.
 	- So, during log writing a rename would not cause any issue and the log message would be written successfully.
 	- journald decides to delete message based on how much space is left on the journal's filesystem, how much space the journal should take as a percentage of the filesystem,and what maximum journal size is set to.
 	- syslogd can listen to network socket, too. usual listening unix domain socket /dev/log.
@@ -1756,6 +1756,30 @@ Output:
 	- Most users log in with graphical interface gdm or remotely with ssh, so getty or login are rare.
 	- Just to know - after your login name, getty replaces itself with the login program which asks for password, if correct login replaces itself with your shell. Otherwise, login incorrect message.
 
+---
+### December 18, 2025
+#### Task Completed
+
+- **System Configuration: Logging, System Time, BAtch jobs and users - Part 2**
+
+	- A process can run a setuid executable as long as it has adequate file permissions.
+	- A process running as root (user ID 0) can use setuid() to become any user.
+	- The real user ID(read UID, ruid) indicate who initiated a process.
+	- When you run a setuid program, Linux sets the euid to the program's owner during execution, but original user ID in the ruid.
+	- Think of euid as the actor and ruid as the owner.
+	- If user A starts a new process that runs as user B, user A still owns the process and can kill it.
+	- `ps -eo pid, euser, ruser, comm`
+	- There is a setuid(2) manual page
+	- The kernel does not know anything about authentication. Anything related to authentication happens in user space.
+
+	**PAM (Pluggable Authentication Modules)**
+	- `auth requisite pam_shells.so`
+	- auth: function, requisite: control argument, pam_shells.so: module
+	- pam.conf(5) manual page
+	- For any configuration line, the module and function together determine the action.
+	- pam_unix.so module + auth function -> checks password
+	- pam_unix.so module + password function -> sets password
+	- Same module (pam_unix.so) but for different function does different action. (Mind the distinction between function and action)
 
 ---
 
