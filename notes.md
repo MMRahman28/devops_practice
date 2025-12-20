@@ -1782,7 +1782,28 @@ Output:
 	- Same module (pam_unix.so) but for different function does different action. (Mind the distinction between function and action)
 
 ---
+### December 19. 2025
+#### Task Completed
 
+- **Unix and Linux System Administration Handbook - Chapter 10**
+
+	- Bottom line: very messy - different versions, older/newer, syntax for configuration can get mixed up
+	- There are tools for large scale logging. Possibly better. 
+	- This section can give the idea but might not help in real professional setup.
+	- original syslog daemon has been replaced by newer rsyslog daemon.
+	- Rsyslog architecture: message like stream of events, and rsyslog event-stream processing engine
+	- By default - /etc/rsyslog.conf
+	- syslog aware programs write log entries in /dev/log. System without systemd, rsyslogd reads from this socket.
+	- Any configuration modification please restart to take effect.
+	- Rsyslog modules extend the capabilities of the core.
+	- All inputs and outputs can be configured by modules. Modules can parse and mutate messages.
+	- sysklogd syntax - selector          action
+	- selector = facility (source) . severity(priority level)
+	- Legacy directives and ReinerScript both separately or together can be used to configure.
+	- Logging policy: how many systems, what type of storage is available, retention time, events of interest.
+
+---
+	
 
 
 

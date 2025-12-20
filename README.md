@@ -62,16 +62,16 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (18 December, 2025)
+## Today's Progress (19 December, 2025)
 
-- **System Configuration - Logging, System Time, Batch Jobs and Users - part 2**
+- **Unix and Linux System Administration Handbook - Chapter 10**
 
-    - euid is the actor and ruid is the owner
-	- Owner (ruid) of the process can kill the process even if the process executes as a different user (euid).
-	- PAM - module and function together determine the action not on their own.
-	- pam_unix.so + auth -> checks password
-	- pam_unix.so + password -> sets password
-	- So, same module but with different function does different action.
+    - Syslog, rsyslog
+	- rsyslog architecture: messages = stream of events, rsyslog = stream processing engine.
+	- To configure - ReinerScript syntax, often with or without legacy directives can be used.
+	- to extend the capability use modules.
+	- Logging policy decision: how many systems, storage availability, retention time, events of interest
+	- Bottom line: There are tools for large scale logging from cloud providers.
 
 	#### notes.md (learning log)
  ---
@@ -83,5 +83,5 @@
 
 ---
 
-*Last updated: 18 December, 2025*
+*Last updated: 19 December, 2025*
 
