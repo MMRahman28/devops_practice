@@ -1833,6 +1833,37 @@ Output:
 
 ---
 
+### December 21, 2025
+#### Task Completed
+
+- **Linux Kernel Configuration**
+	- Most distributions kernel source files in versioned subdriectories under /usr/src/kernels.
+	- Install kernel source package before build.
+	**Kernel Build Process Outline**
+	- Go to the top of the kernel source directory
+	- Run make xconfig (KDE), make gconfig(GNOME), make menuconfig
+	- Run make clean
+	- Run make modules_install
+	- Run make install
+	- Also need to update, configure GRUB bootloader's configuration file if not done in make install step.
+
+	- Loadable kernel modules are in : /lib/modules/version (version is the Linux version uname -r)
+	- To see currently loaded modules: lsmod
+
+	**Booting**
+	- booting messages
+	- First initial messages: Who build the kernel,which compiler has been used.
+	- Next, RAM mapping
+	- after that, data buses including USB subsystem.
+	- Then, various devices power button, mouse, USB hub, RTC (Real Time Clock) chip etc
+	- In this phase, kernel initialises network drivers, facilities, so the messages are about network protocol registration etc.
+	- Next, info about updates, certificates , TPM (Trusted Platform Module) info. Setting system time etc
+	- Ethernet interface initialisation message
+	- Various device initialisation, filesystem mouting info.
+
+--- 
+
+
 
 
 

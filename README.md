@@ -62,14 +62,12 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (20 December, 2025)
+## Today's Progress (21 December, 2025)
 
-- **Drivers and the kernel - Unix and Linux System Adm Handbook - chapter 11**
+- **Linux Kernel Configuration**
 
-    - udevd relies on set of rules to guide its management of devices
-	- rule: matching clause formed ny matching keys and assign clause which specifies action for udevd
-	- Useful command: `udevadm info -a -n device(sda)`
-	 
+    - Outlining kermel build process
+	- Messages from different phases of booting	 
 
 	#### notes.md (learning log)
  ---
@@ -81,5 +79,5 @@
 
 ---
 
-*Last updated: 20 December, 2025*
+*Last updated: 21 December, 2025*
 
