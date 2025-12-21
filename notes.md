@@ -1803,7 +1803,35 @@ Output:
 	- Logging policy: how many systems, what type of storage is available, retention time, events of interest.
 
 ---
-	
+### December 20, 2025
+#### Task Completed
+
+- **Unix and Linux System Administration Handbook Drivers and the Kernel- Chapter 11**
+
+	- Only device drivers are aware of the specific capabilites and communication protocols of the system hardware
+	- The memory management sytem defines an address space for each process and creates an illusion that the process
+	owns the entire space of contiguous memory
+	- Device drivers are system specific and often specific to a particular range of kernel revisions.
+	- To see major and minor number for device file: `ls -l /dev/sda`
+	- The major number identifies the driver with which the file is associated. In other words, the type of device.
+	- The minor number identifies which particular instance of a given device type is to be addressed.
+	- Two types of device files: block and character.
+	- Block: read or write on block (512 bytes) at a time. Character: one byte at atime.
+	- Implementation of a device driver where no actual device is invovled is possible. Those devices are called pseudo-devices.
+	- Manual creation of device files: `mknod filename type major minor`, athough modern system manages device files auto
+	- FreeBSD: devices are created by the kernel in devfs mounted on /dev, in Linux a daemon udev is responsible.
+	- Also, for lots of other activities Linux has udevd, FreeBSD has devd.
+	- sysfs is the repo from where udevd gets its raw data
+	- Linux system administrator should know udevd's rule and udevadm commands.
+	- There are number of subdirectories in /sys.
+	- `udevadm info -a -n sdb`. udevadm queries device info, triggers events, controls the daemon, and monitor events.
+	- udevd relies on set of rules to guide its management of devices
+	- Rule: match clause [match clause, ...] assign clause [assign clause, ...]
+	- Match clause define the situation when the rule should be applied.
+	- The assignment clause specify actions that udevd should take.
+	- There are match keys refer device properties.
+
+---
 
 
 

@@ -62,16 +62,14 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (19 December, 2025)
+## Today's Progress (20 December, 2025)
 
-- **Unix and Linux System Administration Handbook - Chapter 10**
+- **Drivers and the kernel - Unix and Linux System Adm Handbook - chapter 11**
 
-    - Syslog, rsyslog
-	- rsyslog architecture: messages = stream of events, rsyslog = stream processing engine.
-	- To configure - ReinerScript syntax, often with or without legacy directives can be used.
-	- to extend the capability use modules.
-	- Logging policy decision: how many systems, storage availability, retention time, events of interest
-	- Bottom line: There are tools for large scale logging from cloud providers.
+    - udevd relies on set of rules to guide its management of devices
+	- rule: matching clause formed ny matching keys and assign clause which specifies action for udevd
+	- Useful command: `udevadm info -a -n device(sda)`
+	 
 
 	#### notes.md (learning log)
  ---
@@ -83,5 +81,5 @@
 
 ---
 
-*Last updated: 19 December, 2025*
+*Last updated: 20 December, 2025*
 
