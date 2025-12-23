@@ -62,12 +62,14 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (21 December, 2025)
+## Today's Progress (22 December, 2025)
 
-- **Linux Kernel Configuration**
+- **Processes and Resource Utilization**
 
-    - Outlining kermel build process
-	- Messages from different phases of booting	 
+    - Useful commands: lsof, strace, ltrace
+	- All processes starts out single-threaded.
+	- Communication between threads are easier than processes.
+	- Threads avoid the overhead of starting a new process (fork) so less costly. 
 
 	#### notes.md (learning log)
  ---
@@ -79,5 +81,5 @@
 
 ---
 
-*Last updated: 21 December, 2025*
+*Last updated: 22 December, 2025*
 

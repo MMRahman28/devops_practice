@@ -1862,7 +1862,29 @@ Output:
 	- Various device initialisation, filesystem mouting info.
 
 --- 
+### December 22, 2025
+#### Task Completed
 
+- **Processes and Resource Utilization**
+	- Finding open files with lsof : see the manual page lsof(1)
+	- Useful: lsof +D /usr (To see open files in /usr). `lsof -p pid` to list open files for a specific process ID
+	- lsof highly depenedent of kernel info. An update to kernel and lsof might require a reboot to lsof to work.
+	- strace: `strace cat /dev/null`. By default strace sends its output to stderr.
+	- The strace command begins working on the new process just after the fork() call.
+	- Can be used for daemons that fork or detach: `strace -o crummyd_strace -ff crummyd`
+	- ltrace command tracks shared library calls.It does not track anything at the kernel level.
+	- ltrace does not work on statically linked binaries.
+	
+	**Threads**
+	- All processes start out single-threaded. The starting thread is called the main thread.
+	- The main thread may start new threads, making the process multithreaded.
+	- Communication between threads are easier - their shared memory.
+	- Communication between processes are relatively difficult - over a channel e.g. network connection, pipe.
+	- Process sometimes fork() to start a new subprocess to deal with a new input or output.
+	- Threads offer similar mechanism without the overhead of starting a new process.
+	- Viewing threads: `ps m`, `ps m -o pid,tid,command`
+
+---
 
 
 
