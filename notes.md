@@ -1886,6 +1886,46 @@ Output:
 
 ---
 
+### December 23, 2025
+#### Task Completed
+
+- **Resource Monitoring**
+	- How much CPU a command uses: `time ls`
+	- real time is the time to run the process from start to finish
+	- subtracting user and sys from real or elapsed time can give waitinng time for the process for the system and external resources
+	- The load avg is the avg number of proceses currently ready to run
+	- Only processes 5that are actually doing something affect the load average.
+	- `uptime` shows loadtime past 1 min, 5 mins and 15 mins respectively.
+	- A load avg above 1 for a single process is probaby using the CPU nearly all of the time.
+	- A high load does not necessarily mean that the system is in trouble.
+	- If a high load avg, but system still responds well, then a lot of processes sharing the CPU - no worries.
+	- For a web server, processes can start and end so quicklu that load avg can't function or indicate effectively.
+
+	**How memory works**
+	- The kernel assists the MMU by breaking down the memory used by processes into smaller chunks caled pages.
+	- Kernel use a data structure page table, maps process's virtual page addr to real page addr in memory.
+	- `getconf PAGE_SIZE`
+	- Page faults: major and minor.
+	- ps, top and time command to see page faults.
+	- `/usr/bin/time cal > /dev/null` displays page fault
+	- press  f when running top.
+	- vmj - no of page faults since last update.
+	- `ps -o pid,min_flt,maj_flt pid_number` using ps to se page fault
+	- Viewing page faults for certain process is not always enough.
+	- For overall system performance, we can use vmstat
+	- `vmstat 2`, iostat, pidstat can be used.
+	- Control groups: version 1 and version 2
+	- version 1: each type of controller has its own group. A process can belong to multiple cgroups.
+	- version 2: a process can belong to only one cgroup. For each group, different types of controllers can be placed.
+	- E.g. for version 2 a cgroup can have both memory and cpu controllers.
+	- List cgroups: `cat /proc/self/cgroup`
+	- View cgroup: Find the cgroup with `cat /proc/self/cgroup`
+	- Then look in /sys/fs/cgroup: `cd /sys/fs/cgroup/add the output what you find from the cat command.
+	- Useful: `cat cgroup.controllers`. `cat pids.current`, `cat memory.max`
+	- To put a process into a cgroup: `echo pid > cgroup.procs`
+	- To limit max num of PIDS of a cgroup: `echo 3000 > pids.max`
+
+	---
 
 
 

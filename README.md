@@ -62,14 +62,20 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (22 December, 2025)
+## Today's Progress (23 December, 2025)
 
-- **Processes and Resource Utilization**
+- **Resource Monitoring**
 
-    - Useful commands: lsof, strace, ltrace
-	- All processes starts out single-threaded.
-	- Communication between threads are easier than processes.
-	- Threads avoid the overhead of starting a new process (fork) so less costly. 
+    - Cpu time usage for ls: `time ls`
+	- load time avg is the avg number of processes currently ready to run
+	- `uptime` shows load time avg past 1 min, 5 mins, and 15 mins respectively.
+	- Kernel assists the MMU by breaking down memory into pages.
+	- Two page faults: minor and major
+	- ps, top and time commands can show these page faults
+	- Useful commands to see overall performance: vmstat, iostat, iotop, pidstat
+	- Control groups: version 1 and version 2.
+	- Version 1: Each controllers form one controller group, a process can belong to multiple control groups.
+	- Version 2: A group can have both memory and cpu controllers. A process can belong in only one cgroup. 
 
 	#### notes.md (learning log)
  ---
@@ -81,5 +87,5 @@
 
 ---
 
-*Last updated: 22 December, 2025*
+*Last updated: 23 December, 2025*
 
