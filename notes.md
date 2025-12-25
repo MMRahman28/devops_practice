@@ -1926,6 +1926,18 @@ Output:
 	- To limit max num of PIDS of a cgroup: `echo 3000 > pids.max`
 
 	---
+### December 24, 2025
+#### Task Completed
+
+- **Process utilization - linuxjourney.com**
+	- Useful command: `fuser -v .` to view which processes using a specific file, socket or filesystem.
+	- To kill a mount point: `fuser -k /mnt/usb`, helpful before unpluging a usb if it has some open files.
+	- `lsof` for etailed info of open files and their processes, `fuser` for specific file, filesystem, mountpoint etc.
+	- Continuous system monitoring with sar tool. Install it with `sudo apt install sysstat`
+	- sysstat auto collect sytem info. If not can be ENABLED in/etc/default/sysstat
+	- Useful commands: `sar -q`, `sar -r`, `sar -P`, `sar -q /var/log/sysstat/sa02`
+
+---
 
 
 
