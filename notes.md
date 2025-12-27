@@ -1947,6 +1947,17 @@ Output:
 ### December 26, 2025
 #### Boxing Day
 
+---
+
+### December 27, 2025
+#### Task Completed
+
+- **Network and its configuration**
+	- Application layer processing occurs in user space
+	- In Linux, the transport layer and all layers below are primarily handled by the kernel
+	- TLS although called Trasport Layer Security, resides one layer higher, in the application layer.
+---
+
 
 
 

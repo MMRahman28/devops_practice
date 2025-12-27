@@ -62,12 +62,12 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (26 December, 2025)
+## Today's Progress (27 December, 2025)
 
-- **Boxing Day**
+- **Network and Its Configuration**
 
-    - Have a nice holiday!
-
+    - TLS stands for Trasport Layer Security but operates at the application layer.
+	
 	#### notes.md (learning log)
  ---
 
@@ -78,5 +78,5 @@
 
 ---
 
-*Last updated: 26 December, 2025*
+*Last updated: 27 December, 2025*
 
