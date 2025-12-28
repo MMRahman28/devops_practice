@@ -1952,13 +1952,26 @@ Output:
 ### December 27, 2025
 #### Task Completed
 
-- **Network and its configuration**
+- **Network and its Configuration - part 1**
 	- Application layer processing occurs in user space
 	- In Linux, the transport layer and all layers below are primarily handled by the kernel
 	- TLS although called Trasport Layer Security, resides one layer higher, in the application layer.
 ---
 
+### December 28, 2025
+#### Task Completed
 
+- **Network and its Configuration - part 2**
+	- `ip address show`, `ip route show` (routing table -> default, destination) `route -n` and `netstat`
+	- A host on a local network can directly reach hosts on that network
+	- To reach hosts on the rest of the internet, it must communicate through the router.
+	- Host can reach the local subnet directly through the network interface
+	- For IPv4, the default in CIDR notation is 0.0.0.0/0
+	- When no rule matches, the default always does, and the default getway is where messages should be sent  if no other choice
+	- How the kernel chooses a route from the routing table (`ip route show`)? It chooses the longest prefix.
+	- E.g. 10.23.2.0/24 and 0.0.0.0/0 (default and has no prefix), so the longest 10.23.2.0/24 wins.
+
+---
 
 
 

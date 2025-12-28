@@ -62,12 +62,13 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (27 December, 2025)
+## Today's Progress (28 December, 2025)
 
-- **Network and Its Configuration**
+- **Network and Its Configuration - part 2**
 
-    - TLS stands for Trasport Layer Security but operates at the application layer.
-	
+    - `ip route show` shows routing table
+	- The kernel chooses the longest prefix from the routing table for routing
+		
 	#### notes.md (learning log)
  ---
 
@@ -78,5 +79,5 @@
 
 ---
 
-*Last updated: 27 December, 2025*
+*Last updated: 28 December, 2025*
 
