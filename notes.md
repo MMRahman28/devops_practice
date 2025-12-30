@@ -1961,7 +1961,7 @@ Output:
 ### December 28, 2025
 #### Task Completed
 
-- **Network and its Configuration - part 2**
+- **Network and Its Configuration - part 2**
 	- `ip address show`, `ip route show` (routing table -> default, destination) `route -n` and `netstat`
 	- A host on a local network can directly reach hosts on that network
 	- To reach hosts on the rest of the internet, it must communicate through the router.
@@ -1972,6 +1972,35 @@ Output:
 	- E.g. 10.23.2.0/24 and 0.0.0.0/0 (default and has no prefix), so the longest 10.23.2.0/24 wins.
 
 ---
+### December 29, 2025
+#### Task Completed
+
+- **Network and Its Configuration - part 3**
+	- Router usually doesn't care about how it gets traffic, only where the traffic is supposed to go.
+	- DNS is an application layer protocol. `host www.example.com`
+	- Devices on an Ethernet send messages in frames, which are wrappers around the data sent.
+	- A frame contains the origin and the destination MAC addresses.
+	- `ip show` shows hardware info, but it's designed primarily for viewing and configuring the software layers attached to the interfaces.
+	- Assign IP and subnets to the kernel network interface, so that the kernel's device drivers (physical layer) can talk to the internet subsystems (internet layer).
+	- Netplan is a useful too.
+	- To add an IP and subnet to kernel network interface: `ip address add address/subnet dev interface`. Manual ip-address(8)
+	- Add route: `ip route add default via gw-address dev interface`
+	- To remove: `ip route del default`
+	- `nmcli` allows us to control Network Manager. `nm-online` tells us if the network is up or down.
+	- Network Configuration Manager: systemd-networkd, systemd.network(5) manual page.
+	- Network manager: listen to events from the system and users and change configuration based on rules.
+	- Network manager uses plug-ins as network config tools and schemes vary among distributions.
+	- Network manager general config file:/etc/NetworkManager/NetworkManager.conf.
+	- Nearly every configuration file has a `[main]` section to define plugins.
+	- Unmanaged interfaces: localhost (lo) does not need any as it stays same.
+	- Most distributions keep Network Manager away from localhost.
+	- To disregard an interface use plugins to tell the Network Manager.
+	- Debian based: /etc/network/interfaces `[ifupdown]` managed=false
+	- For Fedora/Red Hat: /etc/sysconfig/network-scripts directory, file ifcfg-*. Make NM_CONTROLLED=no, if the file is not present NM ignores the interface.
+	- Hardware address to ignore: `HWADDR=enter its mac address`
+	- keyfile plug-in can also be used: `[keyfile]` unmanaged-devices=mac:10:78:d2:eb:76:97; mac:1c:65:9d:cc:ff:b9`
+
+--- 
 
 
 

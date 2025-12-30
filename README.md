@@ -62,12 +62,15 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (28 December, 2025)
+## Today's Progress (29 December, 2025)
 
-- **Network and Its Configuration - part 2**
+- **Network and Its Configuration - part 3**
 
-    - `ip route show` shows routing table
-	- The kernel chooses the longest prefix from the routing table for routing
+    - Use netplan tool
+	- Router can accept data out of a frame, can repackage and can send to a host on a different physical network which is
+	exactly what happens on the internet
+	- Network manager do not use standard to fit all different distributions
+	- Network manager uses plug-ins to interface with configuration tools
 		
 	#### notes.md (learning log)
  ---
@@ -79,5 +82,5 @@
 
 ---
 
-*Last updated: 28 December, 2025*
+*Last updated: 29 December, 2025*
 
