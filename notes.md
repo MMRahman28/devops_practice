@@ -2001,6 +2001,62 @@ Output:
 	- keyfile plug-in can also be used: `[keyfile]` unmanaged-devices=mac:10:78:d2:eb:76:97; mac:1c:65:9d:cc:ff:b9`
 
 --- 
+### December 30, 2025
+#### Task Completed
+
+- **Network and Its Configuration Part - 4**
+	- Transport layer protocols bridge the gap between the raw packets of the internet layer and the refined needs of applications (different port for different application)
+	- When using TCP, an application opens a connection between one port on its own machine and a port on a remote host
+	- `netstat -nt` -n disables DNS and -t limits the output to TCP. `netstat -ntl` -l for ports that processes are listening on
+	- To learn even more use lsof to identify specific process that's listening 
+	- A dynamically assigned port is called an ephemeral port.
+	- User processes may listen on from port 1024 and up
+	- An application process only needs to know how to open (or listen for), read from, write to and close a connection.
+	- Same as file - application handles stream of data - simple
+	- Harder part - converting incoming packets into data stream for processes to read.
+	- Linux TCP implementation is primarily in the kernel.
+	- Router may act as a DHCP server for a simple network.
+	- traditional - dhclient, systemd-networkd now includes built-in DHCP client
+	- With IPv6 new way of network configuration without central DHCP server is possible - stateless configuration, no lease assignments.
+	- Moreover, network prefix is fixed, so the host can broadcast to the network to avoid conflict of address.
+	- Routers are just computers (e.g Linux machine) with more than one physical network interface.
+	- To move data from one subnet to anoter, IP forwarding can be done if not auto configured:
+	- `sysctl -w net.ipv4.ip_forward=1`
+	- In Linux the variant of NAT that most people use is known as IP masquerading.
+	- NAT - way to share a single IP address with a private network
+	- NAT must go beyond internet layer and dissect packets to find UDP and TCP port numbers from transport layers. 
+	- Linux machine as a NAT router requires: network packet filtering, connection tracking, iptable support, full NAT and MASQUERADE target support. Most distributions kernel comes with this support.
+	- Firewall at the packet level
+	- Firewalling on individual machines is sometimes called IP filtering
+	- A system can filter packets: when receives (INPUT), sends (OUTPUT), or forwards/routes (FORWARD)
+	- Firewall rules in a series known as a chain, a set of chains makes up a table.
+	- The whole system is called iptables, with an iptables user-space command to manipulate the rules.
+	- Three basic chains: INPUT, OUTPUT and FORWARD (incoming, outgoing, and routed packets)
+	- Set policy: `iptables -P FORWARD DROP` (To set FORWARD chain's default policy, can be set for INPUT and OUTPUT too)
+	- default policies - DROP, ACCEPT
+	- `iptables -A INPUT -s 192.168.34.63 -j DROP` to prevent 192.168.34.63. -A means append
+	- `iptables -A INPUT -s 192.168.34.0/24 -p tcp --destination-port 25 -j DROP` to prevent SMTP port for the subnet
+	- kernel reads the chain from top to bottom using the first rule that matches, so, any specific rule should be above any general one, or rule might not be read.
+	- In the example, if I prevent the whole subnet from accessing port 25, in the next line I cannot give access to one host of the subnet
+	- To delete: `iptables -D INPUT 3` deletes the third rule.
+	- To insert at the top of the chain use -I: `iptables -I INPUT -s 192.168.34.37 -j ACCEPT`
+	- 2 basic scenario for firewall strategies: individual machines (INPUT) and network machines (FORWARD)
+	- You are not serious on security - if your default policy is ACCEPT
+	- The key idea: permit only things that you find acceptable, not to try to find and exclude the bad stuff. So, use default policy DROP and permit what is acceptable
+	- Be careful with running DROP command on a machine to which you only have remote access. Will instantly block your access, and you won't regain acces until a reboot
+	- Useful: `iptables -A INPUT -p tcp '!' --syn -j ACCEPT` for any non-SYN packet. All TCP connections start with SYN (connection request), while denying incoming TCP connections, host can make TCP connections.
+	- A host must place an IP packet inside an Ethernet frame in order to transmit the packet across the physical layer to another host. Frames do not include IP address info, they use MAC.
+	- In Linux, ARP cache is in the kernel.
+	- `ip -4 neigh`
+	- A host using Ethernet as its physical layer and IP as the network layer use a small table called ARP cache.
+	- ARP cache maps IP addresses to MAC addreses.
+	- ARP applies only to machines on local subnets
+
+	- The network interface must be up to command to work: `iw dev wlpls0 scan`
+	- `iw dev wlpls0 link` MAC address of the output is from the access point.
+
+---
+
 
 
 

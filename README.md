@@ -62,16 +62,22 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (29 December, 2025)
+## Today's Progress (30 December, 2025)
 
-- **Network and Its Configuration - part 3**
+- **Network and Its Configuration - part 4**
 
-    - Use netplan tool
-	- Router can accept data out of a frame, can repackage and can send to a host on a different physical network which is
-	exactly what happens on the internet
-	- Network manager do not use standard to fit all different distributions
-	- Network manager uses plug-ins to interface with configuration tools
-		
+    - Linux TCP implementation is primarily in the kernel
+	- Like files, applications handle stream of data
+	- NAT - way to share a single IP address with a private network
+	- Firewall works on packet level
+	- Firewall rules in a series known as a chain.
+	- A set of chains makes up a table
+	- 3 basic chains: INPUT, OUTPUT and FORWARD
+	- Kernel reads a chain from top to bottom
+	- Default policy should be DROP not ACCEPT
+	- Key idea for firewall: permit only what is acceptable, try not to find and exclude the bad stuff.
+	- Be careful running DROP on a remote machine, it can block access immediately
+
 	#### notes.md (learning log)
  ---
 
@@ -82,5 +88,5 @@
 
 ---
 
-*Last updated: 29 December, 2025*
+*Last updated: 30 December, 2025*
 
