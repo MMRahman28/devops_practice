@@ -62,21 +62,25 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (30 December, 2025)
+## Today's Progress (31 December, 2025)
 
-- **Network and Its Configuration - part 4**
+- **Network Applications and Services**
 
-    - Linux TCP implementation is primarily in the kernel
-	- Like files, applications handle stream of data
-	- NAT - way to share a single IP address with a private network
-	- Firewall works on packet level
-	- Firewall rules in a series known as a chain.
-	- A set of chains makes up a table
-	- 3 basic chains: INPUT, OUTPUT and FORWARD
-	- Kernel reads a chain from top to bottom
-	- Default policy should be DROP not ACCEPT
-	- Key idea for firewall: permit only what is acceptable, try not to find and exclude the bad stuff.
-	- Be careful running DROP on a remote machine, it can block access immediately
+    - To login to remote host: `ssh remote_username@remote_host`
+	- To copy a directory to anoter host: `tar zcvf - dir | ssh remote_host tar zxvf -`
+	- From remote host to the current directory: `scp user@host:file .`
+	- From local machine to a remote host: `scp file usr@host:dir`
+	- From one remote to anoter: `scp user1@host1:file user2@host2:dir`
+	- `lsof -i:port` or full syntax: `lsof -iprotocol@host:port` shows the process using the port
+	- `lsof -iTCP -sTCP:LISTEN` , processes listening on TCP ports
+	- `tcpdump`, its GUI alternative is WireShark
+	- `netcat` can connect to a remote TCP/UDP port, specify a local port, scan ports, listen on ports, redirect standard I/O
+	- Open a TCP connection: `netcat host port`
+	- To listen a port: `netcat -l port_number`
+	- port scanning: `nmap host` or `nmap 10.1.2.2`
+	- master process listen with a socket -> if connection comes accept and fork. The child process handles the connection.
+	- The original listening socket keep listening.
+	- Unix domain socket is not a network socket, but very similar. Writing code for these sockets are similar. The process connects to a unix domain socket behaves almost same when it connects to a network socket.
 
 	#### notes.md (learning log)
  ---
@@ -88,5 +92,5 @@
 
 ---
 
-*Last updated: 30 December, 2025*
+*Last updated: 31 December, 2025*
 

@@ -2057,6 +2057,50 @@ Output:
 
 ---
 
+### December 31, 2025
+#### Task Completed
+
+- **Network Applications and Services**
+
+	- High-performance TCP servers such as the Apache web server may create a number of worker processes beforehand, so that they are available to handle connnections as needed.
+	- The server config file for ssh is `sshd_config` and the client for ssh is `ssh_config` - be careful.
+	- ssh-keygen program comes with OpenSSH
+	- To create SSH version 2 keys: `ssh-keygen -t rsa -N '' -f /etc/ssh/ssh_host_rsa_key` or `ssh-keygen -t dsa -N '' /etc/ssh/ssh_host_dsa_key`
+	- Useful: `systemctl enable sshd`, enable or disable as required
+	- `systemctl start sshd` to start or to stop
+	- To login to remote host: `ssh remote_username@remote_host`
+	- `tar zcvf - dir | ssh remote_host tar zxvf -` copies a directory dir to another host
+	- SSH file transfer clients: from remote host`scp user@host:file .`, to remote host `scp file user@host:dir`
+	- `scp user1@host1:file user2@host2:dir` from one remote host to another
+	-  Diagnostic tools: netstat (options: -t, -u, -l, -a, -n, -4, -6). t for tcp, u for udp, l listening port, a active port, n disables name lookups
+	- lsof tool not only can track open files, but also can list the programs currently using or listening to ports.
+	- `lsof -i`, `lsof -n -i`, `lsof -i:port` : should show the process using the port.
+	- Full syntax: `lsof -iprotocol@host:port` should show the process using the port.
+	- `lsof -iTCP -sTCP:LISTEN` to show only the processes listening on TCP ports. Reveals network server processes currently running on the system.
+	- `tcpdump` network interface card -> promiscuous mode. Reports every packet that come across.
+	- GUI alternative to tcpdump is WireShark. tcpdump interact with the kernel.
+	- Read pcap-filter(7) manual page.
+	- `netcat`: can connect to remote TCP/UDP ports, specify a local port, listen on ports, scan ports, redirect standard I/O 
+	- To open a TCP connection to a port: `netcat host port`
+	- To listen: `netcat -l port_number`
+	- Port scanning with Nmap: `nmap host` or `nmap 10.1.2.2` 
+
+	- On Unix systems, a process uses a socket to identify when and how it's talking to the network.
+	- Sockets are the interface that proceses use to access the network through the kernel.
+	- TCP -> stream sockets (SOCK_STREAM), udp -> datagram sockets (SOCK_DGRAM)
+	- The master process uses the listening socket to look  for connections from the network.
+	- When a new connection comes, the master process uses the accept() system call, which creates read/write socket dedicated to that connection
+	- Next, fork(), the child process deal with the connection.
+	- Unix Domain socket is not a network socket, and there's no network behind one. 
+	 - A process connects to a unix domain socket behaves almost exactly like it does with the network socket
+	 - A process can create an unnamed Unix domain socket and share the address with another process.
+	 - Domain sockets are suitable for Inter Process Communication.
+	 - Has special socket files to control access, so, not all process can access, and therefore cannot use the socket.
+	 - Writing code for Unix domain socket is not much different from supporting normal network sockets.
+	 - To view: `lsof -U`
+---
+
+
 
 
 
