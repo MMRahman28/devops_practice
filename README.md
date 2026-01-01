@@ -62,26 +62,12 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (31 December, 2025)
+## Today's Progress (1 January, 2026)
 
-- **Network Applications and Services**
+- **Happy New Year**
 
-    - To login to remote host: `ssh remote_username@remote_host`
-	- To copy a directory to anoter host: `tar zcvf - dir | ssh remote_host tar zxvf -`
-	- From remote host to the current directory: `scp user@host:file .`
-	- From local machine to a remote host: `scp file usr@host:dir`
-	- From one remote to anoter: `scp user1@host1:file user2@host2:dir`
-	- `lsof -i:port` or full syntax: `lsof -iprotocol@host:port` shows the process using the port
-	- `lsof -iTCP -sTCP:LISTEN` , processes listening on TCP ports
-	- `tcpdump`, its GUI alternative is WireShark
-	- `netcat` can connect to a remote TCP/UDP port, specify a local port, scan ports, listen on ports, redirect standard I/O
-	- Open a TCP connection: `netcat host port`
-	- To listen a port: `netcat -l port_number`
-	- port scanning: `nmap host` or `nmap 10.1.2.2`
-	- master process listen with a socket -> if connection comes accept and fork. The child process handles the connection.
-	- The original listening socket keep listening.
-	- Unix domain socket is not a network socket, but very similar. Writing code for these sockets are similar. The process connects to a unix domain socket behaves almost same when it connects to a network socket.
-
+    - Holiday
+	
 	#### notes.md (learning log)
  ---
 
@@ -92,5 +78,5 @@
 
 ---
 
-*Last updated: 31 December, 2025*
+*Last updated: 1 January, 2026*
 
