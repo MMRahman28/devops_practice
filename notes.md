@@ -2103,7 +2103,40 @@ Output:
 ### January 1, 2026
 #### Happy New Year
 
-- 
+---
+
+### January 2, 2026
+#### Task Completed
+
+- **Network File Transfer and Sharing**
+
+	- Quick copy - `python -m SimpleHTTPServer` starts a basic server. Run the command from the directory containing the file.
+	- Point browser on http://10.1.2.4:8000 where the address is the network address of the machine. From another machine in the same network the file can be copied.
+    - `scp -r directory user@remote_host[:dest_dir]`
+
+	**rsync**
+	- Both hosts must install rsync
+	- `rsync file1 file2 ... host:`
+	- rsync assumes SSH is being used to connect to the remote
+	- If user is different on the two hosts: `rsync file1 and file2 ... user@host:`
+	- `rsync -a dir host:dest_dir` copy to a directory other than the home directory of the remote host
+	- `rsync -nva dir host:dest_dir` -n tells to de a dry run i.e. without actually copying any files. v for verbose.
+	- To make an exact replica: `rsync -a --delete dir host:dest_dir` any file that was there before copying will be deleted. So, be careful. -nv can be considered first.
+	- Trailing slash: `rsync -a dir/ host:dest_dir` copying anything inside the dir not the dir itself. Similar to cp dir/* dest_dir
+	- Again, be very careful. If manually create the dir in the remote. then do a --delete, the result can be removal of everything inside the dir which you might not wanted. Be careful!
+	- Shell auto complete might add a slash (/), again take extra care if you want a slash(/) or not.
+	- Excluding files and directories: `rsync -a --exclude=.git src host:`, --exclude takes a pattern.
+	- `rsync -a --exclude=/src/.git src host:` first slash (/) does not mean the root directory, but the base directory here.
+	- Checking transfer: The check uses a combination of file size and its last-modified date.
+	- Few options: --checksum or -c, --ignore-existing does not clobber files already on the target, --backup or -bf, --suffix=s, --update or -u , does not clobber any file on the target that has a later date than the source.
+	- Compressing: `rsync -az dir host:dest_dir`
+	- Limiting bandwidth: `rsync --bwlimit=100000 -a dir host:dest_dir` to keep a balance with TCP packets
+	- It's two ways: File can be transferred from remote to local. `rsync -a host:src_dir dest_dir`
+	- rsync(1) manual
+
+---
+
+
 
 
 
