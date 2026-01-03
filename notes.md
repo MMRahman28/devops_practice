@@ -2136,6 +2136,24 @@ Output:
 
 ---
 
+### January 3, 2026
+#### Task Completed
+
+- **rsync Lab work**
+	- After connecting via ssh, use the host ip address. 
+	- use: 192.168.1.xxx:/home/mashuk/Documents or mashuk@192.168.1.xx:/home/mashuk/Documents
+	- Better use verbose mode. Sometimes it is not obvious if the files have been transferred. Verbose mode gives details.
+	- Use `...` only for files not for directories.
+	- `rsync file1 ... host:` but `rsync -a dir host:dest_dir` for directory
+	- `rsync -a --exclude=*.pdf /home/mashuk/Documents/Manuals 192.168.1.xxx:/home/mashuk/Documents`
+	- Transfer files both ways: from local type: `rsync -a remote:src_dir local_dest_dir` i.e.
+	`rsync -a 192.168.1.xxx:/home/mashuk/Documents/ /home/mashuk/Documents/Manuals/`
+	- The above command will copy file or files or directory in the remote's Documents folder to local Manuals folder.
+	- No need to establish ssh connection from remote to local (which is not practical).
+	- `rsync -va --backup  --backup-dir=/home/mashuk/Documents/backup_ubuntu /home/mashuk/Documents/Manuals/ 192.168.1.xxx:/home/mashuk/Documents/Transferred_files`
+	- Any overwrite will be backed up i.e. new modifed files in the Transferred files and the modified file's previous state would be in the backup directory i.e. in backup_ubuntu. However, it does not keep a history of modification only the previous state of the last modification. Can be handy for saving storage space.
+---
+
 
 
 

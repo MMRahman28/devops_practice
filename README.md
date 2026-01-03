@@ -62,20 +62,14 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (2 January, 2026)
+## Today's Progress (3 January, 2026)
 
-- **Network File Transfer and Sharing**
+- **rsync lab**
 
-    - `python -m SimpleHTTPServer` for quick copy
-	- http://device_address_on_the_network:8000 access from any other machine on the network
-
-	- rsync: `rsync file1 file2 ... host:` or `rsynce file1 file2 ... user@host:` (if different username)
-	- rsync to copy directory: `rsync -a dir host:dest_dir`
-	- `rsync -nva dir host:dest_dir` -n tells rsync to do a dry run without copying.
-	- To make an exact replica: `rsync -a --delete dir host:dest_dir`
-	- To exclude: `rsync -a --exclude=.git src host:` --exclude takes a pattern
-	- use --exclude=/src/.git like this for a specific item.
-	- rsync check uses a combination of file size and the last-modified date. 
+    - Connecting to a machine over ssh on the local network
+	- Practising rsync commands
+	- Mention backup directory when using --backup option with rsync.
+	- Backup only keeps the previous state of the recently modified file, not a chronological history.
 	
 	#### notes.md (learning log)
  ---
@@ -87,5 +81,5 @@
 
 ---
 
-*Last updated: 2 January, 2026*
+*Last updated: 3 January, 2026*
 
