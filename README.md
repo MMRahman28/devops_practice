@@ -62,14 +62,13 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (3 January, 2026)
+## Today's Progress (4 January, 2026)
 
-- **rsync lab**
+- **File Sharing**
 
-    - Connecting to a machine over ssh on the local network
-	- Practising rsync commands
-	- Mention backup directory when using --backup option with rsync.
-	- Backup only keeps the previous state of the recently modified file, not a chronological history.
+    - Use network file sharing if random access is not required.
+	- Samba client can be used where Windows restrict unix-friendly means of communication.
+	- Commands of SSHFS, and SSH are similar.CIFS, and NFS commands are similar, too.
 	
 	#### notes.md (learning log)
  ---
@@ -81,5 +80,5 @@
 
 ---
 
-*Last updated: 3 January, 2026*
+*Last updated: 4 January, 2026*
 

@@ -2154,6 +2154,24 @@ Output:
 	- Any overwrite will be backed up i.e. new modifed files in the Transferred files and the modified file's previous state would be in the backup directory i.e. in backup_ubuntu. However, it does not keep a history of modification only the previous state of the last modification. Can be handy for saving storage space.
 ---
 
+### January 4, 2026
+#### Task Completed
+
+- **File sharing**
+	- Consider using network file sharing only if random access is not required.
+	- To setup a Samba server: smb.conf + add file sharing section + printer sharing section to smb.conf + start Samba daemons nmbd and smbd.
+	- `unix password sync = yes` Be very careful, it changes user's normal password in addition to the Samba password
+	- Some distro set this parameter by default!!!!
+	- `systemctl --type=service`is a userful command
+	- Samba client can be handy where Windows servers don't offer a Unix-friendly means of communication.
+	- `smbclient -L -U username SERVER`
+	- `smbclient -U username '\\SERVER\sharename'`
+	- CIFS (Common Internet File System): `mount -t cifs SERVER:sharename mountpoint -o user=username,pass=password`
+	- SSHFS: `sshfs usrname@host:dir mountpoint` command looks same as SSH
+	- To unmount: `fusermount -u mountpoint`
+	- NFS: `mount -t nfs server:directory mountpoint`
+
+---
 
 
 
