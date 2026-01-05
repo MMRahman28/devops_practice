@@ -2173,6 +2173,25 @@ Output:
 
 ---
 
+### January 5, 2026
+#### Task Completed
+
+- **User Environments**
+	- When to alter startup files: for changing default prompt, accomodating locally installed software (consider using wrapper scripts first, though), existing startup files are broken.
+	- The command path: `/usr/local/bin` `/usr/bin` `/bin`
+	- For games: `/usr/games`
+	- A cheap way to accomodate separate installation directories is to use symlinks in /usr/local/bin.
+	- Also cmmon in path: $HOME/bin to store all shell scripts and programs
+	- Newer convention: $HOME/.local/bin
+	- `\u` current user, `\h` hostname, `\!` history number, `\w` current directory, better use `\W` if only base directory is enough
+	- `\$` running as a user account, # if root
+	- Permission mask: 077 or 022. 022 can be a good choice.
+	- Filenames: .bashrc, .bash_profile symbolic links pointing to .bashrc
+	- EDITOR, PAGER: EDITOR=vi, PAGER=less, LESS=meiX
+
+---
+
+
 
 
 

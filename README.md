@@ -62,13 +62,17 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (4 January, 2026)
+## Today's Progress (5 January, 2026)
 
-- **File Sharing**
+- **User Environments**
 
-    - Use network file sharing if random access is not required.
-	- Samba client can be used where Windows restrict unix-friendly means of communication.
-	- Commands of SSHFS, and SSH are similar.CIFS, and NFS commands are similar, too.
+    - The command paths: `/usr/local/bin` `/usr/bin` `/bin`
+	- `$HOME/bin`, and `$HOME/.local/bin` (newer) is also used
+	- Filenames: .bashrc, .bash_profile (symlinks to .bashrc)
+	- EDITOR, PAGER: `EDITOR=vi` `PAGER=less` `LESS=meiX`
+	- umask: 022 can be a good choice
+	- `\u` current user, `\h` hostname, `\w` current directory, better `\W` limit the display to base directory 
+
 	
 	#### notes.md (learning log)
  ---
@@ -80,5 +84,5 @@
 
 ---
 
-*Last updated: 4 January, 2026*
+*Last updated: 5 January, 2026*
 
