@@ -62,16 +62,17 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (5 January, 2026)
+## Today's Progress (6 January, 2026)
 
-- **User Environments**
+- **Linux Desktop and Printing**
 
-    - The command paths: `/usr/local/bin` `/usr/bin` `/bin`
-	- `$HOME/bin`, and `$HOME/.local/bin` (newer) is also used
-	- Filenames: .bashrc, .bash_profile (symlinks to .bashrc)
-	- EDITOR, PAGER: `EDITOR=vi` `PAGER=less` `LESS=meiX`
-	- umask: 022 can be a good choice
-	- `\u` current user, `\h` hostname, `\w` current directory, better `\W` limit the display to base directory 
+    - At the bottom of any graphical display is the framebuffer.
+	- A few individual bytes in the framebuffer represent each pixel.
+	- X Window System (centralised X server) and Wayland (decentralised) - each client has its own memory buffer, and a compositor.
+	- In X, window manager is the client that acts as a helper to the X server (like a kernel).
+	- In Wayland, the window manager is the server, more or less.
+
+	- Program doing the printing turns the doc into PostScript form. 
 
 	
 	#### notes.md (learning log)
@@ -84,5 +85,5 @@
 
 ---
 
-*Last updated: 5 January, 2026*
+*Last updated: 6 January, 2026*
 

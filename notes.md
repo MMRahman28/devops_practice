@@ -2191,6 +2191,44 @@ Output:
 
 ---
 
+### January 6, 2026
+#### Task Completed
+
+- **Linux Desktop and Printing**
+	- At the bottom of any graphical display mechanism is the frambuffer, a chunk of memory that the graphics hardware reads and transmits to the screen for display.
+	- A few individual bytes in the framebuffer represent each pixel, so change the value of framebuffer memory  to change display
+	- On any modern system, windows belongs to individual processes doing all their graphics updates independently.
+	- X Window System: uses a server (X server) which acts as a sort of kernel, manages rendering, configuring displays, handling input from devices.
+	- X client programs handle the UI, X server does not dictate.
+	- X server acts as an intermediary for everyting so  can be a significant bottleneck.
+
+	- Wayland: Decentralised by design. 
+	- Each client gets its own memory buffer (sub-framebuffer) for its own window, and  a compositor that combines all of the clients' buffers in a form that can be copyed to the screen's framebuffer.
+	- Most clients render all of their data as a bitmap and then send the bitmap to the X server.
+	- To channel input to the correct application, most Wayland setups and many X servers use a library called libinput to standardise events to clients.
+	- In X, the window manager is a client that acts as a helper to the server.
+	- In Wayland, window manager is the server, more or less.
+	- Most popular window managers, Mutter (in Gnome) and Kwin (KDE).
+	
+	- Toolkits: To speed up development programmers use graphical toolkits.
+	- Toolkits are at the core of most desktop environments, but to create unified desktop, enviroments must also include numerous support files such as icons and configurations that make up themes.
+	- Wayland refers to a communication protocol between compositing window manager and graphical client program.
+	- There's no core Wayland package, Wayland library that most clients use to speak to the protocol
+	- There's also a reference compositing window manager called Weston.
+	- Although rare, more than one compositor can be run at once.
+	- Compositor does not just pass input events as is, it translates the event into the Wayland protocol before sending to a client.
+	- Most common way to start X server is with a display manager.
+	-When log in, display manager starts a set of clients, such as a window manager and file manager.
+	- The X server uses the X input extension to manage input from many different devices.
+
+	- D-Bus or Desktop Bus: it serves as an interprocess communication mechanism.
+	- Allows desktop applications to talk to each other.
+	- Processes that need to react to events can connect to dbus-daemon and register to receive certain kind of events.
+
+	- Pringting: the program doing the printing converts the doc into PostScript form.
+
+--- 
+
 
 
 
