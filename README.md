@@ -62,18 +62,14 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (6 January, 2026)
+## Today's Progress (7 January, 2026)
 
-- **Linux Desktop and Printing**
+- **Developer Tools - Part 1**
 
-    - At the bottom of any graphical display is the framebuffer.
-	- A few individual bytes in the framebuffer represent each pixel.
-	- X Window System (centralised X server) and Wayland (decentralised) - each client has its own memory buffer, and a compositor.
-	- In X, window manager is the client that acts as a helper to the X server (like a kernel).
-	- In Wayland, the window manager is the server, more or less.
-
-	- Program doing the printing turns the doc into PostScript form. 
-
+    - Static library vs shared library
+	- Static library modification requirtes recompilation of the executables, not for shared libraries
+	- Static library ends with .a and shared library has a suffix .so
+	- program named ld.so finds and loads shared libraries at runtime.
 	
 	#### notes.md (learning log)
  ---
@@ -85,5 +81,5 @@
 
 ---
 
-*Last updated: 6 January, 2026*
+*Last updated: 7 January, 2026*
 

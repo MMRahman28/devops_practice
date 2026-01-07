@@ -2229,6 +2229,27 @@ Output:
 
 --- 
 
+### January 7, 2026
+#### Task Completed
+
+- **Development Tools Part 1**
+
+	- Libraries come into play primarily at link time when linker program (ld) creates  an executable from object files.
+	- `cc -o myprog proj.o -lcurses` here the basic cureses library is libcurses.a, so library name is curses with -l option it becomes -lcurses
+	- Most libraries reside in /usr/lib/ The /lib should not contain any static library.
+	- For non-standard library location use -L. 
+	- `cc -o myproj prog.o -lcurses -L /usr/junk/lib -lcrud`
+	- C standard library libc.a (basic)
+	- Static library ends with .a, has some disadvantages: waste disc spaces if increases over time. If found insecure, there's no way to change the executables without recompiling every executables
+	- Shared libraries (ends with .so) counter the disadvantages of static library.
+	- Shared libraries does not copy the code into final executable, just add references to names in the code of the library file.
+	- At run time the system loads library's code into the process memory space only when necessary.
+	- Modification of the library code does not require recompilation. 
+	- Reboot updates shared libraries when update manager asks for a reboot.
+	- program ld.so finds and loads shared libraries at runtime.
+
+--- 
+
 
 
 
