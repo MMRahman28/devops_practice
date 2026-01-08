@@ -2250,6 +2250,24 @@ Output:
 
 --- 
 
+### January 8, 2026
+#### Task Completed
+- **Development Tools part 2**
+	- Two important make options: -n prints the command necessary for a build without running any commands
+	- And `-f file` Tells make to read from file instead of Makefile or makefile
+	- Standard Macros and Variables: CFLAGS, LDFLAGS, LDLIBS, CC, CPPFLAGS, CXXFLAGS
+	- $@ when inside a rule, this variable expands to the current target.
+	- $< expands to first dependency of the target
+	- $* expands to basename, blah.o becomes blah
+
+	- When Unix tries to run an executable file that starts with #! it runs the program following #! with the rest of the file as the standard input.
+	``` 
+	#!/usr/bin/tail -2 
+	This program won't print this line,
+	but this.
+	and this.
+	```
+	- caution: Don't expect more than one argument in the script's first line to work/. That is, the -2 in the example might work, but more than that might not.
 
 
 

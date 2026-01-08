@@ -62,14 +62,18 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (7 January, 2026)
+## Today's Progress (8 January, 2026)
 
-- **Developer Tools - Part 1**
+- **Developer Tools - Part 2**
 
-    - Static library vs shared library
-	- Static library modification requirtes recompilation of the executables, not for shared libraries
-	- Static library ends with .a and shared library has a suffix .so
-	- program named ld.so finds and loads shared libraries at runtime.
+    - Two important make options: `-n` and `-f file`.
+	- `-n` do a dry run without running the commands.
+	- `-f file` read form a file instead of Makefile or makefile
+	- CFLAGS, LDFLAGS, LDLIBS, CC, CPPFLAGS, CXXFLAGS
+	- $@ when inside a rult expands to the current target.
+	- $< expands to the first dependency of the target.
+	- $* expands to the basename
+	- Executable file that starts with #!, it runs the program following #! and the rest as the standard input.
 	
 	#### notes.md (learning log)
  ---
@@ -81,5 +85,5 @@
 
 ---
 
-*Last updated: 7 January, 2026*
+*Last updated: 8 January, 2026*
 
