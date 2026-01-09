@@ -62,18 +62,11 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (8 January, 2026)
+## Today's Progress (9 January, 2026)
 
-- **Developer Tools - Part 2**
+- **Compiling Software from C Source Code**
 
-    - Two important make options: `-n` and `-f file`.
-	- `-n` do a dry run without running the commands.
-	- `-f file` read form a file instead of Makefile or makefile
-	- CFLAGS, LDFLAGS, LDLIBS, CC, CPPFLAGS, CXXFLAGS
-	- $@ when inside a rult expands to the current target.
-	- $< expands to the first dependency of the target.
-	- $* expands to the basename
-	- Executable file that starts with #!, it runs the program following #! and the rest as the standard input.
+    - Routine: unpack + configure + make + install.
 	
 	#### notes.md (learning log)
  ---
@@ -85,5 +78,5 @@
 
 ---
 
-*Last updated: 8 January, 2026*
+*Last updated: 9 January, 2026*
 

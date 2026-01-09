@@ -2269,6 +2269,23 @@ Output:
 	```
 	- caution: Don't expect more than one argument in the script's first line to work/. That is, the -2 in the example might work, but more than that might not.
 
+	---
+	### January 9, 2026
+	#### Task Completed
+
+	- **Compiling Software from C Source Code**
+	
+		- Routine: unpack + configure + make + install
+		- Check before unpack: tar tvf or tar ztvf
+		- Beware, unlikely but be careful: /etc/passwd, /etc/inetd.conf (Trojan)
+		- GNU autoconf: files named configure, Makefile.in and config.h.in
+		- To generate a Makefile from Makefile.in: `./configure`
+		- To change installation directory other than the default: `./configure --prefix=$HOME/mycoreutils`
+		- Default installation directory or prefix: /usr/local, /usr/local/bin for binaries, /usr/local/lib for libraries.
+		- After configure, run `make` and then `make check` (good practice)
+		- Then for installation, dry run: `make -n install`, if OK run actual install `make install`
+	
+	---
 
 
 
