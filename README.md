@@ -62,11 +62,14 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (9 January, 2026)
+## Today's Progress (10 January, 2026)
 
-- **Compiling Software from C Source Code**
+- **Compiling Software from C Source Code Part 2**
 
-    - Routine: unpack + configure + make + install.
+    - pkg-config program is useful: location of include files, flags.
+	- `pkg-config --libs zlib` output: -lz
+	- `patch -p0 < patch_file` use with diff to find the patch info.
+	- `patch -p1 < patch_file` to ignore the first part of the path.
 	
 	#### notes.md (learning log)
  ---
@@ -78,5 +81,5 @@
 
 ---
 
-*Last updated: 9 January, 2026*
+*Last updated: 10 January, 2026*
 

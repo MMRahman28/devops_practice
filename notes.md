@@ -2274,7 +2274,7 @@ Output:
 	#### Task Completed
 
 	- **Compiling Software from C Source Code**
-	
+
 		- Routine: unpack + configure + make + install
 		- Check before unpack: tar tvf or tar ztvf
 		- Beware, unlikely but be careful: /etc/passwd, /etc/inetd.conf (Trojan)
@@ -2286,6 +2286,20 @@ Output:
 		- Then for installation, dry run: `make -n install`, if OK run actual install `make install`
 	
 	---
+
+	### January 10, 2026
+	#### Task Completed
+
+- **Compiling Software from C Source code part 2**
+
+	- pkg-config program tells the location of include files, specify flags for compiling and link a program.
+	- `pkg-config options package1 package2` i.e. `pkg-config --libs zlib`
+	- Two basic ways to make .pc files available outside installation prefix: symlolic links from the actual .pc files to the central pkgconfig directory
+	- Set PKG_CONFIG_PATH environmental variable
+	- Applying a patch: `patch -p0 < patch_file` use with diff program.
+	- To tell patch to ignorethe first part of the path:  `patch -p1 < patch_file`
+
+---
 
 
 
