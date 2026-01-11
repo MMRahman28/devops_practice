@@ -2301,6 +2301,66 @@ Output:
 
 ---
 
+### January 11, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook - Chapter 12 Printing**
+
+	- A print spooler collects and schedules jobs.
+	- Simultaneous Peripheral Operation On-Line - SPOOL
+	- CUPS Printing: CUPS servers are web servers, CUPS clients are web clients.
+	- Commands: lpr, lpq
+	- CUPS server can also act clients of other CUPS servers.
+	- A CUPS server offers a web interface on port 631.
+	- Internet Printing Protocol - a souped-up version of HTTP.
+	- Clients submit jobs -> HTTP/IPP POST and request status -> HTTP/IPP GET.
+	- Command line print: `lpr foo.pdf /tmp/testprint.ps` prints both foo.pdf and testprint.ps
+	- lpr command transmits copies of the files to the CUPS server, cupsd, which stores them in the print queue. CUPS processes each file in turn as the printer becomes available
+	- Next, CUPS examines both the document and the printer's Postscript Printer Description (PPD) file to see what needs to be done.
+	- CUPS passes a job through a series of filters.
+	- Some filters might perform rasterization (bitmap).
+	- The final stage of the print pipeline is a backend.
+	- Backend transmit the job from the host to the printer via an appropriate protocol (Ethernet).
+	- Backend also communicates status info in the other direction, back to the CUPS server.
+	- `lpstat -t` summarizes the print server's overall status.
+	- To remove, `lprm jobid`. Use lpq to get job number.
+	- `lpoptions -dprinter_name` :Default printer or export PRINTER=printer_name
+	- Printer instances: `lpoptions -p Phaser_6120/2up -o number-up=2 -o job-sheets=standard`
+	- Problem: Broadcast packets do not cross subnet boundaries. Designate a slave server on each subnet that polls and relays.
+	- `/etc/cups/cupsd.conf` file:
+	```
+	BrowsePoll allie_from_subnet_a
+	BrowsePoll jj_from_subnet_b
+	BrowseRelay 127.0.0.1 192.168.3.255
+	```
+	- now both allie and jj print servers are accessible to users on 192.168.3.0.
+	- Filters: CUPS uses a chain of filters to convert each printed file into a form the destination printer understand.
+	- CUPS uses its .ypes file to figure out document's MIME type.
+	- It consult printer's PPD file to figure out printer's MIME type.
+	- It uses .convs files to deduce what filter chains should be used
+	- It picks a chain and passes the document through those filters.
+	- The final filter in the chain passes the printable format to the backend.
+	- Follow:`usr/share/cups/mime/mime.types` application/pdf       pdf string(0.%PDF) means if .pdf extension or starts with the string %PDF use MIME application/pdf.
+	- In mime.convs: application/pdf    application/postscript 33 pdftops
+	- means to convert run the filter pdtops.
+	- To see available backends: `lpinfo -v`
+	- Network printer config: They need to know their own IP addresses and netmasks. Two ways to acquire them
+	- BOOTP or DHCP server. A static IP can be assigned too from its console (set buttons, front panet of the printer etc)
+	- `sudo lpadmin -p groucho -E -v parallel:/dev/lp0 -m pxlcolor.ppd`
+	- `sudo lpadmin -p fezmo -E -v socket://192.168.0.12 -m laserjet.ppd`
+	- Use `lpinfo -v` again to see URIS for printers.
+	- Service shutoff: `sudo lpadmin -x fezmo`
+	- To disable: `sudo cupsdisable groucho` controls the exit side of the queue
+	- `sudo reject corbet` controls the submission side.
+	- Tips: Use reject fro extended downtime, for brief interruptions use disable.
+	- `lpstat -t` tells if a printer is disabled or not. So, use.
+	- Command lpadmin for system-wide tasks, lpoptions for per-user task.
+	- To verify the physical connection: `/usr/lib/cups/backend/usb` command.
+
+---
+
+
+
 
 
 

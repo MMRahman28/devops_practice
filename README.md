@@ -62,14 +62,21 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (10 January, 2026)
+## Today's Progress (11 January, 2026)
 
-- **Compiling Software from C Source Code Part 2**
+- **Unix and Linux System Admmin Handbook Chapter 12 - Printing**
 
-    - pkg-config program is useful: location of include files, flags.
-	- `pkg-config --libs zlib` output: -lz
-	- `patch -p0 < patch_file` use with diff to find the patch info.
-	- `patch -p1 < patch_file` to ignore the first part of the path.
+    - CUPS servers are webservers. So, uses POST an GET with a slight difference.
+	- lpr command transmit copies of the files -> CUPS sever -> put them in print queue
+	- CUPS compares document and the printer's PPD to find out what needs to be done.
+	- CUPS passes the job through series of filters.
+	- The final of the print pipeline is the backend which identifies the protocol to transmit the job (after necessary filter applied) to the printer.
+	- A CUPS server offers a web interface on port 631.
+	- Problem: Broadcast packets do not cross subnet boundaries.
+	- Solution: Designate a slave (use the term helper maybe? sounds awful) server on each subnet to poll and relay.
+	- `lpinfo -v` , `lpstat -t` , `lpr file1.txt file2.txt` are useful commands.
+	- To see more commands and details use notes.
+
 	
 	#### notes.md (learning log)
  ---
@@ -81,5 +88,5 @@
 
 ---
 
-*Last updated: 10 January, 2026*
+*Last updated: 11 January, 2026*
 
