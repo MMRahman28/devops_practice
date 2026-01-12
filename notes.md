@@ -2359,6 +2359,36 @@ Output:
 
 ---
 
+### January 12, 2026
+#### Task Completed
+
+- **Virtualization**
+	- A container can be loosely defined as a restricted runtime enviroment for a set of processes.
+	- Docker: Make a new directory and crate a file called Dockerfile containing:
+	
+	```
+	FROM alpine:latest
+	RUN apk add bash
+	CMD ["/bin/bash"]
+	```
+	- Build the image: `docker build -t hlw_test .` observe the output. There is a newer method to build image.
+	- An image that isn't intended to be a final product is called an intermediate image.
+	-  Intermediate images stay around after a build, intermediate containers do not. Docker calls temporary container an intermediate container.
+	- Anything done with the RUN command in a Dockerfile happens during the image build, not afterward, when starting a container with the image.
+	- The CMD command is for the container runtime this is why it occurs at the end.
+	-  Start a container: `docker run -it hlw_test` -it option (interactive, connect a terminal)
+	- check mount: `mount -v` we will see The filesystem in a container is an overlay filesystem - a kernel feature that allows to create a filesystem by combining existing directories as layers, with changes stored in a single spot.
+	- Docker creates a virtual interface on the host, which simulates a link between two actual network interfaces, and places one of those devices in the new namespace.
+	- To reach outside host, Docker network on the host configures NAT. 
+	- `docker ps` `docker ps -a`, `docker rm container_id` `docker rmi hlw_test` to remove an image.
+	
+	- The term LXC is someimes used to refer to the set of kernel features that make containers possible. LXC was intended to be as much of an entire Linux System as possible inside the container - init and all.
+	- Kubernetes has 2 basic sides, much like any client-server app. The server involves machines available to run containers, and the client is a set of command-line utilities that lauch and manipulate set of containers.
+
+
+---
+
+
 
 
 

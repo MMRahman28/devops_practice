@@ -62,21 +62,16 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (11 January, 2026)
+## Today's Progress (12 January, 2026)
 
-- **Unix and Linux System Admmin Handbook Chapter 12 - Printing**
+- **Virtualization**
 
-    - CUPS servers are webservers. So, uses POST an GET with a slight difference.
-	- lpr command transmit copies of the files -> CUPS sever -> put them in print queue
-	- CUPS compares document and the printer's PPD to find out what needs to be done.
-	- CUPS passes the job through series of filters.
-	- The final of the print pipeline is the backend which identifies the protocol to transmit the job (after necessary filter applied) to the printer.
-	- A CUPS server offers a web interface on port 631.
-	- Problem: Broadcast packets do not cross subnet boundaries.
-	- Solution: Designate a slave (use the term helper maybe? sounds awful) server on each subnet to poll and relay.
-	- `lpinfo -v` , `lpstat -t` , `lpr file1.txt file2.txt` are useful commands.
-	- To see more commands and details use notes.
-
+    - Container: restricted runtime environment for a set of processes.
+	- Docker: Make a new directory and Dockerfile.
+	- Build the image: `docker build -t hlw_test .`
+	- Run to start a container: `docker run -it hlw_test`
+	- Useful commands: `docker ps`, `docker ps -a`, `docker rm container_id`, `docker rmi image_repo_name`
+	- Filesystem inside a container is an overlay filesystem. A kernel feature allows to create a filesystem by combining existing directories as layers
 	
 	#### notes.md (learning log)
  ---
@@ -88,5 +83,5 @@
 
 ---
 
-*Last updated: 11 January, 2026*
+*Last updated: 12 January, 2026*
 
