@@ -62,17 +62,14 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (12 January, 2026)
+## Today's Progress (13 January, 2026)
 
-- **Virtualization**
+- **Unix and Linux System Admin Handbook Chapter 13 - TCP/IP Networking**
 
-    - Container: restricted runtime environment for a set of processes.
-	- Docker: Make a new directory and Dockerfile.
-	- Build the image: `docker build -t hlw_test .`
-	- Run to start a container: `docker run -it hlw_test`
-	- Useful commands: `docker ps`, `docker ps -a`, `docker rm container_id`, `docker rmi image_repo_name`
-	- Filesystem inside a container is an overlay filesystem. A kernel feature allows to create a filesystem by combining existing directories as layers
-	
+    - Find the status of the RFC, it could be outdated.
+	- A doc can have several different ID. 
+	- E.g. RFC1713 and FYI127 both are for Tools for DNS Debugging
+		
 	#### notes.md (learning log)
  ---
 
@@ -83,5 +80,5 @@
 
 ---
 
-*Last updated: 12 January, 2026*
+*Last updated: 13 January, 2026*
 
