@@ -62,13 +62,15 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (13 January, 2026)
+## Today's Progress (14 January, 2026)
 
 - **Unix and Linux System Admin Handbook Chapter 13 - TCP/IP Networking**
 
-    - Find the status of the RFC, it could be outdated.
-	- A doc can have several different ID. 
-	- E.g. RFC1713 and FYI127 both are for Tools for DNS Debugging
+    - Ethernet frame's payload is an ip packet, ip packet's payload is a UDP packet (for UDP transmission), UDP packet's payload is the data being transmitted.
+	- Fragmentation of in-flight packets is an unwelcome chore. IPv6 largely removes this feature.
+	- Packet addressing: MAC for hardware, IPv4 and IPv6 network addresses for software, hostnames for people.
+	- NAT intercepts packets from internal addresses, rewrites their source addresses, using an external IP address and perhaps a different source port.
+	- NAT does not eliminate the need for a firewall.
 		
 	#### notes.md (learning log)
  ---
@@ -80,5 +82,5 @@
 
 ---
 
-*Last updated: 13 January, 2026*
+*Last updated: 14 January, 2026*
 

@@ -2399,6 +2399,32 @@ Output:
 
 ---
 
+### January 14, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook: TCP/IP Networking - Chapter 13**
+
+	- The header tells where the packet came from and where it is going
+	- The Ethernet frames payload is an IP packet, the IP packet's payload is a UDP packet (for UDP transmission), and a UDP packet's payload is the data being transmitted.
+	- The link layer is divided into 2 parts: MAC, and LLC (Logical Link Control) sublayer.
+	- The LLC sublayer handles the framing.
+	- MTU (Maximum Transfer Unit): IPV4 splits packets to conform to the MTU of a particular network link.
+	- IPV4 router that forwards the packet onto the small-MTU network subdivides the packet in a process called fragmentation.
+	- Fragmentation of in-flight packets is an unwelcome chore.
+	- IPV6 largely removes this feature.
+	- All IPv6 networks are required to support an MTU at least 1280 bytes at the IP layer. IPv6 senders have the choice to limit themselves to this size.
+	- IPv4 network can discover the lowest MTU link by setting "Do not fragment flag".
+	- If without fragmenting packets cannot be forwarded, then the intermediate router sends an ICMP error message to the sender.
+	- IPv6 packets act as if they had "do not fragment flag" enabled.
+	- Packet addressing: MAC for hardware, IPv4 and IPv6 network addresses for software, hostnames for people.
+	- Address type: Unicast, Multicast, Broadcast, Anycast. Multicast is largely unused but more mainstream for IPv6.IPv6 bradcast addresses are just specialised multicast.
+	- NAT intercepts packets addressed with internal addresses and rewrites their source addresses, using a valid external IP address and perhaps a different source port number.
+	- Any addresses for NAT purpose from an ISP should only be used for mapping not for hosting.
+	- An incorrect NAT config can let private address space packets escape onto the internet. Packet might get to to the destination, but answering packets won't come back.
+	- Externally visible tunnels can be configured in NAT so that arbitary host on the internet can connect.
+	- NAT does not eliminate the need for a firewall.
+
+---
 
 
 
