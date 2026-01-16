@@ -62,15 +62,16 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (14 January, 2026)
+## Today's Progress (15 January, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 13 - TCP/IP Networking**
+- **Unix and Linux System Admin Handbook Chapter 13 - TCP/IP Networking part 3**
 
-    - Ethernet frame's payload is an ip packet, ip packet's payload is a UDP packet (for UDP transmission), UDP packet's payload is the data being transmitted.
-	- Fragmentation of in-flight packets is an unwelcome chore. IPv6 largely removes this feature.
-	- Packet addressing: MAC for hardware, IPv4 and IPv6 network addresses for software, hostnames for people.
-	- NAT intercepts packets from internal addresses, rewrites their source addresses, using an external IP address and perhaps a different source port.
-	- NAT does not eliminate the need for a firewall.
+    - IPv6 divides the 128 bits of address into 8 groups of 16 bits.
+	- The word routing signifies 2 distinct things: looking up a network address in the table, and building a routing table.
+	- A host can route packets only to gateway machines that are directly connected. So, non-adjacent gateway info is pointless.
+	- Routing table: `netstat -rn`
+	- Routing tables can be configured statically, dynamically or a combination of both.
+	- Dynamic routing is implemented by a daemon.
 		
 	#### notes.md (learning log)
  ---
@@ -82,5 +83,5 @@
 
 ---
 
-*Last updated: 14 January, 2026*
+*Last updated: 15 January, 2026*
 

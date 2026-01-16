@@ -2402,7 +2402,7 @@ Output:
 ### January 14, 2026
 #### Task Completed
 
-- **Unix and Linux System Admin Handbook: TCP/IP Networking - Chapter 13**
+- **Unix and Linux System Admin Handbook: TCP/IP Networking - Chapter 13 (Part 2)**
 
 	- The header tells where the packet came from and where it is going
 	- The Ethernet frames payload is an IP packet, the IP packet's payload is a UDP packet (for UDP transmission), and a UDP packet's payload is the data being transmitted.
@@ -2423,6 +2423,29 @@ Output:
 	- An incorrect NAT config can let private address space packets escape onto the internet. Packet might get to to the destination, but answering packets won't come back.
 	- Externally visible tunnels can be configured in NAT so that arbitary host on the internet can connect.
 	- NAT does not eliminate the need for a firewall.
+
+---
+
+### January 15, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook TCP/IP Networking Chapter 13 - Part 3**
+	- IPv4 addresses are 4 bytes or 32 bits  long
+	- IPv6 addreses are 16 bytes or 128 bits long
+	- IPv6 addresses divides the 128 bits of an address into 8 groups of 16 bits.
+	- Each 16-bit group is represented by 4 hexadecimal digits.
+	- IPv6 notational simplification: Omit leading zeros. Group with a value 0000 can be represented as 0. Replace any number of contiguous zero-valued 16 bit group with a double colon ::
+	- If there's a choice the double colon should replace the longest possible sequence of zeros.
+	- :: cannot replace a single 16 bit group (0000)
+	- The word routing means 2 distinct things: looking up a network address in the routing table to forward a packet towards its destination. Building a routing table in the first place.
+	- Routing table: `netstat -rn`
+	- A host can route packets only to gateway machines that are reachable through a directly connected network.
+	- So, it is pointless to include info about non-adjacent gateways.
+	- Routing tables can be configured statically, dynamically or a combination of both.
+	- Static route: `ip route add 132.236.220.64/26 via 132.236.212.6 dev eth1` `ip route add default via 132.236.227.1 dev eth0`
+	- Dynamic routing is implemented by a daemon process that maintains and modifies the routing table.
+	- Routing daemons on different hosts communicate to discover the topology of the network.
+	- Hosts that get their IP addresses from DHCP server, can also get a default route with DHCP.
 
 ---
 
