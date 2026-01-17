@@ -62,16 +62,17 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (15 January, 2026)
+## Today's Progress (16 January, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 13 - TCP/IP Networking part 3**
+- **Unix and Linux System Admin Handbook Chapter 13 - TCP/IP Networking part 4**
 
-    - IPv6 divides the 128 bits of address into 8 groups of 16 bits.
-	- The word routing signifies 2 distinct things: looking up a network address in the table, and building a routing table.
-	- A host can route packets only to gateway machines that are directly connected. So, non-adjacent gateway info is pointless.
-	- Routing table: `netstat -rn`
-	- Routing tables can be configured statically, dynamically or a combination of both.
-	- Dynamic routing is implemented by a daemon.
+	- ICMP redirects: router can notify the sender is there's an issue with packet forwarding, suggests redirection.
+	- ICMP redirects can be exploited by the hackers.
+	- Dnsmasq: DHCP service + DNS forward
+	- System with Ip forwarding can act as a router. Careful: intrusion is possible.
+	- Source routing: explicit set of gateways + bypass next hop algorithm.
+	- Recommendation for source routing: neither forward nor accept source routed packets. Can be used to fool the firewall so be careful.
+	- IP spoofing: manipulates source IP. Deny ip spoofing at the border router: block outgoing packets whose source ip not in your address space.
 		
 	#### notes.md (learning log)
  ---
@@ -83,5 +84,5 @@
 
 ---
 
-*Last updated: 15 January, 2026*
+*Last updated: 16 January, 2026*
 

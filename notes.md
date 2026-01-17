@@ -2449,7 +2449,36 @@ Output:
 
 ---
 
+### January 16, 2026
+#### Task Completed
 
+- **Unix and Linux System Admin Handbook TCP/IP Networking Chapter 13 part 4**
+
+	- IPv4 uses ARP (Address Resolution Protocol ) while IPv6 uses NDP (Neighbor DIscovery Protocol) to discover hardware address associated with a particular IP address.
+	- ICMP redirects: when a router forwards a packet to a machine on the same network there's something wrong. The router can notify the sender of its problem by sending an ICMP redirect packet. (A hacker can exploit this careful!) The redirect suggest who to send the packet. Receipient of the redirect can adjust its routing table to fix the problem (or fall into a trap of a hacker).
+	- Dedicated routers ignore redirects, but UNIX and Linux systems accept them by default. Under Linux, the variable accept_redirects under /proc controls the acceptance of ICMP redirects. Disable redirect if it poses any security threat.
+	- DHCP: When a device get plugged into a network, it obtains IP address, sets up a default route and connects itself to a DNS server. DHCP makes it happen.
+	- Clients must report back to the DHCP server periodically to renew their leases.
+	- DHCP software: ISC. For client and for server. ISC's server daemon called dhcpd.
+	- ISC's dhcprelay is a separate daemon called dhcrelay.
+	- Dhcrelay listens for DHCP requests from local networks and can forward them to some specific remote DHCP servers. 
+	- Dnsmasq, a server that implements DHCP service in combination with a DNS forwarder.
+	- DHCP is a backward-compatible extension of BOOTP.
+	- IP forwarding: system with ip forwarding enabled can act as a router.
+	- For security reason, ip forwarding can be turned off. Coercion is possible to make external packets look like internal packets - Welcome intruders. So, be careful.
+	- It is possible to have a host with network interfaces in multiple subnets and still not forwarding third party packets.
+	- Again, ICMP redirects can maliciously reroute traffic and can tamper routing table.
+	- Source routing: specify an explicit series of gateways for a packet to transit on the way to destination. Bypass the next hop algorithm.
+	- If someone can cleverly route a packet to make it appear to have originated from your network instead of the internet, then firewall is compromised. Be careful!!
+	- Recommendation for source routing: Neither forward, nor accept source routed packets.
+	- Ignore broadcast packets that come from afar. Read about Smurf attack.
+	- IP spoofing: source address is the address of the host from which the packet was sent, normally filled by the kernel's TCP/IP implementation. If the software creating the packet uses a raw socket, it can fill in any source address it likes.
+	- The machine identified by the spoofed source IP is often the victim.
+	- Packet spoofing from a large set of external machines is called a distributed denial of service attack.
+	- Deny IP spoofing at the border router: block outgoing packets whose source IP address is not within your address space.
+	- A heuristic known as unicast reverse path forwarding (uRPF) helps against an external packet appearing to be internal to fool the firewall.
+	
+	---
 
 
 
