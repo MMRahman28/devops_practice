@@ -2480,6 +2480,26 @@ Output:
 	
 	---
 
+	### January 17, 2026
+	#### Task Completed
+
+	- **Unix and Linux Systerm Admin Handbook Chapter 13 TCP/IP Networking part 5**
+		- Test connectivity with basic tools ping and traceroute
+		- Hostnames to IP addresses - hosts file, LDAP, DNS system, or a combination of all.
+		- /etc/hosts contain only local mappings and must be maintain on each client system
+		- You can assign more than one IP to an interface
+		- Routing is performed at the IP layer.
+		- Local network gateway has a default route, but the routers in the internet backbone does not have default route.
+		- To examine existing route `netstat -nr`
+		- `ip route del` to remove entries and `ip route flush` to initialise the route table and start over
+		- /etc/networks maps names to network numbers, /etc/hosts maps hostnames to IP addresses.
+		- To configure a machine as a DNS client, set up the /etc/resolv.conf. It lists nameservers.
+		- Newer iproute2 package features ip command: ip route show, ip link show, ip link, man ip-link help etc.
+		- Several protocols can run in a given network interface, each those protocols can support multiple addresses. So ip link and ip address distinction is smart.
+		
+	---
+
+
 
 
 

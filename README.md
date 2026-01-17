@@ -62,18 +62,15 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (16 January, 2026)
+## Today's Progress (17 January, 2026)
 
 - **Unix and Linux System Admin Handbook Chapter 13 - TCP/IP Networking part 4**
 
-	- ICMP redirects: router can notify the sender is there's an issue with packet forwarding, suggests redirection.
-	- ICMP redirects can be exploited by the hackers.
-	- Dnsmasq: DHCP service + DNS forward
-	- System with Ip forwarding can act as a router. Careful: intrusion is possible.
-	- Source routing: explicit set of gateways + bypass next hop algorithm.
-	- Recommendation for source routing: neither forward nor accept source routed packets. Can be used to fool the firewall so be careful.
-	- IP spoofing: manipulates source IP. Deny ip spoofing at the border router: block outgoing packets whose source ip not in your address space.
-		
+	- /etc maps names to network numbers, /etc/hosts maps hostnames to IP addresses.
+	- Newer iproute2 package features ip command: ip route show, ip address show etc.
+	- Several protocols can run in a given network interface. Each those protocols can support multiple addresses.
+	- Local network gateway has a default route, however, the routers at the internet backbone do not have.
+			
 	#### notes.md (learning log)
  ---
 
@@ -84,5 +81,5 @@
 
 ---
 
-*Last updated: 16 January, 2026*
+*Last updated: 17 January, 2026*
 
