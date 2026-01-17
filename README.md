@@ -64,7 +64,7 @@
 
 ## Today's Progress (17 January, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 13 - TCP/IP Networking part 4**
+- **Unix and Linux System Admin Handbook Chapter 13 - TCP/IP Networking part 5**
 
 	- /etc maps names to network numbers, /etc/hosts maps hostnames to IP addresses.
 	- Newer iproute2 package features ip command: ip route show, ip address show etc.
