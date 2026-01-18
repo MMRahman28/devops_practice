@@ -62,15 +62,17 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (17 January, 2026)
+## Today's Progress (18 January, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 13 - TCP/IP Networking part 5**
+- **Unix and Linux System Admin Handbook Chapter 13 - TCP/IP Networking part 6**
 
-	- /etc maps names to network numbers, /etc/hosts maps hostnames to IP addresses.
-	- Newer iproute2 package features ip command: ip route show, ip address show etc.
-	- Several protocols can run in a given network interface. Each those protocols can support multiple addresses.
-	- Local network gateway has a default route, however, the routers at the internet backbone do not have.
-			
+	- ethtool is useful
+	- Recommendation:
+	- Do not answer broadcast pings: `sudo echo 1 > /proc/sys/net/ipv4/icmp_echo_ignore_broadcasts`
+	- Do not listen to routing redirects: `cat /proc/sys/net/ipv4/conf/enp0s31f6/accept_redirects` should be 0
+	- Do not accept source routed packets: `cat /proc/sys/net/ipv4/conf/enp0s31f6/accept_source_route` should be 0
+	- Do not ip forward for host: `cat /proc/sys/net/ipv4/ip_forward` should be 0.
+				
 	#### notes.md (learning log)
  ---
 
@@ -81,5 +83,5 @@
 
 ---
 
-*Last updated: 17 January, 2026*
+*Last updated: 18 January, 2026*
 

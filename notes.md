@@ -2499,6 +2499,22 @@ Output:
 		
 	---
 
+### January 18, 2026
+#### Task Completed
+
+- **Unix and Linux Systerm Admin Handbook Chapter 13 TCP/IP Networking part 6**
+	- ethtool is useful. `ethtool eth0`
+	- Check network variables under: /proc/sys/net/ipv4 or /proc/sys/net/ipv6
+	- conf subdirectory under ipv4 contains parameter that are set per interface
+	- To see variable use cat: `cat /proc/sys/net/ipv4/conf/enp0s31f6/accept_redirects`
+	- Recommendation:
+	- Do not answer broadcast pings: `sudo echo 1 > icmp_echo_ignore_broadcasts` (inside ipv4 directory)
+	- Do not listen to routing redirects: `cat /proc/sys/net/ipv4/conf/enp0s31f6/accept_redirects` (inside conf/interface diretory). Should be 0
+	- Do not accept source routed packets (both host interface and router off): `cat /proc/sys/net/ipv4/conf/enp0s31f6/accept_source_route` Should be 0
+	- Do not ip forward for host (but gateway on, obviously): `cat /proc/sys/net/ipv4/ip_forward` should be 0. (in Arch its for all interfaces as it appears)
+
+---
+
 
 
 
