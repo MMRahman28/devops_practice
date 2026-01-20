@@ -2511,7 +2511,47 @@ Output:
 	- Do not answer broadcast pings: `sudo echo 1 > icmp_echo_ignore_broadcasts` (inside ipv4 directory)
 	- Do not listen to routing redirects: `cat /proc/sys/net/ipv4/conf/enp0s31f6/accept_redirects` (inside conf/interface diretory). Should be 0
 	- Do not accept source routed packets (both host interface and router off): `cat /proc/sys/net/ipv4/conf/enp0s31f6/accept_source_route` Should be 0
-	- Do not ip forward for host (but gateway on, obviously): `cat /proc/sys/net/ipv4/ip_forward` should be 0. (in Arch its for all interfaces as it appears)
+	- Do not ip forward for host (but gateway on, obviously): `cat /proc/sys/net/ipv4/ip_forward` should be 0. (in Arch its for all interfaces as it appears)	
+
+---
+
+### January 19, 2026
+#### Task Completed
+
+- **Unix and Linux Systerm Admin Handbook Chapter 13 TCP/IP Networking part 7**
+	- Network troubleshooting: ping, traceroute, tcpdump, wireshark. arp, ndp, ss or netstat also useful debugging tools.
+	- Troubleshooting approach: 
+	- Make 1 change at a time. Test and if undesired effect then back out.
+	- Document the situation before you get involved. Document every change you make along the way.
+	- Work your way up/down, e.g. network config on client > physical connections > hardware > server's physical connections > software config.
+	- Questions:
+	- Physical connectivity and a link light?
+	- Interface configured properly?
+	- ARP table shows other hosts?
+	- Firewall on local machine?
+	- Firewall anywhere between your machine and destination?
+	- Do they pass ICMP ping packets and responses?
+	- ping works for localhost?
+	- ping works for other hosts on the network?
+	- DNS works? ping works by hostname for local hosts, other hosts on another network?
+	- Web, ssh server work?
+	- `ping -n` to avoid to prevent DNS lookup. `ping -s 1500 cuinfo.cornell.edu` can send echo packets of any size. Helpful to force fragmentation.
+	- Successful ping does not guarantee the machine's state. It only says the machine is powered on and the kernel did not panic. Does not say about HTTP and DNS services.
+	- `traceroute hostname`, `traceroute google.com` `traceroute -n` for numeric output if DNS is broken.
+	- traceroute works by setting the time to live (TTL) of an outbound packet to an artificially low number.
+	- Each gateway the TTL get decreased. So, for the first hop it sends 1, next 2, and so on until the destination is reached. If packet reaches the destination, the TTL = number of hops.
+	- Some firewall blocks ICMP packages but it does not make any issue. Although, info will not be obtained beyond that router, but if destination is reached the packet will not send any ICMP error messages anyway. So, info loss, but hop count still works.
+	- Similar utilities: mtr, See PERTKB wiki for such tools.
+	- Packet sniffers: tcpdump, wireshark, Tshark
+	- Interface need to be in promiscuous mode.
+	- tcpdump tune into the first interface it encounters. Use -i to choose an interface. Again `tcpdump -n` for broken DNS or for no name lookup.
+    - In promiscuous mode, an interface lets kernel read all packets on the network even the ones intended for other hosts.
+	- Keep this mode off when not using as it can be a security issue.
+	- Store packets to a file with -w and -r to read, -v for verbose, - vv for more. 
+	- Use filter to avoid huge amount of data: `sudo tcpdump src net 192.168.1.0/24 and dst port 80`
+	- Wireshark can offer GUI, but based on the same library libpcap.
+	- Wireshark can reassamble payload data of all the packets in a stream for a TCP connection.
+	- Do not keep wireshark running when not used.
 
 ---
 

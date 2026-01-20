@@ -62,16 +62,19 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (18 January, 2026)
+## Today's Progress (19 January, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 13 - TCP/IP Networking part 6**
+- **Unix and Linux System Admin Handbook Chapter 13 - TCP/IP Networking part 7**
 
-	- ethtool is useful
-	- Recommendation:
-	- Do not answer broadcast pings: `sudo echo 1 > /proc/sys/net/ipv4/icmp_echo_ignore_broadcasts`
-	- Do not listen to routing redirects: `cat /proc/sys/net/ipv4/conf/enp0s31f6/accept_redirects` should be 0
-	- Do not accept source routed packets: `cat /proc/sys/net/ipv4/conf/enp0s31f6/accept_source_route` should be 0
-	- Do not ip forward for host: `cat /proc/sys/net/ipv4/ip_forward` should be 0.
+	- Network troubleshooting: ping, traceroute, tcpdump, Wireshark.
+	- Trouble shooting approach:
+	- One change at a time, Document the situation and the change, Work your way up or down
+	- Questions to ask: Physical connectivity works? Interface, ARP table OK? 
+	- Firewall on local? Firewall between local and destination?  
+	- Do they pass ICMP messages? Ping DNS, Web, ssh work?
+	- traceroute use TTL to learn about number of hops.
+	- In promiscuous mode an interface lets kernel read all the network packets even the ones intended for other hosts.
+	- Both tcpdump and Wireshark use libpcap library.
 				
 	#### notes.md (learning log)
  ---
@@ -83,5 +86,5 @@
 
 ---
 
-*Last updated: 18 January, 2026*
+*Last updated: 19 January, 2026*
 
