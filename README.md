@@ -62,19 +62,13 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (19 January, 2026)
+## Today's Progress (20 January, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 13 - TCP/IP Networking part 7**
+- **Unix and Linux System Admin Handbook Chapter 13 - TCP/IP Networking part 8**
 
-	- Network troubleshooting: ping, traceroute, tcpdump, Wireshark.
-	- Trouble shooting approach:
-	- One change at a time, Document the situation and the change, Work your way up or down
-	- Questions to ask: Physical connectivity works? Interface, ARP table OK? 
-	- Firewall on local? Firewall between local and destination?  
-	- Do they pass ICMP messages? Ping DNS, Web, ssh work?
-	- traceroute use TTL to learn about number of hops.
-	- In promiscuous mode an interface lets kernel read all the network packets even the ones intended for other hosts.
-	- Both tcpdump and Wireshark use libpcap library.
+	- iptables, iPFilter package uses config file in /etc/ipf/ipf.conf or /etc/ipf.conf to filtering packets.
+	- Both iptables and ipFilter let us use stateful packet filtering.
+	- Configuring nat table is possible with both tool/packages.
 				
 	#### notes.md (learning log)
  ---
@@ -86,5 +80,5 @@
 
 ---
 
-*Last updated: 19 January, 2026*
+*Last updated: 20 January, 2026*
 

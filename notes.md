@@ -2555,6 +2555,47 @@ Output:
 
 ---
 
+### January 20, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 13 TCP/IP Networking part 8**
+
+	- It is not recommended to use Linux, Windows and Unix systems as a firewall. Although, all routers run some sort of Linux, but the recommendation is to use dedicated firewall appliances whose sole functionality is to provide firewall.
+	- Linux iptables which was discussed before.
+	- The filter table contains three defaults chain or chain name: INPUT, OUTPUT, FORWARD.
+	- Forward chain is for the packets that arrive of the interface. INPUT and OUTPUT for packets to and from the local host.
+	- iptables include nat and mangle tables.
+	- Targets available to rules: ACCEPT, DROP, REJECT, LOG, ULOG, RETURN, QUEUE, MIRROR, REDIRECT
+	- LOG: simple way to track packets as they match rules.
+	- QUEUE hands packets to local user programs through a kernel module.
+	- REDIRECT shunts packets to a proxy.
+	- `iptables -F chain-name` flashes all prior rules from the chain.
+	- `iptables -P chain-name target` default policy
+	- PREROUTING chain in the nat table. It is useful for antispoofing filtering.
+	- DROP entries in PREROUTING chain eliminate the need to apply on INPUT and FORWARD chain, since PREROUTING is applied on all packets that enter the firewall host.
+	- `iptables -t nat -A PREROUTING -i eth1 -s 10.0.0.0/8  -j DROP`
+	- LOG target let us see who is knocking at our door:
+	- `iptables -A INPUT -i eth1 -j LOG` or `iptables -A FORWARD -i eth1 -j LOG`
+	- Stateful packet filtering: `iptables -A FORWARD -m state --state ESTABLISHED,RELATED -j ACCEPT` allows all traffic to leave (the command not shown here) but allows only incoming traffic that's related to connections initiated by our hosts.
+	- Certain kernel modules must be loaded to enable iptables to track complex network sessions: FTP, IRC.
+	- Enable IP forewarding in /proc/sys/net/ipv4/ip_forward to 1. Insert appropriate kernel modules:
+	- `sudo modprobe iptable_nat`, `sudo modprobe ip_conntrack`, `sudo modprobe ip_conntrack_ftp`
+	- `iptables -t nat -A POSTROUTING -o eth0 -j SNAT --to 128.138.101.4` eth0 is the interface for the internal network, eth1 is for outside. Here eth1 has not been used instead --to with its ip address.
+	- Another package IPFilter reads filtering rules from a config file. /etc/ipf/ipf.conf or /etc/ipf.conf
+	- The last match is binding.
+	- ``` block in all
+		  pass in all
+		  ```
+	- The last is pass so it will pass all.
+	- To force and skip subsequent rule use quick: `block in quick all`. Now, the last will not be applied rather the quick one.
+	- State:
+	- ``` block out quick all
+		  pass in quick proto tcp from any to 10.0.0.0/24 port=80 keep state
+	   ```
+	- When a new packet arrives at port 80 on 10.0.0.10, IPFilter makes an entry to the state table and allows packet through. Although the first line is blocking all out the state tracking make it possible.
+	- To flush kernel's existing set of filters: `sudo ipf -Fa -f /etc/ipf/ipf.conf`
+
+---                       
 
 
 
