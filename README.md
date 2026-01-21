@@ -62,14 +62,15 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (20 January, 2026)
+## Today's Progress (21 January, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 13 - TCP/IP Networking part 8**
+- **Unix and Linux System Admin Handbook Chapter 13 - TCP/IP Networking part 9**
 
-	- iptables, iPFilter package uses config file in /etc/ipf/ipf.conf or /etc/ipf.conf to filtering packets.
-	- Both iptables and ipFilter let us use stateful packet filtering.
-	- Configuring nat table is possible with both tool/packages.
-				
+	- Central feature of a VPC: IPv4 address range from private address space, subnets, routing tables, Security Groups, NACLS.
+	- AWS, GCP, Digital Ocean implement differently.
+	- Terraform is cloud agnostic. A VPC can be created with Terraform. See documentation.
+	- For more info see notes.md
+
 	#### notes.md (learning log)
  ---
 
@@ -80,5 +81,5 @@
 
 ---
 
-*Last updated: 20 January, 2026*
+*Last updated: 21 January, 2026*
 

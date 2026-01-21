@@ -2595,7 +2595,32 @@ Output:
 	- When a new packet arrives at port 80 on 10.0.0.10, IPFilter makes an entry to the state table and allows packet through. Although the first line is blocking all out the state tracking make it possible.
 	- To flush kernel's existing set of filters: `sudo ipf -Fa -f /etc/ipf/ipf.conf`
 
----                       
+---
+
+### January 21, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 13 TCP/IP Networking part 9**
+
+	- Central features of a VPC: IPV4 address range from private address space, subnets, Routing tables, Security Groups, NACL to isolate subnets from each other.
+	- Public subnets for internet, private subnets are inaccessible from internet.
+	- Internet Gateway connects VPC to the internet.
+	- Hosts in public subnets can access the inter gateway directly.
+	- Hosts in private subnets must use NAT on a public subnet.
+	- NAT gateway is a potential bottleneck, so application which requires high-throughput should be placed in public subnet.
+	- AWS implementation of IPv6 does not use NAT. You make IPv6 private subnets by connecting them  through an egress only internet gateway (eigw). The gateway is stateful, so any established connection might allow traffic both ways.
+	- VPCs are regional, but subnets are restricted to a single availability zone. (different implementation for GCP where hosts in a subnet can be from different availability zone).
+	- Security Groups are firewalls for EC2 instances. Security Groups are associated with network interfaces. An instance can have multiple network interfaces. Each network can have maximum 5 security groups. Consider least privilege principle for SGs.
+	- NACLs are stateless but SGs are not.SGs use is more common than NACLs.
+	- VPC can be created with terraform. See documentation, it's self describing. Terraform is cloud agnostic can manage resources for AWS, GCP, DigitalOcen, Azure etc.
+	- If you are building infrastructure for a team or project use terraform, for something less demanding and quick such as a quick test for an instance use CLI.
+	- Multi-region private GCP network with subnets is possible. There is no concept of subnetwork being private or public.
+	- Instances that do not need inbound traffic can simply not have a public internet-facing address.
+	- In GCP, firewall rules apply to all instance by default. To restrict rules to smaller set of instances, tag instances and filter the rules according to the tags.
+	- Digital Oceans do not have a private network, similar to GCP or AWS. Droplets can have private interfaces that communicate over an internal network within the same region. This network is shared with all other customers in the same region.
+
+---
+
 
 
 
