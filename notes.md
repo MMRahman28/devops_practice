@@ -2621,6 +2621,38 @@ Output:
 
 ---
 
+### January 22, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 14 Physical Networking part 1**
+
+	- Ethernet topology is a branching bus with no loop.
+	- Unshielded Twisted-Pair Cabling (UTP) wire -> 8 classifications.
+	- Faster standards require multiple pairs of UTP.
+	- PVC-coated and Teflon-coated. If burnt, PVC-coated wire can produce toxic fumes.
+	- Optical fiber - Multimode and single mode.
+	- Common strategy to increase bandwidth -> Coarse Wavelength Division Multiplexing (CWDM)
+	- CWDM -> Multiple channels of data through a single fiber on multiple wavelengths of light (colours).
+	- Fiber connects the endpoints + fiber cross-connect cables + endpoint electronics must all be of same types and size.
+	- OM1 and OM2 are not interchangeable.
+	- Switches connect Ethernets at the link layer.
+	- Switch can get confused if network contains any loop. But the topology can allow multiple paths to a host.
+	- Switch performance = packet scanning + packet forwarding. Must scan every packet.
+	- Many vedors do not mention packet sizes in performance, so their performance can be lower than advertised.
+	- Make sure backplane speed of the switch is adequate.
+	- A well designed switch should have a backplane speed > sum of all ports' speed.
+	- A VLAN is a group of ports that belongs to the same logical segment.
+	- Traffic among VLANS are handled by a router, or a layer 3 switch or something that can route traffic.
+	- See networking book or videos for VLAN trunking which allows physically separate switches to service ports on the same VLAN. Remember Trunk call?
+	- Routers: Fixed configuration and modular (interfaces can be added).
+	- Autonegotiation: 1 Gb/s or above must use. 100Mb/s or below either both ends of a link configured auto or manually configure speed and duplex on both sides.
+	- Power over Ethernet: Gives both power to the device and connectivity. VOIP
+	- Bump up network interface's MTU to use so called Jumbo frames. However, all network equipments must support Jumbo frame - no mix and match.
+	- Jumbo frames are non-standard.
+
+--- 
+
+
 
 
 

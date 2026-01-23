@@ -62,14 +62,22 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (21 January, 2026)
+## Today's Progress (22 January, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 13 - TCP/IP Networking part 9**
+- **Unix and Linux System Admin Handbook Chapter 14 - Physical Networking part 1**
 
-	- Central feature of a VPC: IPv4 address range from private address space, subnets, routing tables, Security Groups, NACLS.
-	- AWS, GCP, Digital Ocean implement differently.
-	- Terraform is cloud agnostic. A VPC can be created with Terraform. See documentation.
-	- For more info see notes.md
+	- Ethernet topology is a brancing bus with no loop.
+	- Switches connect Ethernets at the link layer.
+	- If network contains any loop it can confuse the switch.
+	- Switch performance = packet scanning + packet forwarding.
+	- Makesure backplance speed of the switch is adequate.
+	- A well-designed switch backplane speed > sum of all ports' speed.
+	- Routers - fixed and modular.
+	- Power over Ethernet - power + connectivity to the device.
+	- Tweak MTU to allow jumbo frames
+	- Multiplexing -> increase bandwidth.
+	- VLAN -> group of ports belong to the same logical segment, router (layer 3 switch, anything that can route) to handle traffic among VLANS.
+	- VLAN Trunking -> physically separate switches service ports on the same VLAN.
 
 	#### notes.md (learning log)
  ---
@@ -81,5 +89,5 @@
 
 ---
 
-*Last updated: 21 January, 2026*
+*Last updated: 22 January, 2026*
 
