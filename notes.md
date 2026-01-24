@@ -2652,6 +2652,16 @@ Output:
 
 --- 
 
+### january 23, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 14 Physical Networking Part 2**
+
+	- Useful commands for wireless connectivitiy: ifconfig, iwlist, iwconfig, wpa_supplicant
+	- For network testing and debugging: hand-held cable analyzer, LAN cable analysis - Fluke LanMeter, for WAN T-BERD line analyzer.
+	- Constantly updating so any physical network design requires reading latest security, tech legislation, building regulations etc.
+---
+
 
 
 
