@@ -62,13 +62,16 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (23 January, 2026)
+## Today's Progress (24 January, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 14 - Physical Networking part 2**
+- **Unix and Linux System Admin Handbook Chapter 15 - IP Routing part 1**
 
-	- Wireless connectivity, network analyzer.
-	- Requires latest documentation, legislation, abuilding regulation knowledge
-	- Technology, topology discussed are basic.
+	- Routing protocols are better than static routing systems for a complex network.
+	- Two general types of routing protocols: distance-vector and link-state
+	- RIP is a DV protocol, OSPF is a link-state protocol.
+	- Cost metrics: fewer hops? path with the lowest latency? lowest cost? Largest internal minimal bandwidth? 
+	- EIGRP and OSPF are equally good. RIP is older but RIPv2 is still in use and handy. RIPng for IPv6.
+	- BGP is an external routing protocol for managing traffic among autonomous subsystems. Now, used for internet backbone routing.
 
 	#### notes.md (learning log)
  ---
@@ -80,5 +83,5 @@
 
 ---
 
-*Last updated: 23 January, 2026*
+*Last updated: 24 January, 2026*
 

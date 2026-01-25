@@ -2652,7 +2652,7 @@ Output:
 
 --- 
 
-### january 23, 2026
+### January 23, 2026
 #### Task Completed
 
 - **Unix and Linux System Admin Handbook Chapter 14 Physical Networking Part 2**
@@ -2662,8 +2662,32 @@ Output:
 	- Constantly updating so any physical network design requires reading latest security, tech legislation, building regulations etc.
 ---
 
+### January 24, 2026
+#### Task Completed
 
+- **Unix and Linux System Admin Handbook Chapter 15 IP Routing part 1**
 
+	- Again `netstat -rn` is useful to see routing or `ip route`
+	- If a host does not know how to route a packet to a different subnet it can send to default gateway e.g. to the router (internet facing perhaps). This Router can then send ICMP redirects to any ohter router in the same network whose one of the interfaces connected to the destination subnet. If, host B wants to send packet to subnet1 but does not know, then, 
+	Subnet1----router(connecting subnets)---Subnet2-hostB---router(internet facing). 
+	In this arrangement, the internet facing router (provided it has complete network info) can send ICMP redirects to the router connecting the subnets.
+	- Routing protocols better than static routing systems for a complex network. Can adapt with changing environment.
+	- Routing daemons: collects info from config files, existing routing tables, and from other routing daemons.
+	- Routing daemon must periodically check with one another to be sure of their info is current.
+	- Routes are computed depending on routing protocols.
+	- Two general types of protocols: distance-vector protocol, link-state protocol
+	- Distance-vector protocol: announce how far you think you are from the networks you know about.
+	- RIP (Routing Information Protocol) is a DV protocol and chatty.
+	- RIP broadcasts all the routing info every 30 seconds. EIGRP (Enhanced Interior Gateway Routing Protocol) every 90 seconds.
+	- BGP(Border Gateway Protocol) entire table once, and then only changes as they occur.
+	- EIGRP can hold multiple possible routes info. And can alway use them as fallback.
+	- Link-state Protocol: The records traded among routers are 'Router X is adjacent to Router Y ans is up', i.e. state info. A complete set of such record forms a connectivity map. But requires CPU power and memory which DV does not require. OSPF is such protocol.
+	- Cost metrics: Fewer hops? path with the lowest latency? Lowest financial cost? Largest internal minimal bandwidth?
+	- RIPV2 over RIP, RIPng for IPv6. OSPF is more sophisticated, but RIP is still in use. Sometimes RIP is used only as a distribution mechanism when OSPF does the route calculation.
+	- While EIGRP is a DV protocol still EIGRP and OSPF are equally functional.
+	- BGP is an external routing protocol manages traffic among autonomous systems. BGP is now the standard protocol for internet backbone routing.
+
+---
 
 
 
