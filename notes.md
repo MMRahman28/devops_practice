@@ -2689,6 +2689,29 @@ Output:
 
 ---
 
+### January 25, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 15 IP Routing part 2**
+
+	- Routing for a network can be managed at four level:
+	- No routing, static routes only, Mostly static, but clients listen for RIP updaates, Dynamic everywhere
+	- Routing daemon: routed (obsolete RIP implementation), Quagga (development fork for Zebra) see: quagga.net
+	- XORP: it emulates a router, see xorp.org
+	- Cisco routers: runs Cisco IOS.
+	- IOS provides 2 level of access: user and previleged
+	- ssh is possible: `ssh acme-gw.acme.com` (password required)
+	- The user prompt `acme-gw.acme.com >` 
+	- To enter privileged prompt: type `enable` enter password if prompted
+	- The privileged prompt `acme-gw.acme.com#`
+	- to see current running config: `show running` at privileged prompt
+	- To modify configuration: `config term` after modification CTRL + Z  to return to regular command prompt.
+	- Always keep a backup config. You can scp or tftp config each night to another system. If possible on a jump drive.
+	- Useful: RANCID tool. Logs into routers config file and retrieve their info every night if you setup.
+
+---
+
+
 
 
 

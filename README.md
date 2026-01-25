@@ -62,16 +62,18 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (24 January, 2026)
+## Today's Progress (25 January, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 15 - IP Routing part 1**
+- **Unix and Linux System Admin Handbook Chapter 15 - IP Routing part 2**
 
-	- Routing protocols are better than static routing systems for a complex network.
-	- Two general types of routing protocols: distance-vector and link-state
-	- RIP is a DV protocol, OSPF is a link-state protocol.
-	- Cost metrics: fewer hops? path with the lowest latency? lowest cost? Largest internal minimal bandwidth? 
-	- EIGRP and OSPF are equally good. RIP is older but RIPv2 is still in use and handy. RIPng for IPv6.
-	- BGP is an external routing protocol for managing traffic among autonomous subsystems. Now, used for internet backbone routing.
+	- Routing can be managed at four level: No routing, static, Mostly static, Dynamic everywhere
+	- Quagga is a routing daemon. Find info when needed: quagga.net
+	- XORP emulates a router. See xorp.org
+	- CISCO IOS provides two level of access: user and privileged
+	- SSH to the router: `ssh acme-gw.acme.com`
+	- Most usaed command: `enable` (privilege prompt), `show running`, `config term`
+	- Always keep a backup config of the router. Use scp, tftp, jump drive etc
+	- RANCID is a useful tool which can retrieve config regularly.
 
 	#### notes.md (learning log)
  ---
@@ -83,5 +85,5 @@
 
 ---
 
-*Last updated: 24 January, 2026*
+*Last updated: 25 January, 2026*
 
