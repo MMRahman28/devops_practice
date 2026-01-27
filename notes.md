@@ -2711,6 +2711,38 @@ Output:
 
 ---
 
+### January 26, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 16 DNS: The Domain Name System part 1**
+
+	- DNS is a distributed database.
+	- DNS servers are arranged into a hierarchy.
+	- To look-up names in DNS: 1. Configure your systems as DNS clients. 2. Tell systems when to use DNS as opposed to other name lookup methods such as /etc/hosts file.
+	- Client side resolver: `/etc/resolv.conf` (auto setup if DHCP used)
+	- 127.0.0.53 is the IP of systemd-resolved service. If present system is using systemd-resolved DNS resolver rather
+	than traditional external DNS resolver.
+	- For systemd-resolved systems `/etc/resolv.conf` is a symlink to `/run/systemd/resolve/stub-resolv.conf`
+	- Switch file: Who do I ask for a name? `/etc/nsswitch.conf`
+	- If no server running hosts file is used (during booting)
+	- If name service is provided by an outside organization, then resolvf.conf and nsswitch.conf setup is enough.
+	- DNS namespace: tree like both forward and backward mappings.
+	- Name servers: answer queries, asks both local and remote hosts, caches the answers, communicate with other local name servers to sync data.
+	- Serveral types of name servers: authoritative, master, slave, recursive, nonrecursive, caching, forwarder etc.
+	- Recursive:returns answer or error. Nonrecursive: refers to another server if cannot answer.
+	- Any local name server listed in client's resolv.conf must be recursive.
+	- Authoritative-only servers are all nonrecursive.
+	- dig and drill are dns query tools. `dig +trace` or `drill -T`
+	- Caching use TTL (Time to Live)
+	- Negative TTL if a query fails so no repeatition of the query until the TTL expires.
+	- DNS load balancing: several IP addresses to a single hostname rotating them with a round robin fashion.
+	- Debugging with query tools: nslookup, dig, host, drill, delv. dig and drill can user -h flag.
+	- E.g.: `dig @a.root-servers.net viawest.com soa` -> `dig @c.gtld-servers.net viawest.com soa` ->
+	- `dig @ns1.viawest.net viawest.com soa` -> `dig @ns1.viawest.net www.viawest.com any`
+
+---
+
+
 
 
 

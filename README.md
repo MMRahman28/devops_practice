@@ -62,18 +62,20 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (25 January, 2026)
+## Today's Progress (26 January, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 15 - IP Routing part 2**
+- **Unix and Linux System Admin Handbook Chapter 16 - DNS Part 1**
 
-	- Routing can be managed at four level: No routing, static, Mostly static, Dynamic everywhere
-	- Quagga is a routing daemon. Find info when needed: quagga.net
-	- XORP emulates a router. See xorp.org
-	- CISCO IOS provides two level of access: user and privileged
-	- SSH to the router: `ssh acme-gw.acme.com`
-	- Most usaed command: `enable` (privilege prompt), `show running`, `config term`
-	- Always keep a backup config of the router. Use scp, tftp, jump drive etc
-	- RANCID is a useful tool which can retrieve config regularly.
+	- To lookup name is DNS: configure DNS clients, Tell system when to use DNS
+	- Client side resolver: `/etc/resolv.conf` (auto if DHCP used)
+	- Two important files: `/etc/resolv.conf`, `/etc/nsswitch.conf`
+	- If no server running hosts file is used (e.g. during booting).
+	- Name server: answer queries, caches answer, communicates with othe name servers.
+	- Serveral types of name servers: Authoritative, master, slave, recursive, nonrecursive, caching etc
+	- Local servers are recursive, and authoritative are nonrecursive.
+	- dig and drill are DNS query tools.
+	- nslookup, host, delv,dig and drill can be used for debugging.
+	- caching use TTL (time to live), negative value to stop repitition of query for no host, no response etc(until TTL expires).
 
 	#### notes.md (learning log)
  ---
@@ -85,5 +87,5 @@
 
 ---
 
-*Last updated: 25 January, 2026*
+*Last updated: 26 January, 2026*
 
