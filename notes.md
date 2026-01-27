@@ -2742,6 +2742,27 @@ Output:
 
 ---
 
+### January 27, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 16 DNS: The Domain Name System Part 2**
+
+	- Zone files: zone's database maintained by the system admin in the zone's master name server.
+	- $ORIGIN, $INCLUDE, $TTL standard commands can be found most frequently in zone files.
+	- Read and parsed to to bottom in a single pass.
+	- Special characters in resource records: ; for comment, @ for current zone name, () for data span line, * for wild card
+	- name can be either relative or absolute(ends with a dot).
+	- If no dot provided the software appends current origin and a dot (so do not forget a dot if providing absolute name)
+	- Increasing the value of ttl reduces network traffic and DNS load.
+	- Cached records cannot be discarded outside local network.
+	- So, if renumbering necessary use lower or decrease ttl.
+	- After updating the cache, ttl can be back to a higher value.
+	- DNS Record Types: Zone (SOA, NS), Basics (A, AAAA, PTR, MX), Security (DS, DNSKEY, NSEC, NSEC3, RRSIG), Optional(CNAME, SRV, TXT).
+	- Order of resource records is arbitrary but traditionally, SOA comes first, then NS.
+
+---
+
+
 
 
 

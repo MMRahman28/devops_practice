@@ -62,20 +62,18 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (26 January, 2026)
+## Today's Progress (27 January, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 16 - DNS Part 1**
+- **Unix and Linux System Admin Handbook Chapter 16 - DNS Part 2**
 
-	- To lookup name is DNS: configure DNS clients, Tell system when to use DNS
-	- Client side resolver: `/etc/resolv.conf` (auto if DHCP used)
-	- Two important files: `/etc/resolv.conf`, `/etc/nsswitch.conf`
-	- If no server running hosts file is used (e.g. during booting).
-	- Name server: answer queries, caches answer, communicates with othe name servers.
-	- Serveral types of name servers: Authoritative, master, slave, recursive, nonrecursive, caching etc
-	- Local servers are recursive, and authoritative are nonrecursive.
-	- dig and drill are DNS query tools.
-	- nslookup, host, delv,dig and drill can be used for debugging.
-	- caching use TTL (time to live), negative value to stop repitition of query for no host, no response etc(until TTL expires).
+	- $ORIGIN, $INCLUDE, $TTL are more common commands found in zone files.
+	- name can be either relative or absolute (ends with a dot)
+	- Do not forget the dot for an absolute name, the software adds origin and a dot in its absence.
+	- Increasing TTL value reduces the network traffic and DNS load.
+	- Cached records cannot be discarded outside the local network.
+	- If any renumbering required, first decrease the TTL to be sure of that all old records have been discarded.
+	- After update, TTL can be set to a higher value again.
+	- DNS record types: Zone (SOA, NS), Basics (A, AAAA, PTR, MX), Security (DS, DNSKEY, NSEC, NSEC3, RRSIG), Optional (CNAME, SRV, TXT)
 
 	#### notes.md (learning log)
  ---
@@ -87,5 +85,5 @@
 
 ---
 
-*Last updated: 26 January, 2026*
+*Last updated: 27 January, 2026*
 
