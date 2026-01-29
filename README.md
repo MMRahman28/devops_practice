@@ -62,18 +62,14 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (27 January, 2026)
+## Today's Progress (28 January, 2026)
 
 - **Unix and Linux System Admin Handbook Chapter 16 - DNS Part 2**
 
-	- $ORIGIN, $INCLUDE, $TTL are more common commands found in zone files.
-	- name can be either relative or absolute (ends with a dot)
-	- Do not forget the dot for an absolute name, the software adds origin and a dot in its absence.
-	- Increasing TTL value reduces the network traffic and DNS load.
-	- Cached records cannot be discarded outside the local network.
-	- If any renumbering required, first decrease the TTL to be sure of that all old records have been discarded.
-	- After update, TTL can be set to a higher value again.
-	- DNS record types: Zone (SOA, NS), Basics (A, AAAA, PTR, MX), Security (DS, DNSKEY, NSEC, NSEC3, RRSIG), Optional (CNAME, SRV, TXT)
+	- General format of PTR record: `addr [ttl] [IN] PTR hostname`
+	- Some sites puts all reverse records in the same file and use $ORIGIN directives to specify the subnet.
+	- If two different regions in the same namespace, they form two separate zones.
+	- CNAME is useful for handling reverse mappings for a subnet such as 63.173.189.0/26 where the last byte can be any of the four subnets: 0-63, 64-127, 128-191, 192-255.
 
 	#### notes.md (learning log)
  ---
@@ -85,5 +81,5 @@
 
 ---
 
-*Last updated: 27 January, 2026*
+*Last updated: 28 January, 2026*
 

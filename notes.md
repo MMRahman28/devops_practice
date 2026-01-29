@@ -2762,6 +2762,19 @@ Output:
 
 ---
 
+### January 28, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 16 DNS: The Domain Name System Part 3**
+
+	- General format of PTR record: `addr [ttl] [IN] PTR hostname`
+	- Some sites puts all reverse records in the same file and use $ORIGIN directives to specify the subnet.
+	- If two different regions in the same namespace, they constitute two separate zones.
+	- CNAME is useful for handling reverse mappings for a subnet such as 63.173.189.0/26 
+
+---
+
+
 
 
 
