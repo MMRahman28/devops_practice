@@ -2790,6 +2790,36 @@ Output:
 	- The named.conf file specifies the roles of this host (master, slave, stub, or caching only) and the manner in which it should obtain its copy of the data for each zone it serves.
 
 ---
+
+### January 30, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 16 DNS: The Domain Name System Part 5**
+
+	- Early version of BIND syncronised zone files between master and slave servers only when the refresh timeout in the zone's SOA record had expired.
+	- Now the master named auto notify its peer whenever the corresponding zone database has been reloaded as long as notify is set to yes.
+	- By default every authoritative server notifies every other authoritative servers.
+	- notify to master-only : send notifications only to slave servers of zones for which this server is the matter.
+	- notify to explicit: named only notifies the servers listed in the also-notify clause.
+	- named figures out which machines are slave servers of a zone by looking at the zone's NS records.
+	- if also-notify: a set of additional servers that are not advertised with NS records can also be notified.
+	- if server handling extraordinary amount of traffic, you may need to tweak the recursive-clients and max-cache-size options.
+	- DNS by default uses UDP. If a large reply gets fragmented and firewall only lets the first fragment through, the receiver gets a truncated answer, and retries the query with TCP.
+	- `rndc stats` to dump the statistics to a file.
+	- An access control list is just an address match list with a name
+	- acl acl-name { address-match-list};
+	- The key statement defines a shared secret.
+	- A key record: mention algorithm, and the shared secret.
+	- key key-id { algorithm string; secret string; };
+	- Like acl, key-id must be defined with a key statement before it is used. Remember named.conf is read in a single pass.
+	- The server statement tell the named about the characteristics of its remote peers.
+	- Configuring the master server for a zone: zone "domain-name" { type master; file "path"; };
+	- Configuring a slave server for a zone: zone "domain name" {type slave; file "path"; masters {ip_addr [port ip_port] [key keyname]; ... }; allow-query {address-match-list};};
+	- root server hints: hints are a set of DNS records that list servers for the root domain. At least one reachable valid root server is essential for the hints file.
+	- Hints file is often called root.cache.
+	- A zone of type forward overrides named's default query path
+
+---  
  
 
 

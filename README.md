@@ -62,15 +62,13 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (29 January, 2026)
+## Today's Progress (30 January, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 16 - DNS Part 4**
+- **Unix and Linux System Admin Handbook Chapter 16 - DNS Part 5**
 
-	- MX format: `name [ttl] [IN] MX preference host`
-	- CNAME record format: ``nickname [ttl] [IN] CNAME hostname`
-	- CNAME record can nest max 8 deep.
-	- SRV record format: `service.proto.name [ttl] [IN] SRV pri weight port target`
-	- TXT record format: `name [ttl] [IN] TXT info ...`
+	- DNS by default uses UDP. If any truncation happens due to firewall, it tries TCP
+	- Learnt: server statement, key statement.
+	- A zone of type forward overrides the named's default query path.
 
 	#### notes.md (learning log)
  ---
@@ -82,5 +80,5 @@
 
 ---
 
-*Last updated: 29 January, 2026*
+*Last updated: 30 January, 2026*
 
