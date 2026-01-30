@@ -2774,6 +2774,23 @@ Output:
 
 ---
 
+### January 29, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 16 DNS: The Domain Name System Part 4**
+
+	- Mail Exchanger record (MX) format: `name [ttl] [IN] MX preference host`
+	- CNAME record format: `nickname [ttl] [IN] CNAME hostname`
+	- CNAME record can nest 8 deep.
+	- CNAME can be avoided by publishing A records for both a host's real name and its nickname.
+	- SRV record format: `service.proto.name [ttl] [IN] SRV pri weight port target`
+	- TXT record format: `name [ttl] [IN] TXT info ...`
+	- Component of BIND: named server called named answers queries, a resolver library that queries DNS servers on behalf of the users, CLI to DNS: nslookup, dig and host, rndc to control named server
+	- A complete configuration of named consists of the config file named.conf, the zone data files that contain address mappings for each host, and the root name server hints file.
+	- The named.conf file specifies the roles of this host (master, slave, stub, or caching only) and the manner in which it should obtain its copy of the data for each zone it serves.
+
+---
+ 
 
 
 

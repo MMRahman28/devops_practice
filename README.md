@@ -62,14 +62,15 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (28 January, 2026)
+## Today's Progress (29 January, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 16 - DNS Part 2**
+- **Unix and Linux System Admin Handbook Chapter 16 - DNS Part 4**
 
-	- General format of PTR record: `addr [ttl] [IN] PTR hostname`
-	- Some sites puts all reverse records in the same file and use $ORIGIN directives to specify the subnet.
-	- If two different regions in the same namespace, they form two separate zones.
-	- CNAME is useful for handling reverse mappings for a subnet such as 63.173.189.0/26 where the last byte can be any of the four subnets: 0-63, 64-127, 128-191, 192-255.
+	- MX format: `name [ttl] [IN] MX preference host`
+	- CNAME record format: ``nickname [ttl] [IN] CNAME hostname`
+	- CNAME record can nest max 8 deep.
+	- SRV record format: `service.proto.name [ttl] [IN] SRV pri weight port target`
+	- TXT record format: `name [ttl] [IN] TXT info ...`
 
 	#### notes.md (learning log)
  ---
@@ -81,5 +82,5 @@
 
 ---
 
-*Last updated: 28 January, 2026*
+*Last updated: 29 January, 2026*
 
