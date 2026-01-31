@@ -62,13 +62,15 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (30 January, 2026)
+## Today's Progress (31 January, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 16 - DNS Part 5**
+- **Unix and Linux System Admin Handbook Chapter 16 - DNS Part 6**
 
-	- DNS by default uses UDP. If any truncation happens due to firewall, it tries TCP
-	- Learnt: server statement, key statement.
-	- A zone of type forward overrides the named's default query path.
+	- To change domain data, update the zone data files on the master server.
+	- Increment the serial number of the zone SOA record.
+	- Name server software should pick up and distribute changes.
+	- Serial number gives the slave server a clue, if there has been a change or not. It compares.
+	- Zone transfer mechanism do the sync, and uses TCP port 53.
 
 	#### notes.md (learning log)
  ---
@@ -80,5 +82,5 @@
 
 ---
 
-*Last updated: 30 January, 2026*
+*Last updated: 31 January, 2026*
 

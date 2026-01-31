@@ -2819,8 +2819,26 @@ Output:
 	- Hints file is often called root.cache.
 	- A zone of type forward overrides named's default query path
 
+--- 
+
+### January 31, 2026
+#### Task Completed
+
+- **Unix and Linux Sytem Admin Handbook Chapter 16 DNS: The Domain Name System Part 6**
+
+	- To change domain data, update the zone data files on the master server.
+	- Increment the serial number of the zone SOA record.
+	- Finally the name server software should pick up and distribute changes.
+	- `rndc reload` to update without restart.
+	- Do not forget to change forward and reverse zone when change a hostname or IP address.
+	- Zone transfer to sync, uses TCP port 53.
+	- Serial number gives the slave server a clue if there has been a change or not.
+	- Dynamic update: add generic entries to DNS database, or provide a way to make small frequent changes.
+	- DNS protocol to have an update operation, DHCP daemon notifies name servers of the address assignment.
+	- A good default for zones with dynamic hosts to use update-policy.
+
 ---  
- 
+	
 
 
 
