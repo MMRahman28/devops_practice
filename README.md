@@ -62,15 +62,13 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (31 January, 2026)
+## Today's Progress (1 February, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 16 - DNS Part 6**
+- **Unix and Linux System Admin Handbook Chapter 16 - DNS Part 7**
 
-	- To change domain data, update the zone data files on the master server.
-	- Increment the serial number of the zone SOA record.
-	- Name server software should pick up and distribute changes.
-	- Serial number gives the slave server a clue, if there has been a change or not. It compares.
-	- Zone transfer mechanism do the sync, and uses TCP port 53.
+	- It is possible to limit transfer and stop site to dump entire DNS database with tools like dig.
+	- Open resolvers are bad. Outsiders can consume resource, or can poision the resolver's cache.
+	- `dnssec-keygen` is a useful command to create keys.
 
 	#### notes.md (learning log)
  ---
@@ -82,5 +80,5 @@
 
 ---
 
-*Last updated: 31 January, 2026*
+*Last updated: 1 February, 2026*
 

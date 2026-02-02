@@ -2838,6 +2838,19 @@ Output:
 	- A good default for zones with dynamic hosts to use update-policy.
 
 ---  
+
+### February 1, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 16 DNS: The Domain Name System part 7**
+
+	- `allow-transfer {ourslaves; measurement;};` transfer limited to our own slave servers, and measurement project machines. Limiting transfer this way stop other sites to dump entire database with dig tool.
+	- Open resolvers are bad - outsiders can consume resources, can even poison resolver's cache.
+	- Setting up TSIG (Transaction signature) for BIND:
+	- `dnssec-keygen -a HMAC-SHA256 -b 128 -m HOST master-slave1` (could be 512 too)
+	- The generated key is just a long random number. So, can be done manually by writing down an ASCII string of right length (divisible by 4) and pretending that it's a base-64 encoding.
+
+---
 	
 
 
