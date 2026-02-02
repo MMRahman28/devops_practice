@@ -62,13 +62,14 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (1 February, 2026)
+## Today's Progress (2 February, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 16 - DNS Part 7**
+- **Unix and Linux System Admin Handbook Chapter 16 - DNS Part 8**
 
-	- It is possible to limit transfer and stop site to dump entire DNS database with tools like dig.
-	- Open resolvers are bad. Outsiders can consume resource, or can poision the resolver's cache.
-	- `dnssec-keygen` is a useful command to create keys.
+	- The public and private key transaction, security etc are same for as any other authentication methods.
+	- The key should be in a separate file that is included in named.conf, should have mode 600 and owned by named user.
+	- Clock synchronisation between master and slave servers are important during key transaction. So, use NTP.
+	- Two workflows are involved in deploying signed zones: creating and signing zones, served the contents of those signed zones.
 
 	#### notes.md (learning log)
  ---
@@ -80,5 +81,5 @@
 
 ---
 
-*Last updated: 1 February, 2026*
+*Last updated: 2 February, 2026*
 

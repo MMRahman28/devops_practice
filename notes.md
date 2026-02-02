@@ -2851,6 +2851,18 @@ Output:
 	- The generated key is just a long random number. So, can be done manually by writing down an ASCII string of right length (divisible by 4) and pretending that it's a base-64 encoding.
 
 ---
+
+### February 2, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 16 DNS: The Domain Name System part 8**
+
+	- The key should be in a separate file that is included in named.conf and should have mode 600 and owened by named user.
+	- When using TSIG keys and transaction between slave and master servers, keep the clock of the servers synchronised with NTP. If the clocks are too far apart (more than 5 minutes) signature verification might not work
+	- DNSSEC relies on cascading chain of trust.
+	- Two separate workflows are involved in deploying signed zones: creating keys and signing zones, serve the contents of those signed zones.
+	
+---
 	
 
 
