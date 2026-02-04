@@ -2863,7 +2863,19 @@ Output:
 	- Two separate workflows are involved in deploying signed zones: creating keys and signing zones, serve the contents of those signed zones.
 	
 ---
-	
+
+### February 3, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 16 DNS: The Domain Name System part 9**
+
+	- Two key pairs for each zone: zone-signing (ZSK) pair and key-signing (KSK) pair.
+	- Offline private key is impratical for dynamically updated zones and for zone-signing keys.
+	- Once zones are signed, all that remains is to point the name server at the signed versions of the zone files.
+	- Key rollover is tricky in DNSSEC.
+	- Keys have an expiration time, so rollover must occur well before that time. Keys also have TTL.
+
+---
 
 
 

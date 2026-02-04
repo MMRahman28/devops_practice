@@ -62,14 +62,14 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (2 February, 2026)
+## Today's Progress (3 February, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 16 - DNS Part 8**
+- **Unix and Linux System Admin Handbook Chapter 16 - DNS Part 9**
 
-	- The public and private key transaction, security etc are same for as any other authentication methods.
-	- The key should be in a separate file that is included in named.conf, should have mode 600 and owned by named user.
-	- Clock synchronisation between master and slave servers are important during key transaction. So, use NTP.
-	- Two workflows are involved in deploying signed zones: creating and signing zones, served the contents of those signed zones.
+	- For commands discuss the book or documentation according to the tools
+	- Two key pairs for each zone: zone signing pair and key signing pair.
+	- Key rollover is tricky. Keys have an expiration time, so rollover must occur well before that time.
+	- Keys have TTL, too.
 
 	#### notes.md (learning log)
  ---
@@ -81,5 +81,5 @@
 
 ---
 
-*Last updated: 2 February, 2026*
+*Last updated: 3 February, 2026*
 
