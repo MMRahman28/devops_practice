@@ -62,14 +62,13 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (3 February, 2026)
+## Today's Progress (4 February, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 16 - DNS Part 9**
+- **Unix and Linux System Admin Handbook Chapter 16 - DNS Part 10**
 
-	- For commands discuss the book or documentation according to the tools
-	- Two key pairs for each zone: zone signing pair and key signing pair.
-	- Key rollover is tricky. Keys have an expiration time, so rollover must occur well before that time.
-	- Keys have TTL, too.
+	- DNSSEC Tools: ldns, DNSSEC-tools (formerly sparta), RIPE, OPENDNSSEC.
+	- Different commands, configuration require consultation with the doc or the book.
+	- Need to learn from other sources to get a much clearer view of the topic.
 
 	#### notes.md (learning log)
  ---
@@ -81,5 +80,5 @@
 
 ---
 
-*Last updated: 3 February, 2026*
+*Last updated: 4 February, 2026*
 
