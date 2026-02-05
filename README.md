@@ -64,11 +64,11 @@
 
 ## Today's Progress (4 February, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 16 - DNS Part 10**
+- **Unix and Linux System Admin Handbook Chapter 16 - DNS Part 11**
 
-	- DNSSEC Tools: ldns, DNSSEC-tools (formerly sparta), RIPE, OPENDNSSEC.
-	- Different commands, configuration require consultation with the doc or the book.
-	- Need to learn from other sources to get a much clearer view of the topic.
+	- Unused domain, modified name servers, change in server IP addresses without coordinating with the parent zone results in "lame deligation".
+	- Lame deligation -> less efficiency.
+	- Without negative caching -> increased load from root to lame domain.
 
 	#### notes.md (learning log)
  ---

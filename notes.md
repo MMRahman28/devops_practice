@@ -2889,6 +2889,18 @@ Output:
 
 ---
 
+### February 5, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 16 DNS: The Domain Name System part 11**
+
+	- If the domain is never used or the name servers get changed, or their IP addresses without coordinating with the parent zone, then "lame delegation" occurs.
+	- If one of the servers is lame, the DNS system is less efficient.
+	- If all the servers are lame, no one can reach the servers.
+	- So, lame servers and the lazy software that does not do negative caching for SERVFAIL errors, increase the load for everyone on the path from the root to the lame domain.
+
+---
+
 
 
 
