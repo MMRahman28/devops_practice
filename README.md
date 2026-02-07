@@ -62,12 +62,15 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (6 February, 2026)
+## Today's Progress (7 February, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 17 - Single Sign-On part 1**
+- **Unix and Linux System Admin Handbook Chapter 17 - Single Sign-On part 2**
 
-	- SSO involves two core concepts: identity and authentication.
-	- Core SSO elements: Centralised directory (LDAP), Tool for managing info in the directory (e.g. phpLDAPadmin), authentication mechanism (kerberos or PAM), something to look-up user attributes (getpwent, getpwnam).
+	- OpenLDAP: daemon slapd, slurpd (for master with multiple servers)
+	- slapd.conf should be owned by root and permission should be 600 (as this file contains password hash).
+	- 389 Directory server is an alternative of OpenLDAP and has similar structure and operations.
+	- For querying, phpLDAPadmin or ldapsearch can be used.
+	- Consult doc for commands, configuration and setup.
 
 	#### notes.md (learning log)
  ---
@@ -79,5 +82,5 @@
 
 ---
 
-*Last updated: 6 February, 2026*
+*Last updated: 7 February, 2026*
 

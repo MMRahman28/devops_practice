@@ -2912,6 +2912,21 @@ Output:
 
 ---
 
+### February 7, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 17 Single Sign-On part 2**
+
+	- OpenLDAP: daemon slapd, with multiple servers slurpd runs on master server and handles replication by pushing changes out to slave servers.
+	- Configuration: /etc/openldap/slapd.conf
+	- Because of the presence of password hash, slapd.conf should be owned by root and permission 600.
+	- 389 Directory server is an alternative to OpenLDAP. It has more active dev community.
+	- Both have similar structure and operation.
+	- For querying phpLDAPadmin or ldapsearch can be used.
+	- ldapsearch is good for use in scripts and for debugging in an environment where Active Directory is acting as an LDAP server.
+
+---
+
 
 
 
