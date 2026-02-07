@@ -2870,7 +2870,7 @@ Output:
 - **Unix and Linux System Admin Handbook Chapter 16 DNS: The Domain Name System part 9**
 
 	- Two key pairs for each zone: zone-signing (ZSK) pair and key-signing (KSK) pair.
-	- Offline private key is impratical for dynamically updated zones and for zone-signing keys.
+	- Offline private key is impractical for dynamically updated zones and for zone-signing keys.
 	- Once zones are signed, all that remains is to point the name server at the signed versions of the zone files.
 	- Key rollover is tricky in DNSSEC.
 	- Keys have an expiration time, so rollover must occur well before that time. Keys also have TTL.
@@ -2884,7 +2884,7 @@ Output:
 
 	- DNSSEC tools: ldns, DNSSEC-tools (formerly Sparta), RIPE, OPENDNSSEC.
 	- Writing Config files, different tool commands need to be consulted with the doc or the book.
-	- Need clarification more: especially on what situation, how to respond or how to configure.
+	- Need clarification: especially on what situation, how to respond or how to configure.
 	- Extra study materials and tutorials require (Already planned but not yet completed).
 
 ---
@@ -2900,6 +2900,18 @@ Output:
 	- So, lame servers and the lazy software that does not do negative caching for SERVFAIL errors, increase the load for everyone on the path from the root to the lame domain.
 
 ---
+
+### February 6, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 17 Single Sign-On part 1**
+
+	- SSO involves two core security concepts: identity and authentication.
+	- Core SSO elements: Centralised directory (LDAP), Tool for managing info in the directory (phpLDAPadmin, Apache Directory Studio etc), a mechanism for authentication (Kerberos perhaps or PAM), something to look up user attributes (getpwent, getpwnam).
+	- The structure of LDAP data -> entries consist of a set of named attributes and their values.
+
+---
+
 
 
 

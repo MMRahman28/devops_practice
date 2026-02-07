@@ -62,13 +62,12 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (4 February, 2026)
+## Today's Progress (6 February, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 16 - DNS Part 11**
+- **Unix and Linux System Admin Handbook Chapter 17 - Single Sign-On part 1**
 
-	- Unused domain, modified name servers, change in server IP addresses without coordinating with the parent zone results in "lame deligation".
-	- Lame deligation -> less efficiency.
-	- Without negative caching -> increased load from root to lame domain.
+	- SSO involves two core concepts: identity and authentication.
+	- Core SSO elements: Centralised directory (LDAP), Tool for managing info in the directory (e.g. phpLDAPadmin), authentication mechanism (kerberos or PAM), something to look-up user attributes (getpwent, getpwnam).
 
 	#### notes.md (learning log)
  ---
@@ -80,5 +79,5 @@
 
 ---
 
-*Last updated: 4 February, 2026*
+*Last updated: 6 February, 2026*
 
