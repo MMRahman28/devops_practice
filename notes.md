@@ -2927,6 +2927,19 @@ Output:
 
 ---
 
+### February 8, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 17 Single Sign-On Part 3**
+
+	- Using directory services for login:
+	- Configure Kerberos and join the system to the Active Directory Domain
+	- Configure sssd to communicate with the appropriate identity and authentication stores (LDAP, AD or Kerberos)
+	- Configure the name service switch nsswitch.conf to sssd as source of user, group and password info.
+	- Configure PAM to service authentication requests through sssd.
+
+--- 
+
 
 
 

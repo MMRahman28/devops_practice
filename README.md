@@ -62,15 +62,15 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (7 February, 2026)
+## Today's Progress (8 February, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 17 - Single Sign-On part 2**
+- **Unix and Linux System Admin Handbook Chapter 17 - Single Sign-On part 3**
 
-	- OpenLDAP: daemon slapd, slurpd (for master with multiple servers)
-	- slapd.conf should be owned by root and permission should be 600 (as this file contains password hash).
-	- 389 Directory server is an alternative of OpenLDAP and has similar structure and operations.
-	- For querying, phpLDAPadmin or ldapsearch can be used.
-	- Consult doc for commands, configuration and setup.
+	- Directory services for login:
+	- Configure Kerberos + join the system to AD domain
+	- Configure sssd to communicate with identity and authentication stores (LDAP, AD or Kerberos)
+	- Configure nsswitch.conf to sssd as source of user, group and password info.
+	- Configure PAM to service auth requests thorough sssd.
 
 	#### notes.md (learning log)
  ---
@@ -82,5 +82,5 @@
 
 ---
 
-*Last updated: 7 February, 2026*
+*Last updated: 8 February, 2026*
 
