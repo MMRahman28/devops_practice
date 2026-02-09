@@ -62,15 +62,16 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (8 February, 2026)
+## Today's Progress (9 February, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 17 - Single Sign-On part 3**
+- **Unix and Linux System Admin Handbook Chapter 17 - Single Sign-On part 4**
 
-	- Directory services for login:
-	- Configure Kerberos + join the system to AD domain
-	- Configure sssd to communicate with identity and authentication stores (LDAP, AD or Kerberos)
-	- Configure nsswitch.conf to sssd as source of user, group and password info.
-	- Configure PAM to service auth requests thorough sssd.
+	- Before attempting to join Active Directory, Verify:
+	- realmd, sssd, ntpd are installed.ntpd running as well.
+	- correct AD domain name and credentials.
+	- Request a ticket from AD controller: e.g. `kinit administrator@ULSAH.com`.
+	- `klist` to show the tickets and `kdestroy` to invalidate them.
+	- last step is to join the system to the domain.
 
 	#### notes.md (learning log)
  ---
@@ -82,5 +83,5 @@
 
 ---
 
-*Last updated: 8 February, 2026*
+*Last updated: 9 February, 2026*
 

@@ -2940,6 +2940,19 @@ Output:
 
 --- 
 
+### February 9, 2026
+#### Task Completed
+
+- **Linux and Unix Sytem Admin Handbook Chapter 17 Single Sign-On part 4**
+
+	- Before attempting to join AD domain, verify (Linux KErberos configuration):
+	- realmd, sssd, ntpd are installed. ntpd also running.
+	- Correct name of the AD domain and credentials.
+	- Request a ticket from AD controller: Example `kinit administrator@ULSAH.COM` will ask for password, `klist` to show ticket. `kdestroy` to make the ticket invalid.
+	- last step to join the system to the domain.
+
+---
+
 
 
 
