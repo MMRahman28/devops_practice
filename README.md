@@ -62,16 +62,11 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (9 February, 2026)
+## Today's Progress (10 February, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 17 - Single Sign-On part 4**
+- **Unix and Linux System Admin Handbook Chapter 17 - Single Sign-On part 5**
 
-	- Before attempting to join Active Directory, Verify:
-	- realmd, sssd, ntpd are installed.ntpd running as well.
-	- correct AD domain name and credentials.
-	- Request a ticket from AD controller: e.g. `kinit administrator@ULSAH.com`.
-	- `klist` to show the tickets and `kdestroy` to invalidate them.
-	- last step is to join the system to the domain.
+	- Alternative to LDAP -> NIS and rsync. Configuration Management tools such as Ansible can also be used to distribute files.
 
 	#### notes.md (learning log)
  ---
@@ -83,5 +78,5 @@
 
 ---
 
-*Last updated: 9 February, 2026*
+*Last updated: 10 February, 2026*
 

@@ -2952,6 +2952,17 @@ Output:
 	- last step to join the system to the domain.
 
 ---
+### February 10, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 17 Single Sign-On part 5**
+
+	- sssd does not allow authentication over an unencrypted channel, so use of LDAP/TLS is required.
+	- Alternative to LDAP: two older options NIS and rsync.
+	- `rsync -gopt -e ssh /etc/passwd /etc/shadow lollipop:/etc`
+	- Another option Ansible.
+
+---
 
 
 
