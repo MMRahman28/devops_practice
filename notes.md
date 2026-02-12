@@ -2964,6 +2964,19 @@ Output:
 
 ---
 
+### February 11, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 1**
+
+	- Components of a mail system: 
+		- Mail User Agent (MUA) for read and compose mail
+		- Mail Submission Agent MSA accepts outgoing mail from MUA, submits it to the transport system
+		- Mail Transport Agent MTA , routes messages among machines
+		- Delivery Agent (DA) places messages in a local message store (receiving user's mailbox, a database)
+		- An optional Access Agent (AA) connects user agent to the message store (uses IMAP or POP)
+---
+
 
 
 

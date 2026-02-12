@@ -62,11 +62,16 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (10 February, 2026)
+## Today's Progress (11 February, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 17 - Single Sign-On part 5**
+- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 1**
 
-	- Alternative to LDAP -> NIS and rsync. Configuration Management tools such as Ansible can also be used to distribute files.
+	- Components of a mail system:
+		- MUA (Mail User Agent) -> read + Compose
+		- MSA (Mail Submission Agent) -> accepts outgoing mail from MUA -> MTA (Mail Transport Agent)
+		- MTA -> routes messages among machines
+		- DA (Delivery Agent) -> places messages to message store (mailbox, a database)
+		- AA (Access Agent) -> connects user agents to the message store (uses IMAP or POP)
 
 	#### notes.md (learning log)
  ---
@@ -78,5 +83,5 @@
 
 ---
 
-*Last updated: 10 February, 2026*
+*Last updated: 11 February, 2026*
 
