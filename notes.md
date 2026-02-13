@@ -2977,6 +2977,21 @@ Output:
 		- An optional Access Agent (AA) connects user agent to the message store (uses IMAP or POP)
 ---
 
+### February 12, 2026
+#### Task Completed
+
+- **Linux and Unix System Admin Handbook Chapter 18 Electronic Mail part 2**
+
+	- MSA is really just the MTA (speaks the same mail transfer protocol) listening on a different port with a different configuration applied. MSA
+	- MSA uses port 587 while MTA uses 25.
+	- If UA cannot be taught to use port 587 MSA can still use 25. It must be done on a system other than the system that runs MTA.
+	- MSA and MTA must use SMTP AUTH to authenticate each other. Thus, avoid an open relay that spammers can exploit and some sites may blacklist you.
+	- MTA's responsibility (both sender and receiver): receive email from remote mail servers, understanding recipient's address, rewriting address to a form understood by DA, forwarding message to the next responsible mail server or passing it to a local DA
+	- Email can be delivered to a person, to a mailing list, to a file or to a program. Last two weakens safety and security.
+	- Mail traditionally stored in either mbox format (use a single file for all mails) or Maildir format (use separate file for each mail).
+	- Databases (more modern) can be used ot store mail.
+	
+---
 
 
 

@@ -62,16 +62,17 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (11 February, 2026)
+## Today's Progress (12 February, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 1**
+- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 2**
 
-	- Components of a mail system:
-		- MUA (Mail User Agent) -> read + Compose
-		- MSA (Mail Submission Agent) -> accepts outgoing mail from MUA -> MTA (Mail Transport Agent)
-		- MTA -> routes messages among machines
-		- DA (Delivery Agent) -> places messages to message store (mailbox, a database)
-		- AA (Access Agent) -> connects user agents to the message store (uses IMAP or POP)
+	- MSA (Mail Submission Agent) and MTA (Mail Transport Agent) are similar.
+	- MSA usually uses port 587 and MTA uses port 25.
+	- MSA and MTA must use SMTP AUTH to authenticate each other.
+	- Setting up a mail system -> mostly MTA configuration.
+	- Email can be delivered to a person, to a mailing list, to a file or to a program.
+	- Email stored -> mbox or Maildir format (traditional), database (modern)
+	- mbox involves a single file for all mails, Maildir involves separate file for each mail.
 
 	#### notes.md (learning log)
  ---
@@ -83,5 +84,5 @@
 
 ---
 
-*Last updated: 11 February, 2026*
+*Last updated: 12 February, 2026*
 
