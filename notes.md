@@ -3004,6 +3004,23 @@ Output:
 	- Body: the message usually in plain text, can be rich text etc.
 ---
 
+### February 14, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 4**
+
+	- Dissecting mail headers to locate problems is an essential skill.
+	- Various mail servers can run different MTAs and interpoperate just fine - they speak SMTP or ESMTP.
+	- A typical SMTP conversation to devliver an email message goes like this:
+		-HELO or EHLO to identify connecting host speaking SMTP or ESMTP
+		- MAIL FROM:; initiates a mail transaction (envelop sender)
+		- RCPT TO:; identifies envelop recipient(s)
+		- DATA, begins the message body (preceded by headers)
+		- QUIT, ends the exchange and close the connection.
+		- All the above are SMTP commands
+	
+---
+
 
 
 

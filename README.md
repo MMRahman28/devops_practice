@@ -62,15 +62,17 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (13 February, 2026)
+## Today's Progress (14 February, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 3**
+- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 4**
 
-	- Anatomy of a mail: Envelope, Header and Body
-	- Envelop contains -> destination, return address if cannot be delivered
-	- Header contains -> collection of property/value pairs such as date, time, transport agent etc.
-	- Body contains -> plaintext, or rich text.
-
+	- Typical SMTP conversation:
+		- HELO or EHLO -> identifying connecting host speaking SMTP or ESMTP
+		- MAIL FROM:; initiates a mail transaction (envelop sender)
+		- RCTP TO:; identifies envelop recipient(s)
+		- Data, begins the message body (preceded by headers)
+		- QUIT, ends the exchange and close the connection
+		
 	#### notes.md (learning log)
  ---
 
@@ -81,5 +83,5 @@
 
 ---
 
-*Last updated: 13 February, 2026*
+*Last updated: 14 February, 2026*
 
