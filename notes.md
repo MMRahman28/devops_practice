@@ -2980,7 +2980,7 @@ Output:
 ### February 12, 2026
 #### Task Completed
 
-- **Linux and Unix System Admin Handbook Chapter 18 Electronic Mail part 2**
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 2**
 
 	- MSA is really just the MTA (speaks the same mail transfer protocol) listening on a different port with a different configuration applied. MSA
 	- MSA uses port 587 while MTA uses 25.
@@ -2991,6 +2991,17 @@ Output:
 	- Mail traditionally stored in either mbox format (use a single file for all mails) or Maildir format (use separate file for each mail).
 	- Databases (more modern) can be used ot store mail.
 	
+---
+
+### February 13, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 3**
+
+	- A mail message has three distinct parts: Envelope, Header,Body of the message
+	- Envelop: Where the message should be delivered, if cannot be delivered where to return
+	- Header:collection of property/value pairs, has info about date time, transport agents etc
+	- Body: the message usually in plain text, can be rich text etc.
 ---
 
 

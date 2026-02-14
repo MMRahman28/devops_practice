@@ -62,17 +62,14 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (12 February, 2026)
+## Today's Progress (13 February, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 2**
+- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 3**
 
-	- MSA (Mail Submission Agent) and MTA (Mail Transport Agent) are similar.
-	- MSA usually uses port 587 and MTA uses port 25.
-	- MSA and MTA must use SMTP AUTH to authenticate each other.
-	- Setting up a mail system -> mostly MTA configuration.
-	- Email can be delivered to a person, to a mailing list, to a file or to a program.
-	- Email stored -> mbox or Maildir format (traditional), database (modern)
-	- mbox involves a single file for all mails, Maildir involves separate file for each mail.
+	- Anatomy of a mail: Envelope, Header and Body
+	- Envelop contains -> destination, return address if cannot be delivered
+	- Header contains -> collection of property/value pairs such as date, time, transport agent etc.
+	- Body contains -> plaintext, or rich text.
 
 	#### notes.md (learning log)
  ---
@@ -84,5 +81,5 @@
 
 ---
 
-*Last updated: 12 February, 2026*
+*Last updated: 13 February, 2026*
 
