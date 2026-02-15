@@ -62,17 +62,12 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (14 February, 2026)
+## Today's Progress (15 February, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 4**
+- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 5**
 
-	- Typical SMTP conversation:
-		- HELO or EHLO -> identifying connecting host speaking SMTP or ESMTP
-		- MAIL FROM:; initiates a mail transaction (envelop sender)
-		- RCTP TO:; identifies envelop recipient(s)
-		- Data, begins the message body (preceded by headers)
-		- QUIT, ends the exchange and close the connection
-		
+	- To see what authentication method a server supports telnet to port 25
+
 	#### notes.md (learning log)
  ---
 
@@ -83,5 +78,5 @@
 
 ---
 
-*Last updated: 14 February, 2026*
+*Last updated: 15 February, 2026*
 

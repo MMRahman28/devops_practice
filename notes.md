@@ -3021,6 +3021,14 @@ Output:
 	
 ---
 
+### February 15, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 5**
+
+	- To see what authentication mechanisms a server supports telnet to port 25
+---
+
 
 
 
