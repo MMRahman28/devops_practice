@@ -3029,6 +3029,22 @@ Output:
 	- To see what authentication mechanisms a server supports telnet to port 25
 ---
 
+### February 16, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 6**
+
+	- When using PGP/GPG or S/MIME increase the odds of remaining secure by ensuring that the public key or certificate expire or get replaced fequently.
+	- Aliases: Aliases allow mail to be rerouted either by system admin or by individual users.
+	- Most user agents provide some form of aliasing feature.The UA expands this aliases before mail ever reaches an MSA or MTA.
+	- Aliases can also be defined in a forwarding file in the home directory: ~/.forward. Apply to all mail delivered to that particular user.
+	- MTAs look for aliases in global aliases file (/etc/mail/aliases or etc/aliases)
+	- Admin and adduser tools should check both the passwd file and aliases file when selecting new usernames.
+	- The aliases file should contain an alias name called 'postmaster' that forwards mail to whoever maintains the mail system.
+	- An alias for automatic message must be present, it's usually called Mailer Daemon and is often aliased to postmaster.
+
+---
+
 
 
 

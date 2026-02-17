@@ -62,11 +62,17 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (15 February, 2026)
+## Today's Progress (16 February, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 5**
+- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 6**
 
-	- To see what authentication method a server supports telnet to port 25
+	- PGP/GPG, S/MIME -> should expire or get replaced frequently.
+	- Aliases -> mail rerouting (by sysadmin or individual user)
+	- Most UAs have aliasing feature which expand aliases before reaching MSA or MTA.
+	- Admin and adduser tools -> check passwd file and aliases file when selecting new user.
+	- MTAs look for aliases in /etc/mail/aliases or /etc/aliases
+	- Aliases file should contain an alias called 'postmaster'.
+	- An alias for automatic message must be present (Mailer Daemon) which usually aliased to postmaster.
 
 	#### notes.md (learning log)
  ---
@@ -78,5 +84,5 @@
 
 ---
 
-*Last updated: 15 February, 2026*
+*Last updated: 16 February, 2026*
 
