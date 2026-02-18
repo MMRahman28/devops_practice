@@ -3045,6 +3045,17 @@ Output:
 
 ---
 
+### February 17, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 7**
+
+	- Mailing to files: if the target of an alias is an absolute pathname, messages are appended to the specified file.
+	- `cron-status: /usr/local/admin/cron-status-messages` (the syntax is only valid in aliases file and user's.forward file)
+	- If the destination file referred from the aliases file, it must be world-writable, setuid but not executable or owned by MTA's default user. (In short, a security risk)
+	- If referred in a .forward file, it must be owned and writable by the original receipient, who must be a valid user in passwd file and a valid shell that's listed in /etc/shells.
+
+---
 
 
 

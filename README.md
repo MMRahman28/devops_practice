@@ -62,17 +62,14 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (16 February, 2026)
+## Today's Progress (17 February, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 6**
+- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 7**
 
-	- PGP/GPG, S/MIME -> should expire or get replaced frequently.
-	- Aliases -> mail rerouting (by sysadmin or individual user)
-	- Most UAs have aliasing feature which expand aliases before reaching MSA or MTA.
-	- Admin and adduser tools -> check passwd file and aliases file when selecting new user.
-	- MTAs look for aliases in /etc/mail/aliases or /etc/aliases
-	- Aliases file should contain an alias called 'postmaster'.
-	- An alias for automatic message must be present (Mailer Daemon) which usually aliased to postmaster.
+	- mailing to files -> a target of an alias which is an absolute pathname.
+	- `corn-status: /usr/local/admin/cron-status-messages` (valid for aliases file and for .forward file)
+	-  If referred in aliases file -> the file must be world-writable, setuid but not executable, or owned by MTA's default user. (Security risk)
+	- if referred in a .forward file -> must be owned and writable by the original recipient, who must be a valid user in passwd file and a valid shell that's listed in /etc/shells.
 
 	#### notes.md (learning log)
  ---
@@ -84,5 +81,5 @@
 
 ---
 
-*Last updated: 16 February, 2026*
+*Last updated: 17 February, 2026*
 
