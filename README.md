@@ -62,14 +62,19 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (17 February, 2026)
+## Today's Progress (18 February, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 7**
+- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 8**
 
-	- mailing to files -> a target of an alias which is an absolute pathname.
-	- `corn-status: /usr/local/admin/cron-status-messages` (valid for aliases file and for .forward file)
-	-  If referred in aliases file -> the file must be world-writable, setuid but not executable, or owned by MTA's default user. (Security risk)
-	- if referred in a .forward file -> must be owned and writable by the original recipient, who must be a valid user in passwd file and a valid shell that's listed in /etc/shells.
+	**sendmail**
+
+	- Version -> `/usr/bin/sendmail -d0.1 -bt < /dev/null`
+	- Config -> file: sendmail.cf, directory: /usr/share/sendmail or /etc/mail
+	- Ignores system switch file /etc/nsswitch.conf
+	- Uses its own internal service configuration file: /etc/mail/service.switch
+	- Two important fields in its switch file: aliases and hosts
+	- hosts -> values: dns, nis, nisplus and files
+	- aliases -> values: nis, nisplus, files and ldap
 
 	#### notes.md (learning log)
  ---
@@ -81,5 +86,5 @@
 
 ---
 
-*Last updated: 17 February, 2026*
+*Last updated: 18 February, 2026*
 

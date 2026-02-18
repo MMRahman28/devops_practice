@@ -3056,6 +3056,25 @@ Output:
 	- If referred in a .forward file, it must be owned and writable by the original receipient, who must be a valid user in passwd file and a valid shell that's listed in /etc/shells.
 
 ---
+### February 18, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail  part 8**
+
+	**sendmail**
+	To see the version: `/usr/bin/sendmail -d0.1 -bt < /dev/null`
+	puts sendmail in address (-bt) test mode, -d0.1 debug mode, but does not give an address (/dev/null) to test
+	The side effect shows the version number. Once the version number is known, sendmail.org can tell us if there's any recent vulnerabilities etc.
+	config directory loation: /usr/share/sendmail or /etc/mail
+	Config file: sendmail.cf
+	sendmail ignores the system switch file (etc/nsswitch.conf), and uses its own internal service configuraiton file
+	/etc/mail/service.switch
+	Two fields in the switch file impact the mail system:aliases and hosts.
+	Possible values for the hosts services are: dns, nis,nisplus and files.
+	Possible values for aliases: files, nis,nisplus and ldap.
+
+---
+
 
 
 
