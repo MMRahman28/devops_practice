@@ -62,19 +62,19 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (18 February, 2026)
+## Today's Progress (19 February, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 8**
+- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 9**
 
-	**sendmail**
+	**Starting sendmail**
 
-	- Version -> `/usr/bin/sendmail -d0.1 -bt < /dev/null`
-	- Config -> file: sendmail.cf, directory: /usr/share/sendmail or /etc/mail
-	- Ignores system switch file /etc/nsswitch.conf
-	- Uses its own internal service configuration file: /etc/mail/service.switch
-	- Two important fields in its switch file: aliases and hosts
-	- hosts -> values: dns, nis, nisplus and files
-	- aliases -> values: nis, nisplus, files and ldap
+	- starts at boot time.
+	- The flag sendmail starts with determines its behaviour.
+	- For incoming mail -> use flag -bd
+	- To set interval for mail queue processing -> use flag -q (-q30, -q1h etc)
+	- Change in configuration file requires reload.
+	- So, either kill and restart the process, or use HUP signal.
+	- Config file location: either in /var/run/sendmail.pid or /etc/mail/sendmail.pid
 
 	#### notes.md (learning log)
  ---
@@ -86,5 +86,5 @@
 
 ---
 
-*Last updated: 18 February, 2026*
+*Last updated: 19 February, 2026*
 

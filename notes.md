@@ -3075,6 +3075,20 @@ Output:
 
 ---
 
+### February 19, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 9**
+
+	- Starting sendmail: sendmail should not be controlled by inetd or systemd.
+	- Must start at the boot time.
+	- The flag sendmail started with determine its behaviour.
+	- When configuring a server that accept incoming mail use the flag -bd (listens on port 25).
+	- To set interval for mail queue processing use -q flag. (-q30m, -q1h etc)
+	- sendmail reads its configuration file only when it starts up.So, changes require reload. Either kill and restart sendmail, or use HUP signal.
+	- `sudo kill -HUP head -1 sendmail.pid`
+	- The location of the PID file: either /var/run/sendmail.pid or /etc/mail/sendmail.pid
+
 
 
 
