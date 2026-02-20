@@ -62,19 +62,16 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (19 February, 2026)
+## Today's Progress (20 February, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 9**
+- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 10**
 
-	**Starting sendmail**
+	**Mail Queue**
 
-	- starts at boot time.
-	- The flag sendmail starts with determines its behaviour.
-	- For incoming mail -> use flag -bd
-	- To set interval for mail queue processing -> use flag -q (-q30, -q1h etc)
-	- Change in configuration file requires reload.
-	- So, either kill and restart the process, or use HUP signal.
-	- Config file location: either in /var/run/sendmail.pid or /etc/mail/sendmail.pid
+	- Two queues: /var/spool/mqueue on port 25 for MTA, or /var/spool/clientmqueue on port 587 for MSA
+	- A queue message is saved in pieces in several different files (two-prefix filename).
+	- Each message that is queued must have a qf and df file.
+	- System admins check QF files occasionally in case local configuration causes any bounce.
 
 	#### notes.md (learning log)
  ---
@@ -86,5 +83,5 @@
 
 ---
 
-*Last updated: 19 February, 2026*
+*Last updated: 20 February, 2026*
 

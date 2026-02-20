@@ -3089,6 +3089,23 @@ Output:
 	- `sudo kill -HUP head -1 sendmail.pid`
 	- The location of the PID file: either /var/run/sendmail.pid or /etc/mail/sendmail.pid
 
+	---
+
+### February 20, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 10**
+
+	**Mail Queue**
+
+	- sendmail uses at least two queues: /var/spool/mqueue acting as MTA on port 25  or /var/spool/clientmqueue when acting as an MSA on port 587.
+	- A queued message is saved in pieces in serveral different files.
+	- Each filename has a two-letter prefix.
+	- Each message that is queued must have a qf and df file.
+	- System admin checks QF files occasionally in case local configuration causes any bounce.
+
+---
+
 
 
 
