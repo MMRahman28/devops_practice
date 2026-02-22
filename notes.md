@@ -3106,6 +3106,19 @@ Output:
 
 ---
 
+### February 21, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 11**
+
+	**sendmail configuration**
+	- Configuration file: /etc/mail/sendmail.cf when acting as MTA, /etc/mail/submit.cf when acting as MSA
+	- flags -bm, -bs and -bt use submit.cf if it exists, all other modes use sendmail.cf
+	- m4 preprocessor: compiles .mc file to .cf
+	- cf/cf directory contains examples of .mc file.
+
+---
+
 
 
 

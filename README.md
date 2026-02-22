@@ -62,16 +62,16 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (20 February, 2026)
+## Today's Progress (21 February, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 10**
+- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 11**
 
-	**Mail Queue**
+	**sendmail configuration**
 
-	- Two queues: /var/spool/mqueue on port 25 for MTA, or /var/spool/clientmqueue on port 587 for MSA
-	- A queue message is saved in pieces in several different files (two-prefix filename).
-	- Each message that is queued must have a qf and df file.
-	- System admins check QF files occasionally in case local configuration causes any bounce.
+	- Configuration file: /etc/mail/sendmail.cf for MTA, /etc/mail/submit.cf for MSA
+	- flags -bm, -bs and -bt use submit.cf if it exists, all other modes use sendmail.cf
+	- m4 preprocessor: compiles .mc file to .cf
+	- cf/cf directory contains example of .mc file
 
 	#### notes.md (learning log)
  ---
@@ -83,5 +83,5 @@
 
 ---
 
-*Last updated: 20 February, 2026*
+*Last updated: 21 February, 2026*
 
