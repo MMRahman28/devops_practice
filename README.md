@@ -62,16 +62,19 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (21 February, 2026)
+## Today's Progress (22 February, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 11**
+- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 12**
 
-	**sendmail configuration**
+	**sendmail configuration premitives**
+	- predefined macros are all caps, m4 commands are all lowercase
+	- configurable option name starts with conf and ends with all caps, e.g. confFAST_SPLIT
+	- Macros usually refer to an m4 file called ../macroname/arg1.m4
 
-	- Configuration file: /etc/mail/sendmail.cf for MTA, /etc/mail/submit.cf for MSA
-	- flags -bm, -bs and -bt use submit.cf if it exists, all other modes use sendmail.cf
-	- m4 preprocessor: compiles .mc file to .cf
-	- cf/cf directory contains example of .mc file
+	** Tables and Databases**
+	- Table is a cache of routing, aliasing, policy etc. converted to a database format with the makemap command.
+	- Data comes from text file, DNS, LDAP or other sources.
+	- Three database map types: dbm, hash (this is default), btree.
 
 	#### notes.md (learning log)
  ---
@@ -83,5 +86,5 @@
 
 ---
 
-*Last updated: 21 February, 2026*
+*Last updated: 22 February, 2026*
 

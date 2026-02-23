@@ -3119,6 +3119,25 @@ Output:
 
 ---
 
+### February 22, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 12**
+
+	**sendmail configuration premitives**
+	- predefined macros are all caps
+	- m4 commands are all lowercase
+	- configurable option names usually start with lowercase conf and ends with all uppercase.
+	- Macros usually refer to an m4 file called ../macroname/arg1.m4 e.g. OSTYPE(`linux') is ../ostype/linux.m4
+
+	**Tables and Databases**
+	- A table is a cache of routing, aliasing, policy or other info that has been converted to a database format with the makemap command.
+	- Data: usually comes from a text file, can come from DNS, LDAP or other sources.
+	- Three database map types: dbm (legacy uses an extensible hasing algorithm), hash (uses standard hashing scheme, and this type is default), btree (uses btree data structure)
+
+---
+
+
 
 
 
