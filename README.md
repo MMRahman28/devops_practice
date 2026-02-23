@@ -62,19 +62,19 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (22 February, 2026)
+## Today's Progress (23 February, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 12**
+- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 13**
 
-	**sendmail configuration premitives**
-	- predefined macros are all caps, m4 commands are all lowercase
-	- configurable option name starts with conf and ends with all caps, e.g. confFAST_SPLIT
-	- Macros usually refer to an m4 file called ../macroname/arg1.m4
+	**sendmail macros and features**
+	- OSTYPE macro -> packages vendor specific info
+	- DOMAIN macro -> includes site-specfic config details
+	- MAILER macro -> enables mailer, typically smtp and local
+	- FEATURE macro -> for features, there can be at most 9 arguments to a feature
+	- MAIL_HUB macro -> specifies mail server for incoming mail
+	- SMART_HOST macro -> specifies mail server for outgoing mail
 
-	** Tables and Databases**
-	- Table is a cache of routing, aliasing, policy etc. converted to a database format with the makemap command.
-	- Data comes from text file, DNS, LDAP or other sources.
-	- Three database map types: dbm, hash (this is default), btree.
+	Same machine can be used for both incoming and outgoing mail.
 
 	#### notes.md (learning log)
  ---
@@ -86,5 +86,5 @@
 
 ---
 
-*Last updated: 22 February, 2026*
+*Last updated: 23 February, 2026*
 

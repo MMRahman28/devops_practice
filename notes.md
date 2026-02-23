@@ -3137,6 +3137,24 @@ Output:
 
 ---
 
+### February 23, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 13**
+
+	**Sendmail Generic macros and features**
+
+	- OSTYPE macro: packages vendor specific info
+	- DOMAIN macro: includes site-specific config details
+	- MAILER macro: enables mailer, typically smtp and local
+	- FEATURE macro: for feature. There can be at most 9 arguments to a feature
+	- MAIL_HUB macro: specifies mail server for incoming mail
+	- SMART_HOST macro: specifies mail server for outgoing mail
+
+	You can use the same machine as the server for both incoming and outgoing mail. A single machine can help combat viruses, spams, company secrets better as checking one machine traffic is easier.Both MAIL_HUB and SMART_HOST should allow relaying, first from clients inside your domain and the second from the MTA in the DMZ. 
+
+---
+
 
 
 
