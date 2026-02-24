@@ -3155,6 +3155,20 @@ Output:
 
 ---
 
+### February 24, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 14**
+
+	- sendmail should run as an MSA if the user agents on the client machine can be taught to use port 587 for submitting mail
+
+	**Spam related feature in sendmail**
+
+	- Rules to control third-party relaying
+	- The access database for filtering recipient addresses.
+	- Blacklists that catalogue open relays and known spam friendly sites 
+	- Throttles that can slow down mail accpetance when certain types of bad behaviour are detected
+---
 
 
 

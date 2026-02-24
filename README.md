@@ -62,19 +62,15 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (23 February, 2026)
+## Today's Progress (24 February, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 13**
+- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 14**
 
-	**sendmail macros and features**
-	- OSTYPE macro -> packages vendor specific info
-	- DOMAIN macro -> includes site-specfic config details
-	- MAILER macro -> enables mailer, typically smtp and local
-	- FEATURE macro -> for features, there can be at most 9 arguments to a feature
-	- MAIL_HUB macro -> specifies mail server for incoming mail
-	- SMART_HOST macro -> specifies mail server for outgoing mail
-
-	Same machine can be used for both incoming and outgoing mail.
+	**sendmail spam related features**
+	- Rules to control third-party relaying
+	- The access database to filter recipient addresses.
+	- Blacklists that catalog open relays and known spam friendly sites
+	- Throttles that can slow down mail acceptance when certain types of bad behaviour are detected
 
 	#### notes.md (learning log)
  ---
@@ -86,5 +82,5 @@
 
 ---
 
-*Last updated: 23 February, 2026*
+*Last updated: 24 February, 2026*
 
