@@ -3170,6 +3170,19 @@ Output:
 	- Throttles that can slow down mail accpetance when certain types of bad behaviour are detected
 ---
 
+### February 25, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 15**
+
+	- sendmail relay control: accepts incoming mail, look at the envelop addresses, decides where the mail should go, passes the message to the appropriate destination.
+	- The destination can be local or another MTA.
+	- When incoming message has no local recipients, the transport agent that handles it is said to be acting as a relay.
+	- Only hosts that are tagged with relay in the access database or listed in /etc/mail/relay-domains are allowed to submit mail for relaying.
+	- sendmail comes with relaying turned off by default.
+
+---
+
 
 
 

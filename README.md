@@ -62,15 +62,16 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (24 February, 2026)
+## Today's Progress (25 February, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 14**
+- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 15**
 
-	**sendmail spam related features**
-	- Rules to control third-party relaying
-	- The access database to filter recipient addresses.
-	- Blacklists that catalog open relays and known spam friendly sites
-	- Throttles that can slow down mail acceptance when certain types of bad behaviour are detected
+	**sendmail relay control**
+	- accepts incoming mail, look at the envelop addresses, decide route, passes the message to the destination
+	- the destination can be local or another MTA
+	- When incoming message has no local recipients, the MTA that handles it acts as a relay
+	- Only hosts that are tagged as relay in the access database or listed in /etc/mail/relay-domains are allowed to submit mail for relaying
+	- sendmail comes with relaying turned off by default
 
 	#### notes.md (learning log)
  ---
@@ -82,5 +83,5 @@
 
 ---
 
-*Last updated: 24 February, 2026*
+*Last updated: 25 February, 2026*
 
