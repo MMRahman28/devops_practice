@@ -62,17 +62,18 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (25 February, 2026)
+## Today's Progress (26 February, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 15**
+- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 16**
 
-	**sendmail relay control**
-	- accepts incoming mail, look at the envelop addresses, decide route, passes the message to the destination
-	- the destination can be local or another MTA
-	- When incoming message has no local recipients, the MTA that handles it acts as a relay
-	- Only hosts that are tagged as relay in the access database or listed in /etc/mail/relay-domains are allowed to submit mail for relaying
-	- sendmail comes with relaying turned off by default
-
+	**sendmail - Throttles, rates and connection limits**
+	- some sendmail controls (if client's behaviour is suspicious) -> slows down mail processing
+	- There are several configuration premitives: 
+	- BAD_RCPT_THROTTLE, MAX_RCPTS_PER_MESSAGE, ratecontrol, conncontrol, greet_pause
+	- config file: /etc/mail/access
+	- greet_pause: remote transport agent connects to sendmail waits for server's greeting
+	- It's common for spam mailers to blurt out EHLO/HELO. This behaviour is suspicious and known as slamming.
+	
 	#### notes.md (learning log)
  ---
 
@@ -83,5 +84,5 @@
 
 ---
 
-*Last updated: 25 February, 2026*
+*Last updated: 26 February, 2026*
 

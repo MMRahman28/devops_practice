@@ -3183,6 +3183,21 @@ Output:
 
 ---
 
+### February 26, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 16**
+
+	**Throttles, rates and connection limits**
+	- There are several sendmail controls that can slow down mail processing when client's behaviour appears suspicious.
+	- BAD_RCPT_THROTTLE, MAX_RCPTS_PER_MESSAGE, ratecontrol, conncontrol, great_pause (slowdown configuration premitives)
+	- config file: /etc/mail/access
+	- greet_pause: when a remote transport agent connects to the sendmail server it should wait for the server's greeting (implemented by SMTP)
+	- It's common for spam mailers to blurt out EHLO/HELO.This behaviour is suspicious and is known as slamming.
+
+---
+
+
 
 
 
