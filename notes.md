@@ -3197,6 +3197,21 @@ Output:
 
 ---
 
+### February 27, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 17**
+
+	**Security and sendmail**
+	- Supports both SMTP authentication and encryption with TLS
+	- Sendmail carefully inspects the file permission before it believes the content e.g., alias file or .forward file etc
+	- Three user accounts are important for sendmail: DefaultUser, RunAsUser, and TrustedUser
+	- If running sendmail setgid, then the submission sendmail just passes messages to the real sendmail through SMTP
+	- The real sendmail does not have its setuid bit set, so it runs as root.
+	- The RunAsUser is the UID that sendmail runs under after opening its socket connection to port 25.
+
+---
+
 
 
 

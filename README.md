@@ -62,17 +62,16 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (26 February, 2026)
+## Today's Progress (27 February, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 16**
+- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 17**
 
-	**sendmail - Throttles, rates and connection limits**
-	- some sendmail controls (if client's behaviour is suspicious) -> slows down mail processing
-	- There are several configuration premitives: 
-	- BAD_RCPT_THROTTLE, MAX_RCPTS_PER_MESSAGE, ratecontrol, conncontrol, greet_pause
-	- config file: /etc/mail/access
-	- greet_pause: remote transport agent connects to sendmail waits for server's greeting
-	- It's common for spam mailers to blurt out EHLO/HELO. This behaviour is suspicious and known as slamming.
+	**security and sendmail**
+	- sendmail carefully inspect the file permission before it believes the content, e.g. alias or .forward file.
+	- three user accounts are important: DefaultUser, RunAsUser, and TrustedUser
+	- Running sendmail setgid -> submission sendmail passes messages to the real sendmail through SMTP
+	- Real sendmail does not have its setuid bit set. So, runs as root
+	- The RunAsUser is the UID that sendmail runs under after opening its socket connection to port 25  
 	
 	#### notes.md (learning log)
  ---
@@ -84,5 +83,5 @@
 
 ---
 
-*Last updated: 26 February, 2026*
+*Last updated: 27 February, 2026*
 
