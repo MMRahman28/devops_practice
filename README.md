@@ -62,15 +62,19 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (28 February, 2026)
+## Today's Progress (1 March, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 18**
+- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 19**
 
-	**Safer mail to files and programs**
+	**Privacy options**
 
-	- Recommended: smrsh instead of /bin/sh and mail.local instead of /bin/mail
-	- Config: FEATURE(`smrsh', `path-to-smrsh' ), FEATURE(`local_lmtp', `path-to-mail.local') in .mc file.
-	- smrsh is a restricted shell that executes only the program contained in one directory (/usr/adm/sm.bin by default)
+	- sendmail's default value for privacy option is authwarning.
+	- define(`confPRIVACY_OPTIONS', ``goaway, authwarning, restrictmailq, restrictqrun '')
+	- sendmail can be run in chrooted jail: `sudo chroot /jail /usr/sbin/sendmail -bd -q30m`
+	- MaxDaemonChildren limits the number of sendmail processes.
+	- MaxMessageSize can help prevent the mail queue directory from filing. Recommended higher value (50MB)
+	- ConnectionRateThrottle limits the number of permitted connections per second.
+	- MaxRcptsPerMessage controls the maximum number of recipients allowed on a single message.
 	
 	#### notes.md (learning log)
  ---
@@ -82,5 +86,5 @@
 
 ---
 
-*Last updated: 28 February, 2026*
+*Last updated: 1 March, 2026*
 

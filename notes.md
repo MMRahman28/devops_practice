@@ -3224,7 +3224,23 @@ Output:
 	- smrsh is a restricted shell that executes only the programs contained in one directory (/usr/adm/sm.bin by default).
 
 ---
+### March 1, 2026
+#### Task Completed
 
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 19**
+
+	**Privacy Options**
+
+	- sendmail's default value for the privacy option is authwarning.
+	- define(`confPRIVACY_OPTIONS', ``goaway, authwarnings, restrictmailq, restrictqrun'')
+	- sendmail can be run in a chrooted jail: `sudo chroot /jail /usr/sbin/sendmail -bd -q30m`
+	- Create a minimal filesystem in your jail; e.g., /dev/null, /etc essentials (passwd, group, resolv.conf, sendmail.cf, any map files, mail/*)
+	- the MaxDaemonChildren option limits the number of sendmail processes. It prevents the system from being overwhelmed by sendmail work. However, it can allow an attacker to shutdown SMTP.
+	- The MaxMessageSize option can help prevent the mail queue directory from filling. Recommended fairly high limit or it can bounce legitimate mails.
+	- ConnectionRateThrottle limits the number of permitted connections per second.
+	- MaxRcptsPerMessage controls the maximum number of recipients allowed on a single message.
+
+---
 
 
 
