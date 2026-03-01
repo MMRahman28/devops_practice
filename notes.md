@@ -3212,6 +3212,21 @@ Output:
 
 ---
 
+### February 28, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 18**
+
+	**Safer Mail to files and programs**
+
+	- Recommended: smrsh instead of /bin/sh and mail.local instead of /bin/mail
+	- Configuration: FEATURE(`smrsh', `path-to-smrsh'), FEATURE(`local_lmtp', `path-to-mail.local') to the .mc file.
+	- smrsh is a restricted shell that executes only the programs contained in one directory (/usr/adm/sm.bin by default).
+
+---
+
+
+
 
 
 

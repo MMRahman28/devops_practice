@@ -62,16 +62,15 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (27 February, 2026)
+## Today's Progress (28 February, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 17**
+- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 18**
 
-	**security and sendmail**
-	- sendmail carefully inspect the file permission before it believes the content, e.g. alias or .forward file.
-	- three user accounts are important: DefaultUser, RunAsUser, and TrustedUser
-	- Running sendmail setgid -> submission sendmail passes messages to the real sendmail through SMTP
-	- Real sendmail does not have its setuid bit set. So, runs as root
-	- The RunAsUser is the UID that sendmail runs under after opening its socket connection to port 25  
+	**Safer mail to files and programs**
+
+	- Recommended: smrsh instead of /bin/sh and mail.local instead of /bin/mail
+	- Config: FEATURE(`smrsh', `path-to-smrsh' ), FEATURE(`local_lmtp', `path-to-mail.local') in .mc file.
+	- smrsh is a restricted shell that executes only the program contained in one directory (/usr/adm/sm.bin by default)
 	
 	#### notes.md (learning log)
  ---
@@ -83,5 +82,5 @@
 
 ---
 
-*Last updated: 27 February, 2026*
+*Last updated: 28 February, 2026*
 
