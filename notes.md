@@ -3242,6 +3242,19 @@ Output:
 
 ---
 
+### March 2, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 20**
+
+	**TLS**
+	- RFC3207
+	- Implemented in sendmail as an extension to SMTP called STARTTLS.
+	- STARTTLS provide encryption just for the next hop MTA. After that, the message might be forwarded to another MTA that does not encrypt.
+	- So, either have control of all MTA along the path, or use PGP/GPG or centralised email encryption service.
+
+---
+
 
 
 

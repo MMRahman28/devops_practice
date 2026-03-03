@@ -62,19 +62,16 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (1 March, 2026)
+## Today's Progress (2 March, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 19**
+- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 20**
 
-	**Privacy options**
+	**TLS: Transport Layer Security**
 
-	- sendmail's default value for privacy option is authwarning.
-	- define(`confPRIVACY_OPTIONS', ``goaway, authwarning, restrictmailq, restrictqrun '')
-	- sendmail can be run in chrooted jail: `sudo chroot /jail /usr/sbin/sendmail -bd -q30m`
-	- MaxDaemonChildren limits the number of sendmail processes.
-	- MaxMessageSize can help prevent the mail queue directory from filing. Recommended higher value (50MB)
-	- ConnectionRateThrottle limits the number of permitted connections per second.
-	- MaxRcptsPerMessage controls the maximum number of recipients allowed on a single message.
+	- RFC 3207
+	- sendmail implementation -> an extention to SMTP called STARTTLS
+	- STARTTLS provides encryption just for the next hop MTA not the rest of the MTAs along the path.
+	- To ensure security: take controll of all MTAs along the path, use PGP/GPG or centralised email encryption service.
 	
 	#### notes.md (learning log)
  ---
@@ -86,5 +83,5 @@
 
 ---
 
-*Last updated: 1 March, 2026*
+*Last updated: 2 March, 2026*
 
