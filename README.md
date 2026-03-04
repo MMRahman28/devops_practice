@@ -62,17 +62,28 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (2 March, 2026)
+## Today's Progress (3 March, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 20**
+- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 21**
 
-	**TLS: Transport Layer Security**
+	**Sendmail Testing and Debugging**
 
-	- RFC 3207
-	- sendmail implementation -> an extention to SMTP called STARTTLS
-	- STARTTLS provides encryption just for the next hop MTA not the rest of the MTAs along the path.
-	- To ensure security: take controll of all MTAs along the path, use PGP/GPG or centralised email encryption service.
+	- m4-based configurations are some extent pre-tested.
+	- error arises from invoking a feature without turning on the pre-requisite Macro, e.g., enabling masquerade_envelope without turning on MASQUERADE_AS.
+	- Mail system must sync with the DNS MX records and the firewall policy.
 	
+	**Queue Monitoring**
+
+	- `mailq` or `sendmail -bq`
+	- Two default queues: messages received on port 25, and another for port 587 (client submission queue)
+	- `mailq -Ac` to see client queue.
+
+	**Logging**
+
+	- sendmail uses syslog to log error.
+	- High value of the log level implies low severity.
+	- several programs can summerise sendmail log files (mreport, Yasma)
+		
 	#### notes.md (learning log)
  ---
 
@@ -83,5 +94,5 @@
 
 ---
 
-*Last updated: 2 March, 2026*
+*Last updated: 3 March, 2026*
 

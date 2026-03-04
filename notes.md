@@ -3255,6 +3255,31 @@ Output:
 
 ---
 
+### March 3, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 21**
+
+	**sendmail testing and debugging**
+
+	- m4-based configurations are to some extent pre-tested.
+	- errors arises from invoking a feature without the pre-requisite macro, e.g., enabling masquerade_envelope without turning on MASQUERADE_AS.
+	- Mail system must sync with the DNS MX records and the firewall policy.
+
+	**Queue Monitoring**
+
+	- mailq (or sendmail -bq) to view the status of the message queue
+	- mailq prints the human readable summary of /var/spool/mqueue 
+	- Two default queues: one for messages received on port 25, and anoter for port 587 (client submission queue)
+	- maliq -Ac to see client queue.
+	
+	**Logging**
+
+	- sendmail uses syslog to log error.
+	- High value of the log level implies low severity.
+	- several programs can summarise sendmail log files (mreport or Yasma)
+
+---
 
 
 
