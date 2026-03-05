@@ -70,7 +70,10 @@
 
 	- Refer to README file and src/EDITME -> set installation location, user IDS and other compile time parameters.
 	- EDITTIME is over 1000 lines longs but with helpful comments. Read it throughly before installation if possible.
-	- 
+	- After edit save as ../Local/Makefile or ../Local/Makefile-osname before running make command.
+	- The workhorses of exim are routers and transports.
+	- Once Exim working properly, link /usr/sbin/sendmail to Exim.
+	- Exim can be arranged to be started at the boot time.
 		
 	#### notes.md (learning log)
  ---
