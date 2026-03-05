@@ -3281,6 +3281,21 @@ Output:
 
 ---
 
+### March 4, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 22**
+
+	**Exim**
+
+	- Download from exim.org or favourite repo. Refer to README file and src/EDITME in which set installation location, user IDs, and other compile time parameters.
+	- EDITTIME is over 1000 lines long but with helpful comments. After edit save the file as ../Local/Makefile or ../Local/Makefile-osname before running make.
+	- The workhorses in Exim system are routers and transports.
+	- Once Exim working properly, link /usr/sbin/sendmail to Exim.
+	- Exim can be arranged to be started at the boot time.
+
+---
+
 
 
 

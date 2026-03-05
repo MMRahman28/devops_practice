@@ -62,27 +62,15 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (3 March, 2026)
+## Today's Progress (4 March, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 21**
+- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 22**
 
-	**Sendmail Testing and Debugging**
+	**Exim**
 
-	- m4-based configurations are some extent pre-tested.
-	- error arises from invoking a feature without turning on the pre-requisite Macro, e.g., enabling masquerade_envelope without turning on MASQUERADE_AS.
-	- Mail system must sync with the DNS MX records and the firewall policy.
-	
-	**Queue Monitoring**
-
-	- `mailq` or `sendmail -bq`
-	- Two default queues: messages received on port 25, and another for port 587 (client submission queue)
-	- `mailq -Ac` to see client queue.
-
-	**Logging**
-
-	- sendmail uses syslog to log error.
-	- High value of the log level implies low severity.
-	- several programs can summerise sendmail log files (mreport, Yasma)
+	- Refer to README file and src/EDITME -> set installation location, user IDS and other compile time parameters.
+	- EDITTIME is over 1000 lines longs but with helpful comments. Read it throughly before installation if possible.
+	- 
 		
 	#### notes.md (learning log)
  ---
@@ -94,5 +82,5 @@
 
 ---
 
-*Last updated: 3 March, 2026*
+*Last updated: 4 March, 2026*
 
