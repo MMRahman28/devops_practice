@@ -62,18 +62,17 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (4 March, 2026)
+## Today's Progress (5 March, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 22**
+- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 23**
 
-	**Exim**
+	**Exim Startup**
 
-	- Refer to README file and src/EDITME -> set installation location, user IDS and other compile time parameters.
-	- EDITTIME is over 1000 lines longs but with helpful comments. Read it throughly before installation if possible.
-	- After edit save as ../Local/Makefile or ../Local/Makefile-osname before running make command.
-	- The workhorses of exim are routers and transports.
-	- Once Exim working properly, link /usr/sbin/sendmail to Exim.
-	- Exim can be arranged to be started at the boot time.
+	- Similar to sendmail, with different flags, exim functions differently.
+	- See exim manpage for different flags
+	- Any error in the config that can be detected at parse time can be caught by `exim -bv`
+	- Some errors can only be caught at run time
+	- Exim has several utilities which provide different functionalities
 		
 	#### notes.md (learning log)
  ---
@@ -85,5 +84,5 @@
 
 ---
 
-*Last updated: 4 March, 2026*
+*Last updated: 5 March, 2026*
 

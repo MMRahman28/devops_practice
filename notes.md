@@ -3296,6 +3296,21 @@ Output:
 
 ---
 
+### March 5, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 23**
+
+	**Exim Startup**
+
+	- Like sendmail, with different flags, Exim functions differently.
+	- Any error in the config file that can be detected at parse time are caught by `exim -bv`
+	- Some errors can only be caught at run time
+	- See exim man page for different flags
+	- Exim has serveral utilities which provide different functionalities
+	
+---
+
 
 
 
