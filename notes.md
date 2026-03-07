@@ -3311,6 +3311,20 @@ Output:
 	
 ---
 
+### March 6, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 24**
+
+	**Exim Global Options**
+
+	- Options are set with the basic syntax: `option_name = value[s]`
+	- values can be booleans, integers, strings, decimal numbers, time intervals etc.
+	- Multivalue options are allowed. In which case, they are separated by colons.
+	- IPv6 addresses use colon as part of the address, to fix, escape the colon by doubling them.
+	- But, non-confusing, or the best way to do is declaring/re-defining separator with '<' character.
+
+---
 
 
 

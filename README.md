@@ -62,17 +62,17 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (5 March, 2026)
+## Today's Progress (6 March, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 23**
+- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 24**
 
-	**Exim Startup**
+	**Exim - Global Options**
 
-	- Similar to sendmail, with different flags, exim functions differently.
-	- See exim manpage for different flags
-	- Any error in the config that can be detected at parse time can be caught by `exim -bv`
-	- Some errors can only be caught at run time
-	- Exim has several utilities which provide different functionalities
+	- Syntax -> `option_name = value[s]`
+	- Values can be boolean, interger, decimal, string, time interval etc.
+	- Multivalued options are allowed, they are separated by colon.
+	- IPv6 addresses use colon as part of the address, so use double colon to escape.
+	- Best way -> use `<` to re-define separator.
 		
 	#### notes.md (learning log)
  ---
@@ -84,5 +84,5 @@
 
 ---
 
-*Last updated: 5 March, 2026*
+*Last updated: 6 March, 2026*
 
