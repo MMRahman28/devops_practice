@@ -3325,7 +3325,25 @@ Output:
 	- But, non-confusing, or the best way to do is declaring/re-defining separator with '<' character.
 
 ---
+### March 7, 2026
+#### Task Completed
 
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 25**
+
+	**List**
+
+	- Exim has four types of lists: hostlist, domainlist, addresslist, and localpartslist.
+	- `hostlist my_relay_list = 192.168.1.0/24 : myfriend.example.com` (address)
+	- `hostlist my_relay_list = /usr/local/exim/relay.txt` (from file) 
+	- Members can be listed inline or taken from file. If inline they are separated by colon.
+	- @[] means all IP addresses on which Exim is listening.
+	
+	**Macros**
+
+	- Macros to define parameters, error messages etc.
+	- Macro names does not necessarily have to be in uppercase, however, first letter of the name must be in CAP. It is best practice to write macros all caps.
+	- ifdef is supported.
+---
 
 
 

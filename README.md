@@ -62,17 +62,23 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (6 March, 2026)
+## Today's Progress (7 March, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 24**
+- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 25**
 
-	**Exim - Global Options**
+	**Exim - List**
 
-	- Syntax -> `option_name = value[s]`
-	- Values can be boolean, interger, decimal, string, time interval etc.
-	- Multivalued options are allowed, they are separated by colon.
-	- IPv6 addresses use colon as part of the address, so use double colon to escape.
-	- Best way -> use `<` to re-define separator.
+	- Four lists -> hostlist, domainlist, addresslist, and localpartslist
+	- `hostlist my_relay_list = 192.168.1.0/24 : myfriend.example.com`
+	- `hostlist my_relay_list = /usr/local/exim/relay.txt`
+	- Members can be listed inline or taken from a file. If inline, each separated by a colon.
+	- @[] means all IP addresses on which Exim is listening.
+
+	**Macros**
+
+	- Macros -> parameters, errors etc.
+	- Name must start with a capital letter. All caps aids clarity
+	- ifdef is supported. 
 		
 	#### notes.md (learning log)
  ---
@@ -84,5 +90,5 @@
 
 ---
 
-*Last updated: 6 March, 2026*
+*Last updated: 7 March, 2026*
 
