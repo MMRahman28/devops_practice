@@ -62,17 +62,20 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (8 March, 2026)
+## Today's Progress (9 March, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 26**
+- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 27**
 
-	**Exim - ACL**
+	**Authenticators**
 
-	- ACL applied on -> HELO, MAIL, RCPT, DATA stages
-	- ACL enforces strict adherence to the SMTP protocol at the HELO stage
-	- Check sender and sender's domain -> MAIL stage
-	- Check recipients -> RCPT stage
-	- Check message content -> DATA stage 
+	- Authenticators are drivers interact with the SMTP AUTH command's challenge and response sequence.
+	- Also identifies a authentication mechanism for client and server.
+	- Exim receiving Email? -> acts as an SMTP AUTH server
+	- If sending -> client.
+	- Auth data sources -> LDAP, PAM, /etc/passwd etc.
+	- server_advertise_condition -> prevents mail clients sending clear plaintext password
+	- Enforces TLS security, too.
+	- When Exim acts as a client similar measure can be taken with client_condition option.  
 		
 	#### notes.md (learning log)
  ---
@@ -84,5 +87,5 @@
 
 ---
 
-*Last updated: 8 March, 2026*
+*Last updated: 9 March, 2026*
 

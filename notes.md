@@ -3356,6 +3356,21 @@ Output:
 
 ---
 
+### March 9, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 27**
+
+	**Authenticators**
+
+	- Authenticators are drivers that interact with the SMTP AUTH command's challenge and response sequence, and identify an authentication mechanism acceptable to both client and server.
+	- If Exim receiving email, it is acting as an SMTP AUTH server. If it is sending mail it is a client.
+	- Authentication data can come from many sources:LDAP, PAM, /etc/passwd etc.
+	- server_advertise_condition prevents mail clients from sending passwords in clear by requiring TLS security (through STARTTLS or SSL) on connection.
+	- When Exim acts as a client, client_condition option can be used similarly in client clause.
+
+--- 
+
 
 
 
