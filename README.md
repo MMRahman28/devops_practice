@@ -62,23 +62,17 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (7 March, 2026)
+## Today's Progress (8 March, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 25**
+- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 26**
 
-	**Exim - List**
+	**Exim - ACL**
 
-	- Four lists -> hostlist, domainlist, addresslist, and localpartslist
-	- `hostlist my_relay_list = 192.168.1.0/24 : myfriend.example.com`
-	- `hostlist my_relay_list = /usr/local/exim/relay.txt`
-	- Members can be listed inline or taken from a file. If inline, each separated by a colon.
-	- @[] means all IP addresses on which Exim is listening.
-
-	**Macros**
-
-	- Macros -> parameters, errors etc.
-	- Name must start with a capital letter. All caps aids clarity
-	- ifdef is supported. 
+	- ACL applied on -> HELO, MAIL, RCPT, DATA stages
+	- ACL enforces strict adherence to the SMTP protocol at the HELO stage
+	- Check sender and sender's domain -> MAIL stage
+	- Check recipients -> RCPT stage
+	- Check message content -> DATA stage 
 		
 	#### notes.md (learning log)
  ---
@@ -90,5 +84,5 @@
 
 ---
 
-*Last updated: 7 March, 2026*
+*Last updated: 8 March, 2026*
 

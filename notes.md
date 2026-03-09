@@ -3345,6 +3345,17 @@ Output:
 	- ifdef is supported.
 ---
 
+### March 8, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 26**
+
+	**ACL**
+	- ACL can be applied any of the various stages of an SMTP conversation: HELO, MAIL, RCPT, DATA etc.
+	- ACL enforces strict adherence to the SMTP protocol at the HELO stage, checks the sender and  sender's domain at the MAIL stage, check the recipients at the RCPT stage, and scans the message content at DATA stage.
+
+---
+
 
 
 
