@@ -62,20 +62,18 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (9 March, 2026)
+## Today's Progress (10 March, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 27**
+- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 28**
 
-	**Authenticators**
+	**Routers**
 
-	- Authenticators are drivers interact with the SMTP AUTH command's challenge and response sequence.
-	- Also identifies a authentication mechanism for client and server.
-	- Exim receiving Email? -> acts as an SMTP AUTH server
-	- If sending -> client.
-	- Auth data sources -> LDAP, PAM, /etc/passwd etc.
-	- server_advertise_condition -> prevents mail clients sending clear plaintext password
-	- Enforces TLS security, too.
-	- When Exim acts as a client similar measure can be taken with client_condition option.  
+	- Sequence of routers are specified.
+	- The accepting router typically hands the message to the transport driver.
+	- Routers handle both incoming and outgoing messages.
+	- If a message receives pass or decline from all the routers in the sequence, then it is unroutable.
+	- Exim bounces or rejects such messages based on the context.
+	- Example router options: preconditions, acceptance or failure conditions, error message to return, and tranport driver to use. 
 		
 	#### notes.md (learning log)
  ---
@@ -87,5 +85,5 @@
 
 ---
 
-*Last updated: 9 March, 2026*
+*Last updated: 10 March, 2026*
 

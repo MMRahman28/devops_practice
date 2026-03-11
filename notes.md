@@ -3369,7 +3369,21 @@ Output:
 	- server_advertise_condition prevents mail clients from sending passwords in clear by requiring TLS security (through STARTTLS or SSL) on connection.
 	- When Exim acts as a client, client_condition option can be used similarly in client clause.
 
---- 
+---
+
+### March 10, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 28**
+	
+	**Routers**
+	- you specify a sequence of routers.
+	- The accepting router typically hands the message to the transport driver.
+	- Routers handles both incoming and outgoing messages.
+	- If a message receives pass or decline from all the routers in the sequence, it is unroutable. Exim bounces or rejects such messages based on the context.
+	- Routers have many possible options: preconditions, acceptance or failure conditions, error messages to return, and transport driver to use.
+
+---
 
 
 
