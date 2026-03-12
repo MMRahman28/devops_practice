@@ -3385,6 +3385,29 @@ Output:
 
 ---
 
+### March 11, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 29**
+
+	**The accept router**
+	- labels an address as OK and passes the associated message to a transport driver.
+
+	**The dnslookup router**
+	- typically handles outgoing messages.
+	- looks up the MX record of the recipient's domain.
+	- hands the message to an SMTP transport driver for delivery.
+	
+	**The manualroute router**
+	- route email whatever way is wanted.
+	- routing info can be a table of rules that match by recipient domain or a single rule that applies to all domains.
+
+	**The redirect router**
+	- Does address rewriting.
+	- Usually does not assign the rewritten address to a transport, that task is left for other routers in the chain
+
+--- 
+
 
 
 
