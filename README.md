@@ -84,7 +84,7 @@
 		
 	#### notes.md (learning log)
  ---
-
+				
 ## Files in this Repo
 - `notes.md` -> Daily learning log
 - `*.sh` -> Bash scripts
