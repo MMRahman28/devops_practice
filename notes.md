@@ -3406,7 +3406,27 @@ Output:
 	- Does address rewriting.
 	- Usually does not assign the rewritten address to a transport, that task is left for other routers in the chain
 
---- 
+---
+
+### March 12, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 30**
+
+	**Transport**
+
+	- Routers decide where the message should go, and transports take them there
+	- Local transport typically append to a file,
+	- Pipe to a program or speak the LMTP protocol to an IMAP server
+	- Remote transport speak SMTP to their counterparts across the internet
+	- There are five Exim transports:appendfile, lmtp, smtp, autoreply, and pipe
+	- autoreply for vacation
+	- pipe transport hands messages as input to a command 
+	- There can be multiple instances of the same type of transport
+	- Unlike routers order is not important for transport
+
+---
+
 
 
 

@@ -62,25 +62,17 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (11 March, 2026)
+## Today's Progress (12 March, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 29**
+- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 30**
 
-	**The Accept Router**
-	- labels an address as OK and passes the message to a transport driver.
-	
-	**The Dnslookup Router**
-	- Typically handles outgoing messages.
-	- look up the MX record of the recipient's domain
-	- hands the message to a transport driver for delivery
+	**Transport**
 
-	**The Manualroute Router**
-	- routes emails.
-	- routing info can be a table of rules that match by recipient's domain  or a single rule for all domains.
-	
-	**The Redirect Router**
-	- Does address rewriting
-	- Usually does not assign the rewritten address to the transport (it's a task for other routers in the chain)
+	- Routers decide where message should go, transports take them there
+	- Local transport -> append to a file, pipe to a program, speak LMTP protocol to a IMAP server
+	- Remote transport -> speaks SMTP
+	- Five Exim transports -> appendfile, lmtp, smtp, autoreply and pipe
+	- There can be multiple instances of same type of transport
 		
 	#### notes.md (learning log)
  ---
@@ -92,5 +84,5 @@
 
 ---
 
-*Last updated: 11 March, 2026*
+*Last updated: 12 March, 2026*
 
