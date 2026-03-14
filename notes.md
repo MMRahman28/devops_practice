@@ -3427,6 +3427,23 @@ Output:
 
 ---
 
+### March 13, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 31**
+
+	**The appendfile transport**
+
+	- Store message format: mbox, mbx, Maildir, or mailstore in a specified file or directory
+	- group and mode clauses in an instance of the appendfile transport ensure transport agent can write to the file
+
+	**The SMTP transport**
+
+	- smtp transport is the workhorse of any mail system.
+	- Two possible instances can be: one for standard SMTP port (25), and anoter for port 587 for the mail submission
+
+---
+
 
 
 

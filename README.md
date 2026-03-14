@@ -62,17 +62,19 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (12 March, 2026)
+## Today's Progress (13 March, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 30**
+- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 31**
 
-	**Transport**
+	**The appendfile transport**
 
-	- Routers decide where message should go, transports take them there
-	- Local transport -> append to a file, pipe to a program, speak LMTP protocol to a IMAP server
-	- Remote transport -> speaks SMTP
-	- Five Exim transports -> appendfile, lmtp, smtp, autoreply and pipe
-	- There can be multiple instances of same type of transport
+	- store message format -> mbox, mbx, Maildir or mailstore
+	- group and mode clauses in an instance of the appendfile transport -> allow transport agents to write
+
+	**SMTP transport**
+
+	- Workhorse of a mail system
+	- Two possible instances -> for smtp port 25, and another for port 587 for mail submission
 		
 	#### notes.md (learning log)
  ---
@@ -84,5 +86,5 @@
 
 ---
 
-*Last updated: 12 March, 2026*
+*Last updated: 13 March, 2026*
 
