@@ -3444,6 +3444,25 @@ Output:
 
 ---
 
+### March 14, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 32**
+
+	**Retry Configuration**
+
+	- Three time interval can be specified, each less frequent than the previous one.
+	- retry section look like:
+
+	```begin retry
+		* * F, 2h, 15m; F, 24h, 1h; F, 4d, 6h
+	```
+	**Rewriting Configuration**
+	- Not to reroute but to fix address.
+	- Used for outgoing messages, not incoming.
+
+---
+
 
 
 

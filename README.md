@@ -62,19 +62,24 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (13 March, 2026)
+## Today's Progress (14 March, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 31**
+- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 32**
 
-	**The appendfile transport**
+	**Retry Configuration**
 
-	- store message format -> mbox, mbx, Maildir or mailstore
-	- group and mode clauses in an instance of the appendfile transport -> allow transport agents to write
+	- Three time interval can be specified. Each less frequent than the previous one.
+	- retry section look like this:
 
-	**SMTP transport**
+	```
+		begin retry
+			* * F, 2h, 15m; F, 24h, 1h; F, 4d, 6h
+	```
 
-	- Workhorse of a mail system
-	- Two possible instances -> for smtp port 25, and another for port 587 for mail submission
+	**Rewriting Configuration**
+
+	- Not to reroute but to fix address.
+	- Used for outgoing messages not incoming.
 		
 	#### notes.md (learning log)
  ---
@@ -86,5 +91,5 @@
 
 ---
 
-*Last updated: 13 March, 2026*
+*Last updated: 14 March, 2026*
 
