@@ -3463,6 +3463,24 @@ Output:
 
 ---
 
+### March 15, 2026
+#### Task Completed 
+
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 33**
+
+	**Exim Logging**
+
+	- Exim by default writes three log files: a main log, a reject log, and a panic log.
+	- The log_file_path option takes up to two colon separated values - either the keyword syslog or a an absolute path with a %s embedded.
+	- log_file_path = syslog : /var/log/exim_%s
+	- Will log to both syslog and to /var/log/ directory in  exim_main, exim_reject and exim_panic
+	files.
+	- Logging priority in different files: main in syslog -> priority info, reject -> priority notice, and panic -> priority alert.
+	- Logging categories can be included or excluded by the log_selector mechanism.
+	- log_selector = +smtp_connection +smtp_incomplete_transaction +...
+	- Exim also keeps a temporary log at: /var/spool/exim/mslog.
+
+---
 
 
 

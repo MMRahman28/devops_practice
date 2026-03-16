@@ -62,24 +62,19 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (14 March, 2026)
+## Today's Progress (15 March, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 32**
+- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 33**
 
-	**Retry Configuration**
+	**Exim logging**
 
-	- Three time interval can be specified. Each less frequent than the previous one.
-	- retry section look like this:
-
-	```
-		begin retry
-			* * F, 2h, 15m; F, 24h, 1h; F, 4d, 6h
-	```
-
-	**Rewriting Configuration**
-
-	- Not to reroute but to fix address.
-	- Used for outgoing messages not incoming.
+	- Exim by default writes three log files: main, reject, and panic.
+	- The log_file_path takes up to two colon separated values -> syslog and absolute path with a %s embedded
+	- log_file_path = syslog : /var/log/exim_%s
+	- Logging priorty in different files: main in syslog -> priority info, reject -> priority notice, panic -> priority alert
+	- log_selector option for excluding or including logging categories.
+	- log_selector  =  +smtp_connection +smtp_incomplete_transaction +...
+	- Also keeps a temp log at: /var/spool/exim/mslog.
 		
 	#### notes.md (learning log)
  ---
@@ -91,5 +86,5 @@
 
 ---
 
-*Last updated: 14 March, 2026*
+*Last updated: 15 March, 2026*
 
