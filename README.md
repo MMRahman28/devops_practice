@@ -62,19 +62,17 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (15 March, 2026)
+## Today's Progress (16 March, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 33**
+- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 34**
 
-	**Exim logging**
+	**Exim debugging**
 
-	- Exim by default writes three log files: main, reject, and panic.
-	- The log_file_path takes up to two colon separated values -> syslog and absolute path with a %s embedded
-	- log_file_path = syslog : /var/log/exim_%s
-	- Logging priorty in different files: main in syslog -> priority info, reject -> priority notice, panic -> priority alert
-	- log_selector option for excluding or including logging categories.
-	- log_selector  =  +smtp_connection +smtp_incomplete_transaction +...
-	- Also keeps a temp log at: /var/spool/exim/mslog.
+	- debugging mode: `exim -d`, with  `d+expand+acl` shows extra details + acl interpretation
+	- A technique: start MTA on a non-standard port and then talk it through telnet
+	- `sudo exim -d -oX 26 -bd` -> daemon mode + listening on port 26 + debugging info turned on
+	- Now, Telnet to port 26 and type SMTP commands
+	- swaks a perl script can do the same talking.
 		
 	#### notes.md (learning log)
  ---
@@ -86,5 +84,5 @@
 
 ---
 
-*Last updated: 15 March, 2026*
+*Last updated: 16 March, 2026*
 

@@ -3482,6 +3482,24 @@ Output:
 
 ---
 
+### March 16, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook chapter 18 Electronic Mail part 34**
+
+	**Exim debugging**
+	- `exim -d` triggers debugging mode
+	- `-d+expand+acl` requests regular debugging output plus extra details and acl interpretation.
+	- A common technique when debugging mail systems is to start the MTA on a non-standard port and then talk it through telnet.
+	- To start exim on daemon mode, listening on port 26, with debugging info turned on, run
+	- `sudo exim -d -oX 26 -bd`, then telnet to port 26 and type SMTP commands.
+	- swaks a perl script can do the same taking.
+	- If log files show timeouts of around 30 seconds,that's suggestive of DNS issue.
+
+---
+
+
+
 
 
 
