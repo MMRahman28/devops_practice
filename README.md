@@ -62,17 +62,18 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (16 March, 2026)
+## Today's Progress (17 March, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 34**
+- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 35**
 
-	**Exim debugging**
+	**Postfix**
 
-	- debugging mode: `exim -d`, with  `d+expand+acl` shows extra details + acl interpretation
-	- A technique: start MTA on a non-standard port and then talk it through telnet
-	- `sudo exim -d -oX 26 -bd` -> daemon mode + listening on port 26 + debugging info turned on
-	- Now, Telnet to port 26 and type SMTP commands
-	- swaks a perl script can do the same talking.
+	- Speaks ESMTP
+	- Postfix = several small cooperating programs that send network messages.
+	- Communication -> local domain socket or FIFOs.
+	- The master program starts and monitors all other processes.
+	- master.cf, the config file lists all the subsidary programs, and the info how they should be started.
+	- In general, no tweaking is necessary.
 		
 	#### notes.md (learning log)
  ---
@@ -84,5 +85,5 @@
 
 ---
 
-*Last updated: 16 March, 2026*
+*Last updated: 17 March, 2026*
 

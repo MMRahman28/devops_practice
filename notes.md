@@ -3498,6 +3498,23 @@ Output:
 
 ---
 
+### March 17, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 35**
+
+	**Postfix**
+	- Postfix speaks ESMTP.
+	- Postfix relies on table lookup from flat files, Berkley DB, DBM, LDAP, NetInfo, or SQL databases.
+	- Postfix = several small cooperating programs that send network messages. Also, deliver email locally.
+	- Communication among those small programs are done by local domain sockets or FIFOs.
+	- The master program starts and monitors all other processes.
+	- master.cf the config file lists the subsidary programs, along with the info how they should be started.
+	- In general, no tweaking is necessary.
+	- Several postfix server programs for pickup, cleanup, rewrite, bounce etc.
+
+---
+
 
 
 
