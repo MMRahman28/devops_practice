@@ -62,18 +62,15 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (17 March, 2026)
+## Today's Progress (18 March, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 35**
+- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 36**
 
-	**Postfix**
+	**Receiving Email**
 
-	- Speaks ESMTP
-	- Postfix = several small cooperating programs that send network messages.
-	- Communication -> local domain socket or FIFOs.
-	- The master program starts and monitors all other processes.
-	- master.cf, the config file lists all the subsidary programs, and the info how they should be started.
-	- In general, no tweaking is necessary.
+	- smtpd receives mail entering through SMTP.
+	- smtpd verifies connecting clients are authorised to send the mail they are trying to deliver.
+	- All incoming mail passes through cleanup, which adds missing headers and rewrite addresses according to the cannonical and virtual maps.
 		
 	#### notes.md (learning log)
  ---
@@ -85,5 +82,5 @@
 
 ---
 
-*Last updated: 17 March, 2026*
+*Last updated: 18 March, 2026*
 

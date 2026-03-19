@@ -3514,6 +3514,18 @@ Output:
 	- Several postfix server programs for pickup, cleanup, rewrite, bounce etc.
 
 ---
+### March 18, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 36**
+
+	**Receiving Email**
+	- smtpd receives mail entering through SMTP.
+	- Also verifies connecting clients are authorised to send the mail they are trying to deliver.
+	- When email is sent locally through /usr/lib/sendmail compatibility program, a file is written to the /var/spool/postfix/maildrop directory.
+	- All incoming mail passes through cleanup, which adds missing headers and rewrite addresses according to the cannonical and virtual maps.
+
+---
 
 
 
