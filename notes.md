@@ -3514,16 +3514,15 @@ Output:
 	- Several postfix server programs for pickup, cleanup, rewrite, bounce etc.
 
 ---
-### March 18, 2026
+### March 19, 2026
 #### Task Completed
 
-- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 36**
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 37**
 
-	**Receiving Email**
-	- smtpd receives mail entering through SMTP.
-	- Also verifies connecting clients are authorised to send the mail they are trying to deliver.
-	- When email is sent locally through /usr/lib/sendmail compatibility program, a file is written to the /var/spool/postfix/maildrop directory.
-	- All incoming mail passes through cleanup, which adds missing headers and rewrite addresses according to the cannonical and virtual maps.
+	**Sending Email**
+	- qmgr, aided by trivial-rewrite decides where a message should be sent.
+	- local's job is to deliver message locally, resolves addresses in alias table and follows instruction found in recipient's .forward file.
+	- pipe implements delivery through external programs.
 
 ---
 
