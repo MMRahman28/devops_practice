@@ -62,15 +62,9 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (19 March, 2026)
+## Today's Progress (20 March, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 18 - Electronic Mail part 37**
-
-	**Sending Email**
-
-	- qmgr, aided by trivial-rewrite decides where a message should be sent.
-	- local's job -> deliver message locally + resolve addresses in alias table + follow instruction is recipient's .forward file.
-	- pipe implements delivery through external programs.
+- **Break**
 		
 	#### notes.md (learning log)
  ---
@@ -82,5 +76,5 @@
 
 ---
 
-*Last updated: 19 March, 2026*
+*Last updated: 20 March, 2026*
 
