@@ -3529,6 +3529,24 @@ Output:
 ### March 20, 2026
 #### Break
 
+---
+
+### March 21, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 38**
+
+	**Security/ Config**
+
+	- Most of the postfix server programs can run in a chrooted enviroment.
+	- main.cf file is the principal config file.
+	- The master.cf file configures the sever programs.
+	- postconf(5) man page describes every parameter that can be set in main.cf.
+	- Use `man -s 5 postconf` to get the right version
+	- The original mail.cf is best left alone, start with an empty file for personalised configuration.
+
+--- 
+
 
 
 

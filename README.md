@@ -62,10 +62,17 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (20 March, 2026)
+## Today's Progress (21 March, 2026)
 
-- **Break**
-		
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 38**
+
+	**Security/Config**
+	- Most postfix server programs can run in a chrooted environment.
+	- main.cf file is the principal config file
+	- the master.cf file for the server programs.
+	- postconf(5) man pages describes parameters that can be set in main.cf
+	- Original main.cf leave alone, use personalised configuration file which can be empty.
+
 	#### notes.md (learning log)
  ---
 				
@@ -76,5 +83,5 @@
 
 ---
 
-*Last updated: 20 March, 2026*
+*Last updated: 21 March, 2026*
 
