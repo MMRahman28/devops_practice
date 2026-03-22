@@ -62,16 +62,15 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (21 March, 2026)
+## Today's Progress (22 March, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 38**
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 39**
 
-	**Security/Config**
-	- Most postfix server programs can run in a chrooted environment.
-	- main.cf file is the principal config file
-	- the master.cf file for the server programs.
-	- postconf(5) man pages describes parameters that can be set in main.cf
-	- Original main.cf leave alone, use personalised configuration file which can be empty.
+	**Security/Basic Settings**
+	- Simplest possible postfix configuration is an empty file
+	- Null client: does not deliver mail locally, but  forward outbound mail to a central server.
+	- postconf tool -> for configuring postfix.
+	- lookup tables -> maps keys to values. e.g. alias_maps = dbm:/etc/mail/aliases.
 
 	#### notes.md (learning log)
  ---
@@ -83,5 +82,5 @@
 
 ---
 
-*Last updated: 21 March, 2026*
+*Last updated: 22 March, 2026*
 

@@ -3547,6 +3547,19 @@ Output:
 
 --- 
 
+### March 22, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 39**
+
+	**Security- basic settings**
+
+	- Simplest possible postfix configuration is an empty file.
+	- Null client: Does not deliver mail locally but forwards outbound mail to a designated central server.
+	- Use of postconf: for configuring postfix.
+	- lookup tables: maps keys to values. e.g. alias_maps = dbm:/etc/mail/aliases.
+---
+
 
 
 
