@@ -3560,6 +3560,22 @@ Output:
 	- lookup tables: maps keys to values. e.g. alias_maps = dbm:/etc/mail/aliases.
 ---
 
+### March 23, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 40**
+
+	**Local delivery**
+
+	- local program delivers mail to local recipents and also handles local aliasing.
+	- local first consult the alias map tables and then substitutes any matching entries recursively.
+	- If no aliases match, local  looks for a .forward file in user's home directory and follows the instruction if exists.
+	- If no forward file is found, email is delivered to local mailbox.
+	- By default, local writes to standard mbox-file format under /var/mail.
+	- If recipient_delimiter is + mail addressed to say mash+whaterve@gmx.edu is accepted to deliver to mash account even if the extended bits do not match it falls back to the base address.
+
+
+	---
 
 
 

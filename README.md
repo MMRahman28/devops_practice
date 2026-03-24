@@ -62,15 +62,14 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (22 March, 2026)
+## Today's Progress (23 March, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 39**
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 40**
 
-	**Security/Basic Settings**
-	- Simplest possible postfix configuration is an empty file
-	- Null client: does not deliver mail locally, but  forward outbound mail to a central server.
-	- postconf tool -> for configuring postfix.
-	- lookup tables -> maps keys to values. e.g. alias_maps = dbm:/etc/mail/aliases.
+	**Local Delivery**
+	- local program -> delivers mail to local recipient + handles local aliasing.
+	- local consults alias map tables and substitutes any match recursively.
+	- If no match -> look for .forward file -> if no .forward, deliver to the local mailbox.
 
 	#### notes.md (learning log)
  ---
@@ -82,5 +81,5 @@
 
 ---
 
-*Last updated: 22 March, 2026*
+*Last updated: 23 March, 2026*
 
