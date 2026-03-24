@@ -62,14 +62,15 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (23 March, 2026)
+## Today's Progress (24 March, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 40**
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 41**
 
-	**Local Delivery**
-	- local program -> delivers mail to local recipient + handles local aliasing.
-	- local consults alias map tables and substitutes any match recursively.
-	- If no match -> look for .forward file -> if no .forward, deliver to the local mailbox.
+	**Virtual Domains**
+	- Three choices: 
+	- List the domain in mydestination parameter.
+	- List the domain in virtual_alias_domains parameter -> has its own namespace.
+	- List the domain in virtual_mailbox_domains parameter -> has its own namespace, too.
 
 	#### notes.md (learning log)
  ---
@@ -81,5 +82,5 @@
 
 ---
 
-*Last updated: 23 March, 2026*
+*Last updated: 24 March, 2026*
 

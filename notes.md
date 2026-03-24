@@ -3577,6 +3577,23 @@ Output:
 
 	---
 
+### march 24, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chpater 18 Electronic Mail part 41**
+
+	**Virtual Domains**
+
+	- three choices:  
+	- list the domain in mydestination parameter.
+	- List the domain in virtual_alias_domains parameter. This option gives the domain its own namespace.
+	- List the domain in virtual_mailbox_domains parameter.Like the above it has its own namespace.
+
+---
+
+	
+
+
 
 
 
