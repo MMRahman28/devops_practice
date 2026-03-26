@@ -62,15 +62,30 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (24 March, 2026)
+## Today's Progress (25 March, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 41**
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 42**
 
-	**Virtual Domains**
-	- Three choices: 
-	- List the domain in mydestination parameter.
-	- List the domain in virtual_alias_domains parameter -> has its own namespace.
-	- List the domain in virtual_mailbox_domains parameter -> has its own namespace, too.
+	**Virtual Alias Domains**
+	- domain listed as a value of virtual_alias_domains -> accepted by postfix + must be forwarded to an actual recipient
+	- Example from main.cf:
+	```
+	myorigin = cs.colorado.edu
+	mydestination = cs.colrado.edu
+	virtual_alias_domains = admin.com
+	virtual_alias_maps = hash:/etc/mail/admin.com/virtual
+
+	```
+	In /etc/mail/admin.com/virtual:
+	
+	```
+	postmaster@admin.com	evi, david@admin.com
+	david@admin.com			david@schweikert.ch
+	evi@admin.com			evi
+
+	```
+	- mail for evi@admin.com will be redirect to evi@cs.colorado.edu
+	- Because, myorigin will be appended + mydestination contains cs.colorado.edu
 
 	#### notes.md (learning log)
  ---
@@ -82,5 +97,5 @@
 
 ---
 
-*Last updated: 24 March, 2026*
+*Last updated: 25 March, 2026*
 

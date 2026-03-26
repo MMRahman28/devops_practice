@@ -3591,6 +3591,27 @@ Output:
 
 ---
 
+### March 25, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 42**
+
+	**Virtual Alias Domains**
+
+	- If a domain is listed as a value of virtual_alias_domains parameter, mail to that domain is accepted by postfix, and must be forwarded to an actual recipient either on the local machine or elsewhere.
+	- Example, from main.cf:
+	- myorigin = cs.colorado.edu
+	- mydestination = cs.colorado.edu
+	- virtual_alias_domains = admin.com
+	- virtual_alias_maps = hash:/etc/mail/admin.com/virtual
+	- In etc/mail/admin.com/virtual:
+	- postmaster@admin.com      evi, david@admin.com
+	- david@admin.com 	        david@schweikert.ch
+	- evi@admin.com 			evi
+	- So, mail from evi@admin.com would be redirected to evi@cs.colarado.edu.
+	- myorigin is appended + mydestination includes cs.colorado.edu
+---
+
 	
 
 
