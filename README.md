@@ -62,30 +62,16 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (25 March, 2026)
+## Today's Progress (26 March, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 42**
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 43**
 
-	**Virtual Alias Domains**
-	- domain listed as a value of virtual_alias_domains -> accepted by postfix + must be forwarded to an actual recipient
-	- Example from main.cf:
-	```
-	myorigin = cs.colorado.edu
-	mydestination = cs.colrado.edu
-	virtual_alias_domains = admin.com
-	virtual_alias_maps = hash:/etc/mail/admin.com/virtual
-
-	```
-	In /etc/mail/admin.com/virtual:
-	
-	```
-	postmaster@admin.com	evi, david@admin.com
-	david@admin.com			david@schweikert.ch
-	evi@admin.com			evi
-
-	```
-	- mail for evi@admin.com will be redirect to evi@cs.colorado.edu
-	- Because, myorigin will be appended + mydestination contains cs.colorado.edu
+	**Virtual Mailbox Domains**
+	- virtual mailbox domains are similar to local mailbox domain.
+	- However, the list of users and their corresponding mailboxes are managed independently.
+	- virtual_mailbox_maps paoints to a table that lists all valid users in the domain.
+	- Addresses in virtual mailbox domain can have aliases.
+	- It is possible to use alias for addresses which are not in the virtual domain.
 
 	#### notes.md (learning log)
  ---
@@ -97,5 +83,5 @@
 
 ---
 
-*Last updated: 25 March, 2026*
+*Last updated: 26 March, 2026*
 

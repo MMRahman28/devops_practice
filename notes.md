@@ -3612,6 +3612,22 @@ Output:
 	- myorigin is appended + mydestination includes cs.colorado.edu
 ---
 
+### March 26, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 43**
+
+	**Virtual Mailbox Domains**
+
+	- virtual_mailbox_domains are similar to local domains.
+	- However, the list of users and corresponding mailboxes must be managed independently.
+	- virtual_mailbox_maps point to a table that lists all valid users in the domain.
+	- The map format is: user@domain  /path/to/mailbox
+	- Addresses in virtual mailbox domain can be aliased.
+	- It is possible to use alias for addresses which are not in the virtual domain.
+
+---
+
 	
 
 
