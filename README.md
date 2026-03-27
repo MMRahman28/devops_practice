@@ -62,16 +62,15 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (26 March, 2026)
+## Today's Progress (27 March, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 43**
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 44**
 
-	**Virtual Mailbox Domains**
-	- virtual mailbox domains are similar to local mailbox domain.
-	- However, the list of users and their corresponding mailboxes are managed independently.
-	- virtual_mailbox_maps paoints to a table that lists all valid users in the domain.
-	- Addresses in virtual mailbox domain can have aliases.
-	- It is possible to use alias for addresses which are not in the virtual domain.
+	**Access Control**
+	- Postfix does not act like an open relay by default which is good
+	- User most likely liberalize permissions than tighten them by default
+	- SMTP transactions are configured through access restriction lists.
+	- Most important parameter is smtpd_recipient_restrictions.
 
 	#### notes.md (learning log)
  ---
@@ -83,5 +82,5 @@
 
 ---
 
-*Last updated: 26 March, 2026*
+*Last updated: 27 March, 2026*
 

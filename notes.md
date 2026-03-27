@@ -3628,6 +3628,20 @@ Output:
 
 ---
 
+### March 27, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 44**
+
+	**Access control**
+
+	- Mail server should relay mail for third-parties only on behalf of trusted clients.
+	- Postfix does not act like a open relay by default
+	- User most likely to loosen the restrictions than thighten them in postfix which is good.
+	- SMTP transactions are configured through access restriction lists.
+	- Most important parameter is smtpd_recipient_restrictions.
+
+---
 	
 
 
