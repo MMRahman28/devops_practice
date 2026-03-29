@@ -62,15 +62,15 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (27 March, 2026)
+## Today's Progress (28 March, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 44**
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 45**
 
-	**Access Control**
-	- Postfix does not act like an open relay by default which is good
-	- User most likely liberalize permissions than tighten them by default
-	- SMTP transactions are configured through access restriction lists.
-	- Most important parameter is smtpd_recipient_restrictions.
+	**Postfix Access tables**
+	- Access tables -> for restrictions that returns an action.
+	- Postfix programs has -> log entry for every message it processes
+	- Assigns -> queue id -> permanent and searchable.
+	- mailq command, qshape script tool -> prints content of the queue, shows summary statistics about the content of the queue respectively.
 
 	#### notes.md (learning log)
  ---
@@ -82,5 +82,5 @@
 
 ---
 
-*Last updated: 27 March, 2026*
+*Last updated: 28 March, 2026*
 

@@ -3642,6 +3642,26 @@ Output:
 	- Most important parameter is smtpd_recipient_restrictions.
 
 ---
+
+### March 28, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 18 Electronic Mail part 45**
+
+	**Access tables**
+
+	- Access tables are used in restrictions such as check_client_access and check_recipient_access to select an action according to the client host address or recipient address, respectively.
+	- Each restriction returns one action.
+	
+	**Debugging**
+
+	- Every postfix programs normally issues a log entry for every message it processes.
+	- Postfix assigns a queue ID as soon as a message enters the mail system and never changes it. It helps searching.
+	- As in the sendmail system, a mailq command prints the contents of a queue.
+	- qshape script is another tool - shows summary statistics about the contents of a queue.
+
+---
+
 	
 
 
