@@ -62,11 +62,18 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (29 March, 2026)
+## Today's Progress (30 March, 2026)
 
-- **Break - new topics tomorrow**
+- **Unix and Linux System Admin Handbook Chapter 19 Web hosting part 1**
 
-	
+	**HTTP response classes**
+	code		General indication							Example             
+	- 1xx 		Request received, processing continues		101 switching protocols
+	- 2xx		Success										200 OK, 201 Created
+	- 3xx 		Further action needed						300 Moved permanently, 301 Found
+	- 4xx		Unsatisfiable request						403 Forbidden, 404 Not Found
+	- 5xx		Server or Environment failure 				503 Service Unavailable
+
 
 	#### notes.md (learning log)
  ---
@@ -78,5 +85,5 @@
 
 ---
 
-*Last updated: 29 March, 2026*
+*Last updated: 30 March, 2026*
 

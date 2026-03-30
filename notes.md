@@ -3665,6 +3665,21 @@ Output:
 ### March 29, 2026
 #### Break
 
+### March 30, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 19 Web hosting part 1**
+
+	**HTTP response classes**
+	code		General indication							Example             
+	- 1xx 		Request received, processing continues		101 switching protocols
+	- 2xx		Success										200 OK, 201 Created
+	- 3xx 		Further action needed						300 Moved permanently, 301 Found
+	- 4xx		Unsatisfiable request						403 Forbidden, 404 Not Found
+	- 5xx		Server or Environment failure 				503 Service Unavailable
+
+---
+
 
 	
 
