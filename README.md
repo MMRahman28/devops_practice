@@ -62,18 +62,17 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (30 March, 2026)
+## Today's Progress (31 March, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 19 Web hosting part 1**
+- **Unix and Linux System Admin Handbook Chapter 19 Web hosting part 2**
 
-	**HTTP response classes**
-	code		General indication							Example             
-	- 1xx 		Request received, processing continues		101 switching protocols
-	- 2xx		Success										200 OK, 201 Created
-	- 3xx 		Further action needed						300 Moved permanently, 301 Found
-	- 4xx		Unsatisfiable request						403 Forbidden, 404 Not Found
-	- 5xx		Server or Environment failure 				503 Service Unavailable
-
+	**curl**
+	- `curl -s -v -o /dev/null http://admin.com`
+	- s for silent mode o for output
+	- `curl -H "Host:www.admin.com" -s -v -o /dev/null 54.84.253.153`
+	- the above command is handy for request against a IP address, by passing DNS.
+	- `curl -O http://curl.haxx.se/snapshots/curl-7.46.0-20151105.tar.gz
+	- The argument -O is used to download a file.
 
 	#### notes.md (learning log)
  ---
@@ -85,5 +84,5 @@
 
 ---
 
-*Last updated: 30 March, 2026*
+*Last updated: 31 March, 2026*
 

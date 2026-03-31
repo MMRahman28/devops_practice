@@ -3680,6 +3680,20 @@ Output:
 
 ---
 
+### March 31, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 19 Web Hosting part 2**
+
+	**curl**
+	- curl -s -v -o /dev/null http://admin.com
+	- s for silent mode and o for output
+	- can set header explicitly with curl -H argument
+	- curl -H "Host:www.admin.com" -s -v -o /dev/null 54.84.253.153
+	- The above curl -H command let us make request directly against an IP address, bypassing DNS.
+	- We use -O argument to download a file.
+	- curl -O http://curl.haxx.se/snapshots/curl-7.46.0-20151105.tar.gz
+---
 
 	
 
