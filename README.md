@@ -62,18 +62,14 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (31 March, 2026)
+## Today's Progress (April 1, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 19 Web hosting part 2**
+- **Unix and Linux System Admin Handbook Chapter 19 Web hosting part 3**
 
-	**curl**
-	- `curl -s -v -o /dev/null http://admin.com`
-	- s for silent mode o for output
-	- `curl -H "Host:www.admin.com" -s -v -o /dev/null 54.84.253.153`
-	- the above command is handy for request against a IP address, by passing DNS.
-	- `curl -O http://curl.haxx.se/snapshots/curl-7.46.0-20151105.tar.gz
-	- The argument -O is used to download a file.
-
+	- HTTP/1.0 -> no connection reuse feature.
+	- HTTP/1.1 -> can keep connection alive by declaring it in the Header. Still lots of TCP connection.
+	- HTTP/2 -> use multiplexing reduces TCP connection, now more clients are supported
+	
 	#### notes.md (learning log)
  ---
 				
@@ -84,5 +80,5 @@
 
 ---
 
-*Last updated: 31 March, 2026*
+*Last updated: April 1, 2026*
 

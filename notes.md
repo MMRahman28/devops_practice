@@ -3695,7 +3695,16 @@ Output:
 	- curl -O http://curl.haxx.se/snapshots/curl-7.46.0-20151105.tar.gz
 ---
 
-	
+### April 1, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 19 Web Hosting part 3**
+
+	- HTTP/1.0 did not provision for connection reuse.
+	- HTTP/1.1 later had the connection: Keep-alive Header for client and server.
+	- HTTP/2 introduces multiplexing which reduces TCP connection for busy servers or for servers in general. So, more clients can be supported.
+
+---
 
 
 
