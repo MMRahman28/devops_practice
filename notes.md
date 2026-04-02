@@ -3706,7 +3706,26 @@ Output:
 
 ---
 
+### April 2, 2026
+#### Task Completed
 
+- **Unix and Linux System Admin Handbook Chapter 19 Web Hosting part 4**
+
+	**Partial List of HTTP Server Types**
+	- Application server (Unicorn, Tomcat), Cache(Varnish, Squid), Load balancer(Pound, HAProxy), web app firewall (ModSecurity), web server(Apache, Nginx).
+	
+	**Component of a Web Application Stack**
+	- Inbound requests -> web application firewall -> load balancer -> caching layer -> web server -> application server
+	- application server -> web server -> caching layer -> load balancer -> web application firewall -> outbound response
+		^	|
+		|	V
+	- Database
+
+	- If cached then response does not need to travel all the way from application server
+	- Real world architecture is not that straightforward.
+	- NGINX best known as web server but can cache and load balance.
+
+---
 
 
 

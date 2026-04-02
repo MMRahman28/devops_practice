@@ -62,13 +62,20 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (April 1, 2026)
+## Today's Progress (April 2, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 19 Web hosting part 3**
+- **Unix and Linux System Admin Handbook Chapter 19 Web hosting part 4**
 
-	- HTTP/1.0 -> no connection reuse feature.
-	- HTTP/1.1 -> can keep connection alive by declaring it in the Header. Still lots of TCP connection.
-	- HTTP/2 -> use multiplexing reduces TCP connection, now more clients are supported
+	**Partial List of HTTP Server Types**
+	- Application server (Unicorn, Tomcat),  Cache(Varnish, Squid), Load Balancer (Pound, HAProxy), Web Server (Apache, NGINX). Web App Firewall (ModSecurity)
+
+	**Component of a Web Application Stack**
+	- Inbound Requests -> web application firewall -> load balancer -> caching layer -> web server -> application server
+	- Application server -> web server -> caching layer -> load balancer -> web application firewall -> Outbound Responses
+	- Application server talks to database
+	- If cached, response does not need to travel all the way from application layer.
+	- Modern architecture are not this straightforward.
+	- Some web servers can also perform caching and load balancing e.g. NGINX.
 	
 	#### notes.md (learning log)
  ---
@@ -80,5 +87,5 @@
 
 ---
 
-*Last updated: April 1, 2026*
+*Last updated: April 2, 2026*
 
