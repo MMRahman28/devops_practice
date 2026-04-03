@@ -3727,6 +3727,16 @@ Output:
 
 ---
 
+### April 3, 2026
+#### Task Completed
+- **Unix and Linux System Admin Handbook Chapter 19 Web Hosting part 5**
+
+	**CDN**
+	- User request -> CDN DNS server -> DNS  reply is the address of the closest server to the user -> client's request content from the resolved IP address -> Edge server returns the content from its caache.
+	- Streaming services like Netflix, YouTube use CDN.
+	- CDN provides security services like denial of service attack prevention and web application firewalls.
+---
+
 
 
 

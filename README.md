@@ -62,20 +62,14 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (April 2, 2026)
+## Today's Progress (April 3, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 19 Web hosting part 4**
+- **Unix and Linux System Admin Handbook Chapter 19 Web hosting part 5**
 
-	**Partial List of HTTP Server Types**
-	- Application server (Unicorn, Tomcat),  Cache(Varnish, Squid), Load Balancer (Pound, HAProxy), Web Server (Apache, NGINX). Web App Firewall (ModSecurity)
-
-	**Component of a Web Application Stack**
-	- Inbound Requests -> web application firewall -> load balancer -> caching layer -> web server -> application server
-	- Application server -> web server -> caching layer -> load balancer -> web application firewall -> Outbound Responses
-	- Application server talks to database
-	- If cached, response does not need to travel all the way from application layer.
-	- Modern architecture are not this straightforward.
-	- Some web servers can also perform caching and load balancing e.g. NGINX.
+	**CDN**
+	- User request -> CDN DNS server -> DNS reply address -> client request content from the resolved address -> Edge server returns the content from its cache
+	- Streaming services like Netflix, YouTube use CDN.
+	- CDN can provide security services like denial of service attack prevention and web application firewalls.
 	
 	#### notes.md (learning log)
  ---
@@ -87,5 +81,5 @@
 
 ---
 
-*Last updated: April 2, 2026*
+*Last updated: April 3, 2026*
 
