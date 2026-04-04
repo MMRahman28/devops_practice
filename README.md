@@ -62,14 +62,13 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (April 3, 2026)
+## Today's Progress (April 4, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 19 Web hosting part 5**
+- **Unix and Linux System Admin Handbook Chapter 19 Web hosting part 6**
 
-	**CDN**
-	- User request -> CDN DNS server -> DNS reply address -> client request content from the resolved address -> Edge server returns the content from its cache
-	- Streaming services like Netflix, YouTube use CDN.
-	- CDN can provide security services like denial of service attack prevention and web application firewalls.
+	**API**
+	- serialisation format JSON or XML
+	- curl https://api.spotify.com/v1/artists/3WrFJ7zbogyGnTHbHJFl2 | jq "."
 	
 	#### notes.md (learning log)
  ---
@@ -81,5 +80,5 @@
 
 ---
 
-*Last updated: April 3, 2026*
+*Last updated: April 4, 2026*
 

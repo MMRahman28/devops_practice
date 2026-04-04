@@ -3737,6 +3737,17 @@ Output:
 	- CDN provides security services like denial of service attack prevention and web application firewalls.
 ---
 
+### April 4, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 19 Web Hosting part 6**
+
+	**API**
+	- serialisation format JSON or XML format
+	- `curl https://api.spotify.com/v1/artists/3WrFJ7ztbogyGnTHbHJFl2 | jq "."`
+
+--- 
+
 
 
 
