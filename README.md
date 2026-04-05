@@ -62,13 +62,9 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (April 4, 2026)
+## Today's Progress (April 5, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 19 Web hosting part 6**
-
-	**API**
-	- serialisation format JSON or XML
-	- curl https://api.spotify.com/v1/artists/3WrFJ7zbogyGnTHbHJFl2 | jq "."
+- **Break**
 	
 	#### notes.md (learning log)
  ---
@@ -80,5 +76,5 @@
 
 ---
 
-*Last updated: April 4, 2026*
+*Last updated: April 5, 2026*
 

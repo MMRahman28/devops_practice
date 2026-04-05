@@ -3746,7 +3746,10 @@ Output:
 	- serialisation format JSON or XML format
 	- `curl https://api.spotify.com/v1/artists/3WrFJ7ztbogyGnTHbHJFl2 | jq "."`
 
---- 
+---
+
+### April 5, 2026
+**Break**
 
 
 
