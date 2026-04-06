@@ -3751,6 +3751,18 @@ Output:
 ### April 5, 2026
 **Break**
 
+### April 6, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 19 Web Hosting part 7**
+
+	**Apache httpd**
+	- When httpd starts it consults a httpd.conf and incorporates any additional files referenced by Include derectives.
+	- Many admin will be satisfied with the global settings and only need to manage VirtualHosts.
+	- When a http request arrives, the httpd indentifies which virtual host to select by consulting the HTTP Host header and network port.
+
+---
+
 
 
 
