@@ -3763,6 +3763,16 @@ Output:
 
 ---
 
+### April 7, 2026
+#### Task Completed
+
+- **Unix and Linux System Admin Handbook Chapter 19 Web Hosting part 8**
+
+	**NGINX**
+
+	- NGINX uses an event-based system in which just a few worker processes handle many requests simultaneously.
+
+--- 
 
 
 

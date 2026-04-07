@@ -62,14 +62,12 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (April 6, 2026)
+## Today's Progress (April 7, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 19 Web Hosting part 7**
+- **Unix and Linux System Admin Handbook Chapter 19 Web Hosting part 8**
 	
-	**Appache httpd**
-	- When httpd starts it consults httpd.conf and incorporates any additional files referred by Include directives.
-	- Sufficent most cases -> Global settings + VirtualHosts
-	- http request handle -> identify virtual host by consulting HTTP header + network port.
+	**NGiNX**
+	- NGINX uses an event-based system.
 	
 	#### notes.md (learning log)
  ---
@@ -81,5 +79,5 @@
 
 ---
 
-*Last updated: April 6, 2026*
+*Last updated: April 7, 2026*
 
