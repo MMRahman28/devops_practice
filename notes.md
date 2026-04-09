@@ -3801,7 +3801,7 @@ Output:
 		- The artifacts from the build-job are fetched automatically and extracted into the job.
 		- However, Pages looks for the site in the public/ directory.
 		- So, add a script command to move the site to that directory.
-	
+		- A practice .gitlab-ci.yml file: https://gitlab.com/MMRahman28/my-pipeline-tutorial-project/-/blob/main/.gitlab-ci.yml?ref_type=heads	
 
 	---
 
