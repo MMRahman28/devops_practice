@@ -3772,7 +3772,40 @@ Output:
 
 	- NGINX uses an event-based system in which just a few worker processes handle many requests simultaneously.
 
---- 
+---
+
+### April 8, 2026
+#### Task Completed
+
+**Break**
+
+---
+
+### April 9, 2026
+#### Task Completed
+
+- **GitLab Tutorial: Create a Complex Pipeline**
+	
+	- Create a project to hold the files (to apply CI/CD)
+
+	- Create the initial CI/CD configuration file
+		- Jobs: self-contained parts of a pipeline that run commands. Jobs run on runners, separate from GitLab instance.
+		- script: job's configuration where commands are defined for the job.
+		- jobs are self-contained and do not share resources with each other.
+		- So, if files genereated in one job to be used in abother job, save them as artifacts first. Later jobs will retrieve the artifacts from the saved location.
+
+		- We can divide the stages like this: build > test > deploy
+		- Stages are sequential but the jobs in each stage run in parallel. So, jobs in later stages wait for jobs in earlier stages to complete.
+
+		- When using GitLab Pages (for static site), the job is always named pages.
+		- The artifacts from the build-job are fetched automatically and extracted into the job.
+		- However, Pages looks for the site in the public/ directory.
+		- So, add a script command to move the site to that directory.
+	
+
+	---
+
+
 
 
 

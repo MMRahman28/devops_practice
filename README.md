@@ -62,12 +62,15 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (April 7, 2026)
+## Today's Progress (April 9, 2026)
 
-- **Unix and Linux System Admin Handbook Chapter 19 Web Hosting part 8**
-	
-	**NGiNX**
-	- NGINX uses an event-based system.
+- **GitLab Tutorial: Create a Complex Pipeline**
+	- build > test > deploy
+	- jobs do not share resources with each other. Run on runners, separate from GitLab instance.
+	- So, what that means is: if files generated in one job need to be used in another job, save them as artifacts in a location so that later job can retrieve the files.
+	- Stages are sequentials but jobs in each stage runs in parallel. So, jobs in later stage wait for the jobs in earlier stage.
+	- A practice .gitlab-ci.yml file: https://gitlab.com/MMRahman28/my-pipeline-tutorial-project/-/blob/main/.gitlab-ci.yml?ref_type=heads	
+	- 	
 	
 	#### notes.md (learning log)
  ---
@@ -79,5 +82,5 @@
 
 ---
 
-*Last updated: April 7, 2026*
+*Last updated: April 9, 2026*
 
