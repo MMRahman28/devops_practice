@@ -62,15 +62,22 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (April 9, 2026)
+## Today's Progress (April 10, 2026)
 
-- **GitLab Tutorial: Create a Complex Pipeline**
-	- build > test > deploy
-	- jobs do not share resources with each other. Run on runners, separate from GitLab instance.
-	- So, what that means is: if files generated in one job need to be used in another job, save them as artifacts in a location so that later job can retrieve the files.
-	- Stages are sequentials but jobs in each stage run in parallel. So, jobs in later stage wait for the jobs in earlier stage.
-	- A practice .gitlab-ci.yml file: https://gitlab.com/MMRahman28/my-pipeline-tutorial-project/-/blob/main/.gitlab-ci.yml?ref_type=heads	
-	- 	
+- **Docker Concepts**
+	- What is the main problem that Docker solves? Why is it better than just running apps directly on a server or using virtual machine?
+
+	- "It works on my machine" problem solved.
+	- Application depends on specific OS libraries, configurations, and runtime environments that differ between development, testing and production machines. Docker solves this problem.
+	- Containers are lightweight.
+	- Packaging the application and all its dependencies into a single portable unit.
+
+    - Explain the difference between Docker image and Docker container.
+
+	- An image is a read-only template (or snapshot) that contains application code, runtime, libraries, dependencies and filesystem.
+	- A container is an instance of an image.
+	- Image -> like a Class, container -> like an object of that class.
+	- When a container is started, Docker takes the image, adds a writable layer on top, and uses kernel isolation features(namespaces for filesystem, network, processes, etc. and cgroups for resource limits) to create isolated environment.
 	
 	#### notes.md (learning log)
  ---
@@ -82,5 +89,5 @@
 
 ---
 
-*Last updated: April 9, 2026*
+*Last updated: April 10, 2026*
 

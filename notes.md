@@ -3804,6 +3804,29 @@ Output:
 		- A practice .gitlab-ci.yml file: https://gitlab.com/MMRahman28/my-pipeline-tutorial-project/-/blob/main/.gitlab-ci.yml?ref_type=heads	
 
 	---
+### April 10, 2028
+#### Task Completed
+
+- **Docker Concepts**
+	- What is the main problem that Docker (containerization) solves? Why is it better than just running apps directly on a server or using virtual machine? 
+
+	- Consistency "it works on my machine" problem is solved.
+	- Containers are lightweight compared to VMs
+	- The core problem Docker solves is environment consistency + isolation.
+	- Docker solves the problem of applications depending on specific OS libraries, configurations, and runtime environments that differ between development, testing and production machines.
+	- Containers give each app its own isolated user space, filesystem, networking, and process space, even though they share the host kernel.
+	- Packaging the application and all its dependencies into a single portable unit.
+
+
+	-Explain the difference between Docker image and a Docker container.
+
+	- An image is a read-only template (or snapshot) that contains the application code, runtime, libraries, dependencies, and filesystem.
+	- A container is an instance of an image.It adds a writable layer on top of the image and uses Linux kernel features (namespaces + cgroups) to create strong isolation. 
+	- Image = immutable blueprint/package system + metadata (like a class in programming)
+	- Container = running istance created from the image (like an object/instance of a class), with its own writable layer, network stack, process ID space, etc.
+	- When a container is started, Docker takes the image, adds a thin writable layer on top, and uses kernel isolation features (namespaces for filesystem, network, processes, etc. and cgroups for resource limits) to create isolated environment.
+
+---
 
 
 
