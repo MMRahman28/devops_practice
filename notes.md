@@ -3807,7 +3807,9 @@ Output:
 ### April 10, 2028
 #### Task Completed
 
-- **Docker Concepts**
+- **Docker Concepts - Part 1**
+
+	**Core Ideas**
 	- What is the main problem that Docker (containerization) solves? Why is it better than just running apps directly on a server or using virtual machine? 
 
 	- Consistency "it works on my machine" problem is solved.
@@ -3827,6 +3829,41 @@ Output:
 	- When a container is started, Docker takes the image, adds a thin writable layer on top, and uses kernel isolation features (namespaces for filesystem, network, processes, etc. and cgroups for resource limits) to create isolated environment.
 
 ---
+
+### April 11, 2028
+#### Task Completed
+
+- **Docker Concepts - Part 2**
+
+	**Building and Layers**
+
+	- What is a Dockerfile? What is its purpose, and what kind of instructions does it usually contain?
+
+	- A Dockerfile is a plain text file that contains a set of instructions used to build a Docker image.
+	It acts as the recipe or blueprint for creating the image in a reproducible way.
+	- Common instructions include:
+		- FROM - specifies the base image
+		- RUN - executes the commands during build time (e.g. install packages)
+		- COPY/ADD - copies files from host into the image
+		- WORKDIR - sets the working directory
+		- ENV - sets environment variables
+		- EXPOSE - documents which ports the container listens on
+		- CMD/ENTRYPOINT - defines the default command to run when the container starts
+	- Each instruction in the Dockerfile creates a new layer in the final  image.
+
+	- Why do Docker images use layers? How does this affect building, storage, and rebuilding images?
+	
+	- Docker images are built using a layered filesystem. Every instruction (FROM. RUN, COPY, etc.) creates a new read-only layer on top of the previous ones.
+	- Why layer exists: 
+		- Build caching: Docker caches each layer. If something changes in the middle of the Dockerfile, only that layer and the ones after it are rebuilt.Layers before the change are reused from the cache. This makes build much faster.
+		- Storage efficiency: Identical layers are stored only once on disk and in the registry. Multiple images can share the same layers.
+		- Incremental updates: When an image is pushed or pulled, only changed layers are transferred.
+	- The bottom layer comes from the base image (e.g. ubuntu or node:alpine). The top layer of a running container is writable - any changes made inside the container (like creating files) go there.When the container is removed, those writable changes are lost unless committed into a new image.
+	- Never put secrets(password, API keys, certificates) in any layer, they stay in the image history forever, and can be extracted even if a delete attempt was made.
+
+---
+
+
 
 
 

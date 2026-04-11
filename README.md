@@ -62,22 +62,21 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (April 10, 2026)
+## Today's Progress (April 11, 2026)
 
-- **Docker Concepts**
-	- What is the main problem that Docker solves? Why is it better than just running apps directly on a server or using virtual machine?
+- **Docker Concepts - Part 2**
+	**Building and Layers**
 
-	- "It works on my machine" problem solved.
-	- Application depends on specific OS libraries, configurations, and runtime environments that differ between development, testing and production machines. Docker solves this problem.
-	- Containers are lightweight.
-	- Packaging the application and all its dependencies into a single portable unit.
+	- What is a Dockerfile? What is its purpose,  and what kind of instructions does it usually contain?
+	
+	- Dockerfile -> plaintext blueprint or recipe for creating the image in a reproducible way.
+	- Each instruction -> creates a new layer in the final image.
 
-    - Explain the difference between Docker image and Docker container.
+	- Why do Docker images use layers? How does this affect building, storage and rebuilding image?
 
-	- An image is a read-only template (or snapshot) that contains application code, runtime, libraries, dependencies and filesystem.
-	- A container is an instance of an image.
-	- Image -> like a Class, container -> like an object of that class.
-	- When a container is started, Docker takes the image, adds a writable layer on top, and uses kernel isolation features(namespaces for filesystem, network, processes, etc. and cgroups for resource limits) to create isolated environment.
+	- Layers helps: Caching, storage efficiency (identical layers are stored only once on the disk and in the registry), incremental updates (only changed layers are pushed or pulled).
+	- Top layer of a running container is writable, and if the container is removed the changes are lost unless committed into a new image.
+	- Never put secrets in any layer. They stay in the image history forever.
 	
 	#### notes.md (learning log)
  ---
@@ -89,5 +88,5 @@
 
 ---
 
-*Last updated: April 10, 2026*
+*Last updated: April 11, 2026*
 
