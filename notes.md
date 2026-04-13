@@ -3883,6 +3883,32 @@ Output:
 
 ---
 
+### April 13, 2026
+#### Task Completed
+
+- **Docker Concepts - part 4**
+
+	**Docker Compose and network**
+
+	- What is Docker Compose used for? In what situation would you prefer it over running multiple separate containers manually?
+
+	- Docker Compose is a tool for defining and running multi-container Docker applications on a single host using a single YAML file (docker-compose.yml).
+	- Its main purposes are:
+		- Defining multiple services (containers), their images, ports, volumes, environment variables, and dependencies in one place.
+		- Easily starting, stopping, rebuilding, and scaling the entire stack with simple commands (docker compose up, docker compose down, etc.)
+
+	- During local development or testing, when there are several interconnected services (e.g., a web app + postgreSQL database + Redis cache + Nginx).
+	- For simple CI/CD pipelines or demo environments.
+
+	- How do containers communicate with each other? What are the main networking concepts in Docker(without naming specific drivers)?
+
+	- Containers communicate with each other primarily with Docker networks.
+	- Docker creates isolated networks. By default containers are attached to a bridge network. 
+	- When multiple containers are on the same Docker network, they can reach each other using the service name or container name as hostname (thanks to Docker's built-in DNS). Example: A web container can call http://db:5432 instead of using an IP address.
+	- Port publishing/mapping - This is only needed if a container's port need to be exposed to the host or the outside world  (e.g. accessing a web app on localhost:8080). Inside the Docker network, containers can talk directly without publising ports.
+
+---
+
 
 
 
