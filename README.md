@@ -62,22 +62,26 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (April 13, 2026)
+## Today's Progress (April 14, 2026)
 
-- **Docker Concepts - Part 4**
-	**Docker Compose and Network**
+- **Docker Concepts - Part 5**
+	**Docker Architecture and Best Practices**
 
-	- What is Docker compose used for? In what situation would you prefer it over running multiple separate containers manually?
+	- Briefly explain the Docker architecture: What is the role of the Docker daemon, the clent, and the registry (like Docker Hub)?
 
-	- Docker compose  -> for running multi-container Docker applications on a single host using a single YAML file.
-	- Situation -> local development or testing.
+	- Docker architecture follows client server model.
+	- Docker client -> the command-line interface.The client sends commands as requests to the Docker daemon. The client can be on the same machine as the daemon or on a remote machine.
+	- Docker daemon (dockerd) -> long-running background process responsible for managing containers, building images, managing volumes, network and storage, pulling and pushing images from/to registries.
+	- Registry (e.g., Docker hub): A remote repository for storing and distributing images.
 
-	- How do containers communicate with each other? What are the main networking concepts in Docker (without naming specific drivers)?
+	- What are some best practices when creating Docker images for production?
 
-	- Containers communicate -> Docker networks.
-	- By default conatiners are attached to a bridge network.
-	- Multiple containers on same network -> can reach using service name or container name as hostname. 
-	
+	- Minimise image size: Use small base images instead of full os images.
+	- Optimise layer caching -> stable steps at the top (FROM, RUN, apt-get install) and frequently changing steps (COPY . .) near the bottom.
+	- Security: never bake secrets into the image. Scan images for vulnerability (use Docker Scout).
+	- Reproducibility and Maintainability: Pin exact versions of base images and packages (e.g., node:20.12-alpine instead of node:alpine).
+	- Other: use .dockerignore to exclude unnecessary files from the buld context.
+		
 	#### notes.md (learning log)
  ---
 				
@@ -88,5 +92,5 @@
 
 ---
 
-*Last updated: April 13, 2026*
+*Last updated: April 14, 2026*
 

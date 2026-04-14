@@ -3909,6 +3909,33 @@ Output:
 
 ---
 
+### April 14, 2026
+#### Task Completed
+
+- **Docker Concepts - part 5**
+
+	**Docker Architecture and Best Practices**
+
+	- Briefly explain the Docker architecture: What is the role of the Docker daemon, the client, and the registry (like Docker Hub)?
+
+	- Docker architecture follows a client-server model:
+		- Docker client: This is the command-line interface. The client sends commands like `docker run`
+		`docker build` etc. The client sends these requests to the Docker daemon. The client can be on the same machine as the daemon or on a remote machine.
+	- Docker Daemon (dockerd): This is the long-running background process (server) on the host machine. It is responsible for managing containers, building images, managing volume, network, and storage, pulling and pushing images to/from registries.
+
+	- Registry (e.g., Docker Hub): A remote repository for storing and distributing Docker images. The daemon communicates with the registry to docker pull (download) images or docker push (upload) images.
+	- Simple flow: run `docker run nginx` -> client sends request to Daemon -> Daemon pulls the image from Registry (if not present locally) -> Daemon creates and starts the container.
+
+
+	- What are some important best practices when creating Docker images for production?
+
+	- Minimise image size: Use small base images (e.g., alpine, slim, or distroless images) instead of full os images.
+	- Optimise layer caching: Order instructions wisely: Put stable steps (e.g., FROM RUN apt-get install) at the top and frequently changing steps (e.g., COPY . .) near the bottom, This maximaises cache hits and speeds up builds.
+	- Security: Never bake secrets (keys, password, certificates) into the image - use build args, Docker secrets, or external secret managers. Run containers as non-root user (USER instruction). Scan images regularly for vulnerablilities (Docker scout, Trivy etc.)
+	- Reproducibility and Maintainability: Pin exact versions of base images and packages (e.g., node:20.12-alpine instead of node:alpine). Keep images small and single-purpose (one process per container).
+	- Other: Use .dockerignore to exclude unnecessary files from the build context. Set proper HEALTHCHECK instructions.
+
+---
 
 
 
