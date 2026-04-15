@@ -3936,7 +3936,29 @@ Output:
 	- Other: Use .dockerignore to exclude unnecessary files from the build context. Set proper HEALTHCHECK instructions.
 
 ---
+### April 15, 2026
+#### Task Completed
 
+- **Kubernetes concept - part 1**
+
+	**Pod**
+
+	- A pod is the Kubernetes object (a logical unit) that provides the shared execution environment for containers. It includes: 
+		- Shared network namespace(same IP address + localhost communication)
+		- Shared storage volumes
+		- Shared IPC namespace, etc.
+		- Specifications for how the containers should run (resource limits, security context, etc.)
+	- In practice:
+		- Pod acts as a thin wrapper around container.
+		- The actual processes running on the node (via ps or top) are the container processes started by the container runtime (e.g., containerd)
+		- Kubernetes manages and schedules Pods, not individual containers. If the pod dies, Kubernetes may recreate it elsewhere.
+
+	- A pod phase is a simple high-level summary of where the Pod is in its life. It is stored in .status.phase of the Pod object. 
+
+	**Key files**
+	In folder: `Kubernetes_lab_files`
+
+---
 
 
 

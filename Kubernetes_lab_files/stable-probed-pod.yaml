@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+    name: stable-probed-pod
+spec:
+    containers:
+    - name: busybox
+      image: busybox:stable
+      command: ["sh", "-c", "sleep 3600"] # Runs for 1 hour - stable main process
+      livenessProbe:
+        exec:
+            command:
+            - sh
+            - -c
+            - "echo 'I am alive' && exit 0" # Always succeed
+        initialDelaySeconds: 5
+        periodSeconds: 10
+        failureThreshold: 3
+      readinessProbe:
+        exec:
+            command:
+            - sh
+            - -c
+            - "echo 'I am ready' && exit 0"
+        initialDelaySeconds: 5
+        periodSeconds: 10
+        failureThreshold: 3

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+    name: crash-pod
+spec:
+    containers:
+    - name: crashing-container
+      image: busybox:stable
+      command: ["sh", "-c", "echo 'I will crash now' && sleep 2 && exit 1"]
+      # No restartPolicy specified -> defaults to Always for Pods (not jobs)

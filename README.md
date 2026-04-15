@@ -62,26 +62,20 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (April 14, 2026)
+## Today's Progress (April 15, 2026)
 
-- **Docker Concepts - Part 5**
-	**Docker Architecture and Best Practices**
+- **Kubernetes Concepts - Part 1**
 
-	- Briefly explain the Docker architecture: What is the role of the Docker daemon, the clent, and the registry (like Docker Hub)?
+	**Pod**
+	- Kubernetes object provides shared execution environment for containers. It includes:
+		- Shared network namespace(same IP address + localhost communication)
+		- Shared storage volumes
+		- Shared IPC namespace, etc.
+	- In practice: The actual processes running on the node (via ps or top) are the container processes started by the container runtime (e.g., containerd)
+	
+	**Key files**
+	- For lab work: see `Kubernetes_lab_files`
 
-	- Docker architecture follows client server model.
-	- Docker client -> the command-line interface.The client sends commands as requests to the Docker daemon. The client can be on the same machine as the daemon or on a remote machine.
-	- Docker daemon (dockerd) -> long-running background process responsible for managing containers, building images, managing volumes, network and storage, pulling and pushing images from/to registries.
-	- Registry (e.g., Docker hub): A remote repository for storing and distributing images.
-
-	- What are some best practices when creating Docker images for production?
-
-	- Minimise image size: Use small base images instead of full os images.
-	- Optimise layer caching -> stable steps at the top (FROM, RUN, apt-get install) and frequently changing steps (COPY . .) near the bottom.
-	- Security: never bake secrets into the image. Scan images for vulnerability (use Docker Scout).
-	- Reproducibility and Maintainability: Pin exact versions of base images and packages (e.g., node:20.12-alpine instead of node:alpine).
-	- Other: use .dockerignore to exclude unnecessary files from the buld context.
-		
 	#### notes.md (learning log)
  ---
 				
@@ -92,5 +86,5 @@
 
 ---
 
-*Last updated: April 14, 2026*
+*Last updated: April 15, 2026*
 

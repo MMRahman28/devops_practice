@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+    name: succeed-pod
+spec:
+    containers:
+    - name: busybox
+      image: busybox:stable
+      command: ["sh", "-c", "echo 'Task completed successfully' && sleep 10 && exit 0"]
+    restartPolicy: Never
