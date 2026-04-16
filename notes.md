@@ -3960,6 +3960,19 @@ Output:
 
 ---
 
+### April 16, 2026
+#### Task Completed
+
+- **Kubernetes Concept- part 2**
+
+	- Kubernetes defines these main phases: 
+		- Pending: The pod has been accepted by the cluster, but not yet running. Scheduler is trying to find a node, or containers are being pulled/created. Reason: Image pull in progress, no node available, scheduling delays, init Containers running
+		- Running: The pod has been bound to a node, all containers have been created and at least one container is still running or restarting. Application is active. Reason: normal operation.
+		- Succeeded: All containers in the pod have terminated successfully (exit code 0) and will not be restarted.Typical for jobs or one-time tasks that finish cleanly. Reason: Batch job completed.
+		- Failed: All containers have terminated, and at least one terminated with a failure (non-zero exit code or killed by system). Reason: Something went wrong and the pod will not restart automatically (unless controled by a higher object). Reason: Crash, out-of-memory, error in app
+		- Unknown: The state of the pod could not be obtained, usually due to communication problems with the node. Rare in healthy cluster - often means node is unreachable. Reason: Node not reponding.
+	
+	---
 
 
 

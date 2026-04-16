@@ -62,16 +62,16 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (April 15, 2026)
+## Today's Progress (April 16, 2026)
 
-- **Kubernetes Concepts - Part 1**
+- **Kubernetes Concepts - Part 2**
 
-	**Pod**
-	- Kubernetes object provides shared execution environment for containers. It includes:
-		- Shared network namespace(same IP address + localhost communication)
-		- Shared storage volumes
-		- Shared IPC namespace, etc.
-	- In practice: The actual processes running on the node (via ps or top) are the container processes started by the container runtime (e.g., containerd)
+	**Kubernetes phases**
+	- Pending: Pod accepted by the cluster, but not yet running.Reason: Image pull in progress, no node available, scheduling delays, init Containers running
+	- Running: The pod has been bound to a node, all containers created, and at least one conatainer is still running or restarting. Reason: Normal operation
+	- Succeeded: All containers in the pod terminated successfully (exit code 0) and will not be restarted. For Jobs, one-time tasks that finish cleanly. Reason: Batch job completed.
+	- Failed: All containers have terminated, and at least one terminated with a failure (non-zero exit code). Reason: Crash, out-of-memory, error in app.
+	- Unknown: The state of the pod could not be obtained, usually due to communication problems with the node. Node not responding.
 	
 	**Key files**
 	- For lab work: see `Kubernetes_lab_files`
@@ -86,5 +86,5 @@
 
 ---
 
-*Last updated: April 15, 2026*
+*Last updated: April 16, 2026*
 
