@@ -3956,7 +3956,7 @@ Output:
 	- A pod phase is a simple high-level summary of where the Pod is in its life. It is stored in .status.phase of the Pod object. 
 
 	**Key files**
-	In folder: `Kubernetes_lab_files`
+	In directory: `Kubernetes_lab_files`
 
 ---
 
@@ -3974,6 +3974,36 @@ Output:
 	
 	---
 
+	### April 17, 2026
+	#### Break
+	---
+
+	### April 18, 2026
+	#### Task completed
+
+	-	**Kubernetes Concept - part 3**
+		**Init Containers**
+
+		- An Init Container is a special type of container that runs to completion (starts, does it job, and exits successfully) before the main application containers start.
+		- Init Containers run sequentially (one after another).
+		- The Pod will not proceed to start the main containers until all init Containers have succeeded.
+		- If any Init Container fails, the Pod goes into a failed state (or restarts depending on restartPolicy).
+		- They are defined under spec.initContainers in the Pod YAML.
+		- They share the same network and volumes as the main containers.
+		**Why they are useful**
+		- Run database migrations before the app starts
+		- Download configuration files or secrets
+		- Wait for dependencies (e.g., wait for a database to be ready)
+		- Perform setup or security checks
+		- Populate empty directories with data
+		**How they affect Pod lifecycle**
+		- The Pod stays in Pending phase longer (while Init Containers are running)
+		-  The Initialized condition in kubectl describe will be False untill all Init Containers succeed. Tnitialized will be True only after all Init Containers complete successfully.
+
+		**Key file**
+		In  `Kubernetes_lab_files/init-pod.yaml`
+	
+	---
 
 
 

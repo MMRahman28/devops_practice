@@ -62,19 +62,21 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (April 16, 2026)
+## Today's Progress (April 18, 2026)
 
-- **Kubernetes Concepts - Part 2**
-
-	**Kubernetes phases**
-	- Pending: Pod accepted by the cluster, but not yet running.Reason: Image pull in progress, no node available, scheduling delays, init Containers running
-	- Running: The pod has been bound to a node, all containers created, and at least one conatainer is still running or restarting. Reason: Normal operation
-	- Succeeded: All containers in the pod terminated successfully (exit code 0) and will not be restarted. For Jobs, one-time tasks that finish cleanly. Reason: Batch job completed.
-	- Failed: All containers have terminated, and at least one terminated with a failure (non-zero exit code). Reason: Crash, out-of-memory, error in app.
-	- Unknown: The state of the pod could not be obtained, usually due to communication problems with the node. Node not responding.
+- **Kubernetes Concepts and lab - part 3**
+	**Init Containers**
 	
-	**Key files**
-	- For lab work: see `Kubernetes_lab_files`
+	- An Init Container is a special type of container that runs to completion before the main application containers start.
+	- Init Containers run sequentially.
+	- They share the same network and volume as the main containers.
+	- The pod will not proceed to start the main containers until all the Init Containers complete successfully. If any Init Containers fail, pod goes to a failed state.
+	- They are useful for: database migration, downloading config files and secrets, wait for dependencies, performing setup or security checks, populating empty directories with data etc. before the main app starts
+	- The pod stays in pending state (0/1 or 0/2 etc), then once all the Init Containers complete successfully, status changes to running.
+	- `watch -n 2 "kubectl get pod init-pod -o wide" ` command should show the pending state if a longer sleep time is specified in the Init Containers command section (just to test). See the file below:
+	
+	**key file**
+	`Kubernetes_lab_files/init-pod.yaml`
 
 	#### notes.md (learning log)
  ---
@@ -82,9 +84,10 @@
 ## Files in this Repo
 - `notes.md` -> Daily learning log
 - `*.sh` -> Bash scripts
+- `Kubernetes_lab_files/*.yaml`
 - permission.txt
 
 ---
 
-*Last updated: April 16, 2026*
+*Last updated: April 18, 2026*
 
