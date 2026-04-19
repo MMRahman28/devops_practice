@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+    name: app-pod
+spec:
+    initContainers:
+    - name: wait-for-db
+      image: busybox:stable
+      command:
+      - sh
+      - -c
+      - |
+        echo "Waiting for dependency-service: 80 to be reachable..."
+        until nc -z -w 2 dependency-service 80; do
+          echo "$(date) - Service not reachable yet. Retrying..."
+          sleep 2
+        done
+        echo "$(date) - Dependency is ready! Starting main application."
+
+    containers:
+    - name: main-app
+      image: busybox:stable
+      command: ["sh", "-c", "echo 'Main application started' && sleep 3600"]

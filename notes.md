@@ -4004,6 +4004,22 @@ Output:
 		In  `Kubernetes_lab_files/init-pod.yaml`
 	
 	---
+### April 19, 2026
+#### Task Completed
+
+- **Kubernetes Concept - part 4**
+	**Init Container Lab**
+	- One Init Container that waits until an external service (simulate with another pod) is reachable.
+	- Then the main container starts.
+
+	- We will create two Pods: 
+		- a simple service Pod (called dependency-service) that act as our database.
+		- The main Pod (app-pod) that has an Init Container waiting for the dependency service to be ready.
+	**key files**
+	`Kubernnetes_lab_files/dependency-service.yaml`
+	`Kubernetes_lab_files/app-with-init.yaml`
+
+---
 
 
 

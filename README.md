@@ -62,21 +62,16 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (April 18, 2026)
+## Today's Progress (April 19, 2026)
 
-- **Kubernetes Concepts and lab - part 3**
-	**Init Containers**
+- **Kubernetes Concepts and lab - part 4**
+	**Init Containers - Labwork**
 	
-	- An Init Container is a special type of container that runs to completion before the main application containers start.
-	- Init Containers run sequentially.
-	- They share the same network and volume as the main containers.
-	- The pod will not proceed to start the main containers until all the Init Containers complete successfully. If any Init Containers fail, pod goes to a failed state.
-	- They are useful for: database migration, downloading config files and secrets, wait for dependencies, performing setup or security checks, populating empty directories with data etc. before the main app starts
-	- The pod stays in pending state (0/1 or 0/2 etc), then once all the Init Containers complete successfully, status changes to running.
-	- `watch -n 2 "kubectl get pod init-pod -o wide" ` command should show the pending state if a longer sleep time is specified in the Init Containers command section (just to test). See the file below:
+	- Task: One Init Container completes, then the main Container starts.
 	
 	**key file**
-	`Kubernetes_lab_files/init-pod.yaml`
+	`Kubernetes_lab_files/dependency-service.yaml`
+	`Kubernetes_lab_files/app-with-init.yaml`
 
 	#### notes.md (learning log)
  ---
@@ -89,5 +84,5 @@
 
 ---
 
-*Last updated: April 18, 2026*
+*Last updated: April 19, 2026*
 
