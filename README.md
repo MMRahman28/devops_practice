@@ -62,16 +62,9 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (April 19, 2026)
+## Today's Progress (April 20, 2026)
 
-- **Kubernetes Concepts and lab - part 4**
-	**Init Containers - Labwork**
-	
-	- Task: One Init Container completes, then the main Container starts.
-	
-	**key file**
-	`Kubernetes_lab_files/dependency-service.yaml`
-	`Kubernetes_lab_files/app-with-init.yaml`
+- **Break**	
 
 	#### notes.md (learning log)
  ---
@@ -84,5 +77,5 @@
 
 ---
 
-*Last updated: April 19, 2026*
+*Last updated: April 20, 2026*
 
