@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+    name: restart-always
+spec:
+    restartPolicy: Always
+    containers:
+    - name: busybox
+      image: busybox:stable
+      command: ["sh", "-c", "echo 'I will exit now' && sleep 5 && exit 1"]
+---
+apiVersion: v1
+kind: Pod
+metadata:
+    name: restart-never
+spec:
+    restartPolicy: Never
+    containers:
+    - name: busybox
+      image: busybox:stable
+      command: ["sh", "-c", "echo 'I will exit now' && sleep 5 && exit 1"]

@@ -62,9 +62,15 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (April 20, 2026)
+## Today's Progress (April 21, 2026)
 
-- **Break**	
+- **Kubernetes Concept - part 5**
+
+	**Restart Policy**
+	- A pod's restartPolicy decides what Kubernetes should do when a container inside the pod exits.
+	- There are only 3 possible values: Always(default), OnFailure, Never.
+	**Key files**
+	- `Kubernetes_lab_files/restart-demo.yaml` and `Kubernetes_lab_files/restart-success.yaml`
 
 	#### notes.md (learning log)
  ---
@@ -77,5 +83,5 @@
 
 ---
 
-*Last updated: April 20, 2026*
+*Last updated: April 21, 2026*
 

@@ -4025,6 +4025,25 @@ Output:
 
 ---
 
+### April 21, 2026
+#### Task Completed
+
+- **Kubernetes Concept - part 5**
+
+	**Restart Policy**
+	- A pod's restartPolicy decides what Kubernetes should do when a container inside the Pod exits.
+	- There are only three possible values: Always(default), OnFailure, Never.
+	- Always: For long running apps (web server, APIs), restart the container if it exits (any exit code).
+	- OnFailure: Jobs that should retry on error. Restart only if exit code not equal to 0.
+	- Never: One-time tasks/batch jobs. Never restart - pod goes to succeeded or failed.
+
+	**Key files**
+	`Kubernetes_lab_files/restart-demo.yaml`
+	`Kubernetes_lab_files/restart-success.yaml`
+
+---
+
+
 
 
 
