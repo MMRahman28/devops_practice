@@ -4043,6 +4043,23 @@ Output:
 
 ---
 
+### April 22, 2026
+#### Task Completed
+
+- **Kubernetes Concept - part 6**
+
+	**Deployment**
+	A deployment is a higher-level object that:
+	- creates and manages Pods for you
+	- Ensures the desired number of replicas (copies) are always running
+	- Handles rolling updates, rollbacks, scaling, and self-healing
+	- Automatically creates ReplicaSet underneath
+
+    **Key files**
+	`Kubernetes_lab_files/nginx-deployment.yaml`
+
+---
+
 
 
 

@@ -62,15 +62,15 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (April 21, 2026)
+## Today's Progress (April 22, 2026)
 
-- **Kubernetes Concept - part 5**
+- **Kubernetes Concept - part 6**
 
-	**Restart Policy**
-	- A pod's restartPolicy decides what Kubernetes should do when a container inside the pod exits.
-	- There are only 3 possible values: Always(default), OnFailure, Never.
+	**Deployment**
+	- A deployment is a higher-level object that creates and manages Pods for you, handles rolling updates, rollbacks, scaling and self-healing.
+	- Automatically creates a ReplicaSet underneath
 	**Key files**
-	- `Kubernetes_lab_files/restart-demo.yaml` and `Kubernetes_lab_files/restart-success.yaml`
+	- `Kubernetes_lab_files/nginx-deployment.yaml`
 
 	#### notes.md (learning log)
  ---
@@ -83,5 +83,5 @@
 
 ---
 
-*Last updated: April 21, 2026*
+*Last updated: April 22, 2026*
 
