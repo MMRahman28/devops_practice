@@ -4060,6 +4060,38 @@ Output:
 
 ---
 
+### April 23, 2026
+#### Task Completed
+
+- **Kubernetes Concept- part 7**
+
+	**Deployment Lab Notes**
+	- Scaling up -> same Replicaset, just more Pods.
+	- Update image -> creates new Replicaset.
+	- Deployment -> manages a Replicaset -> which creates and maintains the 3 identical pods.
+	- Naming relationship : 
+		- Deployment name: nginx-deployment
+		- ReplicaSet name: nginx-deployment-xxxxx
+		- Pod names: nginx-deployment-xxxxx-yyyyy
+	- Why deployments are better than bare pods?
+		- Offers self-healing, scaling, updates, rollback, replica management, production readiness.
+
+	**Scaling the Deployment**
+	  - `kubectl scale deployment nginx-deployment --replicas=5` (scale up to 5 replicas)
+	  - Useful commands for deployment:
+	  - `kubectl get deployments`
+	  - `kubectl get pods -o wide --watch` (watch what happens)
+	  - Check: `kubectl get deployment nginx-deployment`, `kubectl get replicaset`.
+	  - For changing image: `kubectl set image deployment/nginx-deployment nginx=nginx:latest` (from stable to latest)
+	  - Rollout status: `kubectl rollout status deployment/nginx-deployment` (it should say successfully rolled out for the previous image change)
+	  - Check the rollout history: `kubectl rollout history deployment/nginx-deployment` (should show revision number Revision 1 for nginx:alpine, Revision 2 for nginx:latest etc)
+	  - Rollback to previous version: `kubectl rollout undo deployment/nginx-deployment`
+	  - Verify the rollback: `kubectl get replicaset`, history command, and watch.
+	  - Clean up: `kubectl delete deployment nginx-deployment`
+	  - Verify it's gone: `kubectl get deployments` , `kubectl get pods`(no deplyment, no pods associated with nginx-deployment)
+--- 
+
+
 
 
 
