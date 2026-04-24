@@ -62,30 +62,19 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (April 23, 2026)
+## Today's Progress (April 24, 2026)
 
-- **Kubernetes Concept - part 7**
+- **Kubernetes Concept - part 8**
 
-	**Deployment Lab work**
-	- Scaling up -> Same Replicaset, just more Pods.
-	- Updating image -> create new Replicaset.
-	- Naming relationship:
-		- Deployment name: nginx-deployment
-		- Replicaset name: nginx-deployment-xxxxx
-		- Pod name: nginx-deployment-xxxxx-yyyyy
-	- Why deployments are better than bare Pods?
-		-Offers self-healing, scaling, updates, rollback, replica management, and production readiness.
-	- Scaling: `kubectl scale deployment nginx-deployment --replicas=5`
-	- Changing image: `kubectl set image deployment/nginx-deployment nginx=nginx:latest`
-	- Rollout status: `kubectl rollout status deployment/nginx-deployment`
-	- Rollout history: `kubectl rollout history deployment/nginx-deployment`
-	- Rollback to previous version: `kubectl rollout undo deployment/nginx-deployment`
-	- Cleanup: `kubectl delete deployment nginx-deployment`
+	**Services Lab work**
+	- A service is an abstraction that provides stable DNS name and IP address for a set of Pods.
+	- Types: ClusterIP (Internal), NodePort(external), LoadBlancer(external), ExternalName(DNS alias)
 
-	- Check and Verify commands: `kubectl get deployments`, `kubectl get pods -o wide --watch`, `kubectl get deployment nginx-deployment`, `kubectl get replicaset`, history command, `kubectl get pods` etc.
 	
 	**Key files**
 	- `Kubernetes_lab_files/nginx-deployment.yaml`
+	- `Kubernetes_lab_files/nginx-service.yaml`
+	- `Kubernetes_lab_files/nginx-nodeport.yaml`
 
 	#### notes.md (learning log)
  ---
@@ -98,5 +87,5 @@
 
 ---
 
-*Last updated: April 23, 2026*
+*Last updated: April 24, 2026*
 

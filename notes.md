@@ -4091,6 +4091,32 @@ Output:
 	  - Verify it's gone: `kubectl get deployments` , `kubectl get pods`(no deplyment, no pods associated with nginx-deployment)
 --- 
 
+### April 24, 2026
+#### Task Completed
+
+- **Kubernetes Concept - part 8**
+	**Services**
+	- A service is an abstraction that provides a stable DNS name and IP address for a set of Pods.
+	- Pods are ephemeral - they can die, get rescheduled, and get new IP addresses. A service solves this by giving a consistent way to reach application, whether from inside the cluster or from outside.
+	- Two important types: 
+		- ClusterIP(default) - Internal access only (most common for microservices)
+		- NodePort - Expose the app on a high port on every node(good for quick testing)
+	- Port mapping in service:
+		- port: 80 -> This is the Service Port (The port clients use to talk to the service)
+		- targetPort: 80 -> this is the Container Port (the port your actual application is listening on inside the Pod)
+		- So, the service is doing port mapping /forwarding:
+		- Anything that reaches the service on port 80 -> gets forwarded to the matching pods on targetPort:80
+	- What does the selector do?
+	- Send traffic to all Pods that have the label app: nginx
+	- ClusterIP = Internal service (most common)
+	- NodePort = Make the service accessible from outside the cluster on a high port (30000-32767)
+	**Key files**
+	- `Kubernetes_lab_files/nginx-deployment.yaml`
+	- `Kubernetes_lab_files/nginx-service.yaml`
+	- `Kubernetes_lab_files/nginx-nodeport.yaml`
+
+---
+
 
 
 
