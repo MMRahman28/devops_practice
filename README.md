@@ -62,20 +62,20 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (April 24, 2026)
+## Today's Progress (April 25, 2026)
 
-- **Kubernetes Concept - part 8**
+- **Kubernetes Concept - part 9**
 
-	**Services Lab work**
-	- A service is an abstraction that provides stable DNS name and IP address for a set of Pods.
-	- Types: ClusterIP (Internal), NodePort(external), LoadBlancer(external), ExternalName(DNS alias)
+	**ConfigMap Lab work**
+	- After applying the yaml files below, we are checking the log:
+	- `kubectl logs config-demo-pod`
+	- We observe ConfigMap successfully injected values into the Pod as enviromental variables.
 
 	
 	**Key files**
-	- `Kubernetes_lab_files/nginx-deployment.yaml`
-	- `Kubernetes_lab_files/nginx-service.yaml`
-	- `Kubernetes_lab_files/nginx-nodeport.yaml`
-
+	- `Kubernetes_lab_files/app-config.yaml`
+	- `Kubernetes_lab_files/config-demo.yaml`
+	
 	#### notes.md (learning log)
  ---
 				
@@ -87,5 +87,5 @@
 
 ---
 
-*Last updated: April 24, 2026*
+*Last updated: April 25, 2026*
 

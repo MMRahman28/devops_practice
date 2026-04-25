@@ -4116,7 +4116,26 @@ Output:
 	- `Kubernetes_lab_files/nginx-nodeport.yaml`
 
 ---
+### April 25, 2026
+#### Task Completed
 
+- **Kubernetes Concept - part 9**
+	**ConfigMaps**
+	- Purpose - Non-sensitive configuration
+	- Data storage - plain text
+	- Use case: Config files, environmental variables, command-line args
+	- Visibility: Visible in `kubectl` and `describe`
+
+	**Lab**
+	- After apply the yaml files below, check the log: `kubectl logs config-demo-pod`
+	- We are checking if ConfigMap successfully injected values into the pod as environment variables.
+
+
+	**Key files**
+	- `Kubernetes_lab_files/app-config.yaml`
+	- `Kubernetes_lab_files/config-demo.yaml`
+
+---
 
 
 
