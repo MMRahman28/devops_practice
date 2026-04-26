@@ -4137,6 +4137,21 @@ Output:
 
 ---
 
+### April 26, 2026
+#### Task Completed
+
+- **Kubernetes Concept - part 10**
+	**ConfigMap consumption**
+
+	- There are two main ways to consume ConfigMap:
+		- As Environmental Variables (what we did yesterday)
+		- As Files (mounted as Volume) - More common in real applications, especially for config files (e.g., application.yml, nginx.conf etc.).
+	
+	**Key files**
+	- `Kubernetes_lab_files/config-files.yaml`
+	- `Kubernetes_lab_files/config-files-pod.yaml`
+
+
 
 
 

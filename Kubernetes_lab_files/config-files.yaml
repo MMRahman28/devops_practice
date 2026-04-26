@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: app-files
+data:
+    application.properties: |
+        app.name=MyAwesomeApp
+        app.version=1.2.3
+        debug.enabled=true
+    logback.xml: |
+        <configuration>
+            <root level="DEBUG"/>
+        </configuration>

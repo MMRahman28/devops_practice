@@ -62,19 +62,17 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (April 25, 2026)
+## Today's Progress (April 26, 2026)
 
-- **Kubernetes Concept - part 9**
+- **Kubernetes Concept - part 10**
 
 	**ConfigMap Lab work**
-	- After applying the yaml files below, we are checking the log:
-	- `kubectl logs config-demo-pod`
-	- We observe ConfigMap successfully injected values into the Pod as enviromental variables.
-
+	- There are two main ways to consume ConfigMap. 
+	- As Environmental Variables and as files (mounted as volumes)
 	
 	**Key files**
-	- `Kubernetes_lab_files/app-config.yaml`
-	- `Kubernetes_lab_files/config-demo.yaml`
+	- `Kubernetes_lab_files/confi-files.yaml`
+	- `Kubernetes_lab_files/config-files-pod.yaml`
 	
 	#### notes.md (learning log)
  ---
@@ -87,5 +85,5 @@
 
 ---
 
-*Last updated: April 25, 2026*
+*Last updated: April 26, 2026*
 
