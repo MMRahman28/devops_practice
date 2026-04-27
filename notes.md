@@ -4151,6 +4151,26 @@ Output:
 	- `Kubernetes_lab_files/config-files.yaml`
 	- `Kubernetes_lab_files/config-files-pod.yaml`
 
+---
+### April 27, 2026
+#### Task Completed
+
+- **Kubernetes Concept - part 11**
+	
+	**Secrets**
+
+	- Secrets work almost exactly like ConfigMaps, but they are meant for sensitive data.
+	- Key differences: 
+		- Data stored in base64 encoding (not plain text).
+		- `kubectl get secret` hides the actual values by default.
+		- Never put real secrets in ConfigMaps.
+	
+	**Key files**
+	- `Kubernetes_lab_files/app-secret.yaml`
+	- `Kubernetes_lab_files/secret-files-pod.yaml`
+
+---
+
 
 
 
