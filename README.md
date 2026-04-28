@@ -62,20 +62,11 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (April 27, 2026)
+## Today's Progress (April 28, 2026)
 
-- **Kubernetes Concept - part 10**
+- **Break**
 
-	**Secrets Lab work**
-	- Secrets work almost like ConfigMap, but they are meant for sensitive data.
-	- So, `kubectl get secret` hides the actual value (or does it?)
-	- `kubectl get secret app-secret -o yaml` still shows real password in metadata -> annotations.
-	- Use caution.
-	
-	**Key files**
-	- `Kubernetes_lab_files/app-secret.yaml`
-	- `Kubernetes_lab_files/secret-files-pod.yaml`
-	
+
 	#### notes.md (learning log)
  ---
 				
@@ -87,5 +78,5 @@
 
 ---
 
-*Last updated: April 27, 2026*
+*Last updated: April 28, 2026*
 
