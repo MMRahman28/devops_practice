@@ -4179,14 +4179,37 @@ Output:
 
 ### April 29, 2026
 **Break**
---
+
+---
 
 ### April 30, 2026
 **Break**
---
+
+---
+
+### May 1, 2026
+#### Task Completed
+
+- **Kubernetes Concept - part 12**
+
+	**Persistent Storage**
+
+	- Kubernetes uses a two-step model for persistent storage:
+		- PersistentVolume (PV) -> Actual storage resource in the cluster (like a physical disk, NFS share, cloud volume, etc.).
+		- PersistentVolumeClaim (PVC) -> A request for storage by a user/Pod. The Pod claims storage from available PVs.
+	
+	- StorageClass -> How storage is dynamically provisioned
+	- Pods use PVCs via volumeMounts
+	- Data survives Pod deletion/restart because the volume is independent of the Pod.
+	- This is the foundation for stateful applications (databases, file servers, etc).
+
+	**Key Files**
+	- `Kubernetes_lab_files/mysql-deployment.yaml`
+	- `Kubernetes_lab_files/mysql-pvc.yaml`
+	- `Kubernetes_lab_files/mysql-secret.yaml`
 
 
-
+---
 
 
 

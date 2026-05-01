@@ -62,9 +62,20 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (April 30, 2026)
+## Today's Progress (May 1, 2026)
 
-- **Break**
+- **Kubernetes Concept - part 12**
+	- PV (PersistentVolume) -> Actual storage resource
+	- PVC (PersistentVolumeClaim) -> Request for storage
+	- StorageClass -> How storage is dynamically provisioned
+	- Pods use PVCs via volumeMounts
+	- Data survives Pod deletion/restart because the volume is independent of the Pod.
+	- This is the foundation of stateful applications (database, file servers, etc.).
+
+	**Key Files**
+	- `Kubernetes_lab_files/mysql-deployment.yaml`
+	- `Kubernetes_lab_files/mysql-pvc.yaml`
+	- `Kubernetes_lab_files/mysql-secret.yaml`
 
 
 	#### notes.md (learning log)
@@ -78,5 +89,5 @@
 
 ---
 
-*Last updated: April 30, 2026*
+*Last updated: May 1, 2026*
 
