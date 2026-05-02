@@ -4210,7 +4210,19 @@ Output:
 
 
 ---
+### May 2, 2026
+#### Task Completed
 
+- **Kubernetes Concept - part 13**
+	**StorageClass**
+	- A StorageClass is a Kubernetes resource that describes how storage should be provisioned.
+	- Think of it as template or policy for creating Persistent Volumes.
+	- Different StorageClass can represent different types of storage (fast SSD, slow HDD, cloud block storage, NFS, etc.)
+	- StorageClass can be specified during PVC creation.
+	**Why StorageClass**
+	- With StorageClass: Kubernetes can automatically create PVs when a PVC is created (dynamic provisioning).
+
+---
 
 
 
