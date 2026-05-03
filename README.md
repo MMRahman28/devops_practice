@@ -62,14 +62,22 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (May 2, 2026)
+## Today's Progress (May 3, 2026)
 
-- **Kubernetes Concept - part 13**
+- **Kubernetes Concept - part 14**
 
-	**StorageClass**
-	- A template for persistent volumes.
-	- Different StorageClass -> different types of storage (SSD,HDD, cloud block storage, NFS, etc.)
-	- Storage class can be specified during PVC (PersistentVolumeClaim) creation.
+	**Ingress**
+	- Ingress is the recommended way to expose http/https routes from outside the cluster to Services inside the cluster.
+	- Sort of smart reverse proxy.
+	- Why ingress?
+		- Load balancer costs money in cloud.
+		- Ingress allows multiple domains/ paths on the same IP/port 80/443.
+	
+	**Key Files**
+	- For ingress controller: `kubectl apply -f https//raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml`
+	- `Kubernetes_lab_files/nginx-ingress.yaml`
+	- `Kubernetes_lab_files/nginx-deployment.yaml`
+	- `Kubernetes_lab_files/nginx-service.yaml`
 
 	#### notes.md (learning log)
  ---
@@ -82,5 +90,5 @@
 
 ---
 
-*Last updated: May 2, 2026*
+*Last updated: May 3, 2026*
 

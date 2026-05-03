@@ -4223,8 +4223,29 @@ Output:
 	- With StorageClass: Kubernetes can automatically create PVs when a PVC is created (dynamic provisioning).
 
 ---
+### May 3, 2026
+#### Task Completed
+
+- **Kubernetes Concept - part 14**
+
+	**Ingress**
+
+	- Ingress is the recommended way to expose HTTP/HTTPS routes from outside the cluster to Services inside the cluster.
+	- Think of it as a smart reverse proxy managed by Kubernetes.
+	- Why Ingress instead of NodePort/LoadBalancer?
+		- NodePort uses high ports (30000+) - not user-friendly.
+		- LoadBalancer costs money in cloud.
+		- Ingress allows multiple domains/paths on the same IP/port 80/443.
 
 
+	**Key Files**
+	- For ingress controller: `kubectl apply -f https//raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml`
+	- `Kubernetes_lab_files/nginx-ingress.yaml`
+	- `Kubernetes_lab_files/nginx-deployment.yaml`
+	- `Kubernetes_lab_files/nginx-service.yaml`
+
+
+---
 
 
 
