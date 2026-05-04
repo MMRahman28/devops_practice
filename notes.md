@@ -4247,6 +4247,40 @@ Output:
 
 ---
 
+### May 4, 2026
+#### Task Completed
+
+- **Kubernetes Concept - part 15**
+
+	**Namespaces**
+	- Namespaces are like virtual clusters inside one physical cluster. They help organise resources and provide isolation.
+
+	**Features**
+	- Separate environment (dev, staging, prod) in the same cluster
+	- Team isolation (Team A cannot see Team B's resources)
+	- Resource quotas per team/environment
+	- Default namespace is default
+
+	**Hands-on Namespaces**
+	- Create a new namespace
+	- `kubectl create namespace dev`
+	- `kubectl create namespace prod`
+	- See all namespaces
+	- `kubectl get namespaces`
+	- Run a Pod in a specific namespace
+	- `kubectl run nginx-dev --image=nginx:alpine -n dev`
+	- `kubectl run nginx-prod --image=nginx:alpine -n prod`
+	- Check resources per namespace
+	- `kubectl get pods -n dev`
+	- `kubectl get pods -n prod`
+	- `kubectl get pods --all-namespaces`
+	- Set a default namespace (optional)
+	- `kubectl config set-context --current --namespace=dev`
+	- `kubectl get pods` # now shows only dev namespace
+	- Finally: `kubectl get pods --all-namespaces`
+
+---
+
 
 
 

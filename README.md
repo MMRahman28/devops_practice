@@ -5,7 +5,7 @@
 
 ---
 
-## Open to Junior DevOps Roles
+## Open to DevOps Roles
 - Available: Immediate
 - Location: UK (Remote/Hybrid)
 - Email: mashuk.pro@gmail.com
@@ -62,22 +62,25 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (May 3, 2026)
+## Today's Progress (May 4, 2026)
 
-- **Kubernetes Concept - part 14**
+- **Kubernetes Concept - part 15**
 
-	**Ingress**
-	- Ingress is the recommended way to expose http/https routes from outside the cluster to Services inside the cluster.
-	- Sort of smart reverse proxy.
-	- Why ingress?
-		- Load balancer costs money in cloud.
-		- Ingress allows multiple domains/ paths on the same IP/port 80/443.
-	
-	**Key Files**
-	- For ingress controller: `kubectl apply -f https//raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml`
-	- `Kubernetes_lab_files/nginx-ingress.yaml`
-	- `Kubernetes_lab_files/nginx-deployment.yaml`
-	- `Kubernetes_lab_files/nginx-service.yaml`
+	**Namespaces**
+	- Namespaces are like virtual clusters inside one physical cluster.
+	- Features: separate environment, team isolation, resource quotas per team/environment, default namespace is default
+	- Create a namespace:
+	- `kubectl create namespace dev`
+	- See all namespaces:
+	- `kubectl get namespaces`
+	- Run a pod inside a specific namespace:
+	- `kubectl run nginx-dev --image=nginx:alpine -n dev`
+	- Check resources per namespace:
+	- `kubectl get pods -n dev`
+	- Set a default namespace:
+	- `kubectl config set-context --current --namespace=dev`
+	- Now will show only dev namespace 
+	- `kubectl get pods`
 
 	#### notes.md (learning log)
  ---
@@ -90,5 +93,5 @@
 
 ---
 
-*Last updated: May 3, 2026*
+*Last updated: May 4, 2026*
 
