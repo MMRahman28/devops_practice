@@ -4286,6 +4286,18 @@ Output:
 
 ---
 
+### May 6, 2026
+#### Task Completed
+
+- **Kubernetes Concept - part 16**
+	**ResourceQuota (Limit resources per namespace)**
+	- ResourceQuota: prevents one team/environment from consuming all CPU/Memory of the cluster.
+
+    **Key file**
+	- `Kubernetes_lab_files/dev-quota.yaml`
+
+---
+
 
 
 
