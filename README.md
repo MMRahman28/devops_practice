@@ -62,17 +62,11 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (May 6, 2026)
+## Today's Progress (May 7, 2026)
 
-- **Kubernetes Concept - part 16**
+- **Break**
 
-	**ResourceQuota**
-	- Namespaces = isolation & organisation
-	- ResourceQuota = Limits inside a namespace (prevents one team from eating all cluster resources)
-	**Key file**
-	- `Kubernetes_lab_files/dev-quota.yaml`
-
-	#### notes.md (learning log)
+#### notes.md (learning log)
  ---
 				
 ## Files in this Repo
@@ -83,5 +77,5 @@
 
 ---
 
-*Last updated: May 6, 2026*
+*Last updated: May 7, 2026*
 
