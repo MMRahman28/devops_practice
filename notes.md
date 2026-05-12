@@ -4321,6 +4321,29 @@ Output:
 **Break**
 
 ---
+### May 12, 2026
+**Task Completed**
+
+- **Kubernetes Concept - part 17**
+
+	**RBAC (Role-Based Access Control)**
+	RBAC is Kubernetes built-in authorization system. It is one of the most important security features in Kubernetes.
+	- Concept:
+		- Role: permission inside a single namespace
+			- can get/list pods in dev namespace for example.
+		- ClusterRole: Permission across the entire cluster 
+			- can manage nodes, storageclasses
+		- RoleBinding: Connects a Role to a user/group/serviceaccount 
+			- give "dev-team" the Role in dev namespace
+		- ClusterRoleBinding: Connects a ClusterRole to users/groups
+			- give admin rights to cluster
+
+	**Key Files**
+	- `Kubernetes_lab_files/dev-role.yaml`
+	- `Kubernetes_lab_files/dev-rolebinding.yaml`
+
+---
+
 
 
 
