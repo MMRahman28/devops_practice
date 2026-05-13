@@ -62,22 +62,9 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (May 12, 2026)
+## Today's Progress (May 13, 2026)
 
-- **Kubernetes Concept - part 17**
-
-	**RBAC (Role-Based Access Control)**
-
-	- Role: Permission inside a single namespace.
-	- ClusterRole: Permission across the entire cluster
-	- RoleBinding: Connects a Role to a user/group/serviceaccount
-	- ClusterRoleBinding: Connects a ClusterRole to users/groups
-    
-	**Key Files**
-
-	- `Kubernetes_lab_files/dev-role.yaml`
-	- `Kubernetes_lab_files/dev-rolebinding.yaml`
-
+- **Break**
 #### notes.md (learning log)
  ---
 				
@@ -89,5 +76,5 @@
 
 ---
 
-*Last updated: May 12, 2026*
+*Last updated: May 13, 2026*
 
