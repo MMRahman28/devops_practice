@@ -62,9 +62,21 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (May 13, 2026)
+## Today's Progress (May 14, 2026)
 
-- **Break**
+- **Kubernetes Concept - part 18**
+	**ServiceAccount**
+
+	- A ServiceAccount (SA) is a special type of account used by applications/Pods (not humans).
+	- Humans use normal users (like marco-dev)
+	- Applications/Pods use ServiceAccounts
+	- This is one of the most important concepts in Kubernetes security.
+	- Why ServiceAccount? : When a Pod wants to talk to the Kubernetes API (for example, to list pods, create resources, etc.), it needs its own identity. That identity is provided by ServiceAccount.
+
+	**Key Files**
+	- `Kubernetes_lab_files/app-sa-rolebinding.yaml`
+	- `Kubernetes_lab_files/sa-demo-pod.yaml`
+
 #### notes.md (learning log)
  ---
 				
@@ -76,5 +88,5 @@
 
 ---
 
-*Last updated: May 13, 2026*
+*Last updated: May 14, 2026*
 

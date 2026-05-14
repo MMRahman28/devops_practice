@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+    name: sa-demo
+    namespace: dev
+spec:
+    serviceAccountName: app-sa
+    automountServiceAccountToken: true
+    containers:
+    - name: curl
+      image: curlimages/curl:latest
+      command: ["sleep", "3600"]
