@@ -62,9 +62,14 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (May 18, 2026)
+## Today's Progress (May 19, 2026)
 
-- **Break**
+- **StatefulSets**
+- A StatefulSet is a workload controller (like deployment) but designed for stateful applications.
+
+	**Key Files**
+	- `Kubernetes_lab_files/mysql-headless.yaml`
+	- `Kubernetes_lab_files/mysql-statefulset.yaml`
 
 #### notes.md (learning log)
  ---
@@ -77,5 +82,5 @@
 
 ---
 
-*Last updated: May 18, 2026*
+*Last updated: May 19, 2026*
 

@@ -4385,6 +4385,26 @@ Output:
 
 ---
 
+### May 20, 2026
+
+- **Kubernetes Concept - part 19**
+
+	**StatefulSets**
+
+	- A StatefulSet is a workload controller (like Deployment) but designed for stateful applications.
+	- Key differences from Deployment:
+		- Pod naming: for deployment it's random, for StatefulSet it's ordered and Stable
+		- Scaling Order: for deployment any order, for StatefulSet it's sequential
+		- Pod identity: for deployment no stable identity, for StatefulSet pod has unique, persistent identity
+		- Storage: for deployment Shared or random PVCs, for StatefulSet each pod gets its own dedicated PVC
+		- Use cases: deployment is for web servers, APIs(stateless), StatefulSet are for Databases (MySQL, PostgresSQL), Kafka, Zookeeper, Redis clusters, etc.
+
+	**Key Files**
+	- `Kubernetes_lab_files/mysql-headless.yaml`
+	- `Kubernetes_lab_files/mysql-statefulset.yaml`
+
+---
+
 
 
 		
