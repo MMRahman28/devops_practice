@@ -3875,7 +3875,7 @@ Output:
 	- A volume is a directory managed by Docker that lives outside the container's union filesystem.
 	- It is decoupled from the container's lifecycle, so deleting container won't affect it.
 	
-	- Data inside a container is ephemeral, Volume provide persistent storage. Easier to backup, share between containers, and manage. They enforce separation of concern: code + config in the image, stateful data in volumes.
+	- Data inside a container is ephemeral, Volume provides persistent storage. Easier to backup, share between containers, and manage. They enforce separation of concern: code + config in the image, stateful data in volumes.
 
 	- What happens to data inside a container when the container is stopped or removed?
 
@@ -3984,7 +3984,7 @@ Output:
 	-	**Kubernetes Concept - part 3**
 		**Init Containers**
 
-		- An Init Container is a special type of container that runs to completion (starts, does it job, and exits successfully) before the main application containers start.
+		- An Init Container is a special type of container that runs to completion (starts, does its job, and exits successfully) before the main application containers start.
 		- Init Containers run sequentially (one after another).
 		- The Pod will not proceed to start the main containers until all init Containers have succeeded.
 		- If any Init Container fails, the Pod goes into a failed state (or restarts depending on restartPolicy).
@@ -4385,7 +4385,7 @@ Output:
 
 ---
 
-### May 20, 2026
+### May 19, 2026
 
 - **Kubernetes Concept - part 19**
 
@@ -4405,6 +4405,12 @@ Output:
 
 ---
 
+### May 20, 2026
+#### Task Completed
+
+- **Kubernetes Concept - part 20**
+	- Preparation for what already learned so far. And will build an app.
+---
 
 
 		
