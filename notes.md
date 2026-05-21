@@ -4412,6 +4412,24 @@ Output:
 	- Preparation for what already learned so far. And will build an app.
 ---
 
+### May 21, 2026
+### Task Completed
+- **Voting-app**
+	- Architecture - Components:
+		- Vote Frontend - Web UI where users cast votes (Deployment)
+		- Redis - Stores votes temporarily (StatefulSet)
+		- Worker - Processes votes from Redis to Database (Deployment)
+		- Result Frontend - Shows live results (Deployment)
+		- MySQL - Persistent database for final results (StatefulSet + PVC)
+	- Features that will be used:
+		- Namespace, ConfigMap, Secret (for DB password), Services, Persistent Storage
+	- progress:
+		- MySQL (StatefulSet + PVC) -> Running
+		- Redis (StatefulSet _ PVC) -> Running
+		- Namespace voting-app -> Active
+
+---
+
 
 		
 

@@ -62,9 +62,13 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (May 20, 2026)
+## Today's Progress (May 21, 2026)
 
-- Preparation and recap all previous materials for building a new app.
+- **Voting-app**
+
+	- Vote Frontend, Redis, Worker, Result Frontend, MySQL
+	- Concept/tech used: Namespace, ConfigMap, Secret (for DB password), Services, Persistent Storage
+	- Progress status: MySQL (StatefulSet + PVC) -> Running, Redis (StatefulSet + PVC) -> Running, Namespace active.
 
 #### notes.md (learning log)
  ---
@@ -77,5 +81,5 @@
 
 ---
 
-*Last updated: May 20, 2026*
+*Last updated: May 21, 2026*
 
