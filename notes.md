@@ -4445,6 +4445,18 @@ Output:
 
 ---		
 
+### May 25, 2026
+#### Task Completed
+
+- **Voting Frontend (Web UI)**
+	- Using open source voting UI image
+	- Create a service for it.
+
+  **Key Files**
+  - `Kubernetes_lab_files/voting-app/vote-deployment.yaml`
+  - `Kubernetes_lab_files/voting-app/vote-service.yaml`
+
+---
 
 
 
