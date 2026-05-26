@@ -62,15 +62,11 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (May 25, 2026)
+## Today's Progress (May 26, 2026)
 
-- **Voting Frontend (Web UI)**
-	- Using open source voting UI image
-	- Create a service for it.
+**Break**
 
-  **Key Files**
-  - `Kubernetes_lab_files/voting-app/vote-deployment.yaml`
-  - `Kubernetes_lab_files/voting-app/vote-service.yaml`
+---	
 
 
 #### notes.md (learning log)
@@ -84,5 +80,5 @@
 
 ---
 
-*Last updated: May 25, 2026*
+*Last updated: May 26, 2026*
 
