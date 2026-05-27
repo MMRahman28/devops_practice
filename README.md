@@ -62,12 +62,19 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (May 26, 2026)
+## Today's Progress (May 27, 2026)
 
-**Break**
-
----	
-
+- **Result Frontend**
+	- Using nginx placeholder image instead of an official voting app image.
+	Current status:
+		- Namespace: voting-app
+		- MYSQL (Statefulset + Secret + PVC): Running
+		- Redis (StatefulSet + PVC): Running 
+		- Vote Frontend: Running
+		- Result Frontend: Running (using nginx placeholder for stability)
+  **Key Files**
+	- `Kubernetes_lab_files/result-deployment.yaml`
+	- `Kubernetes_lab_files/result-service.yaml`
 
 #### notes.md (learning log)
  ---
@@ -80,5 +87,5 @@
 
 ---
 
-*Last updated: May 26, 2026*
+*Last updated: May 27, 2026*
 
