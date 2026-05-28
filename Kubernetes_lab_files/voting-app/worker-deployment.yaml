@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: worker
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: worker
+    template:
+        metadata:
+            labels:
+                app: worker
+        spec:
+            initContainers:
+            - name: wait-for-db
+              image: busybox:stable
+              command:
+              - sh
+              - -c
+              - |
+                echo "Waiting for MySQL..."
+                for i in $(seq 1 120); do
+                    if nc -z mysql 3306; then
+                        echo "MySQL is ready!"
+                        exit 0
+                    fi
+                    echo "Attempt $1: Waiting for MySQL..."
+                    sleep 3
+                done
+                echo "Failed to connect to MySQL"
+                exit 1
+
+            containers:
+            - name: worker
+              image: dockersamples/examplevotingapp_worker
+              env:
+              - name: REDIS_HOST
+                value: redis
+              - name: DB_HOST
+                value: mysql
+              - name: DB_PASSWORD
+                valueFrom:
+                    secretKeyRef:
+                        name: mysql-secret
+                        key: MYSQL_ROOT_PASSWORD

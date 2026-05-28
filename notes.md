@@ -4480,5 +4480,16 @@ Output:
 
 ---
 
+### May 28, 2026
+#### Task Completed
+
+- **Worker**
+	- The worker is a background service that:
+		- Reads vote from Redis
+		- Writes the final results to MySQL
+	**Key Files**
+	In folder `Kubernetes_lab_files/voting-app`
+---
+
 
 

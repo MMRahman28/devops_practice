@@ -14,7 +14,10 @@ spec:
         spec:
             containers:
             - name: result
-              image: nginx:alpine
+              image: dockersamples/examplevotingapp_result
               ports:
               - containerPort: 80
+              env:
+              - name: REDIS_HOST
+                value: redis
 
