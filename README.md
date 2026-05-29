@@ -62,12 +62,10 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (May 28, 2026)
+## Today's Progress (May 29, 2026)
 
-- **Worker**
-	- The worker is a background service that:
-		- Reads vote from Redis
-		- Writes the final results to MySQL
+- **Recap & Test preparation**
+	- Voting app and previous topics recap.
 	**Key Files**
 	In folder `Kubernetes_lab_files/voting-app`
 
@@ -82,5 +80,5 @@
 
 ---
 
-*Last updated: May 28, 2026*
+*Last updated: May 29, 2026*
 
