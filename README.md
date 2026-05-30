@@ -62,12 +62,9 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (May 29, 2026)
+## Today's Progress (May 30, 2026)
 
-- **Recap & Test preparation**
-	- Voting app and previous topics recap.
-	**Key Files**
-	In folder `Kubernetes_lab_files/voting-app`
+- **Break**
 
 #### notes.md (learning log)
  ---
@@ -80,5 +77,5 @@
 
 ---
 
-*Last updated: May 29, 2026*
+*Last updated: May 30, 2026*
 
