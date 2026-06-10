@@ -62,9 +62,10 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (June 9, 2026)
+## Today's Progress (June 10, 2026)
 
-- **Break**
+- **Recap and Test is done**
+	- See the notes for test questions and answers.
 
 #### notes.md (learning log)
  ---
@@ -77,5 +78,5 @@
 
 ---
 
-*Last updated: June 9, 2026*
+*Last updated: June 10, 2026*
 

@@ -4562,3 +4562,52 @@ Output:
 
 - **Break**
 
+### June 10, 2026
+#### Task Completed
+
+- **Recap and test so far what learned**
+
+	- Q1: What is the difference between a Pod phase and a Container State? Give an example.
+		- Pod phase = High-level status of the entire Pod (Pending, Running, Succeeded, Failed, Unknown)
+		- Contaier State = Detailed state of each individual container (Waiting, Running, Terminated)
+		- The Pod Phase is calculated based on the state of all containers + conditions (initialised, Ready, etc.)
+	
+	- Q2: Explain when you would use a StatefulSet instead of Deployment.
+		- StatefulSet for stateful applications which provides stable network identity (e.g., mysql-0.mysql DNS name) and ordered scaling and per-pod PVCs.
+		- Deployment for stateless applications. Deployments are the default choice for most microservices, APIs, frontend,etc. Deployment can be used for updates, rollback etc. in a situation where data persistence, state is not involved.
+	
+	- Q3: What is the purpose of ingressClassName: nginx in an ingress resource?
+		- It tells Kubernetes which ingress controller to use. In this case, nginx ingress controller.
+	
+	- Q4: What is the difference between envFrom and volumeMounts when using ConfigMaps or Secrets?
+		- envFrom uses environment variables for configuration while volumeMounts uses file stored in a volume. volumeMounts does not necessarily use a PersistentVolume - it can mount ConfigMaps/Secrets as files in a temporary volume. envFrom is convenient but risky for secrets (visible in logs, describe etc.). Many real applications use both: simple settings via envFrom, complex config files via volumeMounts.
+	
+	- Q5: Explain the difference between a normal User and a ServiceAccount.
+		- Human -> normal Users, Pods -> ServiceAccounts.
+		- ServiceAccounts give Pods an identity to talk to Kubernetes API. Normal Users are usually managed externally (certificates, OIDC etc.) while ServiceAccounts are Kubernetes-native objects.
+	
+	- Q6: what happens when you scale a Deployment from 3 to 5 replicas? Does it create a new ReplicaSet?
+		- No, it does not create new replicaset, as that would defeat the purpose of scaling. Although Replicas field will be changed and pods will be adjusted based on the request or requirements.
+
+	- Q7: Why do we use a Headless Service with StatefulSets?
+		- Headless Service allows direct communication with individual Pods using stable DNS names.
+	
+	- Q8: What is the difference between port, targetPort, and nodePort in a Service?
+		- port: this is the service port client uses to request the service. This is the Service's port. Other Pod/Services inside the cluster connect to this port.
+		- targetPort: targetPort is the container port that the actual app listening on inside the Pod. The application (nginx, code etc.) listening here.
+		- NodePort: exposes the app on high port on every node for external access.
+		- port and targetPort do not have to be the same. 
+		- Who is the cient here?: any other pod inside the cluster, another service, any app running inside the Kubernetes cluster
+		- Example: for the voting appp, the vote frontend pod wants to talk to the redis service.
+		- The vote Pod is the client. It connects to the Redis Service using the Service's port. So, inside the cluster clients are usually other pods or services. The client can send normal HTTP requests to the Service's port. The Service then forwards the request to the targetPort on the actual Pod.
+	
+	- Q9: What is a ResourceQuota and why is it useful in Namespaces?
+		- Resource quota sets resources for a namespace. It stops one team from consuming every resources.
+	
+	- Q10: Explain the difference between stringData and Data in a Secret.
+		- stringData and data both have the same effect and none are secured. With data we provide base64 encoding, but with stringData we provide plaintext which then Kubernetes converts into base64.
+	
+	---
+
+
+
