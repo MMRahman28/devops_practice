@@ -4609,5 +4609,27 @@ Output:
 	
 	---
 
+	### June 11, 2026
+	#### Task Completed
+
+	- **Helm**
+		- Installation
+		- Create chart: `helm create my-first-chart`
+		- Then cd into it: `cd my-first-chart`
+		- There can be templates which can be deleted if conflict with installation.
+		- values.yaml was replaced with simplified clear version.
+		- `helm install my-nginx .` Here my-nginx is the release name. .-> install the chart from the current directory.
+		- Check: `helm list`
+		- `kubectl get pods -l app.kubernetes.io/name=my-first-chart`
+		- `kubectl get svc my-nginx`
+		- Access the app: `kubectl port-forward svc/nginx-app 8080:80`
+		- In another terminal: curl http://localhost:8080
+		- Helm is the package manager for Kubernetes.
+		- Instead of writing dozens of YAML files manually, with Helm Charts (pre-packaged applications) we can install, upgrade, configure, and share easily.
+		- To upgrade: Say we change the values.yaml file with different number of replicas and different image tag
+		- Now, after modification we run: `helm upgrade my-nginx .`
+
+---
+
 
 
