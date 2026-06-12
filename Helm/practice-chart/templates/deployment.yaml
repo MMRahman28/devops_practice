@@ -1,0 +1,32 @@
+ apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: {{ .Release.Name }}
+spec:
+    replicas: {{ .Values.replicaCount }}
+    selector:
+        matchLabels:
+            app: {{ .Release.Name }}
+    template:
+        metadata:
+            labels:
+                app: {{ .Release.Name }}
+        spec:
+            containers:
+            - name: {{ .Chart.Name }}
+              image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+              imagePullPolicy: {{ .Values.image.pullPolicy }}
+              ports:
+              - containerPort: 80
+              env:
+              - name: APP_ENV
+                value: {{ .Values.environment.APP_ENV | default "production" | quote }}
+              - name: LOG_LEVEL
+                value: {{ .Values.environment.LOG_LEVEL | default "info" | quote }}
+              volumeMounts:
+              - name: config-volume
+                mountPath: /app/config
+            volumes:
+            - name: config-volume
+              configMap:
+                  name: {{ .Release.Name }}-config

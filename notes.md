@@ -4631,5 +4631,29 @@ Output:
 
 ---
 
+### June 12, 2026
+#### Task Completed
+
+- **Understanding and editing templates**
+	- Deployment Template modification
+		- We use {{ .Release.Name }} go like template. 
+		- {{ .Values.replicaCount }} -> replaced by value from values.yaml
+		- Helm renders these templates at install/upgrade time to generate real Kubernetes YAML. 
+		- See file: `Helm/practice_chart/templates/deployment.yaml`
+		- After that upgrade with `helm upgrade simple-nginx .`
+		- Check: `kubectl get pods -l app=simple-nginx`
+		- We can also upgrade with different number of replicas:
+		- `helm upgrade simple-nginx . --set replicaCount=5`
+		- `helm list`
+		- Quick customisation: `helm upgrade simple-nginx . --set replicaCount=3 --set image.tag=latest --set service.nodePort=30081`
+		- Next, add environment variables in the templates again modify deplyment.yaml.
+		- See the file: `Helm/practice_chart/templates/deployment.yaml` and `values.yaml`
+		- Verify the environment variables:
+		- `kubectl get pod -l app=simple-nginx -o yaml | grep -A 15 "env:"`
+
+---
+
+
+
 
 

@@ -62,15 +62,11 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (June 11, 2026)
+## Today's Progress (June 12, 2026)
 
-- **Helm**
-	- Package manager for Kubernetes.
-	- Instead of writing dozens of YAML file manually, with helm charts (pre-packaged applications) install, upgrade, configure and share can be done easily.
-	- helm has been installed and chart was created. values.yaml file was modified with a simplified version that came with the chart.
-	- Later this file was updated. 
-	- helm handled all efficiently with minimal code.
-	- See commands in the notes
+- **Helm - understanding and editing templates**
+	- Modify the deployment.yaml file with go like templating.
+	- See commands/files/code in the notes
 
 #### notes.md (learning log)
  ---
@@ -83,5 +79,5 @@
 
 ---
 
-*Last updated: June 11, 2026*
+*Last updated: June 12, 2026*
 
