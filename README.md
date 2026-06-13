@@ -62,11 +62,9 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (June 12, 2026)
+## Today's Progress (June 13, 2026)
 
-- **Helm - understanding and editing templates**
-	- Modify the deployment.yaml file with go like templating.
-	- See commands/files/code in the notes
+- **Break**
 
 #### notes.md (learning log)
  ---
@@ -79,5 +77,5 @@
 
 ---
 
-*Last updated: June 12, 2026*
+*Last updated: June 13, 2026*
 
