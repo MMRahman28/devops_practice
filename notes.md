@@ -4662,6 +4662,44 @@ Output:
 **Break**
 ---
 
+### June 15, 2026
+#### Task Completed
+
+- **ConfigMap**
+	- Why do we use ConfigMap?
+    - ConfigMap is used to separate configuration from application code.
+	- The core problem it solves:
+		- Database host
+		- Log level (debug/info/error)
+		- Feature flags
+		- API URLs
+		-Timeouts, etc.
+	- WARNING!
+		- Bad way (without ConfigMap)
+			- Hardcode all these values inside the Docker image or code.
+			- Every time anything changes (e.g. switch from dev database to prod) rebuild the image -> redeploy
+		- Good way(with ConfigMap)
+			- Put all configuration in a ConfigMap
+			- Application reads it at runtime (as environment variables or files)
+			- Without rebuilding the image config change is possible.
+	- Why ConfigMap is Essential?
+		- Environment separation - Same image can run in dev, staging, production with different configs.
+		- Faster Updates - Change a setting -> just update ConfigMap -> restarts Pods. No rebuild needed.
+		- Security - Non-sensitive config stays out of code and Docker images.
+		- Team Collaboration - Developers manage code, Ops/DevOps manage config.
+		- Reusability - One chart/image can be used across many environment.
+	- Two main ways to consume ConfigMap
+		- envFrom -> injects as environment variables (simple)
+		- volumeMounts -> Mount as files (better for complex config files like application.yml,nginx.conf etc.)
+	- Real-world Rule of thumb:
+		- small, simple settings -> envFrom
+		- Complex files or large configs -> volumeMounts.
+
+	**Key Files**
+	`Helm/practice-chart/templates/configmap.yaml`
+	`Helm/practice-chart/templates/deployment.yaml`
+
+---
 
 
 
