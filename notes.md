@@ -4701,6 +4701,18 @@ Output:
 
 ---
 
+### June 16, 2026
+#### Task Completed
+
+- **Helm ConfigMap + Secret**
+ 
+	**Key Files**
+
+	- `Helm/practice-chart/templates/configmap.yaml`
+	- `Helm/practice-chart/templates/secret.yaml` 
+
+---
+
 
 
 

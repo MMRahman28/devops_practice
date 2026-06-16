@@ -62,9 +62,14 @@
 	`parse_config.sh` , `app.conf`
 
 
-## Today's Progress (June 14, 2026)
+## Today's Progress (June 16, 2026)
 
-- **Break**
+- **Helm ConfigMap + Secret**
+ 
+	**Key Files**
+
+	- `Helm/practice-chart/templates/configmap.yaml`
+	- `Helm/practice-chart/templates/secret.yaml` 
 
 #### notes.md (learning log)
  ---
@@ -77,5 +82,5 @@
 
 ---
 
-*Last updated: June 14, 2026*
+*Last updated: June 16, 2026*
 

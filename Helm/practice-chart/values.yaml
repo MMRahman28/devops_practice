@@ -12,5 +12,9 @@ service:
 
 # New custom values
 environment:
-    APP_ENV: "staging"
-    LOG_LEVEL: "debug"
+    APP_ENV: "production"
+    LOG_LEVEL: "info"
+
+database:
+    password: "MySuperStrongDbPass2026!"
+

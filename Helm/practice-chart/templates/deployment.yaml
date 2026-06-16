@@ -1,4 +1,4 @@
-apiVersion: apps/v1
+ apiVersion: apps/v1
 kind: Deployment
 metadata:
     name: {{ .Release.Name }}
@@ -18,11 +18,20 @@ spec:
               imagePullPolicy: {{ .Values.image.pullPolicy }}
               ports:
               - containerPort: 80
+
+              # Environment variables from ConfigMap
+              envFrom:
+              - configMapRef:
+                  name: {{ .Release.Name }}-config
+
+              # Environment variables from secret
               env:
-              - name: APP_ENV
-                value: {{ .Values.environment.APP_ENV | default "production" | quote }}
-              - name: LOG_LEVEL
-                value: {{ .Values.environment.LOG_LEVEL | default "info" | quote }}
+              - name: DB_PASSWORD
+                valueFrom:
+                    secretKeyRef:
+                        name: mysql-secret
+                        key: MYSQL_ROOT_PASSWORD
+
               volumeMounts:
               - name: config-volume
                 mountPath: /app/config
